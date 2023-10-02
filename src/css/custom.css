@@ -1,0 +1,126 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #0084c2;
+  --ifm-color-primary-dark: #0077af;
+  --ifm-color-primary-darker: #0070a5;
+  --ifm-color-primary-darkest: #005c88;
+  --ifm-color-primary-light: #0091d5;
+  --ifm-color-primary-lighter: #0098df;
+  --ifm-color-primary-lightest: #00acfc;
+  
+  --ifm-heading-font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #009de6;
+  --ifm-color-primary-dark: #008dcf;
+  --ifm-color-primary-darker: #0085c4;
+  --ifm-color-primary-darkest: #006ea1;
+  --ifm-color-primary-light: #00adfd;
+  --ifm-color-primary-lighter: #0ab1ff;
+  --ifm-color-primary-lightest: #2cbcff;
+}
+
+
+.tweetsSection > :global(.col) > * {
+  margin-bottom: 2rem;
+}
+
+.hero__subtitle {
+	font-size: 1.4rem;
+    font-family: MercurySSm-Book-Pro_Web,serif;
+}
+
+.hero__title {
+	font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 996px) {
+  .tweetsSection > :global(.col:last-child) > *:last-child {
+    margin-bottom: 0;
+  }
+	.heroBanner {
+		padding: 1rem;
+	}
+	.hero__subtitle {
+		font-size: 1.2rem;
+	}
+	.statement_text {
+		font-size: 1.1rem;
+	}
+	.quote_dontDisplayOnSmall {
+		display: none;
+	}
+}
+
+@media (min-width: 997px) {
+  .tweetsSection > :global(.col) > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.statement_text {
+  font-size: 1.2rem;
+}
+
+.statement_info {
+  font-size: 1rem;
+}
+
+.md-intro h1 {
+  text-align: center;
+}
+.md-intro h2 {
+  text-align: center;
+}
+
+.index-md {
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (min-width: 997px) {
+	.index-md {
+		max-width: 75%!important;
+		padding: 0 var(--ifm-spacing-horizontal);
+	}
+}
+
+.quote_summary {
+	cursor:pointer;
+	color:var(--ifm-code-color);
+}
+
+.footnotes hr {
+	display: none;
+}
+
+.centered {
+    text-align: center;
+}
+
+@font-face{font-display:block;font-family:MercurySSm-Book-Pro_Web;font-style:normal;font-weight:400;src:url(https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/fonts/MercurySSm-Book-Pro_Web.woff2) format('woff2'),url(https://www.whitehouse.gov/wp-content/themes/whitehouse/assets/fonts/MercurySSm-Book-Pro_Web.woff) format('woff');} /* temporary; Creative Commons licensed? */
+
+.quote_text {
+	margin-bottom: 0;
+}
+
+.mark {
+	font: var(--ifm-h4-font-size) / var(--ifm-heading-line-height)
+      var(--ifm-font-family-base)
+}
+
+/*h1, h2, h3, h4 {
+    font-family: MercurySSm-Book-Pro_Web,serif;
+}*/
+
+.hash-link {
+	display: none;
+}
