@@ -124,3 +124,16 @@
 .hash-link {
 	display: none;
 }
+
+[data-theme='dark'] .hero__subtitle {
+	--ifm-hero-text-color: #fff;
+	color: var(--ifm-hero-text-color);
+}
+[data-theme='dark'] .hero__title {
+	--ifm-hero-text-color: #fff;
+	color: var(--ifm-hero-text-color);
+}
+
+[data-theme='dark'] .button--outline:hover, .button--outline:active, .button--outline.button--active {
+	--ifm-button-color: #fff;
+}
