@@ -2,6 +2,11 @@
 sidebar_position: 1
 ---
 
+
+import Collapsible from '../src/components/Collapsible/index.js';
+import WrapFootnotes from '../src/components/Collapsible/WrapFootnotes.js';
+import HashAwareCollapsible from '../src/components/Collapsible/HashAwareCollapsible.js';
+
 (Work in progress. Looking for collaborators. [Join us](https://docs.google.com/forms/d/e/1FAIpQLSeqKAqC4B4fAQu6temjRmvZjHO98HQ9xdBDokMrWZE3OD-8Mw/viewform).)
 
 # Why we need a global AI moratorium
@@ -30,13 +35,17 @@ If a capable enough mind doesn't care about humans, then we’re just atoms it c
 
 **Without international coordination** to regulate potentially dangerous AI training runs and prevent AGI from being created before the technical problem is solved, **many researchers expect humanity to go extinct**. We welcome the progress we observed over the recent months, but it's still too slow, and we hope to increase engagement with the problem and technical understanding among policymakers.
 
-Below is an explanation of the technical problem of AI alignment.
 
-*Estimated reading time: 12 min.*
+<a className="button button--outline button--primary" href="#intelligence">Read about the technical problem -></a>
 
-<a className="button button--outline button--primary" href="#ai-moratorium">Skip to what the governments can do -></a>
+<!-- 
+<a className="button button--outline button--primary" href="#ai-moratorium">Skip to what the governments can do -></a> -->
 
 ***
+
+We recommend investing 12 minutes into reading our explanation of the technical problem of AI alignment to familiarise yourself with how AI works and the technical reasons that cause experts to expect a catastrophe.
+
+<HashAwareCollapsible summaryCollapsed=<span>Click to show <b>AI Alignment explainer</b> and learn about AI and AI Alignment <i>(Estimated reading time: 12 min.)</i></span> summaryExpanded=<span>Hide <b>AI Alignment explainer</b> and read about what the governments can do</span>><br/>
 
 ## Intelligence
 
@@ -158,6 +167,10 @@ And if a system is much better than us at achieving goals and its goals are diff
 
 How do we prevent this?
 
+</HashAwareCollapsible>
+
+***
+
 ## AI Moratorium
 
 <h4 style={{"text-align": "center"}}>How do we prevent a catastrophe?</h4>
@@ -186,6 +199,12 @@ Some regulations that help with existential risk from future uncontrollable AI c
 
 **We call on policymakers around the world to establish and enforce national restrictions and then a global AI moratorium that would prevent anyone in the world from risking human extinction.**
 
+<p className="centered"><a className="button button--outline button--primary button--lg" href="https://docs.google.com/forms/d/e/1FAIpQLSeqKAqC4B4fAQu6temjRmvZjHO98HQ9xdBDokMrWZE3OD-8Mw/viewform">Help AI Moratorium</a></p>
+
+***
+
+<HashAwareCollapsible summaryCollapsed=<span>Show <b>Counterarguments</b></span> summaryExpanded=<span>Hide <b>Counterarguments</b></span>><br/>
+
 ## Counterarguments
 
 ***Is there evidence that these dangers are real?***
@@ -206,8 +225,6 @@ Citing testimony in the UK House of Commons, "If we develop a shared understandi
 
 It is important to get everybody on board: we need to work with every nation that could be capable of building an AGI and causing humanity to go extinct. We need to develop a shared understanding of this threat to global security. We should also implement compute governance measures, making advanced AI chips trackable and preventing nations that don't regulate frontier AI from acquiring the capability to endanger humanity. 
 
-<p className="centered"><a className="button button--outline button--primary button--lg" href="https://docs.google.com/forms/d/e/1FAIpQLSeqKAqC4B4fAQu6temjRmvZjHO98HQ9xdBDokMrWZE3OD-8Mw/viewform">Help AI Moratorium</a></p>
+</HashAwareCollapsible>
 
-***
-
-### Footnotes
+<WrapFootnotes />
