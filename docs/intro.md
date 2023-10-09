@@ -47,7 +47,7 @@ If a capable enough mind doesn't care about humans, then we’re just atoms it c
 <div className="container margin-bottom--lg margin-top--lg md-intro">
 <div className="index-md">
 
-<p style={{"font-size": "20px",color:"white","font-family":"MercurySSm-Book-Pro_Web,serif"}}>Read about the technical problem of AI alignment: how modern AI works and why experts to expect a catastrophe.</p>
+<p style={{"font-size": "20px",color:"white","font-family":"MercurySSm-Book-Pro_Web,serif"}}>Read about the technical problem of AI alignment: how modern AI works and why exactly experts expect a catastrophe.</p>
 
 <HashAwareCollapsible summaryCollapsed=<span style={{"font-size": "20px","color":"white"}}>Click to <b>learn about AI and AI Alignment</b> <i>(Est. reading time: 12 min.)</i></span> summaryExpanded=<span style={{"font-size": "20px"}}>Hide the explanation of AI and AI Alignment and read about what the governments can do</span>><br/>
 
