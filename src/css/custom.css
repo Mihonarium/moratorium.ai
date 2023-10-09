@@ -152,3 +152,15 @@
 .technical-section button {
     color: white;
 }
+
+.button-collapsible {
+	cursor: pointer;
+    background: none;
+    border: none;
+    font-size: inherit;
+    text-align: left;
+    position: relative;
+    padding: 0px 0px 0px 1.5em;
+    width: 100%;
+    color: var(--ifm-font-color-base);
+}

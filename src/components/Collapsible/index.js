@@ -35,18 +35,7 @@ const Collapsible = ({ summaryCollapsed, summaryExpanded, children, isOpen, onTo
     <div>
       <button 
         onClick={handleToggle}
-        style={{
-          cursor: 'pointer',
-          background: 'none',
-          border: 'none',
-          fontSize: 'inherit',
-          textAlign: 'left',
-          position: 'relative',
-          padding: '0',
-          paddingLeft: '1.5em',
-		  width: '100%',
-		  color: 'var(--ifm-font-color-base)'
-        }}
+        className='button-collapsible'
       >
         {currentIsOpen 
           ? <span style={arrowStyle}>▼</span>
