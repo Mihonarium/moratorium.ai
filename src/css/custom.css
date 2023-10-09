@@ -137,3 +137,18 @@
 [data-theme='dark'] .button--outline:hover, .button--outline:active, .button--outline.button--active {
 	--ifm-button-color: #fff;
 }
+
+.technical-section{	
+    padding: 1px;
+    margin-left: calc((100% - 98vw) / 2);
+    margin-right: calc((100% - 98vw) / 2);
+    background-color: var(--ifm-color-primary-darker);
+    color: white;
+	--ifm-link-hover-color: white;
+    --ifm-link-color: white;
+	--ifm-hr-background-color: white;
+	--ifm-link-decoration: underline;
+}
+.technical-section button {
+    color: white;
+}

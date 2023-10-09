@@ -43,9 +43,13 @@ If a capable enough mind doesn't care about humans, then we’re just atoms it c
 
 ***
 
-<p style={{"font-size": "18px"}}>We recommend investing 12 minutes into our explanation of the technical problem of AI alignment to read about how AI works and the reasons that cause experts to expect a catastrophe.</p>
+<div className="technical-section">
+<div className="container margin-bottom--lg margin-top--lg md-intro">
+<div className="index-md">
 
-<HashAwareCollapsible summaryCollapsed=<span style={{"font-size": "19px"}}>Click to <b>learn about AI and AI Alignment</b> <i>(Estimated reading time: 12 min.)</i></span> summaryExpanded=<span style={{"font-size": "19px"}}>Hide the explanation of AI and AI Alignment and read about what the governments can do</span>><br/>
+<p style={{"font-size": "20px",color:"white","font-family":"MercurySSm-Book-Pro_Web,serif"}}>Read about the technical problem of AI alignment: how modern AI works and why experts to expect a catastrophe.</p>
+
+<HashAwareCollapsible summaryCollapsed=<span style={{"font-size": "20px","color":"white"}}>Click to <b>learn about AI and AI Alignment</b> <i>(Est. reading time: 12 min.)</i></span> summaryExpanded=<span style={{"font-size": "20px"}}>Hide the explanation of AI and AI Alignment and read about what the governments can do</span>><br/>
 
 ## Intelligence
 
@@ -77,7 +81,7 @@ For most real-world problems, we have no idea how the neural networks actually p
 
 GPT-4 can be impressive: it knows a lot and can even perform tasks that require not just remembering facts but thinking critically. It’s clearly not generally super-human, but it’s safe to say that mostly, it’s smarter than 7-year-old humans.
 
-If you imagine a human brain as a function of inputs and outputs (all the electrical impulses, chemicals, etc.[^2]), exists some possible large artificial neural network that can copy its behaviour. And if there is an algorithm for understanding the world and planning on how to achieve some goals in it- something like what we fuzzily perform- there’s a neural network that implements this algorithm.
+If you imagine a human brain as a function of inputs and outputs (all the electrical impulses, chemicals, etc.[^2]), there exists some possible large artificial neural network that can copy its behaviour. And if there is an algorithm for understanding the world and planning on how to achieve some goals in it- something like what we fuzzily perform- there’s a neural network that implements this algorithm.
 
 [^2]: The current scientific consensus is that it’s computable: a program can, theoretically, simulate the physics that run a brain.
 
@@ -168,6 +172,10 @@ And if a system is much better than us at achieving goals and its goals are diff
 How do we prevent this?
 
 </HashAwareCollapsible>
+
+</div>
+</div>
+</div>
 
 ***
 
