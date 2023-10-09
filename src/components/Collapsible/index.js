@@ -44,7 +44,8 @@ const Collapsible = ({ summaryCollapsed, summaryExpanded, children, isOpen, onTo
           position: 'relative',
           padding: '0',
           paddingLeft: '1.5em',
-		  width: '100%'
+		  width: '100%',
+		  color: 'var(--ifm-font-color-base)'
         }}
       >
         {currentIsOpen 
