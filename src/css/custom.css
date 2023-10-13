@@ -177,6 +177,7 @@
     border-style: solid;    
 	border-radius: var(--ifm-global-radius);
     padding-left: 10px;
+    padding-bottom: 10px;
 	border-width: 1px;
 }
 
