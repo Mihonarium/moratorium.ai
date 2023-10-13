@@ -148,6 +148,8 @@
     --ifm-link-color: white;
 	--ifm-hr-background-color: white;
 	--ifm-link-decoration: underline;
+	/*margin-top: 2.5rem;
+    margin-bottom: 2.5rem;*/
 }
 .technical-section button {
     color: white;
@@ -163,4 +165,42 @@
     padding: 0px 0px 0px 1.5em;
     width: 100%;
     color: var(--ifm-font-color-base);
+}
+
+.form-input {
+    color: var(--ifm-color-white);
+    border-color: var(--ifm-color-white);
+    font-family: var(--ifm-font-family-monospace);
+    font-size: var(--ifm-code-font-size);
+    padding: var(--ifm-code-padding-vertical);
+	background: #0000;
+    border-style: solid;    
+	border-radius: var(--ifm-global-radius);
+    padding-left: 10px;
+	border-width: 1px;
+}
+
+.footer {
+    --ifm-font-color-base: : white;
+}
+.footer .form-input::placeholder {
+    color: #ffffffaa;
+}
+
+.button--primary[href="#intelligence"]::after {
+    --arrows-size: 1.3em;
+    background-color: currentcolor;
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    background-size: var(--arrows-size);
+    content: "";
+    display: inline-block;
+    height: var(--arrows-size);
+    mask-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE2LjMxNSAxNi42NjhhMSAxIDAgMSAwIDEuNDE1IDEuNDE0bDQuNjY1LTQuNjY1YTIgMiAwIDAgMCAwLTIuODI5TDE3LjcyNyA1LjkyYTEgMSAwIDEgMC0xLjQxNSAxLjQxNEwxOS45NzggMTFIMmExIDEgMCAxIDAgMCAyaDE3Ljk4M2wtMy42NjggMy42NjhaIiBmaWxsPSIjMDAwIi8+PC9zdmc+);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    margin-left: 8px;
+    vertical-align: text-bottom;
+    width: var(--arrows-size);
 }

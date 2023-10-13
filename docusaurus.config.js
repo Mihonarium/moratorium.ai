@@ -129,13 +129,16 @@ const config = {
             ],
           },
         ],
-        copyright: `${new Date().getFullYear()}, work in progress`,
+        copyright: `<div><input class="form-input" type="text" name="email" id="email_subscribe" placeholder="Email address" value="" style="width:300px;height:30px;margin-right:10px;" required="" data-form-type="other"><button class="button button--outline button--secondary" onclick="email_subscribe()" data-form-type="action">Subscribe to our news</button></div>`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),
+	scripts: [
+		{src: '/scripts.js', async: true},
+	],
 };
 
 module.exports = config;

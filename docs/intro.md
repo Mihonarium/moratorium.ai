@@ -17,7 +17,7 @@ Within the next 10-15 years, many researchers expect to achieve superhuman artif
 
 While researchers find ways to advance on a path towards superhuman AI, the field does not currently recognize any promising leads as to how to make a future AGI pursue goals we’d want it to pursue.
 
-AI Alignment is the problem of aligning future AI goals and behavior with human values. Some employees of OpenAI, DeepMind, and Anthropic think the probability of extinction is around 80-90%[^1], because we’re not on track to solve the technical problem of AI alignment in time. If it remains unsolved when we reach an AGI, humanity will likely go extinct (“extinction” is used literally and doesn’t refer to unemployment).
+"AI alignment" is the problem of aligning future AI goals and behavior with human values. Some employees of OpenAI, DeepMind, and Anthropic think the probability of extinction is around 80-90%[^1], because we’re not on track to solve the technical problem of AI alignment in time. If it remains unsolved when we reach an AGI, humanity will likely go extinct (“extinction” is used literally and doesn’t refer to unemployment).
 
 [^1]: From personal conversations with people working at OpenAI, DeepMind, and Anthropic.
 
@@ -34,7 +34,7 @@ If a capable enough mind doesn't care about humans, then we’re just atoms it c
 **Without international coordination** to regulate potentially dangerous AI training runs and prevent AGI from being created before the technical problem is solved, **many researchers expect humanity to go extinct**. We welcome the progress we observed over the recent months, but it's still too slow, and we hope to increase engagement with the problem and technical understanding among policymakers.
 
 
-<a className="button button--outline button--primary" href="#intelligence">Read about the technical problem -></a>
+<a className="button button--outline button--primary" href="#intelligence">Read about the technical problem</a>
 
 <!-- 
 <a className="button button--outline button--primary" href="#ai-moratorium">Skip to what the governments can do -></a> -->
@@ -187,7 +187,7 @@ Imagine a world where piles of uranium spit out gold, and the larger a pile of u
 
 The researchers developed techniques that allow the top AI labs to predict some performance metrics of a system before it is launched, but they’re not able to predict the general capabilities.
 
-**Every time a new, smarter AI system starts interacting with the world, there's a chance that it will start to successfully pursue its own goals**. Until we figure out how to make general AI systems safe, every training run and every new composition of existing AI systems into a smarter AI system poses a catastrophic risk.
+Every time a new, smarter AI system starts interacting with the world, there's a chance that it will start to successfully pursue its own goals. Until we figure out how to make general AI systems safe, every training run and every new composition of existing AI systems into a smarter AI system poses a catastrophic risk.
 
 A suggested way to prevent dangerous AI launches is to **impose strict restrictions on training** potentially generally capable AI systems. The restrictions need to be implemented both on national levels and, eventually, on the international level, with the goal of **preventing bad and reckless actors from having access to compute** that might allow them to launch AI training that could be dangerous to humanity as a whole.
 
