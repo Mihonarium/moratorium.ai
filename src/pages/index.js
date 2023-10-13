@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -168,7 +169,8 @@ function SoleLink(href) {
 }
 
 export default function Home() {
-  window.toast = toast;
+	
+  
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
@@ -184,7 +186,12 @@ export default function Home() {
 			  </MDXContent>
 			</div>
 		</div>
-      </main><ToastContainer />
+      </main><ToastContainer /><BrowserOnly fallback={<div></div>}>
+      {() => {
+        window.toast = toast;
+        return <div></div>;
+      }}
+    </BrowserOnly>
     </Layout>
   );
 }
