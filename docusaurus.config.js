@@ -129,7 +129,7 @@ const config = {
             ],
           },
         ],
-        copyright: `<div><input class="form-input" type="text" name="email" id="email_subscribe" placeholder="Email address" value="" style="width:300px;height:30px;margin-right:10px;" required="" data-form-type="other"><button class="button button--outline button--secondary" onclick="email_subscribe()" data-form-type="action">Subscribe to our news</button></div>`,
+        copyright: `<div><form id="subscription_form_footer"><input class="form-input" type="text" name="email" id="email_subscribe" placeholder="Email address" value="" style="width:300px;height:30px;margin-right:10px;" required=""><button class="button button--outline button--secondary" type="submit">Subscribe to our news</button></form></div>`,
       },
       prism: {
         theme: lightCodeTheme,
