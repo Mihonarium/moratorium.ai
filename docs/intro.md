@@ -185,7 +185,7 @@ The leading AI labs are in a race to a general AI, and the closer they get, the 
 
 Imagine a world where piles of uranium spit out gold, and the larger a pile of uranium is, the more gold it spits out. But past some critical mass, a nuclear explosion ignites the atmosphere, and soon everybody dies. This is similar to our situation, and the leading AI labs understand this and say they would welcome regulation.
 
-The researchers developed techniques that allow the top AI labs to predict some performance metrics of a system before it is launched, but they’re not able to predict the general capabilities.
+The researchers developed techniques that allow the top AI labs to predict some performance metrics of a system before it is launched, but they’re not able to predict its general capabilities.
 
 Every time a new, smarter AI system starts interacting with the world, there's a chance that it will start to successfully pursue its own goals. Until we figure out how to make general AI systems safe, every training run and every new composition of existing AI systems into a smarter AI system poses a catastrophic risk.
 
