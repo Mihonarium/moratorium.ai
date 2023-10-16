@@ -1,3 +1,4 @@
+// HashAwareCollapsible.js
 import React, { useEffect, useState, useRef } from 'react';
 import Collapsible from './index.js';
 
@@ -18,12 +19,15 @@ const HashAwareCollapsible = ({ summaryCollapsed, summaryExpanded, children }) =
 		  setContentOpen(true);
 		  setTimeout(() => {
 			const targetElement = document.getElementById(currentHash);
-			targetElement && targetElement.scrollIntoView();
+			targetElement && targetElement.scrollIntoView({behavior: 'smooth'});
 		  }, 30);
 		}
 	  };
 
-	  handleHashChange(); // Check the hash on initial mount
+		  setTimeout(() => {
+			handleHashChange(); // Check the hash on initial mount
+		  }, 200);
+	  // handleHashChange(); // Check the hash on initial mount
 
 	  window.addEventListener('hashchange', handleHashChange, false);
 	  return () => {
