@@ -24,10 +24,10 @@ const HashAwareCollapsible = ({ summaryCollapsed, summaryExpanded, children }) =
 		}
 	  };
 
-		  /*setTimeout(() => {
+		  setTimeout(() => {
 			handleHashChange(); // Check the hash on initial mount
-		  }, 200);*/
-	  handleHashChange(); // Check the hash on initial mount
+		  }, 100);
+	  //handleHashChange(); // Check the hash on initial mount
 
 	  window.addEventListener('hashchange', handleHashChange, false);
 	  return () => {
