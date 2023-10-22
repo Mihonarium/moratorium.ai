@@ -168,6 +168,18 @@
 }
 
 .form-input {
+    color: var(--ifm-code-color);
+    font-family: var(--ifm-font-family-monospace);
+    font-size: var(--ifm-code-font-size);
+    padding: var(--ifm-code-padding-vertical);
+    background: #0000;
+    border-style: solid;
+    width: 250px;
+    border-color: var(--ifm-code-background);
+    border-radius: var(--ifm-code-border-radius);
+}
+
+footer .form-input {
     color: var(--ifm-color-white);
     border-color: var(--ifm-color-white);
     font-family: var(--ifm-font-family-monospace);
@@ -204,4 +216,42 @@
     margin-left: 8px;
     vertical-align: text-bottom;
     width: var(--arrows-size);
+}
+
+.contact-forms-container {
+    display: flex;
+    align-items: start; /* This might be causing the children to align at the start, making the hr appear shorter */
+    gap: 2rem;
+    min-height: 200px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+	flex-wrap: wrap;
+}
+
+.vertical-hr {
+    width: 3px;
+    height: 100%;
+    background-color: var(--ifm-code-background);
+    flex-shrink: 0;
+    margin: 0 1rem;
+    min-height: 180px;
+}
+@media (max-width: 997px) {
+  .vertical-hr {
+    display: none;
+  }
+}
+
+
+.contact-form {
+    flex: 1;
+    padding: 1rem;    flex-shrink: 0;
+    border-color: var(--ifm-code-background);
+    border-style: solid;
+    border-radius: var(--ifm-global-radius);
+    flex-shrink: 0;  
+}
+
+.star {
+    color: #d93025;
 }

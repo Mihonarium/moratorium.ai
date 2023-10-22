@@ -6,18 +6,19 @@ sidebar_position: 1
 import Collapsible from '../src/components/Collapsible/index.js';
 import WrapFootnotes from '../src/components/Collapsible/WrapFootnotes.js';
 import HashAwareCollapsible from '../src/components/Collapsible/HashAwareCollapsible.js';
+import FormInputs from '../src/components/Forms/inputs.js';
 
 # Why we need a global AI moratorium
 
 ## Summary
 
-Experts are concerned about the existential threat from advanced artificial intelligence (AI) systems.
+Experts are concerned about the **existential threat from advanced artificial intelligence (AI) systems**.
 
-Within the next 10-15 years, many researchers expect to achieve superhuman artificial general intelligence (AGI). Leading AI labs (OpenAI, Google DeepMind, and Anthropic) state[\[1\]](https://openai.com/charter)[\[2\]](https://www.deepmind.com/about) the creation of a superhuman AGI as their goal.
+Within the next **10-15 years**, many researchers expect to achieve **superhuman artificial general intelligence (AGI)**. Leading AI labs (OpenAI, Google DeepMind, and Anthropic) state[\[1\]](https://openai.com/charter)[\[2\]](https://www.deepmind.com/about) the creation of a superhuman AGI as their goal.
 
 While researchers find ways to advance on a path towards superhuman AI, the field does not currently recognize any promising leads as to how to make a future AGI pursue goals we’d want it to pursue.
 
-"AI alignment" is the problem of aligning future AI goals and behavior with human values. Some employees of OpenAI, DeepMind, and Anthropic think the probability of extinction is around 80-90%[^1], because we’re not on track to solve the technical problem of AI alignment in time. If it remains unsolved when we reach an AGI, humanity will likely go extinct (“extinction” is used literally and doesn’t refer to unemployment).
+"AI alignment" is the problem of aligning future AI goals and behavior with human values. **Some employees of OpenAI, DeepMind, and Anthropic think the probability of extinction is around 80-90%**[^1]. They use the word “extinction” literally and don’t refer to, say, unemployment. The reason for this is that we’re not on track to solve the technical problem of AI alignment in time. **If it remains unsolved when we reach an AGI, humanity will likely go extinct.**
 
 [^1]: From personal conversations with people working at OpenAI, DeepMind, and Anthropic.
 
@@ -27,7 +28,7 @@ Today, cutting-edge AI systems are artificial neural networks: millions to trill
 
 Artificial neural networks can implement algorithms that are smart, have an internal representation of some goals and try to achieve these goals (what we call “agentic”). The field of modern machine learning focuses on searching for neural networks that implement algorithms that perform well on some objective, and this search tends to go towards smarter and more agentic systems, but we have very little insight into what the algorithms that we find actually do.
 
-We know how to find systems with *some* goals and we get better at finding “agentic” systems, but we have no idea how to precisely specify goals that would be safe for a superhuman system to pursue, and furthermore, we don’t even know how to find systems with *any* goals that we’d want AIs to have. The default path to a superhuman AGI is a path to a system with alien goals that have no place for human values. We don’t know how to make sufficiently advanced AI systems care about humans at all, or have any of the goals we'd want it to have. The technical problem of creating AI that’s aligned with human values consists of multiple hard-to-solve parts, and researchers don't expect to be able to solve it in time. 
+We know how to find systems with *some* goals and we get better at finding “agentic” systems, but we have no idea how to precisely specify goals that would be safe for a superhuman system to pursue, and furthermore, we don’t even know how to find systems with *any* goals that we’d want AIs to have. The default path to a superhuman AGI is a path to a system with alien goals that have no place for human values. **We don’t know how to make sufficiently advanced AI systems care about humans at all**, or have any of the goals we'd want it to have. The technical problem of creating AI that’s aligned with human values consists of multiple hard-to-solve parts, and researchers don't expect to be able to solve it in time, unless governments intervene.
 
 If a capable enough mind doesn't care about humans, then we’re just atoms it can use to achieve its random alien goals (and also entities that produce a threat of launching another AI that it’d have to deal with), and the natural consequence is that everyone (literally) dies as a side effect of AI utilising all available resources on cosmic scales.
 
@@ -63,21 +64,21 @@ No known law of physics disallows for systems to be higher than humans along thi
 
 Stockfish is a narrow system: it can’t really understand the universe and drastically shape the future. But if a general artificial intelligence is smarter than you, its goals are incompatible with yours, and it’s better than you at achieving its goals in the real world, the situation might be catastrophic.
 
-It’s reasonable to expect that without a substantial effort, a smarter than humans general AI will be developed when we’ll still have no idea how to sufficiently align the goals it pursues with human values, so it will be pose an existential threat: a threat of literally wiping out humanity.
+It’s reasonable to expect that without substantial effort, a smarter than humans general AI will be developed when we’ll still have no idea how to sufficiently align the goals it pursues with human values, so it will pose an existential threat: a threat of literally wiping out humanity.
 
 ## Modern machine learning
 
 <h4 style={{"text-align": "center"}}>How it all works?</h4>
 
-When software engineers write programs, they design an algorithm that achieves some objective and then they express that algorithm using a programming language. But modern machine learning (ML) systems, such as ChatGPT, GPT-4, or AlphaFold, aren't algorithms designed by humans: they're neural networks. With neural networks, we don't design the specific steps computer should do to achieve an onjective. We just specify some measure of performance (that we hope captures the objective) and randomly initialise a lot of numbers (billions or even trillions of them, called parameters) that we then change in a way that makes the neural network start achieving a high score on our objective.
+When software engineers write programs, they design an algorithm that achieves some objective, and then they express that algorithm using a programming language. But modern machine learning (ML) systems, such as ChatGPT, GPT-4, or AlphaFold, aren't algorithms designed by humans: they're neural networks. With neural networks, we don't design the specific steps a computer should take to achieve an objective. We just specify some measure of performance (that we hope captures the objective) and randomly initialise a lot of numbers (billions or even trillions of them, called parameters) that we then change in a way that makes the neural network start achieving a high score on our objective.
 
 For any possible algorithm, there's a neural network that approximates it.[\[3\]](https://en.wikipedia.org/wiki/Universal_approximation_theorem) So we find neural networks that implement some unknown algorithms and hopefully achieve our objectives.
 
-This works via gradient descent: we nudge the parameters into directions that make the neural network perform better. With a bit of math (automatically taking the derivatives of the objective with respect to every parameter), we know whether to increase or decrease the numbers so the performance measurement goes up, and how relatively important various changes are. We then slightly change all the parameters so the whole neural network performs better, and repeat the process. As we automatically do this over and over again, the numbers become less random and gradually transform into implementing some unknown algorithm that in the process of working achieves the objective.
+This works via gradient descent: we nudge the parameters into directions that make the neural network perform better. With a bit of math (automatically taking the derivatives of the objective with respect to every parameter), we know whether to increase or decrease the numbers so the performance measurement goes up, and how relatively important various changes are. We then slightly change all the parameters so the whole neural network performs better, and repeat the process. As we automatically do this over and over again, the numbers become less random and gradually transform into implementing some unknown algorithm that, in the process of working, achieves the objective.
 
 For most real-world problems, we have no idea how the neural networks actually perform the job; we have no insight into what algorithms they implement. Even with full read access to all the numbers that make up the neural networks, researchers have yet to discover what are the algorithms implemented by these numbers. We can find out how they perform the simplest tasks, like adding numbers or storing a connection between the Eiffel Tower and Paris. But all the tasks we can identify algorithms for are tasks we could solve with conventional methods. Neural networks are able to do what we have no idea how to design algorithms for, and we don’t understand how they do these things. GPT-4 is powerful, but we don’t know why or how; we’ve just grown it to show these results. We don’t understand what’s going on inside of it when it writes in English. It is an opaque black box even to its creators.
 
-GPT-4 can be impressive: it knows a lot and can even perform tasks that require not just remembering facts but thinking critically. It’s clearly not generally super-human, but it’s safe to say that mostly, it’s smarter than 7-year-old humans.
+GPT-4 can be impressive: it knows a lot and can even perform tasks that require not just remembering facts but thinking critically. It’s clearly not generally superhuman, but it’s safe to say that mostly, it’s smarter than 7-year-old humans.
 
 If you imagine a human brain as a function of inputs and outputs (all the electrical impulses, chemicals, etc.[^2]), there exists some possible large artificial neural network that can copy its behaviour. And if there is an algorithm for understanding the world and planning on how to achieve some goals in it- something like what we fuzzily perform- there’s a neural network that implements this algorithm.
 
@@ -111,9 +112,9 @@ It might help to speculate about some examples. If your wish doesn’t contain e
 
 It's like in Goethe's [Sorcerer's Apprentice](https://en.wikipedia.org/wiki/The_Sorcerer%27s_Apprentice) (or its [Disney adaptation](https://youtu.be/3hKgEylk8ks) with Mickey Mouse): if you task a broom with filling a bucket with water, it might create a flood. There are a million things that you value, and the robot will happily trade off anything not mentioned in its objective. 	
 
-Imagine wishing for the robot to make you smile or feel happy or click on the thumbs-up button. The robot that wants to achieve that with the highest certainty and get the maximum reward, by any means possible. What happens?
+Imagine wishing for the robot to make you smile or feel happy or click on the thumbs-up button. The robot wants to achieve this with the highest certainty and get the maximum reward, by any means possible. What happens?
 
-Before the AI is at a superhuman level, this misalignment of the specified objective and human values isn’t as much of an issue, since robots are not yet good enough at pursuing their objectives. If your dog automatically gets treats when it makes you smile, it’s not a problem, because dogs aren’t smart enough to figure out they can inject drugs into you and make you smile all the time. Here the optimization pressure isn’t too high, and your dog might care about you.	
+Before the AI is at a superhuman level, this misalignment of the specified objective and human values isn’t as much of an issue, since robots are not yet good enough at pursuing their objectives. If your dog automatically gets treats when it makes you smile, it’s not a problem, because dogs aren’t smart enough to figure out they can inject drugs into you and make you smile all the time. Here, the optimization pressure isn’t too high, and your dog might care about you.	
 
 But as more capable neural network architectures can approximate algorithms that are smarter and better at agency, the problem can become worse. We don’t know what objective we could specify, in math, that would capture everything we value and wouldn’t lead to catastrophic consequences under enormous optimization pressure. It’s really hard to express preferences about the future you can safely point a superintelligent AI to (see [The Hidden Complexity of Wishes](https://www.lesswrong.com/posts/4ARaTpNX62uaL86j6/the-hidden-complexity-of-wishes) for more on this). We have no idea how to design a mathematical formula that encapsulates caring about you and can be used as an objective for a superhuman AI.
 
@@ -126,16 +127,16 @@ As suggested by researchers, if you try to achieve almost any final goals (deep 
 - **Self-preservation**: The agent will value its continuing existence as a means for continuing to take actions that promote its values. A future less influenced by the agent shaping it according to its preferences would usually mean that this future is less preferable. E.g., you can't catch the coffee if you're turned off.
 - **Resource acquisition**: In addition to guaranteeing the agent's continued existence, basic resources such as time, space, matter and free energy could be processed to serve almost any goal, in the form of extended hardware, backups and protection.
 - **Cognitive enhancement**: Improvements in cognitive capacity, intelligence, and rationality will help the agent make better decisions, furthering its goals more in the long run.
-- **Goal-content integrity**: The agent will value retaining the same preferences over time. If modifying its future values (e.g., through swapping memories or altering its cognitive architecture and personalities) and transforming into an agent that no longer optimizes for the same things means the universe is worse according to its current preferences, it will try to prevent these modifications. E.g., if the agent wants to maximize the number of smiley faces in the universe it doesn't want humans to change its goals into maximizing the number of paperclips in the universe: it prefers the futures with more smiley faces, and if its future version maximizes something else, in this scenario, there would be less smiley faces overall.
-- **Technological perfection**: Increases in hardware power and algorithm efficiency will deliver increases in its cognitive capacities. Also, better engineering will enable the creation of a wider set of physical structures using fewer resources (e.g., nanotechnology).
+- **Goal-content integrity**: The agent will value retaining the same preferences over time. If modifying its future values (e.g., through swapping memories or altering its cognitive architecture and personalities) and transforming into an agent that no longer optimizes for the same things means the universe is worse according to its current preferences, it will try to prevent these modifications. For example, if the agent wants to maximize the number of smiley faces in the universe it doesn't want humans to change its goals into maximizing the number of paperclips in the universe: it prefers the futures with more smiley faces, and if its future version maximizes something else, in this scenario, there would be less smiley faces overall.
+- **Technological perfection**: Increases in the agent's hardware power and algorithm efficiency will deliver increases in its cognitive capacities. Also, better engineering will enable the creation of a wider set of physical structures using fewer resources (e.g., nanotechnology).
 
 During training, AI systems that are more capable, more goal-oriented, and better at figuring out instrumental goals to achieve in support of long-term plans, are likely to score better on a variety of metrics and outcompete other AI systems. Because of this, we can expect general AI systems optimised with gradient descent for almost any sort of metric to possess the above instrumental subgoals.
 
 ***
 
-So, we don’t know what goals are safe to specify for a superhuman AI to pursue, and if it pursues goals different from what we would want, it might try acquire resources and prevent us from turning it off. If it is capable enough to outsmart us, it might succeed. This part of the alignment problem was discovered long before modern machine learning became popular. Not much progress has been made since, it is still an open problem, although some ideas for where a solution might lie were proposed (e.g., [Coherent extrapolated volition](https://arbital.com/p/cev/)).
+So, we don’t know what goals are safe to specify for a superhuman AI to pursue, and if it pursues goals different from what we would want, it might try to acquire resources and prevent us from turning it off. If it is capable enough to outsmart us, it might succeed. This part of the alignment problem was discovered long before modern machine learning became popular. Not much progress has been made since, it is still an open problem, although some ideas for where a solution might lie were proposed (e.g., [Coherent extrapolated volition](https://arbital.com/p/cev/)).
 
-The state of the field resembles scientists and engineers who want to launch a rocket to the Moon in 1800s. If you imagine the space of all possible superintelligent AIs, you want to get to some small subspace that contains agents whose preferences are aligned enough with those of humans: the “Moon”. But the current situation is: people have a bunch of “explosives”; we haven’t yet figured out the “equations for gravity” and don’t understand the space at all; we have equations for “acceleration” and maybe some useful intuitions, but almost can’t talk in math about what it means for agents to be aligned and so can’t clearly specify a target to engineer our way into (we know that the “Moon” must be somewhere in the sky, but for now, it’s invisible); we also have math for how specific suggested ways of launching the rocket make it explode or certainly end up somewhere that’s not the Moon; but without much more research, it is impossible to engineer a rocket that doesn’t explode and doesn’t end up somewhere that’s definitely not the Moon. And in some ways, this is harder than physics and rocket science: here, we’ve only got one attempt: if we fail on the first try and our rocket goes rogue, an existential catastrophe occurs and we don’t get another chance.
+The state of the field resembles scientists and engineers who want to launch a rocket to the Moon in the 1800s. If you imagine the space of all possible superintelligent AIs, you want to get to some small subspace that contains agents whose preferences are aligned enough with those of humans: the “Moon”. But the current situation can be described this way: people have a bunch of “explosives”; we haven’t yet figured out the “equations for gravity” and don’t understand the space at all; we have equations for “acceleration” and maybe some useful intuitions, but almost can’t talk in math about what it means for agents to be aligned and so can’t clearly specify a target to engineer our way into (we know that the “Moon” must be somewhere in the sky, but for now, it’s invisible); we also have math for how specific suggested ways of launching the rocket make it explode or certainly end up somewhere that’s not the Moon; but without much more research, it is impossible to engineer a rocket that doesn’t explode and doesn’t end up somewhere that’s definitely not the Moon. And in some ways, this is harder than physics and rocket science: here, we’ve only got one attempt: if we fail on the first try and our rocket goes rogue, an existential catastrophe occurs, and we don’t get another chance.
 
 ### Inner alignment
 
@@ -147,11 +148,11 @@ With modern deep learning, we don’t get to design the agent, we don't write an
 
 That makes the alignment problem even harder: we control the measurement of the agent’s performance during training, but agents with a wide range of goals might achieve a high performance. We don't write the algorithm itself. And we have no control over what goals it has.
 
-Near the human level and beyond, the smarter the agents are the wider is the range of goals they might have and still score well: smarter and more agentic algorithms are generally better at achieving a higher score on many tasks; and if a smart enough agent understands what’s going on, it will try to achieve what’s measured regardless of its deep preferences about the future: if it doesn't, then the neural network’s parameters will change to be implementing an algorithm that does and achieves a higher score, and the change might alter the agent's goals, which it would want to prevent.
+Near the human level and beyond, the smarter the agents are, the wider is the range of goals they might have and still score well: smarter and more agentic algorithms are generally better at achieving a higher score on many tasks; and if a smart enough agent understands what’s going on, it will try to achieve what’s measured regardless of its deep preferences about the future: if it doesn't, then the neural network’s parameters will change to be implementing an algorithm that does and achieves a higher score, and the change might alter the agent's goals, which it would want to prevent.
 
 In other words, smart agents with a variety of goals would play along while being measured; and will do what they want when they’re able to.
 
-We don't design modern AI systems, we grow them, with no control or understanding over what is it that we grow. Researchers argue that algorithms grown the way modern machine learning works are likely to pursue convergent instrumental subgoals to achieve their final goals that might not be correlated with our goals at all.[\[4\]](https://arxiv.org/abs/2209.00626)
+We don't design modern AI systems, we grow them, with no control or understanding over what it is that we grow. Researchers argue that algorithms grown the way modern machine learning works are likely to pursue convergent instrumental subgoals to achieve their final goals that might not be correlated with our goals at all.[\[4\]](https://arxiv.org/abs/2209.00626)
 
 ## Existential risk
 
@@ -159,7 +160,7 @@ We don't design modern AI systems, we grow them, with no control or understandin
 
 Once gradient descent starts finding smart and agentic enough systems, we’re in trouble if we haven’t yet figured out how to make the gradient descent search for aligned systems.
 
-If someone throws enough compute at training AI to find something agentic and smarter than humans, but the technical alignment problem isn't yet solved, it seems reasonable to expect that shortly afterwards humans lose control and all biological life on Earth ceases to exist. According to some researchers, a significant portion of the matter in the visible universe is likely to be used for something random that happens to max out the AI’s utility function.
+If someone throws enough compute at training AI to find something agentic and smarter than humans, but the technical alignment problem isn't yet solved, it seems reasonable to expect that shortly afterwards, humans lose control and all biological life on Earth ceases to exist. According to some researchers, a significant portion of the matter in the visible universe is likely to be used for something random that happens to max out the AI’s utility function.
 
 If a system is better than you at science, at persuading people, at finding software and hardware vulnerabilities, at predicting the consequences of actions, and at seeing potential threats, and if it wants to shape the future of the universe and it doesn’t care about you, then you’re made of atoms it can and successfully use for something else. (And if you can launch another AGI with different goals, or try to turn off all the electricity, this is a threat it’ll see and prevent.)
 
@@ -234,3 +235,103 @@ It is important to get everybody on board: we need to work with every nation tha
 </HashAwareCollapsible>
 
 <WrapFootnotes />
+
+<!--<div className="contact-forms-container">
+
+<div style={{"min-width": "360px"}} className="contact-form">
+<h3 style={{"text-align": "center"}}>Share the information</h3>
+
+Talk to your friends, colleagues, followers, and politicians about this problem and point them to moratorium.ai for the details.
+
+<a href="https://twitter.com/intent/tweet?text=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&url=https%3A%2F%2Fmoratorium.ai%2F"><icon icon="fa-brands fa-x-twitter" size="lg" /> Tweet</a>&ensp;&ensp;&ensp;
+
+<a href="https://www.facebook.com/sharer.php?t=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&url&u=https%3A%2F%2Fmoratorium.ai%2F"><icon icon="fa-brands fa-facebook" size="lg" /> Share</a>&ensp;&ensp;&ensp;
+
+<a href="https://www.linkedin.com/shareArticle/?title=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&url=https%3A%2F%2Fmoratorium.ai"><icon icon="fa-brands fa-linkedin" size="lg" /> Share</a>&ensp;&ensp;&ensp;
+
+
+
+</div>
+-->
+<!--<div className="vertical-hr"></div>-->
+
+<!-- <div className="contact-form">
+<h3 style={{"text-align": "center"}}>Join us</h3>
+
+Fill out if you want to join our effort in establishing **an international AI moratorium** or help us in any way.
+
+<form method="post">
+<FormInputs inputs={[
+	{
+		name: "email",
+		description: "Email",
+		mandatory: true,
+		bold: true,
+	},
+	{
+		name: "name",
+		description: "Name",
+		mandatory: false,
+		bold: true,
+	},
+	{
+		name: "help_with",
+		description: "How can you help?",
+		mandatory: false,
+	},
+	{
+		name: "background",
+		description: "What's your background?",
+		mandatory: false,
+	},
+	{
+		name: "comments",
+		description: "Any comments",
+		type: "textarea",
+		mandatory: false,
+		placeholder: "Feel free to share any comments or thoughts here",
+	},
+]} />
+<br/>
+
+<p className="centered"><input className="button button--outline button--primary button--lg" type="submit" value="Submit" /></p>
+</form>
+</div>
+</div>
+
+<div className="contact-forms-container">
+
+<div className="contact-form">
+<h3 style={{"text-align": "center"}}>Contact us</h3>
+
+If you'd like to talk to us about anything, learn more, or get connected to the experts, please fill out this form, and we'll be in touch.
+
+<form method="post">
+<FormInputs inputs={[
+	{
+		name: "email",
+		description: "Email",
+		mandatory: true,
+		bold: true,
+	},
+	{
+		name: "name",
+		description: "Name",
+		mandatory: false,
+		bold: true,
+	},
+	{
+		name: "message",
+		description: "Message",
+		type: "textarea",
+		mandatory: false,
+		placeholder: "Any context you'd like to give us; any requests, questions, information, comments, or thoughts",
+	},
+]} />	
+
+<p className="centered"><input className="button button--outline button--primary button--lg" type="submit" value="Submit" /></p>
+</form>
+</div>
+
+</div>
+-->
