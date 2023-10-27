@@ -198,7 +198,9 @@ First, we need to **introduce monitoring and ensure the non-proliferation** of t
 
 Then, we need to **impose restrictions on AI training runs that require more than the calculated threshold**. As a lead investor of Anthropic [puts it](https://twitter.com/liron/status/1656929936639430657), “I’ve not met anyone in AI labs who says the risk [from a large-scale AI experiment] is less than 1% of blowing up the planet”. **Potentially dangerous training runs should be prohibited by default**: although we should be able to make exceptions, under strict monitoring, for demonstrably safe use of compute for training or using narrow models that clearly won’t develop the ability to pursue dangerous goals. At the moment, narrow AI training runs usually wouldn’t take even closely the amount of compute utilised for current frontier general models, but in the future, purposes such as novel drug discovery could require similar amounts of compute.
 
-**Regulation of AI to prevent catastrophic risks is widely supported by the general public**. In the US, 86% believe AI could accidentally cause a catastrophic event; 82% say we should go slow with AI compared to just 8% who would rather speed it up; 70% agree with the statement that “Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war” ([YouGov for AIPI](https://moratorium.ai/content/YouGov_Blue_lionheart_ai_research_toplines_AI_items_s2.pdf), July 2023). Across 17 major countries, 71% believe AI regulation is necessary ([KPMG](https://assets.kpmg.com/content/dam/kpmg/au/pdf/2023/trust-in-ai-global-insights-2023.pdf), February 2023).
+**Regulation of AI to prevent catastrophic risks is widely supported by the general public**. In the US, 86% believe AI could accidentally cause a catastrophic event; 82% say we should go slow with AI compared to just 8% who would rather speed it up; 70% agree with the statement that “Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war” ([YouGov for AIPI](https://moratorium.ai/content/YouGov_Blue_lionheart_ai_research_toplines_AI_items_s2.pdf), July 2023). 77% express their preference for policies with the goal of preventing dangerous and catastrophic ourcomes from AI (57% for preventing AI from causing human extinction) ([YouGov for AIPI](https://twitter.com/DanielColson6/status/1716564864183734349), October 2023). Across 17 major countries, 71% believe AI regulation is necessary ([KPMG](https://assets.kpmg.com/content/dam/kpmg/au/pdf/2023/trust-in-ai-global-insights-2023.pdf), February 2023). In the UK, 74% agree preventing AI from quickly reaching superhuman capabilities should be an important goal of AI policy (13% don't agree); 60% would support the introduction of an international treaty to ban any smarter-than-human AI (16% would oppose). 78% don't trust the CEOs of technology companies to act in the public interest when discussing regulation for AI ([YouGov for ai_ctrl](https://twitter.com/tegmark/status/1717297520437535204), October 2023).
+
+We shouldn't give AI systems a chance of becoming more intelligent than humans until we can figure out how to do that safely.
 
 **Until the technical problem of alignment is solved, to safeguard the future of humanity, we need strict regulation of general AI and international coordination.**
 
@@ -206,61 +208,33 @@ Some regulations that help with existential risk from future uncontrollable AI c
 
 **We call on policymakers around the world to establish and enforce national restrictions and then a global AI moratorium that would prevent anyone in the world from risking human extinction.**
 
-<p className="centered"><a className="button button--outline button--primary button--lg" href="https://docs.google.com/forms/d/e/1FAIpQLSeqKAqC4B4fAQu6temjRmvZjHO98HQ9xdBDokMrWZE3OD-8Mw/viewform">Help AI Moratorium</a></p>
+<p className="centered"><a className="button button--outline button--primary button--lg" href="#how-to-help" id="help_moratorium_button">Help AI Moratorium</a></p>
 
 ***
 
-<HashAwareCollapsible summaryCollapsed=<span>Show <b>Counterarguments</b></span> summaryExpanded=<span>Hide <b>Counterarguments</b></span>><br/>
 
-## Counterarguments
-
-***Is there evidence that these dangers are real?***
-
-It is important to note that existential risk from AI is speculative in nature: the threat is posed by technology that does not yet exist. The behaviour of the current AI systems shouldn't be taken as much evidence one way or another, as the existential risk depends on dynamics in systems smarter than humans, which are expected to be different from the dynamics in the current systems.
-
-That said, according to [forecasters](https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/) and public statements[\[4\]](https://www.youtube.com/watch?v=Nlkk3glap_U) from the top AI labs, unless something interferes with the speed of AI progress, we might have between 2 and 15 years until the technology in question: artificial general intelligence.
-
-And researchers do indeed observe behaviour that supports the claims, even in systems where it should be far easier to solve than in superintelligent AIs. There are examples of inner misalignment: AI systems pursuing goals different from what the creators of these systems hoped they would and gave rewards for. There are examples of AI systems attempting to deceive or manipulate humans when it helps (or they think it helps) them survive, get higher reward, or achieve other goals.[\[5\]](https://arxiv.org/pdf/2210.01790.pdf)[\[6\]](https://openai.com/research/learning-from-human-preferences#challenges)[\[7\]](https://www.lesswrong.com/posts/jtoPawEhLNXNxvgTT/bing-chat-is-blatantly-aggressively-misaligned)[\[8\]](https://arxiv.org/pdf/2212.09251.pdf)
-
-***Can regulation on a national level decrease our competitiveness?***
-
-It is important to get the benefits of these technologies while avoiding the dangers. Indeed, it might take a lot of work to balance the two. The regulations should only prevent the training of generally capable models that could pose existential or security risks and the proliferation of technologies that could make it easier to build dangerous models. It is important to aim to minimize the impact on beneficial and economically valuable innovation. Responsible investment in ethical and non-dangerous use of AI, such as for drug discovery or perhaps education, should be welcomed.
-
-***Why would everyone stay within the rules?***
-
-Citing testimony in the UK House of Commons, "If we develop a shared understanding of the risks here, the game theory isn't that complicated. Imagine there was a button on Mars labelled "geopolitical dominance", but actually, if you pressed it, it killed everyone. If everyone understands that, there is no space race for it. If we as an international community can get on the same page as many of the leading academics here, I think we can craft regulation that targets the dangerous designs of AI while leaving extraordinary economic value on the table".[\[9\]](https://committees.parliament.uk/oralevidence/12575/pdf/)
-
-It is important to get everybody on board: we need to work with every nation that could be capable of building an AGI and causing humanity to go extinct. We need to develop a shared understanding of this threat to global security. We should also implement compute governance measures, making advanced AI chips trackable and preventing nations that don't regulate frontier AI from acquiring the capability to endanger humanity. 
-
-</HashAwareCollapsible>
-
-<WrapFootnotes />
-
-<!--<div className="contact-forms-container">
+<HashAwareCollapsible summaryCollapsed=<span>Show <b>How to help</b></span> summaryExpanded=<span>Hide <b>How to help</b></span>><br/>
+<div id="how-to-help"/>
 
 <div style={{"min-width": "360px"}} className="contact-form">
 <h3 style={{"text-align": "center"}}>Share the information</h3>
 
-Talk to your friends, colleagues, followers, and politicians about this problem and point them to moratorium.ai for the details.
+Talk to your friends, colleagues, followers, and elected officials about this problem and point them to *moratorium.ai* for the details.
 
-<a href="https://twitter.com/intent/tweet?text=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&url=https%3A%2F%2Fmoratorium.ai%2F"><icon icon="fa-brands fa-x-twitter" size="lg" /> Tweet</a>&ensp;&ensp;&ensp;
-
-<a href="https://www.facebook.com/sharer.php?t=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&url&u=https%3A%2F%2Fmoratorium.ai%2F"><icon icon="fa-brands fa-facebook" size="lg" /> Share</a>&ensp;&ensp;&ensp;
-
-<a href="https://www.linkedin.com/shareArticle/?title=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&url=https%3A%2F%2Fmoratorium.ai"><icon icon="fa-brands fa-linkedin" size="lg" /> Share</a>&ensp;&ensp;&ensp;
-
-
+<p style={{"text-align": "center"}}><a href="https://twitter.com/intent/tweet?text=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&url=https%3A%2F%2Fmoratorium.ai%2F"><icon icon="fa-brands fa-x-twitter" size="lg" /> Tweet</a>&ensp;&ensp;&ensp;<a href="https://www.facebook.com/sharer.php?t=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&url&u=https%3A%2F%2Fmoratorium.ai%2F"><icon icon="fa-brands fa-facebook" size="lg" /> Share</a>&ensp;&ensp;&ensp;<a href="#copy" id="share_button_copy"><icon icon="fa-regular fa-copy" size="lg" /> <span id="copy_text">Copy</span></a></p>
 
 </div>
--->
+<div className="contact-forms-container">
+
 <!--<div className="vertical-hr"></div>-->
 
-<!-- <div className="contact-form">
+<div className="contact-form">
 <h3 style={{"text-align": "center"}}>Join us</h3>
 
-Fill out if you want to join our effort in establishing **an international AI moratorium** or help us in any way.
+Join the effort to establish **an international AI moratorium**.
 
-<form method="post">
+<form id="join_form">
+<input type="hidden" name="form" value="join_form"/>
 <FormInputs inputs={[
 	{
 		name: "email",
@@ -289,7 +263,7 @@ Fill out if you want to join our effort in establishing **an international AI mo
 		description: "Any comments",
 		type: "textarea",
 		mandatory: false,
-		placeholder: "Feel free to share any comments or thoughts here",
+		placeholder: "Feel free to share any thoughts, ideas, or suggestions here",
 	},
 ]} />
 <br/>
@@ -299,14 +273,44 @@ Fill out if you want to join our effort in establishing **an international AI mo
 </div>
 </div>
 
-<div className="contact-forms-container">
+</HashAwareCollapsible>
+
+<HashAwareCollapsible summaryCollapsed=<span>Show <b>Counterarguments</b></span> summaryExpanded=<span>Hide <b>Counterarguments</b></span>><br/>
+
+## Counterarguments
+
+***Is there evidence that these dangers are real?***
+
+It is important to note that existential risk from AI is speculative in nature: the threat is posed by technology that does not yet exist. The behaviour of the current AI systems shouldn't be taken as much evidence one way or another, as the existential risk depends on dynamics in systems smarter than humans, which are expected to be different from the dynamics in the current systems.
+
+That said, according to [forecasters](https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/) and public statements[\[4\]](https://www.youtube.com/watch?v=Nlkk3glap_U) from the top AI labs, unless something interferes with the speed of AI progress, we might have between 2 and 15 years until the technology in question: artificial general intelligence.
+
+And researchers do indeed observe behaviour that supports the claims, even in systems where it should be far easier to solve than in superintelligent AIs. There are examples of inner misalignment: AI systems pursuing goals different from what the creators of these systems hoped they would and gave rewards for. There are examples of AI systems attempting to deceive or manipulate humans when it helps (or they think it helps) them survive, get higher reward, or achieve other goals.[\[5\]](https://arxiv.org/pdf/2210.01790.pdf)[\[6\]](https://openai.com/research/learning-from-human-preferences#challenges)[\[7\]](https://www.lesswrong.com/posts/jtoPawEhLNXNxvgTT/bing-chat-is-blatantly-aggressively-misaligned)[\[8\]](https://arxiv.org/pdf/2212.09251.pdf)
+
+***Can regulation on a national level decrease our competitiveness?***
+
+It is important to get the benefits of these technologies while avoiding the dangers. Indeed, it might take a lot of work to balance the two. The regulations should only prevent the training of generally capable models that could pose existential or security risks and the proliferation of technologies that could make it easier to build dangerous models. It is important to aim to minimize the impact on beneficial and economically valuable innovation. Responsible investment in ethical and non-dangerous use of AI, such as for drug discovery or perhaps education, should be welcomed.
+
+***Why would everyone stay within the rules?***
+
+Citing testimony in the UK House of Commons, "If we develop a shared understanding of the risks here, the game theory isn't that complicated. Imagine there was a button on Mars labelled "geopolitical dominance", but actually, if you pressed it, it killed everyone. If everyone understands that, there is no space race for it. If we as an international community can get on the same page as many of the leading academics here, I think we can craft regulation that targets the dangerous designs of AI while leaving extraordinary economic value on the table".[\[9\]](https://committees.parliament.uk/oralevidence/12575/pdf/)
+
+It is important to get everybody on board: we need to work with every nation that could be capable of building an AGI and causing humanity to go extinct. We need to develop a shared understanding of this threat to global security. We should also implement compute governance measures, making advanced AI chips trackable and preventing nations that don't regulate frontier AI from acquiring the capability to endanger humanity. 
+
+</HashAwareCollapsible>
+
+<WrapFootnotes />
+
+<HashAwareCollapsible customToggleId="hide_contact_form"><br/>
+<div className="contact-forms-container" id="contact">
 
 <div className="contact-form">
 <h3 style={{"text-align": "center"}}>Contact us</h3>
 
-If you'd like to talk to us about anything, learn more, or get connected to the experts, please fill out this form, and we'll be in touch.
+To talk to us, learn more, or get connected to the experts, reach out via this form.
 
-<form method="post">
+<form id="contact_form">
+<input type="hidden" name="form" value="contact_form"/>
 <FormInputs inputs={[
 	{
 		name: "email",
@@ -329,9 +333,10 @@ If you'd like to talk to us about anything, learn more, or get connected to the 
 	},
 ]} />	
 
-<p className="centered"><input className="button button--outline button--primary button--lg" type="submit" value="Submit" /></p>
+<p className="centered"><input className="button button--outline button--primary button--lg" type="submit" value="Submit" /> <button className="button button--outline button--danger button--lg" id="hide_contact_form" style={{display: "none"}}>Cancel</button></p>
 </form>
 </div>
 
 </div>
--->
+
+</HashAwareCollapsible>

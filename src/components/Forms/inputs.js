@@ -32,7 +32,7 @@ function FormInputs({ inputs }) {
                                 type={type}
                                 name={name}
                                 placeholder={placeholder}
-                                value={value}
+                                defaultValue={value}
                                 style={{ width, height: '30px' }}
                                 required={mandatory}
                             />
@@ -52,7 +52,7 @@ function FormInputs({ inputs }) {
                                     <input
                                         type="radio"
                                         name={name}
-                                        value={option}
+                                        defaultValue={option}
                                         style={{ display: 'none' }}
                                         required={mandatory}
                                         checked={value === option}
@@ -60,7 +60,7 @@ function FormInputs({ inputs }) {
                                     {option}
                                 </label>
                             ))}
-                            {value ? <input type="hidden" name={name} value={value} /> : <input type="radio" name={name} value="default" style={{ display: 'none' }} defaultChecked />}
+                            {value ? <input type="hidden" name={name} defaultValue={value} /> : <input type="radio" name={name} defaultValue="default" style={{ display: 'none' }} defaultChecked />}
                         </div>
                     );
                 }

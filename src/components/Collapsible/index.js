@@ -1,16 +1,24 @@
 //index.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
-const Collapsible = ({ summaryCollapsed, summaryExpanded, children, isOpen, onToggle }) => {
+const Collapsible = ({ 
+  summaryCollapsed, 
+  summaryExpanded, 
+  children, 
+  isOpen, 
+  onToggle, 
+  customToggleId = null 
+}) => {
   const isControlled = isOpen !== undefined; // Check if in controlled mode
   const [uncontrolledIsOpen, setUncontrolledIsOpen] = useState(false);
   
   const currentIsOpen = isControlled ? isOpen : uncontrolledIsOpen;
+  const toggleElementRef = useRef(null);
 
   const handleToggle = () => {
-  console.log("Button was clicked");
-  console.log("isControlled:", isControlled);
-	console.log("currentIsOpen:", currentIsOpen);
+    console.log("Button was clicked");
+    console.log("isControlled:", isControlled);
+    console.log("currentIsOpen:", currentIsOpen);
     if (isControlled) {
       onToggle && onToggle(!currentIsOpen);
     } else {
@@ -20,7 +28,18 @@ const Collapsible = ({ summaryCollapsed, summaryExpanded, children, isOpen, onTo
 
   useEffect(() => {
     console.log('Collapsible rendered. isOpen:', isOpen);
-  }, [isOpen]);
+
+    if (customToggleId) {
+      toggleElementRef.current = document.getElementById(customToggleId);
+      toggleElementRef.current && toggleElementRef.current.addEventListener('click', handleToggle);
+    }
+
+    return () => {
+      if (toggleElementRef.current) {
+        toggleElementRef.current.removeEventListener('click', handleToggle);
+      }
+    };
+  }, [isOpen, customToggleId]);
 
   const arrowStyle = {
     position: 'absolute',
@@ -33,16 +52,18 @@ const Collapsible = ({ summaryCollapsed, summaryExpanded, children, isOpen, onTo
 
   return (
     <div>
-      <button 
-        onClick={handleToggle}
-        className='button-collapsible'
-      >
-        {currentIsOpen 
-          ? <span style={arrowStyle}>▼</span>
-          : <span style={arrowStyle}>▶</span>
-        }
-        {currentIsOpen && summaryExpanded ? summaryExpanded : summaryCollapsed}
-      </button>
+      {!customToggleId && (
+        <button 
+          onClick={handleToggle}
+          className='button-collapsible'
+        >
+          {currentIsOpen 
+            ? <span style={arrowStyle}>▼</span>
+            : <span style={arrowStyle}>▶</span>
+          }
+          {currentIsOpen && summaryExpanded ? summaryExpanded : summaryCollapsed}
+        </button>
+      )}
       <div style={{ display: currentIsOpen ? 'block' : 'none' }}>
         {children}
       </div>

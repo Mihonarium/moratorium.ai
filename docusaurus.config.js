@@ -76,11 +76,13 @@ const config = {
             items: [
               {
                 label: 'Help AI Moratorium',
-                href: 'https://docs.google.com/forms/d/e/1FAIpQLSeqKAqC4B4fAQu6temjRmvZjHO98HQ9xdBDokMrWZE3OD-8Mw/viewform',
+				target: '_top',
+                href: '/#how-to-help',
               },
               {
-                label: 'Talk to us',
-                href: 'https://docs.google.com/forms/d/e/1FAIpQLSfRfqhOOVh2QP4kiadJw6jkV43Q5oalckG7jrWat62FbjF0JA/viewform?usp=sf_link',
+                label: 'Contact us',
+				target: '_top',
+                href: '/#contact',
               },
             ],
           },
@@ -93,12 +95,10 @@ const config = {
             title: 'Get in touch',
             items: [
               {
-                label: 'Help AI Moratorium',
-                href: 'https://docs.google.com/forms/d/e/1FAIpQLSeqKAqC4B4fAQu6temjRmvZjHO98HQ9xdBDokMrWZE3OD-8Mw/viewform',
+                html: `<a class="footer__link-item" href="/#how-to-help">Help AI Moratorium</a>`,
               },
               {
-                label: 'Talk to us',
-                href: 'https://docs.google.com/forms/d/e/1FAIpQLSfRfqhOOVh2QP4kiadJw6jkV43Q5oalckG7jrWat62FbjF0JA/viewform?usp=sf_link',
+                html: `<a class="footer__link-item" href="/#contact">Contact us</a>`,
               },
             ],
           },
@@ -135,6 +135,14 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+		announcementBar: {
+		  id: 'wip',
+		  content:
+			'<b>Work in progress</b>. To contribute, please <a target="_self" rel="noopener noreferrer" href="#how-to-help">fill out this form</a>. Feel free to use the website as is for educational purposes, but please don\'t share it widely just yet. Feel free to <a target="_self" rel="noopener noreferrer" href="#contact">get in touch</a>!',
+		  backgroundColor: 'var(--ifm-color-primary-darkest)',
+		  textColor: 'white',
+		  isCloseable: false,
+		},
     }),
 	scripts: [
 		{src: '/scripts.js', async: true},

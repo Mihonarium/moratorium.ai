@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Collapsible from './index.js';
 
-const HashAwareCollapsible = ({ summaryCollapsed, summaryExpanded, children }) => {
+const HashAwareCollapsible = ({ summaryCollapsed, summaryExpanded, children, customToggleId = null }) => {
   const contentRef = useRef(null);
   const [isContentOpen, setContentOpen] = useState(false);
   const [childIDs, setChildIDs] = useState([]);
@@ -15,11 +15,15 @@ const HashAwareCollapsible = ({ summaryCollapsed, summaryExpanded, children }) =
 	  
 	  const handleHashChange = () => {
 		const currentHash = new URL(window.location).hash.slice(1);
-		if (ids.includes(currentHash)) {
+		if (ids.includes(currentHash) && !isContentOpen) {
 		  setContentOpen(true);
 		  setTimeout(() => {
 			const targetElement = document.getElementById(currentHash);
-			targetElement && targetElement.scrollIntoView({behavior: 'smooth'});
+			targetElement && targetElement.scrollIntoView();
+			//window.scrollBy(0, 1);
+			  setTimeout(() => {
+				window.scrollBy(0, 1);
+			  }, 30);
 		  }, 30);
 		}
 	  };
@@ -45,9 +49,13 @@ const HashAwareCollapsible = ({ summaryCollapsed, summaryExpanded, children }) =
         setContentOpen(state);
 		if (!state) {  // If the content is being closed
 		  // Remove the hash from the URL without affecting the browser history
-		  history.replaceState(null, null, ' ');
+			const currentHash = new URL(window.location).hash.slice(1);
+			if (childIDs.includes(currentHash)) {
+			  history.replaceState(null, null, ' ');
+			}
 		}
       }}
+	  customToggleId={customToggleId}
     >
       <div ref={contentRef}>
         {children}
