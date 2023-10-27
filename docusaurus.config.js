@@ -138,7 +138,7 @@ const config = {
 		announcementBar: {
 		  id: 'wip',
 		  content:
-			'<b>Work in progress</b>. <a target="_self" rel="noopener noreferrer" href="#contact">Get in touch</a> | <a target="_self" rel="noopener noreferrer" href="#how-to-help">contribute</a>. Feel free to use the website as is for educational purposes, but please don\'t share it widely just yet.',
+			'<b>Work in progress</b>. Feel free to use the website as is, but please don\'t share it widely just yet.  <a target="_self" rel="noopener noreferrer" href="#contact">Get in touch</a> | <a target="_self" rel="noopener noreferrer" href="#how-to-help">Сontribute</a>',
 		  backgroundColor: 'var(--ifm-color-primary-darkest)',
 		  textColor: 'white',
 		  isCloseable: false,
