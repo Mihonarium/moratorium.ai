@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Global AI Moratorium',
+  title: 'AI Moratorium',
   tagline: 'To avoid an existential catastrophe, we call on policymakers around the world to implement a global moratorium on large AI training runs until the technical problem of AI alignment is solved.',
   favicon: 'img/favicon.ico',
 
