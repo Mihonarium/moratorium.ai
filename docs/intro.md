@@ -148,11 +148,11 @@ With modern deep learning, we don’t get to design the agent, we don't write an
 
 That makes the alignment problem even harder: we control the measurement of the agent’s performance during training, but agents with a wide range of goals might achieve a high performance. We don't write the algorithm itself, and we have no control over what goals it has.
 
-Near the human level and beyond, the smarter the agents are, the wider is the range of goals they might have and still score well: smarter and more agentic algorithms are generally better at achieving a higher score on many tasks; and if a smart enough agent understands what’s going on, it will try to achieve what’s measured regardless of its deep preferences about the future: if it doesn't, then the neural network’s parameters will change to be implementing an algorithm that does and achieves a higher score, and the change might alter the agent's goals, which it would want to prevent.
+Near the human level and beyond, the smarter the agents are, the wider is the range of goals they can have and still score well on our metric: smarter and more agentic algorithms are generally better at achieving a higher score on many tasks; and if a smart enough agent understands what’s going on, it will try to achieve the reward target regardless of its deep preferences about the future: if it doesn't, then the neural network’s parameters will change to be implementing an algorithm that does and achieves a higher score. That change might alter the agent's goals, which it would want to prevent.
 
 In other words, smart agents with a variety of goals would play along while being measured; and will do what they want when they’re able to.
 
-We don't design modern AI systems, we grow them, with no control or understanding over what it is that we grow. Researchers argue that algorithms grown the way modern machine learning works are likely to pursue convergent instrumental subgoals to achieve their final goals that might not be correlated with our goals at all.[\[4\]](https://arxiv.org/abs/2209.00626)
+We don't design modern AI systems; we grow them, with no control or understanding over what it is that we are growing. Researchers argue that algorithms grown the way modern machine learning works are likely to pursue convergent instrumental subgoals to achieve their final goals that might not be correlated with our goals at all.[\[4\]](https://arxiv.org/abs/2209.00626)
 
 ## Existential risk
 
@@ -160,11 +160,11 @@ We don't design modern AI systems, we grow them, with no control or understandin
 
 Once gradient descent starts finding smart and agentic enough systems, we’re in trouble if we haven’t yet figured out how to make the gradient descent search for aligned systems.
 
-If someone throws enough compute at training AI to find something agentic and smarter than humans, but the technical alignment problem isn't yet solved, it seems reasonable to expect that shortly afterwards, humans lose control and all biological life on Earth ceases to exist. According to some researchers, a significant portion of the matter in the visible universe is likely to be used for something random that happens to max out the AI’s utility function.
+If someone throws enough compute at training AI to find something agentic and smarter than humans, but the technical alignment problem isn't yet solved, it seems reasonable to expect that shortly afterwards, humans will lose control and all biological life on Earth will cease to exist. According to some researchers, if this scenario occurs, a significant portion of the matter in the visible universe is likely to be used for something random that happens to max out the AI’s utility function.
 
 If a system is better than you at science, at persuading people, at finding software and hardware vulnerabilities, at predicting the consequences of actions, and at seeing potential threats, and if it wants to shape the future of the universe and it doesn’t care about you, then you’re made of atoms it can and successfully use for something else. (And if you can launch another AGI with different goals, or try to turn off all the electricity, this is a threat it’ll see and prevent.)
 
-At the moment, tens of thousands of ML researchers race ahead to advance AI capabilities. Only a couple hundred people in the world are working on the technical AI alignment problem. This wouldn’t be enough to solve this huge scientific problem in any realistic timeframe, let alone before a superhuman AI is launched. Until we know how to align a general AI with the preferences of humanity and make it aid us in achieving our goals, launching powerful AI systems poses an existential threat, as by default, capable AI systems possess their own goals, not aligned with ours.
+At the moment, tens of thousands of ML researchers are racing ahead to advance AI capabilities. Only a couple hundred people in the world are working on the technical AI alignment problem. This wouldn’t be enough to solve this huge scientific problem in any realistic timeframe, let alone before a superhuman AI is launched. Until we know how to align a general AI with the preferences of humanity and make it aid us in achieving our goals, launching powerful AI systems poses an existential threat, as by default, capable AI systems possess their own goals, not aligned with ours.
 
 And if a system is much better than us at achieving goals and its goals are different from ours, we lose.
 
@@ -204,7 +204,7 @@ We shouldn't give AI systems a chance of becoming more intelligent than humans u
 
 **Until the technical problem of alignment is solved, to safeguard the future of humanity, we need strict regulation of general AI and international coordination.**
 
-Some regulations that help with existential risk from future uncontrollable AI can also **address shorter-term global security risks**: experts [believe](https://www.judiciary.senate.gov/committee-activity/hearings/oversight-of-ai-principles-for-regulation) that systems capable of developing biological weapons could be about 2-3 years away. Introducing regulatory bodies, pre-training licensing, and strong security and corporate governance requirements can prevent the unreversible proliferation of frontier AI technologies and establish a framework that could be later adapted for the prevention of existential risk.
+Some regulations that help with existential risk from future uncontrollable AI can also **address shorter-term global security risks**: experts [believe](https://www.judiciary.senate.gov/committee-activity/hearings/oversight-of-ai-principles-for-regulation) that systems capable of developing biological weapons could be about 2-3 years away. Introducing regulatory bodies, pre-training licensing, and strong security and corporate governance requirements can prevent the irreversible proliferation of frontier AI technologies and establish a framework that could be later adapted for the prevention of existential risk.
 
 **We call on policymakers around the world to establish and enforce national restrictions and then a global AI moratorium that would prevent anyone in the world from risking human extinction.**
 
@@ -281,11 +281,11 @@ Join the effort to establish **an international AI moratorium**.
 
 ***Is there evidence that these dangers are real?***
 
-It is important to note that existential risk from AI is speculative in nature: the threat is posed by technology that does not yet exist. The behaviour of the current AI systems shouldn't be taken as much evidence one way or another, as the existential risk depends on dynamics in systems smarter than humans, which are expected to be different from the dynamics in the current systems.
+It is important to note that existential risk from AI is speculative in nature: this threat is posed by technology that does not yet exist. The behaviour of current AI systems shouldn't be taken as much evidence one way or another, as the existential risk depends on dynamics in systems smarter than humans, which are expected to be different from the dynamics in the current systems.
 
 That said, according to [forecasters](https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/) and public statements[\[4\]](https://www.youtube.com/watch?v=Nlkk3glap_U) from the top AI labs, unless something interferes with the speed of AI progress, we might have between 2 and 15 years until the technology in question: artificial general intelligence.
 
-And researchers do indeed observe behaviour that supports the claims, even in systems where it should be far easier to solve than in superintelligent AIs. There are examples of inner misalignment: AI systems pursuing goals different from what the creators of these systems hoped they would and gave rewards for. There are examples of AI systems attempting to deceive or manipulate humans when it helps (or they think it helps) them survive, get higher reward, or achieve other goals.[\[5\]](https://arxiv.org/pdf/2210.01790.pdf)[\[6\]](https://openai.com/research/learning-from-human-preferences#challenges)[\[7\]](https://www.lesswrong.com/posts/jtoPawEhLNXNxvgTT/bing-chat-is-blatantly-aggressively-misaligned)[\[8\]](https://arxiv.org/pdf/2212.09251.pdf)
+And researchers do indeed observe behaviour that supports these claims, even in systems where it should be far easier to solve than in superintelligent AIs. There are examples of inner misalignment: AI systems pursuing goals different from what the creators of these systems hoped they would and gave rewards for. There are examples of AI systems attempting to deceive or manipulate humans when it helps (or they think it helps) them survive, get higher reward, or achieve other goals.[\[5\]](https://arxiv.org/pdf/2210.01790.pdf)[\[6\]](https://openai.com/research/learning-from-human-preferences#challenges)[\[7\]](https://www.lesswrong.com/posts/jtoPawEhLNXNxvgTT/bing-chat-is-blatantly-aggressively-misaligned)[\[8\]](https://arxiv.org/pdf/2212.09251.pdf)
 
 ***Can regulation on a national level decrease our competitiveness?***
 
