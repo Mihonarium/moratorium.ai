@@ -150,9 +150,9 @@ That makes the alignment problem even harder: we control the measurement of the 
 
 Near the human level and beyond, the smarter the agents are, the wider is the range of goals they can have and still score well on our metric: smarter and more agentic algorithms are generally better at achieving a higher score on many tasks; and if a smart enough agent understands what’s going on, it will try to achieve the reward target regardless of its deep preferences about the future: if it doesn't, then the neural network’s parameters will change to be implementing an algorithm that does and achieves a higher score. That change might alter the agent's goals, which it would want to prevent.
 
-In other words, smart agents with a variety of goals would play along while being measured; and will do what they want when they’re able to.
+In other words, smart agents with a variety of goals would play along while being measured, but will follow their actual deep preferences when they have an opportunity to do so.
 
-We don't design modern AI systems; we grow them, with no control or understanding over what it is that we are growing. Researchers argue that algorithms created this way are likely to pursue convergent instrumental subgoals to achieve their final goals, which might not be correlated with our goals at all.[\[4\]](https://arxiv.org/abs/2209.00626)
+We don't design modern AI systems; we grow them, with no control or understanding over what it is that we are growing. As mentioned in the previous section, algorithms created this way are likely to pursue convergent instrumental subgoals to achieve their final goals, which might not be correlated with our goals at all.[\[4\]](https://arxiv.org/abs/2209.00626)
 
 ## Existential risk
 
