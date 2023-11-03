@@ -84,7 +84,7 @@ If you imagine a human brain as a function of inputs and outputs (all the electr
 
 [^2]: The current scientific consensus is that the processes in the human brain are computable: a program can, theoretically, simulate the physics that run a brain.
 
-So, we should expect AI to eventually get generally smarter than humans. 
+So, we should expect AI to eventually become generally smarter than humans. 
 
 ## Outer and inner AI alignment
 
@@ -152,7 +152,7 @@ Near the human level and beyond, the smarter the agents are, the wider is the ra
 
 In other words, smart agents with a variety of goals would play along while being measured; and will do what they want when they’re able to.
 
-We don't design modern AI systems; we grow them, with no control or understanding over what it is that we are growing. Researchers argue that algorithms grown the way modern machine learning works are likely to pursue convergent instrumental subgoals to achieve their final goals that might not be correlated with our goals at all.[\[4\]](https://arxiv.org/abs/2209.00626)
+We don't design modern AI systems; we grow them, with no control or understanding over what it is that we are growing. Researchers argue that algorithms created this way are likely to pursue convergent instrumental subgoals to achieve their final goals, which might not be correlated with our goals at all.[\[4\]](https://arxiv.org/abs/2209.00626)
 
 ## Existential risk
 
