@@ -182,11 +182,11 @@ How do we prevent this?
 
 <h4 style={{"text-align": "center"}}>How do we prevent a catastrophe?</h4>
 
-The leading AI labs are in a race to a general AI, and the closer they get, the more pressure there is to continue developing even more generally capable systems.
+The leading AI labs are in a race to create a powerful general AI, and the closer they get, the more pressure there is to continue developing even more generally capable systems.
 
-Imagine a world where piles of uranium spit out gold, and the larger a pile of uranium is, the more gold it spits out. But past some critical mass, a nuclear explosion ignites the atmosphere, and soon everybody dies. This is similar to our situation, and the leading AI labs understand this and say they would welcome regulation.
+Imagine a world where piles of uranium produce gold, and the larger a pile of uranium is, the more gold it produces. But past some critical mass, a nuclear explosion ignites the atmosphere, and soon everybody dies. This is similar to our situation, and the leading AI labs understand this and say they would welcome regulation.
 
-The researchers developed techniques that allow the top AI labs to predict some performance metrics of a system before it is launched, but they’re not able to predict its general capabilities.
+Researchers have developed techniques that allow the top AI labs to predict some performance metrics of a system before it is launched, but they are still unable to predict its general capabilities.
 
 Every time a new, smarter AI system starts interacting with the world, there's a chance that it will start to successfully pursue its own goals. Until we figure out how to make general AI systems safe, every training run and every new composition of existing AI systems into a smarter AI system poses a catastrophic risk.
 
@@ -289,7 +289,7 @@ And researchers do indeed observe behaviour that supports these claims, even in 
 
 ***Can regulation on a national level decrease our competitiveness?***
 
-It is important to get the benefits of these technologies while avoiding the dangers. Indeed, it might take a lot of work to balance the two. The regulations should only prevent the training of generally capable models that could pose existential or security risks and the proliferation of technologies that could make it easier to build dangerous models. It is important to aim to minimize the impact on beneficial and economically valuable innovation. Responsible investment in ethical and non-dangerous use of AI, such as for drug discovery or perhaps education, should be welcomed.
+It is important to get the benefits of these technologies while avoiding the dangers. Indeed, it might take a lot of work to balance the two. Regulations should only prevent the training of generally capable models that could pose existential or security risks and the proliferation of technologies that could make it easier to build dangerous models. It is important to aim to minimize the impact on beneficial and economically valuable innovation. Responsible investment in ethical and non-dangerous use of AI, such as for drug discovery or perhaps education, should be welcomed.
 
 ***Why would everyone stay within the rules?***
 
