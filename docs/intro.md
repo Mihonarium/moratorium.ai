@@ -158,7 +158,7 @@ We don't design modern AI systems; we grow them, with no control or understandin
 
 <h4 style={{"text-align": "center"}}>What's the worst that can happen?</h4>
 
-Once gradient descent starts finding smart and agentic enough systems, we’re in trouble if we haven’t yet figured out how to make the gradient descent search for aligned systems.
+Once gradient descent starts finding smart and agentic enough systems, we’re in trouble if we haven’t yet figured out how to make the gradient descent search for systems aligned with human goals and values.
 
 If someone throws enough compute at training AI to find something agentic and smarter than humans, but the technical alignment problem isn't yet solved, it seems reasonable to expect that shortly afterwards, humans will lose control and all biological life on Earth will cease to exist. According to some researchers, if this scenario occurs, a significant portion of the matter in the visible universe is likely to be used for something random that happens to max out the AI’s utility function.
 
