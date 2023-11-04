@@ -84,7 +84,6 @@ const Quotes = [
     title: 'the CEO of Google DeepMind',
     text: 'I would advocate not moving fast and breaking things. [...] When it comes to very powerful technologies—and obviously AI is going to be one of the most powerful ever—we need to be careful. [...] Not everybody is thinking about those things. It’s like experimentalists, many of whom don’t realize they’re holding dangerous material',
 	link: 'https://time.com/6246119/demis-hassabis-deepmind-interview/',
-	on_mobile: true,
   },
   {
     name: 'Stephen Hawking',
@@ -97,7 +96,6 @@ const Quotes = [
     title: 'writer of the standard textbook on AI used in thousands of universities',
     text: 'If we pursue [our current approach], then we will eventually lose control over the machines',
 	link: 'https://news.berkeley.edu/2023/04/07/stuart-russell-calls-for-new-approach-for-ai-a-civilization-ending-technology/',
-	on_mobile: true,
   },
   {
     name: 'Bill Gates',
