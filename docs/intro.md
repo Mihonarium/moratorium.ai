@@ -12,6 +12,8 @@ import FormInputs from '../src/components/Forms/inputs.js';
 
 ## Summary
 
+AI systems have many realised and potential benefits, but it's crucial to avoid their harms. As AI gets increasingly integrated into society, we need to address, both through technical research and governance, the risks related to racial, gender and other biases, misinformation, cybersecurity, equality, and privacy. And there's another worry, which we focus on here.
+
 Experts are concerned about the **existential threat from advanced artificial intelligence (AI) systems**.
 
 Within the next **10-15 years**, many researchers expect to achieve **superhuman artificial general intelligence (AGI)**. Leading AI labs (OpenAI, Google DeepMind, and Anthropic) state[\[1\]](https://openai.com/charter)[\[2\]](https://www.deepmind.com/about) the creation of a superhuman AGI as their goal.
