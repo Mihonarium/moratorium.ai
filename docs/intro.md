@@ -26,7 +26,7 @@ While researchers find ways to advance on a path towards superhuman AI, the fiel
 
 Urgent action is needed from governments around the world to prevent an existential catastrophe.
 
-Today, cutting-edge AI systems are artificial neural networks: millions to trillions of numbers we automatically adjust until they start achieving a high score on some metric. We don't know what these numbers represent. **We do not how the resulting AI systems work, or what their goals are**.
+Today, cutting-edge AI systems are artificial neural networks: millions to trillions of numbers we automatically adjust until they start achieving a high score on some metric. We don't know what these numbers represent. **We do not know how the resulting AI systems work or what their goals are**.
 
 Artificial neural networks can implement algorithms that are smart, have an internal representation of some goals and try to achieve these goals (what we call “agentic”). The field of modern machine learning focuses on searching for neural networks that implement algorithms that perform well on some objective, and this search tends to go towards smarter and more agentic systems, but we have very little insight into what the algorithms that we find actually do.
 
