@@ -14,11 +14,11 @@ import FormInputs from '../src/components/Forms/inputs.js';
 
 *AI systems have huge realised and potential benefits, but it's crucial to avoid their harms. As AI gets increasingly integrated into society, we need to address the risks related to racial, gender and other biases, misinformation, cybersecurity, equality, and privacy, both through technical research and governance. And there's another worry, which we focus on here.*
 
-Leading AI scientists warn about the **existential threat from advanced artificial intelligence (AI) systems**.
+Leading AI scientists warn about the **existential threat from advanced Artificial Intelligence (AI) systems**.
 
 To develop everyday software, programmers write down instructions that computers follow. But AI is not like that: no one designs or understands the instructions AIs follow. Instead, AI systems are grown. We don't know how to control advanced AI systems or set the goals they pursue.
 
-Within the next **10-15 years**, many researchers expect to achieve **superhuman artificial general intelligence (AGI)**. Leading AI labs (OpenAI, Google DeepMind, and Anthropic) state[\[1\]](https://openai.com/charter)[\[2\]](https://www.deepmind.com/about) the creation of a superhuman AGI as their explicit objective.
+Within the next **10-15 years**, many researchers expect to achieve **superhuman Artificial General Intelligence (AGI)**. Leading AI labs (OpenAI, Google DeepMind, and Anthropic) state[\[1\]](https://openai.com/charter)[\[2\]](https://www.deepmind.com/about) the creation of a superhuman AGI as their explicit objective.
 
 While researchers find ways to get closer to a superhuman AI, the field does not currently recognize any promising leads as to how to make a future AGI controllable or safe.
 
