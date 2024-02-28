@@ -12,15 +12,17 @@ import FormInputs from '../src/components/Forms/inputs.js';
 
 ## Summary
 
-AI systems have many realised and potential benefits, but it's crucial to avoid their harms. As AI gets increasingly integrated into society, we need to address, both through technical research and governance, the risks related to racial, gender and other biases, misinformation, cybersecurity, equality, and privacy. And there's another worry, which we focus on here.
+*AI systems have huge realised and potential benefits, but it's crucial to avoid their harms. As AI gets increasingly integrated into society, we need to address the risks related to racial, gender and other biases, misinformation, cybersecurity, equality, and privacy, both through technical research and governance. And there's another worry, which we focus on here.*
 
-Experts are concerned about the **existential threat from advanced artificial intelligence (AI) systems**.
+Leading AI scientists warn about the **existential threat from advanced artificial intelligence (AI) systems**.
 
-Within the next **10-15 years**, many researchers expect to achieve **superhuman artificial general intelligence (AGI)**. Leading AI labs (OpenAI, Google DeepMind, and Anthropic) state[\[1\]](https://openai.com/charter)[\[2\]](https://www.deepmind.com/about) the creation of a superhuman AGI as their goal.
+To develop everyday software, programmers write down instructions that computers follow. But AI is not like that: no one designs or understands the instructions AIs follow. Instead, AI systems are grown. We don't know how to control advanced AI systems or set the goals they pursue.
 
-While researchers find ways to advance on a path towards superhuman AI, the field does not currently recognize any promising leads as to how to make a future AGI pursue goals we’d want it to pursue.
+Within the next **10-15 years**, many researchers expect to achieve **superhuman artificial general intelligence (AGI)**. Leading AI labs (OpenAI, Google DeepMind, and Anthropic) state[\[1\]](https://openai.com/charter)[\[2\]](https://www.deepmind.com/about) the creation of a superhuman AGI as their objective.
 
-"AI alignment" is the problem of aligning future AI goals and behavior with human values. **Some employees of OpenAI, DeepMind, and Anthropic think the probability of extinction is around 80-90%**[^1]. They use the word “extinction” literally and don’t refer to, say, unemployment. The reason for this is that we’re not on track to solve the technical problem of AI alignment in time. If it remains unsolved when we reach an AGI, humanity will likely go extinct.
+While researchers find ways to get closer to a superhuman AI, the field does not currently recognize any promising leads as to how to make a future AGI controllable or safe.
+
+"AI alignment" is the problem of aligning future AI goals and behavior with human values. We're not on track to solve this problem in time (before we reach AGI). Because of that, **some employees of OpenAI, DeepMind, and Anthropic think the probability of extinction is around 80-90%**[^1]. They use the word “extinction” literally: the end of all life on the planet.
 
 [^1]: From personal conversations with people working at OpenAI, DeepMind, and Anthropic.
 
