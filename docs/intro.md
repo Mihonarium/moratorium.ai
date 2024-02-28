@@ -221,7 +221,7 @@ Some regulations that help with existential risk from future uncontrollable AI c
 <div id="how-to-help"/>
 
 <div style={{"min-width": "360px"}} className="contact-form">
-<h3 style={{"text-align": "center"}}>Share the information</h3>
+<h3 style={{"text-align": "center"}}>Raise awareness</h3>
 
 Talk to your friends, colleagues, followers, and elected officials about this problem and point them to *moratorium.ai* for the details.
 
