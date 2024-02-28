@@ -40,7 +40,7 @@ function Statement() {
 	return (
       <div className={clsx('container', 'margin-bottom--sm', 'text--center', 'margin-top--lg', 'col-2')}>
         <p className="statement_text"><b>“{statement}”</b> <br/>
-		— A statement signed by prominent AI executives and researchers {SoleLink('https://www.safe.ai/statement-on-ai-risk')}</p>
+		— A statement signed by leading AI researchers and executives {SoleLink('https://www.safe.ai/statement-on-ai-risk')}</p>
       </div>
 	)
 }
