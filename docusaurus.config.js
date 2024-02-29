@@ -135,14 +135,14 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-		announcementBar: {
+		/* announcementBar: {
 		  id: 'wip',
 		  content:
 			'<b>Work in progress</b>. Feel free to use the website as is and give us your feedback.  <a target="_self" rel="noopener noreferrer" href="#contact">Get in touch</a> | <a target="_self" rel="noopener noreferrer" href="#how-to-help">Сontribute</a>',
 		  backgroundColor: 'var(--ifm-color-primary-darkest)',
 		  textColor: 'white',
 		  isCloseable: false,
-		},
+		},*/
     }),
 	scripts: [
 		{src: '/scripts.js', async: true},
