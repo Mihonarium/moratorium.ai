@@ -58,6 +58,7 @@ const Quotes = [
     title: 'lead investor of Anthropic',
     text: 'I’ve not met anyone in AI labs who says the risk [from a large-scale AI experiment] is less than 1% of blowing up the planet. It’s important that people know lives are being risked',
 	link: 'https://twitter.com/liron/status/1656929936639430657',
+	on_mobile: true,
   },
   {
     name: 'Yoshua Bengio',
