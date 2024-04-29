@@ -144,12 +144,12 @@ function QuotesSection() {
           {Quotes.map((quote) => (
             <div className={clsx('col', 'col--4', 'margin-top--lg', quote.on_mobile?'quote_displayOnSmall':'quote_dontDisplayOnSmall')} key={quote.name}>
               <p className="text--center padding-top--sm margin-bottom--sm">
-                “<b>{quote.text}</b>” {SoleLink(quote.link)}
+                “<b>{quote.text}</b>”
               </p>
 	      <div className="avatar avatar--vertical padding-horiz--md ">
                 <div className="avatar__intro">
                   <div className="avatar__name">— {quote.name}</div>
-                  <small className="avatar__subtitle text--italic">{quote.title}</small>
+                  <small className="avatar__subtitle text--italic">{quote.title}</small> {SoleLink(quote.link)}
                 </div>
               </div>
             </div>
