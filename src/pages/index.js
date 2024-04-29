@@ -147,7 +147,7 @@ function QuotesSection() {
               <div className="text--center padding-horiz--md padding-top--sm margin-bottom--sm">
                 “{quote.text}” {SoleLink(quote.link)}
               </div>
-		<div className="avatar avatar--vertical">
+		<div className="avatar avatar--vertical right">
                 <div className="avatar__intro">
                   <div className="avatar__name">— {quote.name}</div>
                   <p><small className="avatar__subtitle text--italic">{quote.title}</small></p>
