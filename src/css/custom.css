@@ -74,6 +74,10 @@
   font-size: 1rem;
 }
 
+.quote_text{
+	font-weight: 600;
+}
+
 .md-intro h1 {
   text-align: center;
 }
