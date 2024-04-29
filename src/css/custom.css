@@ -106,6 +106,7 @@
 	padding-right: 10px;
 	text-align: right;
 	--ifm-avatar-intro-alignment: right;
+	align-items: end;
 }
 
 .footnotes hr {
