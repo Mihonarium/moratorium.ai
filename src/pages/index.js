@@ -47,17 +47,17 @@ function Statement() {
 
 const Quotes = [
   {
-    name: 'Sam Altman',
-    title: 'the CEO of OpenAI, which created ChatGPT and GPT-4',
-    text: 'Development of superhuman machine intelligence is probably the greatest threat to the continued existence of humanity',
-	link: 'https://blog.samaltman.com/machine-intelligence-part-1',
-	on_mobile: true,
-  },
-  {
     name: 'Jaan Tallinn',
     title: 'lead investor of Anthropic',
     text: 'I’ve not met anyone in AI labs who says the risk [from a large-scale AI experiment] is less than 1% of blowing up the planet. It’s important that people know lives are being risked',
 	link: 'https://twitter.com/liron/status/1656929936639430657',
+	on_mobile: true,
+  },
+  {
+    name: 'Sam Altman',
+    title: 'the CEO of OpenAI, which created ChatGPT and GPT-4',
+    text: 'Development of superhuman machine intelligence is probably the greatest threat to the continued existence of humanity',
+	link: 'https://blog.samaltman.com/machine-intelligence-part-1',
 	on_mobile: true,
   },
   {
