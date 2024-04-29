@@ -143,10 +143,10 @@ function QuotesSection() {
         <div className={clsx('row', styles.tweetsSection)}>
           {Quotes.map((quote) => (
             <div className={clsx('col', 'col--4', quote.on_mobile?'quote_displayOnSmall':'quote_dontDisplayOnSmall')} key={quote.name}>
-              <p className="text--center padding-horiz--md">
+              <p className="text--center padding-horiz--md padding-top--sm margin-bottom--sm">
                 “{quote.text}” {SoleLink(quote.link)}
               </p>
-		<div className="avatar avatar--vertical padding-top--sm margin-bottom--sm">
+		<div className="avatar avatar--vertical">
                 <div className="avatar__intro">
                   <div className="avatar__name">{quote.name}</div>
                   <small className="avatar__subtitle text--italic">{quote.title}</small>
