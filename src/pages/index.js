@@ -148,7 +148,7 @@ function QuotesSection() {
               </p>
 	      <div className="avatar avatar--vertical padding-horiz--md ">
                 <div className="avatar__intro">
-                  <div className="avatar__name">{quote.name}</div>
+                  <div className="avatar__name">— {quote.name}</div>
                   <small className="avatar__subtitle text--italic">{quote.title}</small>
                 </div>
               </div>
