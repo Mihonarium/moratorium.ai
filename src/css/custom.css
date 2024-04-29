@@ -109,6 +109,30 @@
 	align-items: end;
 }
 
+.quote-mark {
+  position: relative;
+  font-size: 4rem; /* Large size for the quotation marks */
+  color: rgba(0, 0, 0, 0.1); /* Semi-transparent color */
+  opacity: 0.5;
+}
+
+.quote-mark::before,
+.quote-mark::after {
+  content: "“"; /* This is the opening quote */
+  position: absolute;
+  font-family: "Times New Roman", serif; /* This is a traditional font that looks serious and modern */
+  z-index: -1;
+}
+
+.quote-mark::after {
+  content: "”"; /* This is the closing quote */
+}
+
+.quote-text {
+  position: relative;
+  z-index: 1; /* Ensures that the text appears above the large quotation marks */
+}
+
 .footnotes hr {
 	display: none;
 }
