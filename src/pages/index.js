@@ -139,7 +139,7 @@ const Quotes = [
 function QuotesSection() {
   return (
     <div className={clsx(styles.section, styles.sectionAlt)}>
-      <div className={clsx('container', 'margin-bottom--lg', 'text--center', 'margin-top--lg')}>
+      <div className={clsx('container', 'margin-bottom--lg', 'text--center')}>
         <div className={clsx('row', styles.tweetsSection)}>
           {Quotes.map((quote) => (
             <div className={clsx('col', 'col--4', 'margin-top--lg', quote.on_mobile?'quote_displayOnSmall':'quote_dontDisplayOnSmall')} key={quote.name}>
