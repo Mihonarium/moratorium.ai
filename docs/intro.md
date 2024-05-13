@@ -26,7 +26,7 @@ While researchers find ways to get closer to a superhuman AI, the field does not
 
 [^1]: From personal conversations with people working at OpenAI, Google DeepMind, and Anthropic.
 
-Urgent action is needed from governments around the world to prevent an existential catastrophe.
+They don't expect their companies to behave responsibly around the time of AGI without government oversight and intervention. Urgent action is needed from governments around the world to prevent an existential catastrophe.
 
 Today, cutting-edge AI systems are artificial neural networks: millions to trillions of numbers we automatically adjust until they start achieving a high score on some metric. We don't know what these numbers represent. **We do not know how the resulting AI systems work or what their goals are**.
 
