@@ -47,13 +47,6 @@ function Statement() {
 
 const Quotes = [
   {
-    name: 'Jaan Tallinn',
-    title: 'lead investor of Anthropic',
-    text: 'I’ve not met anyone in AI labs who says the risk [from a large-scale AI experiment] is less than 1% of blowing up the planet. It’s important that people know lives are being risked',
-	link: 'https://twitter.com/liron/status/1656929936639430657',
-	on_mobile: true,
-  },
-  {
     name: 'Sam Altman',
     title: 'the CEO of OpenAI, which created ChatGPT and GPT-4',
     text: 'Development of superhuman machine intelligence is probably the greatest threat to the continued existence of humanity',
@@ -65,6 +58,13 @@ const Quotes = [
     title: 'deep learning pioneer, one of the three "Godfathers of AI", and winner of the Turing Award',
     text: 'Rogue AI may be dangerous for the whole of humanity. Banning powerful AI systems (say beyond the abilities of GPT-4) that are given autonomy and agency would be a good start',
 	link: 'https://yoshuabengio.org/2023/05/22/how-rogue-ais-may-arise/',
+	on_mobile: true,
+  },
+  {
+    name: 'Jaan Tallinn',
+    title: 'lead investor of Anthropic',
+    text: 'I’ve not met anyone in AI labs who says the risk [from a large-scale AI experiment] is less than 1% of blowing up the planet. It’s important that people know lives are being risked',
+	link: 'https://twitter.com/liron/status/1656929936639430657',
 	on_mobile: true,
   },
   {
