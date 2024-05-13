@@ -47,33 +47,6 @@ function Statement() {
 
 const Quotes = [
   {
-    name: 'Sam Altman',
-    title: 'the CEO of OpenAI, which created ChatGPT and GPT-4',
-    text: 'Development of superhuman machine intelligence is probably the greatest threat to the continued existence of humanity',
-	link: 'https://blog.samaltman.com/machine-intelligence-part-1',
-	on_mobile: true,
-  },
-  {
-    name: 'Yoshua Bengio',
-    title: 'deep learning pioneer, one of the three "Godfathers of AI", and winner of the Turing Award',
-    text: 'Rogue AI may be dangerous for the whole of humanity. Banning powerful AI systems (say beyond the abilities of GPT-4) that are given autonomy and agency would be a good start',
-	link: 'https://yoshuabengio.org/2023/05/22/how-rogue-ais-may-arise/',
-	on_mobile: true,
-  },
-  {
-    name: 'Jaan Tallinn',
-    title: 'lead investor of Anthropic',
-    text: 'I’ve not met anyone in AI labs who says the risk [from a large-scale AI experiment] is less than 1% of blowing up the planet. It’s important that people know lives are being risked',
-	link: 'https://twitter.com/liron/status/1656929936639430657',
-	on_mobile: true,
-  },
-  {
-    name: 'Eliezer Yudkowsky',
-    title: 'founder of MIRI and conceptual father of the AI safety field',
-    text: 'Many researchers steeped in these issues, including myself, expect that the most likely result of building a superhumanly smart AI, under anything remotely like the current circumstances, is that literally everyone on Earth will die',
-	link: 'https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/',
-  },
-  {
     name: 'Geoffrey Hinton',
     title: 'deep learning pioneer, one of the three "Godfathers of AI", and winner of the Turing Award', //, left Google to speak out about the risk',
     text: 'The alarm bell I’m ringing has to do with the existential threat of them taking control [...] If you take the existential risk seriously, as I now do, it might be quite sensible to just stop developing these things any further',
@@ -85,6 +58,33 @@ const Quotes = [
     title: 'the CEO of Google DeepMind',
     text: 'I would advocate not moving fast and breaking things. [...] When it comes to very powerful technologies—and obviously AI is going to be one of the most powerful ever—we need to be careful. [...] Not everybody is thinking about those things. It’s like experimentalists, many of whom don’t realize they’re holding dangerous material',
 	link: 'https://time.com/6246119/demis-hassabis-deepmind-interview/',
+  },
+  {
+    name: 'Eliezer Yudkowsky',
+    title: 'founder of MIRI and conceptual father of the AI safety field',
+    text: 'Many researchers steeped in these issues, including myself, expect that the most likely result of building a superhumanly smart AI, under anything remotely like the current circumstances, is that literally everyone on Earth will die',
+	link: 'https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/',
+  },
+  {
+    name: 'Sam Altman',
+    title: 'the CEO of OpenAI, which created ChatGPT and GPT-4',
+    text: 'Development of superhuman machine intelligence is probably the greatest threat to the continued existence of humanity',
+	link: 'https://blog.samaltman.com/machine-intelligence-part-1',
+	on_mobile: true,
+  },
+  {
+    name: 'Yoshua Bengio',
+    title: 'deep learning pioneer, one of the three "Godfathers of AI", winner of the Turing Award, and the second most cited scientist alive',
+    text: 'Rogue AI may be dangerous for the whole of humanity. Banning powerful AI systems (say beyond the abilities of GPT-4) that are given autonomy and agency would be a good start',
+	link: 'https://yoshuabengio.org/2023/05/22/how-rogue-ais-may-arise/',
+	on_mobile: true,
+  },
+  {
+    name: 'Jaan Tallinn',
+    title: 'lead investor of Anthropic',
+    text: 'I’ve not met anyone in AI labs who says the risk [from a large-scale AI experiment] is less than 1% of blowing up the planet. It’s important that people know lives are being risked',
+	link: 'https://twitter.com/liron/status/1656929936639430657',
+	on_mobile: true,
   },
   {
     name: 'Stephen Hawking',
