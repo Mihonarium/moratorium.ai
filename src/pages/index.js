@@ -48,7 +48,7 @@ function Statement() {
 const Quotes = [
   {
     name: 'Geoffrey Hinton',
-    title: 'deep learning pioneer, the "godfather" of AI, Nobel laureate in Physics', //, left Google to speak out about the risk',
+    title: 'deep learning pioneer, a "godfather" of AI, Nobel laureate in Physics', //, left Google to speak out about the risk',
     text: 'The alarm bell I’m ringing has to do with the existential threat of them taking control [...] If you take the existential risk seriously, as I now do, it might be quite sensible to just stop developing these things any further',
 	link: 'https://www.forbes.com/sites/craigsmith/2023/05/04/geoff-hinton-ais-most-famous-researcher-warns-of-existential-threat/',
 	on_mobile: true,
@@ -74,7 +74,7 @@ const Quotes = [
   },
   {
     name: 'Yoshua Bengio',
-    title: 'deep learning pioneer, one of the three "Godfathers of AI", winner of the Turing Award, and the second most cited scientist alive',
+    title: 'deep learning pioneer, a "godfather", winner of the Turing Award, and the second most cited scientist alive',
     text: 'Rogue AI may be dangerous for the whole of humanity. Banning powerful AI systems (say beyond the abilities of GPT-4) that are given autonomy and agency would be a good start',
 	link: 'https://yoshuabengio.org/2023/05/22/how-rogue-ais-may-arise/',
 	on_mobile: true,
