@@ -48,14 +48,14 @@ function Statement() {
 const Quotes = [
   {
     name: 'Geoffrey Hinton',
-    title: 'deep learning pioneer, one of the three "Godfathers of AI", and winner of the Turing Award', //, left Google to speak out about the risk',
+    title: 'deep learning pioneer, the "godfather" of AI, Nobel laureate in Physics', //, left Google to speak out about the risk',
     text: 'The alarm bell I’m ringing has to do with the existential threat of them taking control [...] If you take the existential risk seriously, as I now do, it might be quite sensible to just stop developing these things any further',
 	link: 'https://www.forbes.com/sites/craigsmith/2023/05/04/geoff-hinton-ais-most-famous-researcher-warns-of-existential-threat/',
 	on_mobile: true,
   },
   {
     name: 'Demis Hassabis',
-    title: 'the CEO of Google DeepMind',
+    title: 'the CEO of Google DeepMind, Nobel laureate in Chemistry',
     text: 'I would advocate not moving fast and breaking things. [...] When it comes to very powerful technologies—and obviously AI is going to be one of the most powerful ever—we need to be careful. [...] Not everybody is thinking about those things. It’s like experimentalists, many of whom don’t realize they’re holding dangerous material',
 	link: 'https://time.com/6246119/demis-hassabis-deepmind-interview/',
   },
