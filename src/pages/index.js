@@ -56,7 +56,7 @@ const Quotes = [
   {
     name: 'Demis Hassabis',
     title: 'the CEO of Google DeepMind, Nobel laureate in Chemistry',
-    text: 'I would advocate not moving fast and breaking things. [...] When it comes to very powerful technologies—and obviously AI is going to be one of the most powerful ever—we need to be careful. [...] Not everybody is thinking about those things. It’s like experimentalists, many of whom don’t realize they’re holding dangerous material',
+    text: 'I would advocate not moving fast and breaking things. [...] When it comes to very powerful technologies—and obviously AI is going to be one of the most powerful ever—we need to be careful. [...] It’s like experimentalists, many of whom don’t realize they’re holding dangerous material',
 	link: 'https://time.com/6246119/demis-hassabis-deepmind-interview/',
   },
   {
