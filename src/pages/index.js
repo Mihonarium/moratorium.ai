@@ -61,7 +61,7 @@ const Quotes = [
   },
   {
     name: 'Eliezer Yudkowsky',
-    title: 'founder of MIRI and conceptual father of the AI safety field',
+    title: 'founder of Machine Intelligence Research Institute',
     text: 'Many researchers steeped in these issues, including myself, expect that the most likely result of building a superhumanly smart AI, under anything remotely like the current circumstances, is that literally everyone on Earth will die',
 	link: 'https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/',
   },
