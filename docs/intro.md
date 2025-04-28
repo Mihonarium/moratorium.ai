@@ -16,15 +16,17 @@ Leading AI scientists warn about the **existential threat from advanced Artifici
 
 To develop everyday software, programmers write down instructions that computers follow. But AI is not like that: no one designs or understands the instructions AIs follow. Instead, AI systems are grown. We don't know how to control advanced AI systems or set the goals they pursue.
 
-Within the next **10-15 years**, many researchers expect to achieve **superhuman Artificial General Intelligence (AGI)**. Leading AI labs (OpenAI, Google DeepMind, and Anthropic) state[\[1\]](https://openai.com/charter)[\[2\]](https://www.deepmind.com/about) the creation of a superhuman AGI as their explicit objective.
+Within the next **10 years**, many researchers expect to achieve **superhuman Artificial General Intelligence (AGI)**. Leading AI labs (OpenAI, Google DeepMind, and Anthropic) state[\[1\]](https://openai.com/charter)[\[2\]](https://www.deepmind.com/about) the creation of a superhuman AGI as their explicit objective.
 
-While researchers find ways to get closer to a superhuman AI, the field does not currently recognize any promising leads as to how to make a future AGI controllable or safe.
+While researchers find ways to get closer to a superhuman AI, the field does not currently recognize any promising leads as to how to make a future AGI controllable or safe. **According to scientists, the default trajectory of the field will cause human extinction.**
 
 "AI alignment" is the problem of aligning future AI goals and behavior with human values. We're not on track to solve this problem in time (before we reach AGI). Because of that, **some employees of OpenAI, DeepMind, and Anthropic think the probability of extinction is around 80-90%**[^1]. They use the word “extinction” literally: the end of all life on the planet.
 
 [^1]: From personal conversations with people working at OpenAI, Google DeepMind, and Anthropic.
 
 They don't expect their companies to behave responsibly around the time of AGI without government oversight and intervention. Urgent action is needed from governments around the world to prevent an existential catastrophe.
+
+**Geoffrey Hinton, a "godfather of AI", who won a Nobel Prize in 2024 for his foundational work in AI, regrets his life's work and says the chance that everyone on the planet will die might be as high as 50%.**
 
 Today, cutting-edge AI systems are artificial neural networks: millions to trillions of numbers we automatically adjust until they start achieving a high score on some metric. We don't know what these numbers represent. **We do not know how the resulting AI systems work or what their goals are**.
 
