@@ -18,16 +18,30 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+    <header className={styles.heroBanner}>
+      <div className={styles.heroContent}>
+        <h1 className={styles.heroTitle}>
+          <span style={{color: '#ffeb3b'}}>⚠️</span> AI Could End Humanity
+        </h1>
+        <p className={styles.heroSubtitle}>
+          Leading AI researchers warn we have less than 10 years to prevent an existential catastrophe.
+          <br/>A global moratorium on dangerous AI development is our only hope.
+        </p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
+            className={clsx("button", styles.ctaButton, styles.primaryCta)}
             to="#why">
-            Why?
+            Learn The Facts
           </Link>
+          <Link
+            className={clsx("button", styles.ctaButton, styles.secondaryCta)}
+            to="#help_moratorium_button">
+            Take Action Now
+          </Link>
+        </div>
+        <div className={styles.urgencyIndicator}>
+          <span className={styles.urgencyText}>Time Until AGI (Expert Estimates):</span>
+          <span className={styles.countdown}>2-10 YEARS</span>
         </div>
       </div>
     </header>
@@ -167,6 +181,56 @@ function SoleLink(href) {
   );
 }
 
+function EvidenceSection() {
+  const evidenceData = [
+    {
+      icon: '⏰',
+      number: '2-10',
+      label: 'Years until AGI',
+      description: 'Expert consensus timeline'
+    },
+    {
+      icon: '⚠️',
+      number: '10-25%',
+      label: 'Extinction risk',
+      description: 'Median expert estimate'
+    },
+    {
+      icon: '📊',
+      number: '86%',
+      label: 'Public concern',
+      description: 'Believe AI could cause catastrophe'
+    },
+    {
+      icon: '🔬',
+      number: '300+',
+      label: 'Leading researchers',
+      description: 'Signed extinction risk statement'
+    }
+  ];
+
+  return (
+    <div className={styles.evidenceSection}>
+      <div className="container">
+        <h2 className={styles.sectionTitle}>The Evidence Is Clear</h2>
+        <p className={styles.sectionSubtitle}>
+          The data shows an unprecedented threat to humanity
+        </p>
+        <div className={styles.evidenceGrid}>
+          {evidenceData.map((item, idx) => (
+            <div key={idx} className={styles.evidenceCard}>
+              <div className={styles.evidenceIcon}>{item.icon}</div>
+              <div className={styles.evidenceNumber}>{item.number}</div>
+              <div className={styles.evidenceLabel}>{item.label}</div>
+              <div className={styles.evidenceDescription}>{item.description}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
 	
   
@@ -177,6 +241,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <Statement />
+        <EvidenceSection />
         <QuotesSection />
 		<div className={clsx('container', 'margin-bottom--lg', 'margin-top--lg', 'md-intro')} id="why">
 			<div className={clsx('index-md')} id="why">
