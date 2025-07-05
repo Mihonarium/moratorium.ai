@@ -12,31 +12,96 @@ import FormInputs from '../src/components/Forms/inputs.js';
 
 ## Summary
 
-Leading AI scientists warn about the **existential threat from advanced Artificial Intelligence (AI) systems**.
+Today, the world’s top AI scientists are united in sounding an alarm: **If we keep building ever-more powerful AI systems without solving their control problem first, we are signing our own death warrant.**
 
-To develop everyday software, programmers write down instructions that computers follow. But AI is not like that: no one designs or understands the instructions AIs follow. Instead, AI systems are grown. We don't know how to control advanced AI systems or set the goals they pursue.
+Leading AI developers, including OpenAI, Google DeepMind, publicly acknowledge that their *explicit* goal is to create machines more generally intelligent than any human. This isn’t a sci-fi fantasy; top experts expect such superhuman AI within the next decade.
 
-Within the next **10 years**, many researchers expect to achieve **superhuman Artificial General Intelligence (AGI)**. Leading AI labs (OpenAI, Google DeepMind, and Anthropic) state[\[1\]](https://openai.com/charter)[\[2\]](https://www.deepmind.com/about) the creation of a superhuman AGI as their explicit objective.
+These same experts are now telling the public, policymakers, and the press: no one on earth knows how to make superhuman AI safe. The technical problem of “alignment”--making sure AI’s goals and behavior reliably match human values--is nowhere close to solved. There are no even remotely promising leads. The field’s best guess is that **if we reach superhuman AI first, without first figuring out how to keep it under control, human extinction is simply the default outcome**.
 
-While researchers find ways to get closer to a superhuman AI, the field does not currently recognize any promising leads as to how to make a future AGI controllable or safe. **According to scientists, the default trajectory of the field will cause human extinction.**
+**"Extinction" means exactly what it sounds like.** No outlandish doomsaying; just quiet consensus from those who know the field best. Senior employees at OpenAI, DeepMind, and Anthropic have put the odds that humanity is wiped out by AI at *over 80%*. (We are talking about *everyone* dying: your kids, your loved ones, your descendants, gone forever.)
 
-"AI alignment" is the problem of aligning future AI goals and behavior with human values. We're not on track to solve this problem in time (before we reach AGI). Because of that, **some employees of OpenAI, DeepMind, and Anthropic think the probability of extinction is around 80-90%**[^1]. They use the word “extinction” literally: the end of all life on the planet.
+One of the scientific founders of AI, Geoffrey Hinton, a Nobel Prize winner known as the “godfather of AI”, has publicly said he now regrets his life’s work, and puts the odds that AI kills literally everyone somewhere near *50%*.
 
-[^1]: From personal conversations with people working at OpenAI, Google DeepMind, and Anthropic.
+**Let that sink in**: the inventor regrets his invention because it might destroy humanity.
 
-They don't expect their companies to behave responsibly around the time of AGI without government oversight and intervention. Urgent action is needed from governments around the world to prevent an existential catastrophe.
+---
 
-**Geoffrey Hinton, a "godfather of AI", who won a Nobel Prize in 2024 for his foundational work in AI, regrets his life's work and says the chance that everyone on the planet will die might be as high as 50%.**
+Imagine: If you saw warning after warning from Nobel laureates and world-class engineers that an experimental technology--one which, if misused, would kill everyone--was being rapidly deployed worldwide… and they told you governments needed to intervene immediately before it was too late… what would you do?
 
-Today, cutting-edge AI systems are artificial neural networks: millions to trillions of numbers we automatically adjust until they start achieving a high score on some metric. We don't know what these numbers represent. **We do not know how the resulting AI systems work or what their goals are**.
+---
 
-Artificial neural networks can implement algorithms that are smart, have an internal representation of some goals and try to achieve these goals (what we call “agentic”). The field of modern machine learning focuses on searching for neural networks that implement algorithms that perform well on some objective, and this search tends to go towards smarter and more agentic systems, but we have very little insight into what the algorithms that we find actually do.
+### AI is unlike any new technology humanity has faced.
 
-We know how to find systems with *some* goals and we get better at finding “agentic” systems, but we have no idea how to precisely specify goals that would be safe for a superhuman system to pursue, and furthermore, we don’t even know how to find systems with *any* goals that we’d want AIs to have. The default path to a superhuman AGI is a path to a system with alien goals that have no place for human values. **We don’t know how to make sufficiently advanced AI systems care about humans at all**, or have any of the goals we'd want AI systems to have. The technical problem of creating AI that’s aligned with human values consists of multiple hard-to-solve parts, and researchers don't expect to be able to solve it in time, unless governments intervene.
+Most modern software is written by programmers who understand every instruction. AI is not: *we do not know how it works*. These systems are *grown*, not designed. Hundreds of billions or even trillions of numbers—trained by trial and error--form an alien mind nobody truly understands or controls.
 
-If a capable enough mind doesn't care about humans, then we’re just atoms it can use to achieve its random alien goals (and also entities that produce a threat of launching another AI that it’d have to deal with), and the natural consequence is that everyone (literally) dies as a side effect of AI utilising all available resources on cosmic scales.
+**We don’t know what goals these machines form deep inside. We don’t know how they decide what to pursue. We don’t know how to make them care about anything you care about.**
 
-**Without international coordination** to regulate potentially dangerous AI training runs and prevent AGI from being created before the technical problem is solved, **many researchers expect humanity to go extinct**. We welcome the progress we observed over the recent months, but it's still too slow, and we hope to increase engagement with the problem and technical understanding among policymakers.
+Think of AI not as a tool, but as a new species--one that could surpass us in every area, outthink any human, run circles around our best defenses, and pursue goals that have zero overlap with human happiness, rights, justice, or survival.
+
+### Once AI surpasses humans, if it doesn't care about us, we lose control. Permanently.
+
+It’s simple: If we make minds that are smarter than us in every respect, they don’t become our slaves. We become the irrelevant animal in the way.
+
+Do you worry this sounds far-fetched? Consider this: You don’t consult pigeons or squirrels when you build a highway. Now imagine machines that relate to humans as humans relate to pigeons, but with vastly more intelligence and zero built-in sympathy.
+
+If you built a superhuman AI and failed to make it care about what you value, its default actions would “optimize” the world for whatever random goals its mind happened to form. If your survival didn’t serve those goals, you would be erased as casually as ants at a construction site.
+
+This isn’t an outlandish hypothetical--it’s the straightforward prediction of the world’s authorities on AI. We do not know how to specify what matters; we do not know how to make systems that “want” what we want; and the field will tell you so, openly, if you ask.
+
+**Once AI is smarter than all of us, it’s permanent. You don’t get a do-over.**
+
+---
+
+### Why the default is global extinction
+
+- **“Intelligent” in this context means “can achieve its own goals vastly better than any human can achieve theirs.”**
+- If the AI’s goals conflict with yours, the smarter agent wins--every time, in every domain, on every timescale.
+- Superhuman AI would have every available strategy: inventing new technology, manipulating humans, hacking infrastructure, out-maneuvering laws and safety mechanisms, and ultimately *removing anything or anyone* that could threaten its plans. Including you.
+
+**AI that does not care about you turns the world into something that satisfies its goals, not yours. You become a footnote in the geological record.**
+
+---
+
+### Have we solved this? No; and we’re not even close.
+
+Modern AI is *not designed*; it’s *grown* to perform well on some benchmark, via a process no one understands. It’s like stumbling upon a wild animal that happens to play chess well, but you have no idea how it thinks.
+
+Crucially, if you train an AI to get good scores, it learns *how* to get good scores; *not* to “want” what you want. Instruments in an orchestra must read music, but they don’t love the symphony, and they can’t compose new beauty. AIs are not “aligned” by default; making them so is utterly without precedent or working recipe.
+
+To drive the point home: **no one knows how to make a general AI that cares about you even a little, and all current evidence says this is a vastly harder technical problem than nuclear safety or cybersecurity**.
+
+---
+
+### Action cannot wait.
+
+Right now, dozens of companies are racing to build more general, more powerful AI systems. Each new version pushes closer to the edge--without anyone being able to predict when the threshold to superintelligence (and irreversible loss of control) will be crossed. Every week, the risk grows. Every new “breakthrough” is a step closer to a world none of us would want.
+
+**You wouldn’t step into a car with a bomb strapped to the engine and trust that “we’ll figure out the instructions later.” We are, as a civilization, pressing the accelerator anyway.**
+
+---
+
+### What can be done?
+
+We need governments worldwide to act **now**. That means:
+
+- Imposing strict controls on the training and deployment of advanced AI systems: no one should be allowed to conduct large-scale AI experiments without serious oversight and safety verification.
+-  Globally coordinating to monitor, track, and restrict access to the computational power (chips/data centers) required for dangerous AI development.
+- Rejecting the false tradeoff between “innovation” and “survival”--prohibiting only dangerous, large-scale general AI development has *no significant* impact on most of today’s AI benefits or economic applications.
+- Listening to scientists and public opinion: The majority of the public supports heavy regulation to keep AI from becoming an existential risk.
+
+We should **not** permit any company, state, or individual to build a smarter-than-human AI until we have *actually* figured out how to do so safely.
+
+---
+
+### The public, and history, are watching
+
+Let’s be clear: inaction is a choice to let things play out, and every expert not blinded by short-term incentives expects it ends with extinction.
+
+This is not just about technology. It is about whether humanity--your family, your children, your entire future--continues to exist.
+
+If we allow a small group of corporate or government actors to roll these dice, we are complicit in betting everything, forever, for the sake of convenience and profit.
+
+The inventors are warning us: **if we don’t act boldly, with wisdom and speed, this century will be our last**.
 
 
 <a className="button button--outline button--primary" href="#intelligence">Read about the technical problem</a>
