@@ -103,20 +103,20 @@ const config = {
             ],
           },
           {
-            title: 'More about AI safety',
+            title: 'Resources',
             items: [
               {
-                label: 'AI Safety Fundamentals',
-                href: 'https://aisafetyfundamentals.com/',
+                label: '"The Problem" by MIRI',
+                href: 'https://intelligence.org/the-problem/',
               },
               {
-                label: 'AI Alignment Intro Materials',
-                href: 'https://www.lesswrong.com/tag/ai-alignment-intro-materials',
+                label: 'Chat to our tool about AI safety',
+                href: 'https://whycare.aisgf.us',
               },
             ],
           },
           {
-            title: 'More about policy proposals',
+            title: 'Other policy organizations',
             items: [
               {
                 label: 'Center for AI Policy (US)',
@@ -129,7 +129,7 @@ const config = {
             ],
           },
         ],
-        copyright: `<div>AI Safety and Governance Fund is a 501(c)(4) nonprofit dedicated to ensuring that AI and other technologies benefit humanity and are developed safely, securely, in alignment with human values, and stimulate the economy.<form id="subscription_form_footer"><input class="form-input" type="text" name="email" id="email_subscribe" placeholder="Email address" value="" style="width:300px;height:30px;margin-right:10px;" required=""><button class="button button--outline button--secondary" type="submit">Subscribe to our news</button></form></div>`,
+        copyright: `<div><a href="https://aisgf.us">AI Safety and Governance Fund</a> is a 501(c)(4) nonprofit dedicated to ensuring that AI and other technologies benefit humanity and are developed safely, securely, in alignment with human values, and stimulate the economy.<form id="subscription_form_footer"><input class="form-input" type="text" name="email" id="email_subscribe" placeholder="Email address" value="" style="width:300px;height:30px;margin-right:10px;" required=""><button class="button button--outline button--secondary" type="submit">Subscribe to our news</button></form></div>`,
       },
       prism: {
         theme: lightCodeTheme,
