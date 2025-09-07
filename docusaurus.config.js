@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'AI moratorium is necessary to avoid extinction',
-  tagline: 'Large AI training runs have to be stopped until scientists consider it safe to proceed.',
+  tagline: 'Large AI training runs have to be stopped (until scientists consider it safe to proceed).',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
