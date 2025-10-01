@@ -106,6 +106,8 @@ The inventors are warning us: **if we don’t act boldly, with wisdom and speed,
 
 <a className="button button--outline button--primary" href="#intelligence">Read about the technical problem</a>
 
+Disagree? <a className="button button--outline button--primary" href="https://whycare.aisgf.us">Send your counterarguments to our tool and see if it changes your mind.</a>
+
 <!-- 
 <a className="button button--outline button--primary" href="#ai-moratorium">Skip to what the governments can do -></a> -->
 
