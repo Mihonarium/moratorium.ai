@@ -106,6 +106,8 @@ The inventors are warning us: **if we don’t act boldly, with wisdom and speed,
 
 <a className="button button--outline button--primary" href="#intelligence">Read about the technical problem</a>
 
+<br/>
+
 Disagree? <a className="button button--outline button--primary" href="https://whycare.aisgf.us">Send your counterarguments to our tool and see if it changes your mind.</a>
 
 <!-- 
