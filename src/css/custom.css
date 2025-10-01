@@ -201,7 +201,7 @@ footer .form-input {
     color: #ffffffaa;
 }
 
-.button--primary[href="#intelligence"]::after {
+.button--primary[href="#intelligence"]::after, .button--primary[href="https://whycare.aisgf.us"]::after {
     --arrows-size: 1.3em;
     background-color: currentcolor;
     background-position-x: 50%;
