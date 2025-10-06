@@ -103,7 +103,7 @@ If we allow a small group of corporate or government actors to roll these dice, 
 
 The inventors are warning us: **if we don’t act boldly, with wisdom and speed, this century will be our last**.
 
-Disagree? <a className="button button--outline button--primary" href="https://whycare.aisgf.us">Send your counterarguments to our tool and see if it changes your mind</a>
+Disagree, have questions, or counterarguments? Send them to our tool and see if it can answer: <a className="button button--outline button--primary" href="https://whycare.aisgf.us">Go here</a>
 
 <!-- 
 <a className="button button--outline button--primary" href="#ai-moratorium">Skip to what the governments can do -></a> -->
