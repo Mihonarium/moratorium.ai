@@ -49,13 +49,7 @@ const config = {
           editUrl:
             'https://github.com/Mihonarium/moratorium.ai/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Mihonarium/moratorium.ai/tree/main/',
-        },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
