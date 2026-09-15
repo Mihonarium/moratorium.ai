@@ -7,8 +7,12 @@ const WrapFootnotes = () => {
   const [footnotesContent, setFootnotesContent] = useState(null);
 
   useEffect(() => {
-    const footnotesDiv = document.querySelector('div.footnotes');
+    // MDX v3 (remark-gfm) renders footnotes as <section class="footnotes"> with a
+    // visually-hidden <h2 id="footnote-label">; older MDX v1 used <div class="footnotes">.
+    const footnotesDiv = document.querySelector('.footnotes');
     if (!footnotesDiv) return;
+	const generatedLabel = footnotesDiv.querySelector('#footnote-label');
+	generatedLabel && generatedLabel.remove();
 	footnotesDiv.insertAdjacentHTML('afterbegin', '<h2>Footnotes</h2>');
 	
 
@@ -18,7 +22,7 @@ const WrapFootnotes = () => {
 
   useEffect(() => {
     const checkFootnoteHash = () => {
-      const footnoteHashRegex = /#fn-\d+/;
+      const footnoteHashRegex = /#(user-content-)?fn-\d+/;
       if (footnoteHashRegex.test(window.location.hash)) {
 		if(document.querySelector('#footnotes_collapsible hr')) {
 			document.querySelector('#footnotes_collapsible hr').remove()
@@ -49,7 +53,7 @@ const WrapFootnotes = () => {
 			document.querySelector('#footnotes_collapsible hr').remove()
 		}
 		  setFootnotesOpen(state);
-		  if (!state && window.location.hash.startsWith('#fn-')) {
+		  if (!state && /^#(user-content-)?fn-/.test(window.location.hash)) {
 			window.history.pushState("", document.title, window.location.pathname + window.location.search);
 		  }
 		}}

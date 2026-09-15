@@ -105,8 +105,8 @@ The inventors are warning us: **if we don’t act boldly, with wisdom and speed,
 
 Disagree, have questions, or counterarguments? Send them to our tool and see if it can answer: <a className="button button--outline button--primary" href="https://whycare.aisgf.us">Go here</a>
 
-<!-- 
-<a className="button button--outline button--primary" href="#ai-moratorium">Skip to what the governments can do -></a> -->
+{/* 
+<a className="button button--outline button--primary" href="#ai-moratorium">Skip to what the governments can do -></a> */}
 
 ***
 
@@ -116,7 +116,7 @@ Disagree, have questions, or counterarguments? Send them to our tool and see if 
 
 <p style={{"font-size": "20px",color:"white","font-family":"MercurySSm-Book-Pro_Web,serif"}}>Read about the technical problem of AI alignment: how modern AI works and why exactly experts expect a catastrophe.</p>
 
-<HashAwareCollapsible summaryCollapsed=<span style={{"font-size": "20px","color":"white"}}>Click to <b>learn about AI and AI Alignment</b> <i>(Est. reading time: 12 min.)</i></span> summaryExpanded=<span style={{"font-size": "20px"}}>Hide the explanation of AI and AI Alignment and read about what the governments can do</span>><br/>
+<HashAwareCollapsible summaryCollapsed={<span style={{"font-size": "20px","color":"white"}}>Click to <b>learn about AI and AI Alignment</b> <i>(Est. reading time: 12 min.)</i></span>} summaryExpanded={<span style={{"font-size": "20px"}}>Hide the explanation of AI and AI Alignment and read about what the governments can do</span>}><br/>
 
 ## Intelligence
 
@@ -289,7 +289,7 @@ Some regulations that help with existential risk from future uncontrollable AI c
 ***
 
 
-<HashAwareCollapsible summaryCollapsed=<span>Show <b>How to help</b></span> summaryExpanded=<span>Hide <b>How to help</b></span>><br/>
+<HashAwareCollapsible summaryCollapsed={<span>Show <b>How to help</b></span>} summaryExpanded={<span>Hide <b>How to help</b></span>}><br/>
 <div id="how-to-help"/>
 
 <div style={{"min-width": "360px"}} className="contact-form">
@@ -297,12 +297,12 @@ Some regulations that help with existential risk from future uncontrollable AI c
 
 Talk to your friends, colleagues, followers, and elected officials about this problem and point them to *moratorium.ai* for the details.
 
-<p style={{"text-align": "center"}}><a href="https://twitter.com/intent/tweet?text=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&url=https%3A%2F%2Fmoratorium.ai%2F"><icon icon="fa-brands fa-x-twitter" size="lg" /> Tweet</a>&ensp;&ensp;&ensp;<a href="https://www.facebook.com/sharer.php?t=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&url&u=https%3A%2F%2Fmoratorium.ai%2F"><icon icon="fa-brands fa-facebook" size="lg" /> Share</a>&ensp;&ensp;&ensp;<a href="#copy" id="share_button_copy"><icon icon="fa-regular fa-copy" size="lg" /> <span id="copy_text">Copy</span></a></p>
+<p style={{"text-align": "center"}}><a href="https://twitter.com/intent/tweet?text=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&url=https%3A%2F%2Fmoratorium.ai%2F"><Icon icon="fa-brands fa-x-twitter" size="lg" /> Tweet</a>&ensp;&ensp;&ensp;<a href="https://www.facebook.com/sharer.php?t=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&url&u=https%3A%2F%2Fmoratorium.ai%2F"><Icon icon="fa-brands fa-facebook" size="lg" /> Share</a>&ensp;&ensp;&ensp;<a href="#copy" id="share_button_copy"><Icon icon="fa-regular fa-copy" size="lg" /> <span id="copy_text">Copy</span></a></p>
 
 </div>
 <div className="contact-forms-container">
 
-<!--<div className="vertical-hr"></div>-->
+{/* <div className="vertical-hr"></div> */}
 
 <div className="contact-form">
 <h3 style={{"text-align": "center"}}>Join us</h3>
@@ -351,7 +351,7 @@ Join the effort to establish **an international AI moratorium**.
 
 </HashAwareCollapsible>
 
-<HashAwareCollapsible summaryCollapsed=<span>Show <b>Counterarguments</b></span> summaryExpanded=<span>Hide <b>Counterarguments</b></span>><br/>
+<HashAwareCollapsible summaryCollapsed={<span>Show <b>Counterarguments</b></span>} summaryExpanded={<span>Hide <b>Counterarguments</b></span>}><br/>
 
 ## Counterarguments
 

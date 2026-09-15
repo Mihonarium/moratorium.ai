@@ -7,6 +7,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import useBrokenLinks from '@docusaurus/useBrokenLinks';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -168,9 +169,9 @@ function SoleLink(href) {
 }
 
 export default function Home() {
-	
-  
   const {siteConfig} = useDocusaurusContext();
+  // #why is a <div id>, not a heading, so tell the v3 broken-anchor checker it exists.
+  useBrokenLinks().collectAnchor('why');
   return (
     <Layout
       description="To avoid an existential catastrophe, we need a global moratorium on large AI training runs until the technical problem of AI alignment is solved.">
