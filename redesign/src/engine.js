@@ -32,17 +32,17 @@ function lum(c) { return 0.2126 * lin(c[0]) + 0.7152 * lin(c[1]) + 0.0722 * lin(
    right (firstlight, clear, golden). Everything before the moratorium is
    cool; so are the parts that explain, count or argue. */
 function mood(top, mid, bot, gx, gy, gc, ga, night) { return { s: [hex(top), hex(mid), hex(bot)], g: [gx, gy, hex(gc), ga], n: night }; }
-var MOODS = {
-  cool:       mood('#7f9dc2', '#bccde0', '#e6edf4', 0.82, 0.1, '#ffffff', 0.22, 0),
-  day:        mood('#86abd3', '#b9cfe6', '#e2ebf3', 0.55, 0.05, '#ffffff', 0.28, 0),
-  slate:      mood('#8fa1b8', '#c2cbd6', '#e0e4e9', 0.5, 0.08, '#ffffff', 0.12, 0),
-  overcast:   mood('#959ca4', '#b7bcc1', '#d4d6d6', 0.5, 0.2, '#ffffff', 0.0, 0),
-  uncanny:    mood('#8f9c97', '#b4bdb4', '#d5d9cd', 0.5, 0.5, '#ffffff', 0.0, 0),
-  firstlight: mood('#8597b8', '#b8b6c8', '#f0c6a3', 0.2, 1.0, '#ffcf9e', 0.62, 0),
-  night:      mood('#0b111d', '#121b2b', '#1c2638', 0.78, 0.16, '#d2e1ff', 0.10, 1),
-  haze:       mood('#8b9db2', '#bcc6cf', '#dfe3e2', 0.72, 0.3, '#ffffff', 0.12, 0),
-  clear:      mood('#7eaee0', '#bad7ef', '#f6ebd7', 0.5, 1.02, '#fff0c8', 0.62, 0),
-  golden:     mood('#90a3c2', '#d8c4b2', '#f3cb9e', 0.78, 0.92, '#ffd08a', 0.6, 0)
+var MOODS = {   // one plain paper ground for the whole page: the pictures carry the meaning, not the sky
+  cool: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  day: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  slate: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  overcast: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  uncanny: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  firstlight: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  night: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  haze: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  clear: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  golden: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0)
 };
 function blendMood(A, B, t) {
   if (t <= 0) return A; if (t >= 1) return B;

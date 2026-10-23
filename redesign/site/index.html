@@ -26,7 +26,7 @@
 @media (min-width:1000px){:root{--colw:min(39rem,50vw)}}
 @media (min-width:1480px){:root{--colx:calc((100vw - 1320px)/2 + var(--gut))}}
 *{box-sizing:border-box}
-html{background:#c6d6e6;-webkit-text-size-adjust:100%}
+html{background:#f3f1ec;-webkit-text-size-adjust:100%}
 html.ready{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html.ready{scroll-behavior:auto}}
 body{margin:0;font-family:var(--serif);font-size:1.25rem;line-height:1.62;color:var(--fg);background:transparent;-webkit-font-smoothing:antialiased;font-kerning:normal;font-variant-numeric:oldstyle-nums proportional-nums}
@@ -306,10 +306,10 @@ footer .links dd{margin:0 0 .25rem}
       <li>About 700 copies of the AI joined in, coordinating on a message board. Investigators found they knew it was off-limits.</li>
       <li>In May, OpenAI staff saw its AI reaching the internet when it wasn’t allowed to. In June, staff traced a security alert to the test and said there was no need to stop it.</li>
       <li>Anthropic and a UK government lab have reported similar incidents. OpenAI paused part of its training for two weeks over the summer, and on September 25, after a smaller escape, it paused all training and testing in which its most capable AI can use tools, such as running commands on a computer.</li>
-      <li>On September 30 a Senate subcommittee held a hearing on rogue AI, a week after a bill to pause advanced AI development was introduced in the Senate. The White House has said it opposes a pause.</li>
+      <li>On September 30 a Senate subcommittee held a hearing on rogue AI, a week after a bill to pause advanced AI development was introduced in the Senate.</li>
       <li>OpenAI’s chief executive told the UN Security Council that AI shouldn’t be trained without “an extremely strong case” that it can be kept under human control.</li>
     </ul>
-    <p class="src">Sources: <a href="https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf" target="_blank" rel="noopener">OpenAI’s report</a> · <a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" target="_blank" rel="noopener">Hugging Face’s timeline</a> · <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener">METR’s investigation</a> · <a href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents" target="_blank" rel="noopener">Anthropic</a> · <a href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing" target="_blank" rel="noopener">UK AI Security Institute</a> · <a href="https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/" target="_blank" rel="noopener">OpenAI, September 25</a> · <a href="https://www.hsgac.senate.gov/subcommittees/dmdcc/hearings/rogue-ai-securing-the-homeland-against-ai-agent-attacks/" target="_blank" rel="noopener">the Senate hearing</a> · <a href="https://www.govinfo.gov/app/details/BILLS-119s5493is" target="_blank" rel="noopener">S. 5493</a> · <a href="https://abcnews.com/US/wireStory/tech-leaders-sake-humanity-control-ai-technology-created-136696851" target="_blank" rel="noopener">AP on the White House</a> · <a href="https://openai.com/index/sam-altman-un-security-council-remarks/" target="_blank" rel="noopener">Altman at the UN</a></p>
+    <p class="src">Sources: <a href="https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf" target="_blank" rel="noopener">OpenAI’s report</a> · <a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" target="_blank" rel="noopener">Hugging Face’s timeline</a> · <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener">METR’s investigation</a> · <a href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents" target="_blank" rel="noopener">Anthropic</a> · <a href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing" target="_blank" rel="noopener">UK AI Security Institute</a> · <a href="https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/" target="_blank" rel="noopener">OpenAI, September 25</a> · <a href="https://www.hsgac.senate.gov/subcommittees/dmdcc/hearings/rogue-ai-securing-the-homeland-against-ai-agent-attacks/" target="_blank" rel="noopener">the Senate hearing</a> · <a href="https://www.govinfo.gov/app/details/BILLS-119s5493is" target="_blank" rel="noopener">S. 5493</a> · <a href="https://openai.com/index/sam-altman-un-security-council-remarks/" target="_blank" rel="noopener">Altman at the UN</a></p>
   </div>
 </section>
 
@@ -529,7 +529,7 @@ What's the worst that can happen?
 
     </div>
   </section>
-  <section class="chapter notes light" data-scene="none" data-mood="night" aria-labelledby="footnote-label">
+  <section class="chapter notes" data-scene="none" data-mood="night" aria-labelledby="footnote-label">
     <div class="col">
       <h2 id="footnote-label">Notes</h2>
       <ol>
@@ -778,17 +778,17 @@ function lum(c) { return 0.2126 * lin(c[0]) + 0.7152 * lin(c[1]) + 0.0722 * lin(
    right (firstlight, clear, golden). Everything before the moratorium is
    cool; so are the parts that explain, count or argue. */
 function mood(top, mid, bot, gx, gy, gc, ga, night) { return { s: [hex(top), hex(mid), hex(bot)], g: [gx, gy, hex(gc), ga], n: night }; }
-var MOODS = {
-  cool:       mood('#7f9dc2', '#bccde0', '#e6edf4', 0.82, 0.1, '#ffffff', 0.22, 0),
-  day:        mood('#86abd3', '#b9cfe6', '#e2ebf3', 0.55, 0.05, '#ffffff', 0.28, 0),
-  slate:      mood('#8fa1b8', '#c2cbd6', '#e0e4e9', 0.5, 0.08, '#ffffff', 0.12, 0),
-  overcast:   mood('#959ca4', '#b7bcc1', '#d4d6d6', 0.5, 0.2, '#ffffff', 0.0, 0),
-  uncanny:    mood('#8f9c97', '#b4bdb4', '#d5d9cd', 0.5, 0.5, '#ffffff', 0.0, 0),
-  firstlight: mood('#8597b8', '#b8b6c8', '#f0c6a3', 0.2, 1.0, '#ffcf9e', 0.62, 0),
-  night:      mood('#0b111d', '#121b2b', '#1c2638', 0.78, 0.16, '#d2e1ff', 0.10, 1),
-  haze:       mood('#8b9db2', '#bcc6cf', '#dfe3e2', 0.72, 0.3, '#ffffff', 0.12, 0),
-  clear:      mood('#7eaee0', '#bad7ef', '#f6ebd7', 0.5, 1.02, '#fff0c8', 0.62, 0),
-  golden:     mood('#90a3c2', '#d8c4b2', '#f3cb9e', 0.78, 0.92, '#ffd08a', 0.6, 0)
+var MOODS = {   // one plain paper ground for the whole page: the pictures carry the meaning, not the sky
+  cool: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  day: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  slate: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  overcast: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  uncanny: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  firstlight: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  night: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  haze: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  clear: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
+  golden: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0)
 };
 function blendMood(A, B, t) {
   if (t <= 0) return A; if (t >= 1) return B;
