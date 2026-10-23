@@ -169,7 +169,7 @@ def prow(r):
     cls = ' class="open"' if r.get('open') else ''
     held = '<span class="held">%s</span>' % r['held'] if r.get('held') else ''
     line = (' ' + r['line']) if r.get('line') else ''
-    return '      <li%s><span class="y">%s</span><div class="t"><b>%s</b>%s%s</div><span class="perch" aria-hidden="true"></span></li>' % (cls, r['year'], r['what'], line, held)
+    return '      <li%s><span class="y">%s</span><div class="t"><b>%s</b>%s%s</div></li>' % (cls, r['year'], r['what'], line, held)
 import html as _h
 def faq(items): return '\n'.join('<h3 id="%s">%s</h3>\n<p>%s</p>' % (slug(q), _h.escape(q, quote=False), a) for q, a in items)
 def groups(items): return '\n'.join('      <dt>%s</dt><dd>%s</dd>' % (g, x) for g, x in items)
