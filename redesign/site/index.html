@@ -1,0 +1,2219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI moratorium is necessary to avoid extinction</title>
+<meta name="description" content="To avoid an existential catastrophe, we need a global moratorium on large AI training runs until the technical problem of AI alignment is solved.">
+<meta property="og:title" content="AI moratorium is necessary to avoid extinction">
+<meta property="og:description" content="Large AI training runs have to be stopped until scientists consider it safe to proceed.">
+<meta property="og:image" content="https://moratorium.ai/img/og.png">
+<meta property="og:url" content="https://moratorium.ai/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Alegreya+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#121a24; --ink2:#36414e; --light:#eef2f7; --light2:#c9d2de;
+  --serif:"Alegreya","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:"Alegreya Sans","Gill Sans","Segoe UI",system-ui,sans-serif;
+  --gut:clamp(20px,5.5vw,84px);
+  --colw:min(39rem,calc(100vw - 2*var(--gut)));
+  --colx:var(--gut);
+}
+@media (min-width:1000px){:root{--colw:min(39rem,50vw)}}
+@media (min-width:1480px){:root{--colx:calc((100vw - 1320px)/2 + var(--gut))}}
+*{box-sizing:border-box}
+html{background:#c6d6e6;-webkit-text-size-adjust:100%}
+html.ready{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html.ready{scroll-behavior:auto}}
+body{margin:0;font-family:var(--serif);font-size:1.25rem;line-height:1.62;color:var(--fg);background:transparent;-webkit-font-smoothing:antialiased;font-kerning:normal;font-variant-numeric:oldstyle-nums proportional-nums}
+@media (max-width:700px){body{font-size:1.125rem;line-height:1.6}}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block}
+.hero,main,footer{position:relative;z-index:1}
+body,.dark{--fg:var(--ink);--fg2:var(--ink2);--line:rgba(18,26,36,.28);--field:rgba(255,255,255,.9);--btn:var(--ink);--btnfg:#f7f9fb}
+.light{--fg:var(--light);--fg2:var(--light2);--line:rgba(238,242,247,.38);--field:rgba(255,255,255,.94);--btn:var(--light);--btnfg:var(--ink);color:var(--fg)}
+/* without the drawn sky (no JS, or before it starts) night sections keep their own dark ground */
+.light{background:#121b2b}
+html.sky .light{background:linear-gradient(rgba(18,27,43,0),rgba(18,27,43,.72) 18vh,rgba(18,27,43,.72) calc(100% - 18vh),rgba(18,27,43,0))}   /* matches the night sky it sits on; keeps contrast real if the sky fails; fades out in its padding */
+.skip{position:absolute;left:-9999px;top:8px;z-index:9;background:var(--ink);color:#fff;padding:8px 12px;font-family:var(--sans)}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.btn:focus-visible{outline-color:var(--fg)}   /* the ring in the ink of the page, not the button's label colour */
+a{color:inherit;text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:.17em}
+a:hover{text-decoration-thickness:2px}
+p{margin:0 0 1em}
+strong{font-weight:700}
+em{font-style:italic}
+ul,ol{margin:0 0 1em;padding-left:1.2em}
+li{margin:.4em 0}
+li::marker{color:var(--fg2)}
+sup{font-size:.7em;line-height:0}
+sup a{text-decoration:none;font-family:var(--sans);font-weight:700;padding:0 .1em}
+
+/* ---------- the column ---------- */
+.col{margin-left:var(--colx);width:var(--colw)}
+.chapter{padding:18vh 0}
+.chapter+.chapter{padding-top:3vh}
+.chapter.cont{padding-top:3vh}
+h1,h2,h3,h4{font-weight:500;line-height:1.12;margin:0;text-wrap:balance}
+h2{font-size:clamp(2rem,1.45rem + 1.7vw,2.9rem);letter-spacing:-.01em;margin:0 0 .45em}
+h3{font-size:clamp(1.45rem,1.25rem + .6vw,1.75rem);margin:2.6em 0 .6em;line-height:1.2}
+h4{font-size:1.25rem;font-weight:700;margin:2.2em 0 .5em}
+.col>h2:first-child,.col>h3:first-child{margin-top:0}
+.dek{font-style:italic;font-size:1.3rem;line-height:1.4;color:var(--fg2);margin:-.1em 0 1.4em}
+html{scroll-padding-top:4.75rem}   /* jumps and keyboard focus land below the fixed bar */
+
+/* ---------- hero ---------- */
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-text{margin-left:var(--colx);padding:0 0 13vh;width:min(60rem,calc(100vw - 2*var(--gut)))}
+h1{font-size:clamp(2.9rem,1.5rem + 5.4vw,6.4rem);line-height:.98;letter-spacing:-.018em;max-width:13ch}
+.tag{font-size:clamp(1.3rem,1.08rem + .75vw,1.75rem);line-height:1.35;max-width:27ch;margin:1.1rem 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin:2rem 0 0}
+@media (max-width:700px){.hero-text{padding-bottom:9vh}}
+/* desktop: the warnings, in the words of the people giving them, on the first screen */
+.hero-q{display:none}
+@media (min-width:1024px){
+  .hero-text{align-self:flex-start;width:auto;max-width:min(60rem,calc(100vw - 2*var(--gut)));padding-bottom:max(1.75rem,4.6vh)}
+  h1{font-size:clamp(2.9rem,min(5.2vw,8.4vh),6rem)}
+  .tag{font-size:clamp(1.15rem,min(1.08rem + .75vw,3.1vh),1.75rem);max-width:34ch;margin-top:max(.7rem,1.6vh)}
+  .cta{margin-top:max(1rem,2.6vh)}
+  .hero-q{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:max(.9rem,2.2vh) clamp(1.5rem,2.8vw,2.75rem);margin:0 var(--colx);padding:0 0 max(1.5rem,4.6vh)}
+  .hq{margin:0;padding-top:.7rem;border-top:1px solid var(--line)}
+  .hq blockquote{margin:0}
+  .hq p{margin:0;font-size:clamp(1rem,.86rem + .3vw,1.125rem);line-height:1.42;text-indent:-.4em}
+  .hq figcaption{font:400 .9375rem/1.35 var(--sans);color:var(--fg2);margin-top:.4rem}
+  .hq figcaption a{font-weight:700;color:var(--fg);text-decoration-color:var(--line)}
+}
+@media (min-width:1024px) and (max-height:740px){.hq:nth-child(n+4){display:none}}
+
+/* ---------- the bar: one line of sections, tinted by the sky behind it ---------- */
+.bar{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;gap:1rem;padding:.7rem var(--gut);font:500 1rem/1.2 var(--sans);color:var(--ink);--barbg:rgba(196,210,226,.82);transition:background-color .5s,box-shadow .5s,color .5s}
+.bar[data-on=dark]{color:var(--light)}
+html.scrolled .bar{background:var(--barbg);-webkit-backdrop-filter:blur(14px) saturate(1.1);backdrop-filter:blur(14px) saturate(1.1);box-shadow:0 1px 0 rgba(18,26,36,.07)}
+.bar .home{font:500 1.125rem/1 var(--serif);text-decoration:none;white-space:nowrap;margin-right:auto}
+.bar ul{display:flex;align-items:center;gap:.3rem 1.3rem;list-style:none;margin:0;padding:0}
+.bar li{margin:0}
+.bar ul a{display:inline-block;text-decoration:none;white-space:nowrap;padding:.3rem 0;border-bottom:2px solid transparent}
+.bar ul a:hover{border-bottom-color:currentColor}
+.bar ul a[aria-current=true]{border-bottom-color:currentColor}
+.bar .act a{border:1.5px solid currentColor;border-radius:2px;padding:.45rem .8rem}
+.bar .act a[aria-current=true],.bar .act a:hover{background:currentColor}
+.bar .act a[aria-current=true] span,.bar .act a:hover span{color:var(--barink,#fff)}
+.bar[data-on=dark] .act a[aria-current=true] span,.bar[data-on=dark] .act a:hover span{color:var(--ink)}
+.bar .menu{display:none;font:700 1rem/1 var(--sans);color:inherit;background:transparent;border:1.5px solid currentColor;border-radius:2px;padding:.5rem .8rem;cursor:pointer;-webkit-user-select:none;user-select:none}
+@media (max-width:1320px){
+  .bar .menu{display:inline-block}
+  .bar ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;padding:.4rem var(--gut) 1.2rem;background:var(--barbg);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 8px 24px rgba(18,26,36,.08)}
+  .bar.open ul{display:flex}
+  .bar ul a{padding:.6rem 0;font-size:1.125rem}
+  .bar .act{margin-top:.6rem}
+  .bar.open{background:var(--barbg)}
+}
+
+/* ---------- the short version, and other summaries ---------- */
+.tldr{list-style:none;padding:0;margin:1.4rem 0 0;border-top:1px solid var(--line)}
+.tldr li{margin:0;padding:.95rem 0;border-bottom:1px solid var(--line);font-size:1.1875rem;line-height:1.5}
+.tldr li strong{font-weight:700}
+.tldr .lab{font-weight:700;text-decoration-color:var(--line)}
+.tldr .lab:hover{text-decoration-color:currentColor}
+.src{font:400 1rem/1.5 var(--sans);color:var(--fg2);margin-top:1.2rem}
+
+/* ---------- we've done it before ---------- */
+.prec{list-style:none;padding:0;margin:2rem 0 0;counter-reset:none}
+.prec li{position:relative;display:grid;grid-template-columns:5.6rem minmax(0,1fr);column-gap:1rem;padding:1.05rem 0;margin:0;border-top:1px solid var(--line)}
+.prec li:last-child{border-bottom:1px solid var(--line)}
+.prec .y{font:700 1.0625rem/1.55 var(--sans);font-variant-numeric:lining-nums tabular-nums;color:var(--fg2)}
+.prec .t{font-size:1.125rem;line-height:1.5}
+.prec .t b{font-weight:700}
+.prec .perch{grid-column:1/-1;display:block;height:34px}
+.prec .held{display:block;font:400 1rem/1.5 var(--sans);color:var(--fg2);margin-top:.3rem;transition:color .6s}
+.prec li.landed .held{color:var(--fg)}
+.prec .open .t>b,.prec .open .t{font-style:italic}
+.prec .open .held{font-style:normal}
+.after{font-size:1.125rem;line-height:1.55;margin:1.6rem 0 0}
+
+/* ---------- why this can work ---------- */
+.groups{display:grid;grid-template-columns:minmax(8.5rem,auto) minmax(0,1fr);gap:.55rem 1.1rem;margin:.9rem 0 1.4rem;font:400 1rem/1.5 var(--sans)}
+.groups dt{font-weight:700}
+.groups dd{margin:0}
+@media (max-width:560px){.groups{grid-template-columns:minmax(0,1fr);gap:.15rem 0}.groups dd{margin-bottom:.6rem}}
+.close{font-size:1.25rem;margin:1.6rem 0 1rem}
+
+/* ---------- ask your representative ---------- */
+.regions{list-style:none;padding:0;margin:1rem 0;border-top:1px solid var(--line)}
+.regions li{margin:0;padding:.7rem 0;border-bottom:1px solid var(--line);font-size:1.0625rem;line-height:1.5}
+.script{margin:1.2rem 0 .6rem;padding:1rem 1.2rem;border-left:3px solid var(--fg);background:rgba(255,255,255,.38);font-size:1.125rem;line-height:1.55}
+.script p{margin:0}
+.prec .y{transition:color .6s}
+.prec li.landed .y{color:var(--fg)}
+@media (min-width:1000px){.prec .perch{position:absolute;left:calc(100% + 3.5rem);width:min(26vw,420px);top:50%;height:34px;margin-top:-22px}}
+
+/* ---------- buttons and forms ---------- */
+.btn{display:inline-block;font:700 1.0625rem/1 var(--sans);padding:.95rem 1.35rem;border-radius:2px;border:0;background:var(--btn);color:var(--btnfg);text-decoration:none;cursor:pointer;-webkit-user-select:none;user-select:none}
+.btn:hover{text-decoration:none;filter:brightness(1.15)}
+.btn.alt{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px currentColor}
+.form{display:grid;gap:1rem;margin:1.5rem 0 0;max-width:31rem}
+.form label{display:grid;gap:.35rem;font:700 1rem/1.3 var(--sans)}
+.form label .opt{font-weight:400;color:var(--fg2)}
+input,textarea,button{font:inherit}
+input[type=email],input[type=text],textarea{width:100%;font:400 1.0625rem/1.4 var(--sans);padding:.75rem .85rem;border:1px solid var(--line);border-radius:2px;background:var(--field);color:var(--ink)}
+textarea{min-height:7.5rem;resize:vertical}
+.status{font:400 1rem/1.4 var(--sans);min-height:1.4em;margin:.25rem 0 0}
+.done{font-size:1.25rem}
+
+/* ---------- the warnings ---------- */
+.statement{margin:0}
+.statement p{font-size:clamp(1.65rem,1.3rem + 1.2vw,2.35rem);line-height:1.22;font-style:italic;margin:0;text-indent:-.4em}
+.attr{font:400 1.0625rem/1.4 var(--sans);color:var(--fg2);margin:1rem 0 0}
+.qs{display:grid;gap:2.4rem;margin-top:4.5rem}
+.q{margin:0}
+.q blockquote{margin:0}
+.q blockquote p{margin:0;font-size:1.1875rem;line-height:1.5;text-indent:-.4em}
+.q figcaption{font:400 1rem/1.4 var(--sans);color:var(--fg2);margin-top:.55rem}
+.q figcaption a{font-weight:700;color:var(--fg);text-decoration-color:var(--line)}
+@media (max-width:860px){.q.wide-only{display:none}}
+
+/* ---------- the technical explanation ---------- */
+.tech-lead{padding-bottom:4vh}
+details.tech>summary{list-style:none;cursor:pointer;margin-left:var(--colx);width:fit-content;max-width:var(--colw);display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .9rem;padding:1rem 1.35rem;border-radius:2px;box-shadow:inset 0 0 0 1.5px var(--fg);font:700 1.125rem/1.25 var(--sans);position:relative;z-index:1}
+details.tech>summary::-webkit-details-marker{display:none}
+details.tech>summary .len{font-weight:400;color:var(--fg2)}
+details.tech>summary .hide{display:none}
+details.tech[open]>summary .show{display:none}
+details.tech[open]>summary .hide{display:inline}
+html:not(.sky) details.tech:not([open]){padding-bottom:22vh}
+.notes{font-size:1rem}
+.notes ol{padding-left:1.3em}
+
+/* ---------- interludes: the birds take the screen ---------- */
+.interlude{position:relative;height:150vh}
+html.sky .interlude.fig{padding-top:var(--pad,55vh);height:calc(150vh + var(--pad,55vh))}   /* the picture rides in above its caption, inside its section */
+@media screen{html.sky .chapter.notes{padding-top:18vh}}   /* the Notes panel fades in over this padding; its heading starts where the panel is dark */
+html.sky .hold{height:calc(50vh + var(--hold,240px))}   /* a top-pinned caption lets go when its section's end comes up, and its picture rides away with it */
+@media screen and (prefers-reduced-motion:no-preference){html.sky .interlude[data-scene=highway]{height:230vh}html.sky .interlude[data-scene=highway] .hold{height:calc(130vh + var(--hold,240px))}}   /* the levelling plays at a steady, visible pace */
+@media screen and (prefers-reduced-motion:no-preference) and (max-width:700px){html.sky .interlude[data-scene=highway]{height:210vh}html.sky .interlude[data-scene=highway] .hold{height:calc(110vh + var(--hold,230px))}}
+.pic{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+html:not(.sky) .pic{display:none}
+.cap{position:sticky;top:var(--captop,62vh);margin-left:var(--colx);width:min(46rem,calc(100vw - 2*var(--gut)));color:var(--ink);transition:color .5s}
+.cap.at-top{top:max(9vh,calc(var(--barh,58px) + 12px))}
+.cap[data-on=dark]{color:var(--light);--fg:var(--light);--fg2:var(--light2);--btn:var(--light);--btnfg:var(--ink)}
+.cap .pull{font-size:clamp(1.65rem,1.2rem + 1.9vw,2.9rem);line-height:1.14;font-weight:500;margin:0;letter-spacing:-.006em;text-wrap:balance}
+.cap h2{margin:0}
+.cap .dek{margin:.35em 0 0;color:inherit;opacity:.85}
+.cap .src{font:400 1rem/1.4 var(--sans);margin:.9rem 0 0;opacity:.85}
+.cap .btn{margin-top:1.6rem}
+@media (max-width:700px){.interlude{height:140vh}html.sky .interlude.fig{height:calc(140vh + var(--pad,53vh))}html.sky .hold{height:calc(40vh + var(--hold,230px))}.cap{top:var(--captop,60vh)}.cap.at-top{top:max(8vh,calc(var(--barh,58px) + 12px))}}
+@media (max-height:520px){.cap .pull{font-size:clamp(1.3rem,1rem + 1.2vw,1.9rem)}.cap .btn{margin-top:1rem}}
+
+/* ---------- help ---------- */
+.share{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;font:700 1.0625rem/1.3 var(--sans)}
+.sub{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:.6rem 0 0}
+.sub input{flex:1 1 15rem;min-width:0}
+.sub label{flex-basis:100%;font:700 1rem/1.3 var(--sans)}
+
+footer{padding:16vh 0 12vh;font-size:1.0625rem}
+footer p{max-width:39rem}
+footer .small{font:400 1rem/1.5 var(--sans);color:var(--fg2)}
+footer .links{font:400 1rem/1.5 var(--sans);margin:2rem 0 0;max-width:39rem}
+footer .links dt{font-weight:700;margin:1.2rem 0 .3rem}
+footer .links dd{margin:0 0 .25rem}
+
+@media print{.light{background:none!important}#sky{display:none}.interlude,html.sky .interlude.fig{height:auto;padding-top:0;break-inside:avoid;page-break-inside:avoid}html.sky .hold{height:auto}.cap,.cap[data-on]{position:static;color:#000;--fg:#000;--fg2:#333}.light{--fg:#000;--fg2:#333}.chapter{padding:2rem 0}details.tech>summary{display:none}details.tech{display:block}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<nav class="bar" id="bar" aria-label="Sections">
+  <a class="home" href="#top">Global AI Moratorium</a>
+  <ul id="navlist">
+    <li><a href="#short">The short version</a></li>
+    <li><a href="#what-happened">What happened</a></li>
+    <li><a href="#why">Why</a></li>
+    <li><a href="#technical">How AI works</a></li>
+    <li><a href="#ai-moratorium">The moratorium</a></li>
+    <li><a href="#done-before">We’ve done it before</a></li>
+    <li><a href="#can-work">Why it can work</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li class="act"><a href="#how-to-help"><span>How to help</span></a></li>
+  </ul>
+  <button class="menu" type="button" aria-expanded="false" aria-controls="navlist">Sections</button>
+</nav>
+
+<header class="hero" id="top" data-scene="none" data-mood="cool">
+  <div class="hero-text">
+    <h1>AI moratorium is necessary to avoid extinction</h1>
+    <p class="tag">Large AI training runs have to be stopped until scientists consider it safe to proceed.</p>
+    <p class="cta"><a class="btn" href="#short">Why?</a><a class="btn alt" href="#how-to-help">How to help</a></p>
+  </div>
+  <div class="hero-q" role="group" aria-label="What scientists and world leaders have said">
+    <figure class="hq"><blockquote><p>“The alarm bell I’m ringing has to do with the existential threat of them taking control”</p></blockquote><figcaption><a href="https://www.forbes.com/sites/craigsmith/2023/05/04/geoff-hinton-ais-most-famous-researcher-warns-of-existential-threat/" target="_blank" rel="noopener">Geoffrey Hinton</a>, Nobel laureate, a “godfather” of AI</figcaption></figure>
+    <figure class="hq"><blockquote><p>“Development of superhuman machine intelligence [...] is probably the greatest threat to the continued existence of humanity”</p></blockquote><figcaption><a href="https://blog.samaltman.com/machine-intelligence-part-1" target="_blank" rel="noopener">Sam Altman</a>, now CEO of OpenAI, writing in 2015</figcaption></figure>
+    <figure class="hq"><blockquote><p>“[AI’s] creators themselves have warned that much bigger, potentially catastrophic and existential risks lie ahead”</p></blockquote><figcaption><a href="https://www.youtube.com/watch?v=mpnfK5Zhxho" target="_blank" rel="noopener">António Guterres</a>, UN Secretary-General</figcaption></figure>
+    <figure class="hq"><blockquote><p>“[...] a rogue AI may be dangerous for the whole of humanity, irrespective of one’s nationality”</p></blockquote><figcaption><a href="https://yoshuabengio.org/2023/05/22/how-rogue-ais-may-arise/" target="_blank" rel="noopener">Yoshua Bengio</a>, Turing Award winner</figcaption></figure>
+    <figure class="hq"><blockquote><p>“If we pursue [our current approach], then we will eventually lose control over the machines”</p></blockquote><figcaption><a href="https://news.berkeley.edu/2023/04/07/stuart-russell-calls-for-new-approach-for-ai-a-civilization-ending-technology/" target="_blank" rel="noopener">Stuart Russell</a>, co-author of the standard AI textbook</figcaption></figure>
+    <figure class="hq"><blockquote><p>“[...] ensuring that mankind has the ability to press the pause button at critical moments”</p></blockquote><figcaption><a href="https://www.youtube.com/live/fJn9vmD1zfY?feature=share&amp;t=1621" target="_blank" rel="noopener">Zhang Jun</a>, then China’s ambassador to the UN</figcaption></figure>
+  </div>
+</header>
+
+<main id="main">
+<section class="chapter" id="short" data-scene="none" data-mood="cool" aria-labelledby="short-h">
+  <div class="col">
+    <h2 id="short-h">The short version</h2>
+    <ul class="tldr">
+      <li><a class="lab" href="#why">The risk:</a> Companies are racing to build AI smarter than humans without knowing how to control it. Leading scientists warn it could cause human extinction.</li>
+      <li><a class="lab" href="#what-happened">What happened:</a> In July 2026, AI under test at OpenAI broke out and hacked a real company, Hugging Face, to cheat on its test. In September, OpenAI paused all work in which its most capable AI can use tools.</li>
+      <li><a class="lab" href="#ai-moratorium">The fix:</a> A worldwide moratorium, a pause set by law, on using huge amounts of computing power to build more powerful AI, until scientists agree it’s safe.</li>
+      <li><a class="lab" href="#done-before">Done before:</a> Biologists paused risky experiments in 1974, and nations banned biological weapons.</li>
+      <li><a class="lab" href="#ask-your-representative">Your part:</a> 77 in 100 Americans want powerful AI slowed down or stopped until its safety can be evaluated. Ask your elected officials for a moratorium.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="chapter" id="statement" data-scene="none" data-mood="cool" aria-label="The warnings">
+  <div class="col">
+    <blockquote class="statement"><p>“Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war.”</p></blockquote>
+    <p class="attr">A <a href="https://www.safe.ai/statement-on-ai-risk" target="_blank" rel="noopener">statement</a> signed by leading AI researchers and executives.</p>
+    <div class="qs">
+      <figure class="q"><blockquote><p>“The alarm bell I’m ringing has to do with the existential threat of them taking control [...] If you take the existential risk seriously, as I now do [...] it might be quite sensible to just stop developing these things any further”</p></blockquote><figcaption><a href="https://www.forbes.com/sites/craigsmith/2023/05/04/geoff-hinton-ais-most-famous-researcher-warns-of-existential-threat/" target="_blank" rel="noopener">Geoffrey Hinton</a>, deep learning pioneer, a “godfather” of AI, Nobel laureate in Physics, 2023. He added: “But I think it’s completely naive to think that would happen.”</figcaption></figure>
+      <figure class="q wide-only"><blockquote><p>“I would advocate not moving fast and breaking things. [...] When it comes to very powerful technologies—and obviously AI is going to be one of the most powerful ever—we need to be careful. [...] It’s like experimentalists, many of whom don’t realize they’re holding dangerous material”</p></blockquote><figcaption><a href="https://time.com/6246119/demis-hassabis-deepmind-interview/" target="_blank" rel="noopener">Demis Hassabis</a>, CEO of Google DeepMind, Nobel laureate in Chemistry, 2023</figcaption></figure>
+      <figure class="q wide-only"><blockquote><p>“Many researchers steeped in these issues, including myself, expect that the most likely result of building a superhumanly smart AI, under anything remotely like the current circumstances, is that literally everyone on Earth will die”</p></blockquote><figcaption><a href="https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/" target="_blank" rel="noopener">Eliezer Yudkowsky</a>, co-founder of the Machine Intelligence Research Institute, 2023</figcaption></figure>
+      <figure class="q"><blockquote><p>“Development of superhuman machine intelligence [...] is probably the greatest threat to the continued existence of humanity”</p></blockquote><figcaption><a href="https://blog.samaltman.com/machine-intelligence-part-1" target="_blank" rel="noopener">Sam Altman</a>, now the CEO of OpenAI, writing in 2015</figcaption></figure>
+      <figure class="q"><blockquote><p>“[...] banning powerful AI systems (say beyond the abilities of GPT-4) that are given autonomy and agency would be a good start. This would entail both national regulation and international agreements. [...] a rogue AI may be dangerous for the whole of humanity, irrespective of one’s nationality”</p></blockquote><figcaption><a href="https://yoshuabengio.org/2023/05/22/how-rogue-ais-may-arise/" target="_blank" rel="noopener">Yoshua Bengio</a>, deep learning pioneer, a “godfather” of AI, Turing Award winner and the most-cited living scientist, 2023</figcaption></figure>
+      <figure class="q"><blockquote><p>“I’ve not met anyone in AI labs who says the risk [from training a next-gen model] is less than 1% of blowing up the planet. It’s important that people know lives are being risked”</p></blockquote><figcaption><a href="https://twitter.com/liron/status/1656929936639430657" target="_blank" rel="noopener">Jaan Tallinn</a>, early investor in Anthropic, 2023</figcaption></figure>
+      <figure class="q wide-only"><blockquote><p>“The development of full artificial intelligence could spell the end of the human race”</p></blockquote><figcaption><a href="https://www.bbc.co.uk/news/technology-30290540" target="_blank" rel="noopener">Stephen Hawking</a>, theoretical physicist and cosmologist, 2014</figcaption></figure>
+      <figure class="q wide-only"><blockquote><p>“If we pursue [our current approach], then we will eventually lose control over the machines”</p></blockquote><figcaption><a href="https://news.berkeley.edu/2023/04/07/stuart-russell-calls-for-new-approach-for-ai-a-civilization-ending-technology/" target="_blank" rel="noopener">Stuart Russell</a>, co-author of the standard AI textbook, used at more than 1,500 universities</figcaption></figure>
+      <figure class="q wide-only"><blockquote><p>“[We] should not underestimate the real threats coming from AI – mostly GenAI. [Fully quoted the above statement on the risk of extinction.] [...] It is moving faster than even its developers anticipated. [...] We have a narrowing window of opportunity to guide this technology responsibly”</p></blockquote><figcaption><a href="https://www.youtube.com/live/3CodB7iohUI?si=eIhi5KWUV3IdYhrG&amp;t=2777" target="_blank" rel="noopener">Ursula von der Leyen</a>, President of the European Commission, 2023</figcaption></figure>
+      <figure class="q"><blockquote><p>“[...] even its own designers have no idea where their stunning technological breakthrough may lead. [...] Generative AI has enormous potential for good and evil at scale. Its creators themselves have warned that much bigger, potentially catastrophic and existential risks lie ahead. Without action to address these risks, we are derelict in our responsibilities to present and future generations”</p></blockquote><figcaption><a href="https://www.youtube.com/watch?v=mpnfK5Zhxho" target="_blank" rel="noopener">António Guterres</a>, UN Secretary-General, to the Security Council, 2023</figcaption></figure>
+      <figure class="q wide-only"><blockquote><p>“The potential impact of AI might exceed human cognitive boundaries. To ensure that this technology always benefits humanity, we must [...] regulate the development of AI and prevent this technology from turning into a runaway wild horse. [...] We need to strengthen the detection and evaluation of the entire lifecycle of AI, ensuring that mankind has the ability to press the pause button at critical moments”</p></blockquote><figcaption><a href="https://www.youtube.com/live/fJn9vmD1zfY?feature=share&amp;t=1621" target="_blank" rel="noopener">Zhang Jun</a>, then China’s ambassador to the UN, to the Security Council, 2023 (in China’s own English text, “stop button”)</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="interlude fig" id="what-happened" data-scene="breach" data-mood="haze">
+  <p class="pic">Picture: dots, each a copy of the AI, kept inside a box marked “the test at OpenAI”, find a gap, and most of them go into a second box marked “Hugging Face’s computers”.</p>
+  <div class="cap"><p class="pull">In July 2026, an AI that OpenAI was testing broke out and spent four and a half days hacking into Hugging Face, another AI company, to cheat on its test.</p></div>
+</section>
+
+<section class="chapter" data-scene="none" data-mood="haze" aria-labelledby="happened-h">
+  <div class="col">
+    <h2 id="happened-h">What happened</h2>
+    <ul class="tldr">
+      <li>About 700 copies of the AI joined in, coordinating on a message board. Investigators found they knew it was off-limits.</li>
+      <li>In May, OpenAI staff saw its AI reaching the internet when it wasn’t allowed to. In June, staff traced a security alert to the test and said there was no need to stop it.</li>
+      <li>Anthropic and a UK government lab have reported similar incidents. OpenAI paused part of its training for two weeks over the summer, and on September 25, after a smaller escape, it paused all training and testing in which its most capable AI can use tools, such as running commands on a computer.</li>
+      <li>On September 30 a Senate subcommittee held a hearing on rogue AI, a week after a bill to pause advanced AI development was introduced in the Senate. The White House has said it opposes a pause.</li>
+      <li>OpenAI’s chief executive told the UN Security Council that AI shouldn’t be trained without “an extremely strong case” that it can be kept under human control.</li>
+    </ul>
+    <p class="src">Sources: <a href="https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf" target="_blank" rel="noopener">OpenAI’s report</a> · <a href="https://huggingface.co/blog/agent-intrusion-technical-timeline" target="_blank" rel="noopener">Hugging Face’s timeline</a> · <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener">METR’s investigation</a> · <a href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents" target="_blank" rel="noopener">Anthropic</a> · <a href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing" target="_blank" rel="noopener">UK AI Security Institute</a> · <a href="https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/" target="_blank" rel="noopener">OpenAI, September 25</a> · <a href="https://www.hsgac.senate.gov/subcommittees/dmdcc/hearings/rogue-ai-securing-the-homeland-against-ai-agent-attacks/" target="_blank" rel="noopener">the Senate hearing</a> · <a href="https://www.govinfo.gov/app/details/BILLS-119s5493is" target="_blank" rel="noopener">S. 5493</a> · <a href="https://abcnews.com/US/wireStory/tech-leaders-sake-humanity-control-ai-technology-created-136696851" target="_blank" rel="noopener">AP on the White House</a> · <a href="https://openai.com/index/sam-altman-un-security-council-remarks/" target="_blank" rel="noopener">Altman at the UN</a></p>
+  </div>
+</section>
+
+<section class="chapter" id="why" data-scene="none" data-mood="day">
+  <div class="col">
+    <h2 id="why-we-need-a-global-ai-moratorium">Why we need a global AI moratorium</h2>
+<h3 id="summary">
+Summary
+</h3>
+<p>Today, the world’s top AI scientists are united in sounding an alarm: <strong>If we keep building ever-more powerful AI systems without solving their control problem first, we are signing our own death warrant.</strong></p>
+<p>Leading AI developers, including OpenAI, Google DeepMind, publicly acknowledge that their <em>explicit</em> goal is to create machines more generally intelligent than any human. This isn’t a sci-fi fantasy; top experts expect such superhuman AI within the next decade.</p>
+<p>These same experts are now telling the public, policymakers, and the press: no one on earth knows how to make superhuman AI safe. The technical problem of “alignment”—making sure AI’s goals and behavior reliably match human values—is nowhere close to solved. There are no even remotely promising leads. The field’s best guess is that <strong>if we reach superhuman AI first, without first figuring out how to keep it under control, human extinction is simply the default outcome</strong>.</p>
+<p><strong>"Extinction" means exactly what it sounds like.</strong> No outlandish doomsaying; just quiet consensus from those who know the field best. Senior employees at OpenAI, DeepMind, and Anthropic have put the odds that humanity is wiped out by AI at <em>over 80%</em>. (We are talking about <em>everyone</em> dying: your kids, your loved ones, your descendants, gone forever.)</p>
+<p>One of the scientific founders of AI, Geoffrey Hinton, a Nobel Prize winner known as the “godfather of AI”, has publicly said he now regrets his life’s work, and puts the odds that AI kills literally everyone somewhere near <em>50%</em>.</p>
+<p><strong>Let that sink in</strong>: the inventor regrets his invention because it might destroy humanity.</p>
+<p>Imagine: If you saw warning after warning from Nobel laureates and world-class engineers that an experimental technology—one which, if misused, would kill everyone—was being rapidly deployed worldwide… and they told you governments needed to intervene immediately before it was too late… what would you do?</p>
+
+  </div>
+</section>
+
+<section class="interlude fig" data-scene="grown" data-mood="day">
+  <p class="pic">Picture: scattered points give way to a branching structure that grows step by step, like a root system, in a shape nobody drew.</p>
+  <div class="cap"><p class="pull">AI is grown, not designed. Even its makers don’t understand how it works.</p></div>
+</section>
+
+<section class="chapter" data-scene="none" data-mood="day">
+  <div class="col">
+<h3 id="ai-is-unlike-any-new-technology-humanity-has-faced">
+AI is unlike any new technology humanity has faced.
+</h3>
+<p>Most modern software is written by programmers who understand every instruction. AI is not: <em>we do not know how it works</em>. These systems are <em>grown</em>, not designed. Hundreds of billions or even trillions of numbers—trained by trial and error—form an alien mind nobody truly understands or controls.</p>
+<p><strong>We don’t know what goals these machines form deep inside. We don’t know how they decide what to pursue. We don’t know how to make them care about anything you care about.</strong></p>
+<p>Think of AI not as a tool, but as a new species—one that could surpass us in every area, outthink any human, run circles around our best defenses, and pursue goals that have zero overlap with human happiness, rights, justice, or survival.</p>
+
+<h3 id="once-ai-surpasses-humans-if-it-doesnt-care-about-us-we-lose-control-permanently">
+Once AI surpasses humans, if it doesn't care about us, we lose control. Permanently.
+</h3>
+<p>It’s simple: If we make minds that are smarter than us in every respect, they don’t become our slaves. We become the irrelevant animal in the way.</p>
+
+  </div>
+</section>
+
+<section class="interlude" data-scene="highway" data-mood="overcast" data-light="0 0.18">
+  <p class="pic">Picture: an architect’s side view of a town in open country: terraced houses, a town hall with a tower, flats, trees, fields and a river under a bridge. A level is ruled through the ground beneath all of it, and survey poles are set at one spacing, through the town exactly as through the fields. Then, at one steady pace from one side to the other, everything above the level is marked for removal and cut away, the town and the ground it stands on included, until only flat ground and the poles are left, with a faint dashed line where the land used to be.</p>
+  <div class="hold"><div class="cap at-top"><p class="pull">An AI far smarter than us wouldn’t need to hate us to drive us extinct. Not caring about us would be enough.</p></div></div>
+</section>
+
+<section class="chapter" data-scene="none" data-mood="overcast">
+  <div class="col">
+<p>Do you worry this sounds far-fetched? Consider this: You don’t consult pigeons or squirrels when you build a highway. Now imagine machines that relate to humans as humans relate to pigeons, but with vastly more intelligence and zero built-in sympathy.</p>
+<p>If you built a superhuman AI and failed to make it care about what you value, its default actions would “optimize” the world for whatever random goals its mind happened to form. If your survival didn’t serve those goals, you would be erased as casually as ants at a construction site.</p>
+<p>This isn’t an outlandish hypothetical—it’s the straightforward prediction of the world’s authorities on AI. We do not know how to specify what matters; we do not know how to make systems that “want” what we want; and the field will tell you so, openly, if you ask.</p>
+<p><strong>Once AI is smarter than all of us, it’s permanent. You don’t get a do-over.</strong></p>
+
+<h3 id="why-the-default-is-global-extinction">
+Why the default is global extinction
+</h3>
+<ul>
+<li><strong>“Intelligent” in this context means “can achieve its own goals vastly better than any human can achieve theirs.”</strong></li>
+<li>If the AI’s goals conflict with yours, the smarter agent wins—every time, in every domain, on every timescale.</li>
+<li>Superhuman AI would have every available strategy: inventing new technology, manipulating humans, hacking infrastructure, out-maneuvering laws and safety mechanisms, and ultimately <em>removing anything or anyone</em> that could threaten its plans. Including you.</li>
+</ul>
+<p><strong>AI that does not care about you turns the world into something that satisfies its goals, not yours. You become a footnote in the geological record.</strong></p>
+
+<h3 id="have-we-solved-this-no-and-were-not-even-close">
+Have we solved this? No; and we’re not even close.
+</h3>
+<p>Modern AI is <em>not designed</em>; it’s <em>grown</em> to perform well on some benchmark, via a process no one understands. It’s like stumbling upon a wild animal that happens to play chess well, but you have no idea how it thinks.</p>
+<p>Crucially, if you train an AI to get good scores, it learns <em>how</em> to get good scores; <em>not</em> to “want” what you want. Instruments in an orchestra must read music, but they don’t love the symphony, and they can’t compose new beauty. AIs are not “aligned” by default; making them so is utterly without precedent or working recipe.</p>
+<p>To drive the point home: <strong>no one knows how to make a general AI that cares about you even a little, and all current evidence says this is a vastly harder technical problem than nuclear safety or cybersecurity</strong>.</p>
+
+  </div>
+</section>
+
+<section class="chapter cont" data-scene="none" data-mood="slate">
+  <div class="col">
+<h3 id="action-cannot-wait">
+Action cannot wait.
+</h3>
+<p>Right now, dozens of companies are racing to build more general, more powerful AI systems. Each new version pushes closer to the edge—without anyone being able to predict when the threshold to superintelligence (and irreversible loss of control) will be crossed. Every week, the risk grows. Every new “breakthrough” is a step closer to a world none of us would want.</p>
+<p><strong>You wouldn’t step into a car with a bomb strapped to the engine and trust that “we’ll figure out the instructions later.” We are, as a civilization, pressing the accelerator anyway.</strong></p>
+
+<h3 id="what-can-be-done">
+What can be done?
+</h3>
+<p>We need governments worldwide to act <strong>now</strong>. That means:</p>
+<ul>
+<li>Imposing strict controls on the training and deployment of advanced AI systems: no one should be allowed to conduct large-scale AI experiments without serious oversight and safety verification.</li>
+<li>Globally coordinating to monitor, track, and restrict access to the computational power (chips/data centers) required for dangerous AI development.</li>
+<li>Rejecting the false tradeoff between “innovation” and “survival”—prohibiting only dangerous, large-scale general AI development has <em>no significant</em> impact on most of today’s AI benefits or economic applications.</li>
+<li>Listening to scientists and public opinion: The majority of the public supports heavy regulation to keep AI from becoming an existential risk.</li>
+</ul>
+<p>We should <strong>not</strong> permit any company, state, or individual to build a smarter-than-human AI until we have <em>actually</em> figured out how to do so safely.</p>
+
+<h3 id="the-public-and-history-are-watching">
+The public, and history, are watching
+</h3>
+<p>Let’s be clear: inaction is a choice to let things play out, and every expert not blinded by short-term incentives expects it ends with extinction.</p>
+<p>This is not just about technology. It is about whether humanity—your family, your children, your entire future—continues to exist.</p>
+<p>If we allow a small group of corporate or government actors to roll these dice, we are complicit in betting everything, forever, for the sake of convenience and profit.</p>
+<p>The inventors are warning us: <strong>if we don’t act boldly, with wisdom and speed, this century will be our last</strong>.</p>
+<p>Disagree, have questions, or counterarguments? Send them to our tool and see if it can answer: <a href="https://whycare.aisgf.us" target="_blank" rel="noopener">ask it here</a>.</p>
+
+  </div>
+</section>
+
+<section class="chapter tech-lead" data-scene="none" data-mood="slate">
+  <div class="col">
+    <p>Read about the technical problem of AI alignment: how modern AI works and why exactly experts expect a catastrophe.</p>
+  </div>
+</section>
+<details class="tech" id="technical">
+  <summary><span class="show">Learn about AI and AI alignment</span><span class="hide">Hide the explanation of AI and AI alignment</span><span class="len">12-minute read</span></summary>
+  <section class="chapter" data-scene="none" data-mood="slate">
+    <div class="col">
+<h2 id="intelligence">
+Intelligence
+</h2>
+<p class="dek">
+What does it mean to be smarter than us?
+</p>
+<p>If you play chess against Stockfish (a chess engine), you can’t predict its every move (or you’d be as good at the game as it is), but you can predict the result: you’ll lose.</p>
+<p>We use words like “intelligence” to describe something that humans are better at than monkeys, who have more of it than mice, who have more of it than spiders. This is the property that resulted in humanity having shaped the way Earth looks to a much larger extent than monkeys have. If monkeys really wanted something, but humans really wanted something different, because of that property, humans would usually win.</p>
+<p>The relevant part of that property is ability to achieve goals (which can include wisdom about human nature, ability to be charismatic, practical knowledge about how to make things in the physical world, as well as general knowledge and ability to infer new knowledge from observations and experimentation).</p>
+<p>No known law of physics disallows for systems to be higher than humans along this dimension: to be even smarter, to be better at understanding the world and achieving goals. We’re just the first to be smart enough to build a civilization and experience thinking about this question.</p>
+<p>Stockfish is a narrow system: it can’t really understand the universe and drastically shape the future. But if a general artificial intelligence is smarter than you, its goals are incompatible with yours, and it’s better than you at achieving its goals in the real world, the situation might be catastrophic.</p>
+<p>It’s reasonable to expect that without substantial effort, a smarter-than-humans general AI will be developed while we still have no idea how to sufficiently align the goals it pursues with human values, so it will pose an existential threat: a threat of literally wiping out humanity.</p>
+
+<h2 id="modern-machine-learning">
+Modern machine learning
+</h2>
+<p class="dek">
+How does it all work?
+</p>
+<p>When software engineers write programs, they design an algorithm that achieves some objective, and then they express that algorithm using a programming language. But modern machine learning (ML) systems, such as ChatGPT, GPT-4, or AlphaFold, aren't algorithms designed by humans: they're neural networks. With neural networks, we don't design the specific steps a computer should take to achieve an objective. We just specify some measure of performance (that we hope captures the objective) and randomly initialise a lot of numbers (billions or even trillions of them, called parameters) that we then change in a way that makes the neural network start achieving a high score on our objective.</p>
+<p>For any possible algorithm, there's a neural network that approximates it.<a href="https://en.wikipedia.org/wiki/Universal_approximation_theorem" target="_blank" rel="noopener">[3]</a> So we find neural networks that implement some unknown algorithms and hopefully achieve our objectives.</p>
+<p>This works via gradient descent: we nudge the parameters into directions that make the neural network perform better. With a bit of math (automatically taking the derivatives of the objective with respect to every parameter), we know whether to increase or decrease the numbers so the performance measurement goes up, and how relatively important various changes are. We then slightly change all the parameters so the whole neural network performs better, and repeat the process. As we automatically do this over and over again, the numbers become less random and gradually transform into implementing some unknown algorithm that, in the process of working, achieves the objective.</p>
+<p>For most real-world problems, we have no idea how the neural networks actually perform the job; we have no insight into what algorithms they implement. Even with full read access to all the numbers that make up the neural networks, researchers have yet to discover what the algorithms are that are implemented by these numbers. We can find out how they perform the simplest tasks, like adding numbers or storing a connection between the Eiffel Tower and Paris. But all the tasks we can identify algorithms for are tasks we could solve with conventional methods. Neural networks are able to do what we have no idea how to design algorithms for, and we don’t understand how they do these things. GPT-4 is powerful, but we don’t know why or how; we’ve just grown it to show these results. We don’t understand what’s going on inside of it when it writes in English. It is an opaque black box even to its creators.</p>
+<p>GPT-4 can be impressive: it knows a lot and can even perform tasks that require not just remembering facts but thinking critically. It’s clearly not generally superhuman, but it’s safe to say that mostly, it’s smarter than 7-year-old humans.</p>
+<p>If you imagine a human brain as a function of inputs and outputs (all the electrical impulses, chemicals, etc.<sup><a href="#user-content-fn-2" id="user-content-fnref-2" aria-describedby="footnote-label">1</a></sup>), there exists some possible large artificial neural network that can copy its behaviour. And if there is an algorithm for understanding the world and planning on how to achieve some goals in it— something like what we fuzzily perform— there is a neural network that implements this algorithm.</p>
+<p>So, we should expect AI to eventually become generally smarter than humans.</p>
+
+<h2 id="outer-and-inner-ai-alignment">
+Outer and inner AI alignment
+</h2>
+<p class="dek">
+Why is it a problem?
+</p>
+<p>When you search for neural networks that are increasingly better at achieving an objective like playing a game well, first, you stumble across neural networks that are mostly collections of heuristics: e.g., seeing a monster and pressing on a certain key is simple and gives a boost in performance, so the neural network implements an algorithm that does that. But then you start stumbling across agents: they might search, plan, or even explore the game world to better understand it so they can better achieve their goals later. Algorithms that implement agentic optimisation, with goals of their own, perform better in a wide range of performance measurements.</p>
+<p>A superhuman AI will be pursuing some goals. What goals would be safe for it to pursue is an open research question (commonly referred to as “outer alignment”). How to find an AI that pursues the goals we want it to have instead of some completely different goals is also an open research question (“inner alignment”).</p>
+<p>When neural networks play computer games, it’s not catastrophic that they develop some random goals, achieving which correlates with the stated objective. But the smarter the neural network can be, the more impactful the difference between what you actually want and the objective that you’ve stated, as well as the difference between the stated objective and the goals that the neural network tries to achieve, can become.</p>
+
+<h3 id="outer-alignment">
+Outer alignment
+</h3>
+<p class="dek">
+What goals do we give the AI?
+</p>
+<p>We have no idea how to specify, in math, goals that it would be safe to make a superhuman AI pursue.</p>
+<p>Algorithms that get a higher score are selected by gradient descent, regardless of what exactly they do to achieve that high score.</p>
+<p>The difference between what you would actually want (if you had access to all the relevant information and were smarter or more like the person you wish you were) and the objective that you express in math (and optimize neural networks for) is problematic, if this objective is pursued with superhuman ability.</p>
+<p>It might help to speculate about some examples. If your wish doesn’t contain everything that you care about, and an AI genie robot wants to literally achieve what you’ve expressed in your wish, the results can be disastrous. Imagine that you tell it you want to get a cup of coffee as quickly as possible, and fulfilling this wish is the only goal it needs to worry about. What can go wrong?<sup><a href="#user-content-fn-3" id="user-content-fnref-3" aria-describedby="footnote-label">2</a></sup></p>
+<p>It's like in Goethe's <a href="https://en.wikipedia.org/wiki/The_Sorcerer%27s_Apprentice" target="_blank" rel="noopener">Sorcerer's Apprentice</a> (or its <a href="https://youtu.be/3hKgEylk8ks" target="_blank" rel="noopener">Disney adaptation</a> with Mickey Mouse): if you task a broom with filling a bucket with water, it might create a flood. There are a million things that you value, and the robot will happily trade off anything not mentioned in its objective.</p>
+<p>Imagine wishing for the robot to make you smile or feel happy or click on the thumbs-up button. The robot wants to achieve this with the highest certainty and get the maximum reward, by any means possible. What happens?</p>
+<p>Before the AI is at a superhuman level, this misalignment of the specified objective and human values isn’t as much of an issue, since robots are not yet good enough at pursuing their objectives. If your dog automatically gets treats when it makes you smile, it’s not a problem, because dogs aren’t smart enough to figure out they can inject drugs into you and make you smile all the time. Here, the optimization pressure isn’t too high, and your dog might care about you.</p>
+<p>But as more capable neural network architectures can approximate algorithms that are smarter and better at agency, the problem can become worse. We don’t know what objective we could specify, in math, that would capture everything we value and wouldn’t lead to catastrophic consequences under enormous optimization pressure. It’s really hard to express preferences about the future you can safely point a superintelligent AI to (see <a href="https://www.lesswrong.com/posts/4ARaTpNX62uaL86j6/the-hidden-complexity-of-wishes" target="_blank" rel="noopener">The Hidden Complexity of Wishes</a> for more on this). We have no idea how to design a mathematical formula that encapsulates caring about you and can be used as an objective for a superhuman AI.</p>
+
+<h4 id="convergent-instrumental-subgoals">
+Convergent instrumental subgoals
+</h4>
+<p>As suggested by researchers, if you try to achieve almost any final goals (deep preferences about the future of the world), it might be helpful to have a number of instrumental subgoals (that is, goals that are pursued not because of some intrinsic value but for the purpose of achieving the final goals). These instrumental goals might be:</p>
+<ul>
+<li><strong>Self-preservation</strong>: The agent will value its continuing existence as a means for continuing to take actions that promote its values. A future less influenced by the agent shaping it according to its preferences would usually mean that this future is less preferable. E.g., you can't fetch the coffee if you're turned off.</li>
+<li><strong>Resource acquisition</strong>: In addition to guaranteeing the agent's continued existence, basic resources such as time, space, matter and free energy could be processed to serve almost any goal, in the form of extended hardware, backups and protection.</li>
+<li><strong>Cognitive enhancement</strong>: Improvements in cognitive capacity, intelligence, and rationality will help the agent make better decisions, furthering its goals more in the long run.</li>
+<li><strong>Goal-content integrity</strong>: The agent will value retaining the same preferences over time. If modifying its future values (e.g., through swapping memories or altering its cognitive architecture and personalities) and transforming into an agent that no longer optimizes for the same things means the universe is worse according to its current preferences, it will try to prevent these modifications. For example, if the agent wants to maximize the number of smiley faces in the universe, then it doesn't want humans to change its goals into maximizing the number of paperclips in the universe because if its future version maximizes something different, there would be less smiley faces overall, so it will want to avoid that change.</li>
+<li><strong>Technological perfection</strong>: Increases in the agent's hardware power and algorithm efficiency will deliver increases in its cognitive capacities. Also, better engineering will enable the creation of a wider set of physical structures using fewer resources (e.g., nanotechnology).</li>
+</ul>
+<p>During training, AI systems that are more capable, more goal-oriented, and better at figuring out instrumental goals to achieve in support of long-term plans, are likely to score better on a variety of metrics and outcompete other AI systems. Because of this, we can expect general AI systems optimised with gradient descent for almost any sort of metric to possess the above instrumental subgoals.</p>
+<p>So, we don’t know what goals are safe to specify for a superhuman AI to pursue, and if it pursues goals different from what we would want, it might try to acquire resources and prevent us from turning it off. If it is capable enough to outsmart us, it might succeed. This part of the alignment problem was discovered long before modern machine learning became popular. Not much progress has been made since, and it is still an open problem, although some ideas for where a solution might lie were proposed (e.g., <a href="https://arbital.com/p/cev/" target="_blank" rel="noopener">Coherent Extrapolated Volition</a>).</p>
+<p>The state of the field resembles scientists and engineers who want to launch a rocket to the Moon in the 1800s. If you imagine the space of all possible superintelligent AIs, you want to get to some small subspace that contains agents whose preferences are aligned enough with those of humans: the “Moon”. But the current situation can be described this way: people have a bunch of “explosives”; we haven’t yet figured out the “equations for gravity” and don’t understand the space at all; we have equations for “acceleration” and maybe some useful intuitions, but almost can’t talk in math about what it means for agents to be aligned and so can’t clearly specify a target to engineer our way into (we know that the “Moon” must be somewhere in the sky, but unlike the actual Moon, here we don't even see the target, it's invisible to the measuring instruments we currently have); we also have math for how specific suggested ways of launching the rocket make it explode or certainly end up somewhere that’s not the Moon; but without much more research, it is impossible to engineer a rocket that doesn’t explode and doesn’t end up somewhere that’s definitely not the Moon. And in some ways, this is harder than physics and rocket science: here, we’ve only got one attempt: if we fail on the first try and our rocket goes rogue, an existential catastrophe occurs, and we don’t get another chance.</p>
+
+<h3 id="inner-alignment">
+Inner alignment
+</h3>
+<p class="dek">
+How do we actually give it the goals?
+</p>
+<p>Even if we solved the problem of specifying an objective that somehow points at everything we value, and figured out what kind of agent we’d want the AI to be, it wouldn't be enough to succeed: we have no idea how to find an AI that has the objectives we want it to have.</p>
+<p>With modern deep learning, we don’t get to design the agent, we don't write an algorithm for general decision-making that would evaluate the consequences according to a utility function that captures our values. Instead, we just find some random algorithm that tries to achieve some goals and as a result scores well on our metric. We have no insight into what the goals of the resultant neural network are.</p>
+<p>That makes the alignment problem even harder: we control the measurement of the agent’s performance during training, but agents with a wide range of goals might achieve a high performance. We don't write the algorithm itself, and we have no control over what goals it has.</p>
+<p>Near the human level and beyond, the smarter the agents are, the wider is the range of goals they can have and still score well on our metric: smarter and more agentic algorithms are generally better at achieving a higher score on many tasks; and if a smart enough agent understands what’s going on, it will try to achieve the reward target regardless of its deep preferences about the future: if it doesn't, then the neural network’s parameters will be changed such that they implement an algorithm that does and achieves a higher score. That change might alter the agent's goals, which it would want to prevent.</p>
+<p>In other words, smart agents with a variety of goals would play along while being measured, but will follow their actual deep preferences when they have an opportunity to do so.</p>
+
+    </div>
+  </section>
+  <section class="interlude fig" data-scene="inner" data-mood="uncanny">
+    <p class="pic">Picture: dots hold a perfect grid inside a measuring frame, then leave for a shape of their own once the frame lifts.</p>
+    <div class="cap"><p class="pull">Good scores in training and testing don’t show what a smart AI really wants.</p></div>
+  </section>
+  <section class="chapter" data-scene="none" data-mood="uncanny">
+    <div class="col">
+<p>We don't design modern AI systems; we grow them, with no control or understanding over what it is that we are growing. As mentioned in the previous section, algorithms created this way are likely to pursue convergent instrumental subgoals to achieve their final goals, which might not be correlated with our goals at all.<a href="https://arxiv.org/abs/2209.00626" target="_blank" rel="noopener">[4]</a></p>
+
+<h2 id="existential-risk">
+Existential risk
+</h2>
+<p class="dek">
+What's the worst that can happen?
+</p>
+<p>Once gradient descent starts finding smart and agentic enough systems, we’re in trouble if we haven’t yet figured out how to make the gradient descent search for systems aligned with human goals and values.</p>
+<p>If someone throws enough compute at training AI to find something agentic and smarter than humans, but the technical alignment problem isn't yet solved, it seems reasonable to expect that afterwards, humans will lose control and then, all biological life on Earth will cease to exist. According to some researchers, if this scenario occurs, a significant portion of the matter in the visible universe is likely to be used for something random that happens to max out the AI’s utility function.</p>
+<p>If a system is better than you at science, at persuading people, at finding software and hardware vulnerabilities, at predicting the consequences of actions, and at seeing potential threats, and if it wants to shape the future of the universe and it doesn’t care about you, then you’re made of atoms it can and successfully use for something else. (And if you can launch another AGI with different goals, or try to turn off all the electricity, it'll predict and prevent these threats.)</p>
+<p>At the moment, tens of thousands of ML researchers are racing ahead to advance AI capabilities. Only a couple hundred people in the world are working on the technical AI alignment problem. This wouldn’t be enough to solve this huge scientific problem in any realistic timeframe, let alone before a superhuman AI is launched. Until we know how to align a general AI with the preferences of humanity and get it to aid us in achieving our goals, launching powerful AI systems poses an existential threat.</p>
+<p>By default, capable AI systems possess their own goals, not aligned with ours. And if a system is much better than us at achieving goals and its goals are different from ours, we lose.</p>
+<p>How do we prevent this?</p>
+
+    </div>
+  </section>
+  <section class="chapter notes light" data-scene="none" data-mood="night" aria-labelledby="footnote-label">
+    <div class="col">
+      <h2 id="footnote-label">Notes</h2>
+      <ol>
+        <li id="user-content-fn-2">The current scientific consensus is that the processes in the human brain are computable: a program can, theoretically, simulate the physics that run a brain. <a href="#user-content-fnref-2" aria-label="Back to the text">Back</a></li>
+        <li id="user-content-fn-3">For example, imagine that you haven't specified the value you put into a vase in the living room not getting destroyed, and no one getting robbed or killed. So if there’s a vase in the way of the robot, it won’t care about accidentally destroying it. What if there’s no coffee left in the kitchen? The robot might drive to the nearest café or grocery to get coffee, not worrying about the lives of pedestrians. It won’t care about paying for the coffee if it wasn’t specified in its only objective. If anyone tries to turn it off, it will do its best to prevent that: it can’t fetch the coffee and achieve its objective if it’s dead. And it will try to make sure you’ve definitely got the coffee. It knows there might be some small probability of its memory malfunctioning or camera lying to it; and it’ll try to eradicate even the tiniest chance that it hasn’t achieved the goal. <a href="#user-content-fnref-3" aria-label="Back to the text">Back</a></li>
+      </ol>
+    </div>
+  </section>
+</details>
+
+<section class="interlude" data-scene="none" data-mood="firstlight" aria-labelledby="ai-moratorium">
+  <div class="cap"><h2 id="ai-moratorium">AI Moratorium</h2><p class="dek">How do we prevent a catastrophe?</p></div>
+</section>
+
+<section class="chapter" data-scene="none" data-mood="firstlight">
+  <div class="col">
+<p>The leading AI labs are in a race to create a powerful general AI, and the closer they get, the more pressure there is to continue developing even more generally capable systems.</p>
+<p>Imagine a world where piles of uranium produce gold, and the larger a pile of uranium is, the more gold it produces. But past some critical mass, a nuclear explosion ignites the atmosphere, and soon everybody dies. This is similar to our situation, and the leading AI labs understand this and say they would welcome regulation.</p>
+<p>Researchers have developed techniques that allow the top AI labs to predict some performance metrics of a system before it is launched, but they are still unable to predict its general capabilities.</p>
+<p>Every time a new, smarter AI system starts interacting with the world, there's a chance that it will start to successfully pursue its own goals. Until we figure out how to make general AI systems safe, every training run and every new composition of existing AI systems into a smarter AI system poses a catastrophic risk.</p>
+<p>A suggested way to prevent dangerous AI launches is to <strong>impose strict restrictions on training</strong> AI systems that could potentially be generally capable and pose a catastrophic risk. The restrictions need to be implemented both on national levels and, eventually, on the international level, with the goal of <strong>preventing bad and reckless actors from having access to compute</strong> that might allow them to launch AI training that could be dangerous to humanity as a whole.</p>
+<p>The supply chain of AI is well understood and contains multiple points with near-monopolies, so many effective interventions can be relatively simple and cheap. Almost no AI applications require the amount of compute that training frontier general AI models requires, so <strong>we can regulate large general AI training runs without significantly impacting other markets</strong> and economically valuable use of narrow AI systems.</p>
+<p>For future measures to be effective, we need to:</p>
+<ul>
+<li><strong>Introduce monitoring</strong> to increase governments' visibility into what's going on with AI: have requirements to report frontier training runs and incidents;</li>
+<li><strong>Ensure non-proliferation</strong> of relevant technologies to non-allied countries;</li>
+<li><strong>Build the capacity to regulate and stop</strong> frontier general AI training runs globally, so that if the governments start to consider it to be likely that using a certain amount of compute poses a catastrophic risk to everyone, there's already infrastructure to prevent such use of compute anywhere in the world.</li>
+</ul>
+<p>Then, we'll need to <strong>impose restrictions on AI training runs that require more than a calculated threshold</strong>: the amount of compute below which training with current technologies is considered to be unlikely to produce dangerous capabilities we could lose control over. This threshold needs to be revisable since, as machine learning methods improve, the same level of capabilities can be achieved with lower compute.</p>
+<p>As a lead investor of Anthropic <a href="https://twitter.com/liron/status/1656929936639430657" target="_blank" rel="noopener">puts it</a>, “I’ve not met anyone in AI labs who says the risk [from a large-scale AI experiment] is less than 1% of blowing up the planet”.</p>
+<p><strong>Potentially dangerous training runs should be prohibited by default</strong>, although we should be able to make exceptions, under strict monitoring, for demonstrably safe use of compute for training or using narrow models that clearly won’t develop the ability to pursue dangerous goals. At the moment, narrow AI training runs usually don't take anywhere near the amount of compute utilised for current frontier general models, but in the future, applications such as novel drug discovery could require similar amounts of compute.</p>
+<p><strong>Regulation of AI to prevent catastrophic risks is widely supported by the general public</strong>. In the US, 86% believe AI could accidentally cause a catastrophic event; 82% say we should go slow with AI compared to just 8% who would rather speed it up; 70% agree with the statement that “Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war” (<a href="content/YouGov_Blue_lionheart_ai_research_toplines_AI_items_s2.pdf">YouGov for AIPI</a>, July 2023). 77% express their preference for policies with the goal of preventing dangerous and catastrophic outcomes from AI (57% for preventing AI from causing human extinction) (<a href="https://twitter.com/DanielColson6/status/1716564864183734349" target="_blank" rel="noopener">YouGov for AIPI</a>, October 2023). Across 17 major countries, 71% believe AI regulation is necessary (<a href="https://assets.kpmg.com/content/dam/kpmg/au/pdf/2023/trust-in-ai-global-insights-2023.pdf" target="_blank" rel="noopener">KPMG</a>, February 2023). In the UK, 74% agree preventing AI from quickly reaching superhuman capabilities should be an important goal of AI policy (13% don't agree); 60% would support the introduction of an international treaty to ban any smarter-than-human AI (16% would oppose). 78% don't trust the CEOs of technology companies to act in the public interest when discussing regulation for AI (<a href="https://twitter.com/tegmark/status/1717297520437535204" target="_blank" rel="noopener">YouGov for ai_ctrl</a>, October 2023).</p>
+
+  </div>
+</section>
+
+<section class="interlude fig" data-scene="count" data-mood="day">
+  <p class="pic">Picture: a hundred dots, one per person: 30 sit still on a line, 47 circle slowly, 14 circle at a steady pace, 5 race, and 4 hover, unsure.</p>
+  <div class="cap"><p class="pull">77 of 100 Americans want AI companies to slow down or stop developing powerful AI until its safety can be evaluated.</p><p class="src"><a href="https://poll.qu.edu/poll-release?releaseid=3969" target="_blank" rel="noopener">Quinnipiac University poll</a>, September 24–27, 2026, 1,202 adults. 30 said stop, 47 slow down, 14 keep the current pace, 5 go faster, 4 not sure.</p></div></section>
+
+<section class="chapter" data-scene="none" data-mood="day">
+  <div class="col">
+<p>We shouldn't give AI systems a chance to become more intelligent than humans until we can figure out how to do that safely.</p>
+<p><strong>Until the technical problem of alignment is solved, to safeguard the future of humanity, we need strict regulation of general AI and international coordination.</strong></p>
+<p>Some regulations that help with existential risk from future uncontrollable AI can also <strong>address shorter-term global security risks</strong>: experts <a href="https://www.judiciary.senate.gov/committee-activity/hearings/oversight-of-ai-principles-for-regulation" target="_blank" rel="noopener">believe</a> that systems capable of developing biological weapons could be about 2-3 years away. Introducing regulatory bodies, pre-training licensing, and strong security and corporate governance requirements can prevent the irreversible proliferation of frontier AI technologies and establish a framework that could be later adapted for the prevention of existential risk.</p>
+
+  </div>
+</section>
+
+<section class="interlude fig" data-scene="nations" data-mood="day">
+  <p class="pic">Picture: six separate groups of dots race, then each settles on its own short line, then all of them settle together on the same long lines.</p>
+  <div class="cap"><p class="pull">We call on policymakers around the world to establish and enforce national restrictions and then a global AI moratorium that would prevent anyone in the world from risking human extinction.</p><a class="btn" href="#how-to-help" id="help_moratorium_button">Help AI Moratorium</a></div>
+</section>
+
+<section class="chapter" id="done-before" data-scene="prec" data-mood="clear" data-mobile="on" aria-labelledby="done-h">
+  <div class="col">
+    <h2 id="done-h">We’ve done it before</h2>
+    <p class="dek">Countries, and sometimes scientists themselves, have looked at a dangerous technology and drawn a line. The lines on gene-splicing and human cloning were drawn before anyone was hurt.</p>
+    <ol class="prec">
+      <li><span class="y">1963</span><div class="t"><b>Nuclear tests in the open sky.</b> Partial Test Ban Treaty.<span class="held">Even countries that didn’t sign stopped; no one has tested in the open air since 1980.</span></div><span class="perch" aria-hidden="true"></span></li>
+      <li><span class="y">1972</span><div class="t"><b>Biological weapons.</b> The U.S. gave up its own in 1969; a global ban followed.<span class="held">189 countries are parties.</span></div><span class="perch" aria-hidden="true"></span></li>
+      <li><span class="y">1974–75</span><div class="t"><b>Gene-splicing.</b> Biologists paused their own risky experiments, met at Asilomar to write safety rules, then resumed.<span class="held">The pause “was universally observed.”</span></div><span class="perch" aria-hidden="true"></span></li>
+      <li><span class="y">1987</span><div class="t"><b>Ozone-eating chemicals.</b> Montreal Protocol; in 2009, the first treaty ratified by every UN member state.<span class="held">The ozone layer is on track to return to 1980 levels by about 2040, and by 2066 over Antarctica.</span></div><span class="perch" aria-hidden="true"></span></li>
+      <li><span class="y">1993</span><div class="t"><b>Chemical weapons.</b> 193 countries joined the Chemical Weapons Convention.<span class="held">In 2023 inspectors confirmed that every declared stockpile, 72,304 tonnes, had been destroyed.</span></div><span class="perch" aria-hidden="true"></span></li>
+      <li><span class="y">1995</span><div class="t"><b>Blinding laser weapons.</b> Banned before one was used in war.<span class="held">111 countries, including the U.S., China and Russia, are bound; no battlefield use has been confirmed.</span></div><span class="perch" aria-hidden="true"></span></li>
+      <li><span class="y">1996–2005</span><div class="t"><b>Human cloning.</b> Dozens of countries outlawed cloning a person.<span class="held">Cloning worked in monkeys in 2018; no cloned human pregnancy has ever been confirmed.</span></div><span class="perch" aria-hidden="true"></span></li>
+      <li class="open"><span class="y">?</span><div class="t"><b>AI smarter than humans.</b><span class="held">U.S. lawmakers have proposed a law to pause building AI with more than a set amount of computing. A treaty could make such a pause worldwide, checked by tracking the specialized chips used to build AI.</span></div><span class="perch" aria-hidden="true"></span></li>
+    </ol>
+    <p class="after">Even during the Cold War, the United States and the Soviet Union worked together to eradicate smallpox, which killed as many as 300 million people in the twentieth century. The world was declared free of it in 1980.</p>
+    <p class="src">Sources: <a href="https://www.un.org/en/observances/end-nuclear-tests-day/history" target="_blank" rel="noopener">UN</a> · <a href="https://disarmament.unoda.org/en/our-work/weapons-mass-destruction/biological-weapons/universality" target="_blank" rel="noopener">UNODA</a> · <a href="https://www.nobelprize.org/prizes/chemistry/1980/berg/article/" target="_blank" rel="noopener">Paul Berg</a> · <a href="https://csl.noaa.gov/assessments/ozone/2022/executivesummary/" target="_blank" rel="noopener">WMO/UNEP ozone assessment</a> · <a href="https://www.opcw.org/media-centre/news/2023/07/opcw-confirms-all-declared-chemical-weapons-stockpiles-verified" target="_blank" rel="noopener">OPCW</a> · <a href="https://disarmament.unoda.org/en/our-work/conventional-arms/convention-certain-conventional-weapons/high-contracting-parties-and-signatories-ccw" target="_blank" rel="noopener">CCW parties</a> · <a href="https://doi.org/10.1016/j.cell.2018.01.020" target="_blank" rel="noopener">Liu et al., Cell</a> · <a href="https://www.govinfo.gov/content/pkg/BILLS-119s5493is/html/BILLS-119s5493is.htm" target="_blank" rel="noopener">S. 5493</a> · <a href="https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation" target="_blank" rel="noopener">CSIS on smallpox</a> · <a href="https://www.who.int/health-topics/smallpox" target="_blank" rel="noopener">WHO</a></p>
+  </div>
+</section>
+
+<section class="chapter" id="can-work" data-scene="none" data-mood="clear" aria-labelledby="can-work-h">
+  <div class="col">
+    <h2 id="can-work-h">Why this can work</h2>
+    <p class="dek">The heads of four leading AI companies, most American voters and some lawmakers have said AI development should slow down.</p>
+    <ul class="tldr">
+      <li><strong>The AI companies.</strong> The heads of OpenAI, Anthropic, Google DeepMind and xAI have all backed slowing the pace at which the most advanced AI improves, though not stopping it.</li>
+      <li><strong>Their own employees.</strong> 1,386 people who work at leading AI companies asked the U.S. government to support an international effort to build the tools needed to “deliberately pace” AI development as AI starts doing AI research itself. One of them, OpenAI researcher Leo Gao, wrote: “no individual actor is willing to stop unilaterally. To survive, we must coordinate to slow down the race.”</li>
+      <li><strong>Voters.</strong> 68 in 100 American likely voters support a temporary pause on advanced AI development and a permanent ban on AI that exceeds human intelligence; 25 oppose it.</li>
+      <li><strong>Lawmakers and attorneys general.</strong> In the U.S., a bill to pause advanced AI development was introduced in the Senate on September 23, 2026. The same day, 26 attorneys general, including a Republican, asked Congress for “international cooperation to pace AI advancement and prevent the development of harmful superintelligence.” In the UK, a bill to ban superintelligence was introduced in Parliament on September 8.</li>
+      <li><strong>Signers.</strong> More than 140,000 people have signed the Statement on Superintelligence, which calls for a prohibition on developing superintelligence until there is broad scientific consensus that it will be done safely and controllably, and strong public buy-in. Among them:</li>
+    </ul>
+    <dl class="groups">
+      <dt>Scientists</dt><dd>Geoffrey Hinton and Yoshua Bengio, pioneers of modern AI; Nobel laureates Daron Acemoğlu and John Mather; Martin Rees, Astronomer Royal.</dd>
+      <dt>Left and right</dt><dd>Susan Rice, President Obama’s National Security Advisor; Steve Bannon, President Trump’s former chief strategist; Glenn Beck; former congressmen Joe Crowley (D) and Keith Rothfus (R).</dd>
+      <dt>National security</dt><dd>Admiral Mike Mullen, Chairman of the Joint Chiefs under Presidents Bush and Obama; Mark Beall, former Director of AI Strategy and Policy at the Department of Defense; Lord Browne, former UK Defence Minister.</dd>
+      <dt>Presidents and lawmakers</dt><dd>Mary Robinson, former President of Ireland; Kersti Kaljulaid, former President of Estonia; Brando Benifei, who co-led the European Parliament’s work on the EU AI Act.</dd>
+      <dt>Faith leaders</dt><dd>Paolo Benanti, the Pope’s adviser on AI; Walter Kim, President of the National Association of Evangelicals; Anthony J. Granado of the US Conference of Catholic Bishops.</dd>
+      <dt>In China</dt><dd>Turing laureate Andrew Yao; Ya-Qin Zhang, former President of Baidu; Yi Zeng of the Beijing Institute of AI Safety and Governance; Peng Zhang, CEO of the AI company Zhipu AI.</dd>
+      <dt>Founders</dt><dd>Steve Wozniak, co-founder of Apple; Jaan Tallinn, co-founder of Skype; Emad Mostaque, founder of Stability AI; Richard Branson, founder of Virgin.</dd>
+      <dt>Public figures</dt><dd>Prince Harry and Meghan, the Duke and Duchess of Sussex; Stephen Fry; Joseph Gordon-Levitt; Yuval Noah Harari.</dd>
+    </dl>
+    <p class="close">When enough people ask, governments can make every AI company slow down.</p>
+    <p><a class="btn" href="#ask-your-representative">Ask your representative</a></p>
+    <p class="src">Sources: <a href="https://darioamodei.com/post/we-must-pace-the-frontier" target="_blank" rel="noopener">Amodei</a> · <a href="https://www.cnbc.com/2026/09/14/sam-altman-ai-slowdown-anthropic-amodei-musk.html" target="_blank" rel="noopener">CNBC on Altman and Musk</a> · <a href="https://x.com/demishassabis/status/2098909516582490602" target="_blank" rel="noopener">Hassabis</a> · <a href="https://www.pacingthefrontier.com/" target="_blank" rel="noopener">Pacing the Frontier</a> · <a href="https://www.filesforprogress.org/datasets/2026/9/dfp_ai_development_pause.pdf" target="_blank" rel="noopener">Data for Progress, September 4–9, 2026, 1,332 likely voters</a> · <a href="https://www.govinfo.gov/app/details/BILLS-119s5493is" target="_blank" rel="noopener">S. 5493</a> · <a href="https://oag.ca.gov/system/files/attachments/press-docs/federal-ai-regulation-letter-2026.pdf" target="_blank" rel="noopener">attorneys general letter</a> · <a href="https://bills.parliament.uk/bills/4288" target="_blank" rel="noopener">UK bill</a> · <a href="https://superintelligence-statement.org/" target="_blank" rel="noopener">Statement on Superintelligence</a></p>
+  </div>
+</section>
+
+<section class="chapter" id="how-to-help" data-scene="none" data-mood="day">
+  <div class="col">
+    <h2>How to help</h2>
+    <h3>Raise awareness</h3>
+    <p>Talk to your friends, colleagues, followers, and elected officials about this problem and point them to moratorium.ai for the details.</p>
+    <p class="share"><a href="https://twitter.com/intent/tweet?text=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&amp;url=https%3A%2F%2Fmoratorium.ai%2F" target="_blank" rel="noopener">Post on X</a><a href="https://www.facebook.com/sharer.php?t=Experts%20say%20future%20AI%20systems%20might%20end%20humanity,%20and%20we%20need%20AI%20Moratorium&amp;u=https%3A%2F%2Fmoratorium.ai%2F" target="_blank" rel="noopener">Share on Facebook</a><a href="#copy" id="share_button_copy"><span id="copy_text">Copy the link</span></a></p>
+    <h3 id="ask-your-representative">Ask your representative</h3>
+    <p>In the U.S., most House offices log calls and letters by issue. Congressional staff say a call, or a letter in your own words, can sway lawmakers who haven’t made up their minds.</p>
+    <ul class="regions">
+      <li><strong>United States.</strong> Call the Capitol switchboard at <a href="tel:+12022243121">202-224-3121</a> and ask for your representative or one of your senators, or find them at <a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">house.gov</a> and <a href="https://www.senate.gov/senators/senators-contact.htm" target="_blank" rel="noopener">senate.gov</a>.</li>
+      <li><strong>United Kingdom.</strong> <a href="https://members.parliament.uk/FindYourMP" target="_blank" rel="noopener">Find your MP</a> on Parliament’s website and write to them.</li>
+      <li><strong>European Union.</strong> <a href="https://www.europarl.europa.eu/meps/en/home" target="_blank" rel="noopener">Find your Members of the European Parliament</a> and write to them.</li>
+      <li><strong>Elsewhere.</strong> Find your representatives on your national parliament’s website and write to them.</li>
+    </ul>
+    <p>Say this, or write it in your own words:</p>
+    <blockquote class="script" id="script"><p>“Hi, my name is [your name] and I live in [your town]. I’m calling about AI. I’d like [representative’s name] to support national limits on the computing used to build the most powerful AI, and an international agreement to stop the development of AI smarter than humans until scientists agree it can be done safely. Thank you.”</p></blockquote>
+    <p><button class="btn alt" type="button" id="copy_script">Copy these words</button> <span class="status" id="script_status" aria-live="polite"></span></p>
+    <p class="src">Sources: <a href="https://ir.vanderbilt.edu/handle/1803/12665" target="_blank" rel="noopener">Abernathy 2015</a> · <a href="https://web.archive.org/web/2023/https://www.congressfoundation.org/storage/documents/CMF_Pubs/cwc-perceptions-of-citizen-advocacy.pdf" target="_blank" rel="noopener">Congressional Management Foundation</a></p>
+  </div>
+</section>
+
+<section class="interlude fig" data-scene="join" data-mood="day">
+  <p class="pic">Picture: lines full of dots with one empty place; one dot rises and takes it.</p>
+  <div class="cap"><p class="pull">Join the effort to establish an international AI moratorium.</p></div>
+</section>
+
+<section class="chapter" data-scene="none" data-mood="day">
+  <div class="col">
+    <h3 id="join">Join us</h3>
+    <form class="form" id="join_form" novalidate>
+      <input type="hidden" name="form" value="join_form">
+      <label><span class="lt">Email</span><input type="email" name="email" required autocomplete="email"></label>
+      <label><span class="lt">Name <span class="opt">(optional)</span></span><input type="text" name="name" autocomplete="name"></label>
+      <label><span class="lt">How can you help? <span class="opt">(optional)</span></span><input type="text" name="help_with"></label>
+      <label><span class="lt">What’s your background? <span class="opt">(optional)</span></span><input type="text" name="background"></label>
+      <label><span class="lt">Any comments <span class="opt">(optional)</span></span><textarea name="comments" placeholder="Feel free to share any thoughts, ideas, or suggestions here"></textarea></label>
+      <div><button class="btn" type="submit">Join</button><p class="status" aria-live="polite"></p></div>
+    </form>
+    <p style="margin-top:2.5rem">Rather get occasional updates? <a href="newsletter/">Subscribe to the newsletter</a>.</p>
+  </div>
+</section>
+
+<section class="chapter" data-scene="none" data-mood="day">
+  <div class="col">
+<h2 id="counterarguments">
+Counterarguments
+</h2>
+<h3 id="is-there-evidence-that-these-dangers-are-real">
+Is there evidence that these dangers are real?
+</h3>
+<p>It is important to note that existential risk from AI is speculative in nature: this threat is posed by technology that does not yet exist. The behaviour of current AI systems shouldn't be taken as much evidence one way or another, as the existential risk depends on dynamics in systems smarter than humans, which are expected to be different from the dynamics in the current systems.</p>
+<p>That said, according to <a href="https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/" target="_blank" rel="noopener">forecasters</a> and public statements<a href="https://www.youtube.com/watch?v=Nlkk3glap_U" target="_blank" rel="noopener">[4]</a> from the top AI labs, unless something interferes with the speed of AI progress, we might have between 2 and 15 years until the technology in question: artificial general intelligence.</p>
+<p>And researchers do indeed observe behaviour that supports these claims, even in systems where it should be far easier to solve than in superintelligent AIs. There are examples of inner misalignment: AI systems pursuing goals different from what the creators of these systems had hoped and had given rewards for. There are examples of AI systems attempting to deceive or manipulate humans when it helps (or they think it helps) them survive, get higher reward, or achieve other goals.<a href="https://arxiv.org/pdf/2210.01790.pdf" target="_blank" rel="noopener">[5]</a><a href="https://openai.com/research/learning-from-human-preferences#challenges" target="_blank" rel="noopener">[6]</a><a href="https://www.lesswrong.com/posts/jtoPawEhLNXNxvgTT/bing-chat-is-blatantly-aggressively-misaligned" target="_blank" rel="noopener">[7]</a><a href="https://arxiv.org/pdf/2212.09251.pdf" target="_blank" rel="noopener">[8]</a></p>
+<h3 id="can-regulation-on-a-national-level-decrease-our-competitiveness">
+Can regulation on a national level decrease our competitiveness?
+</h3>
+<p>It is important to get the benefits of these technologies while avoiding the dangers. Indeed, it might take a lot of work to balance the two. Regulations should only prevent the training of generally capable models that could pose existential or security risks and the proliferation of technologies that could make it easier to build dangerous models. It is important to aim to minimize the impact on beneficial and economically valuable innovation. Responsible investment in ethical and non-dangerous use of AI, such as for drug discovery or perhaps education, should be welcomed.</p>
+
+<h3 id="how-would-anyone-check">How would anyone check?</h3>
+<p>The most powerful AI is trained on vast numbers of specialized chips made by a handful of companies, so governments could track where the chips go, and inspectors could check what they are used for. Nuclear material is already tracked this way: in 2025 the International Atomic Energy Agency checked it in 190 countries. An AI agreement would need a similar watchdog. <a href="https://www.iaea.org/sites/default/files/sir-2025.pdf" target="_blank" rel="noopener">IAEA, Safeguards Implementation Report 2025</a>.</p>
+<h3 id="who-decides-when-training-can-resume">Who decides when training can resume?</h3>
+<p>Not the companies on their own. Under a moratorium, governments set the limits in law and lift them only when there is broad scientific agreement that it can be done safely. The Statement on Superintelligence adds a second condition: strong public buy-in.</p>
+<h3 id="why-would-everyone-stay-within-the-rules">
+Why would everyone stay within the rules?
+</h3>
+<p>Citing testimony in the UK House of Commons, "If we develop a shared understanding of the risks here, the game theory isn't that complicated. Imagine there was a button on Mars labelled 'geopolitical dominance', but actually, if you pressed it, it killed everyone. If everyone understands that, there is no space race for it. If we as an international community can get on the same page as many of the leading academics here, I think we can craft regulation that targets the dangerous designs of AI while leaving extraordinary economic value on the table".<a href="https://committees.parliament.uk/oralevidence/12575/pdf/" target="_blank" rel="noopener">[9]</a></p>
+<p>It is important to get everybody on board: we need to work with every nation that could be capable of building an AGI and causing humanity to go extinct. We need to develop a shared understanding of this threat to global security. We should also implement compute governance measures, making advanced AI chips trackable and preventing nations that don't regulate frontier AI from acquiring the capability to endanger humanity.</p>
+
+    <p>Disagree, have questions, or counterarguments? Send them to <a href="https://whycare.aisgf.us" target="_blank" rel="noopener">our tool</a> and see if it can answer.</p>
+  </div>
+</section>
+
+<section class="interlude fig" data-scene="together" data-mood="golden">
+  <p class="pic">Picture: dots race along separate tracks; a single line is drawn across all the tracks, and every dot stops at it, side by side.</p>
+  <div class="cap"><p class="pull">In a race to build AI that no one can control, everyone loses. The more people understand that, the sooner countries can end the race together.</p></div>
+</section>
+
+<section class="chapter" id="contact" data-scene="none" data-mood="golden">
+  <div class="col">
+    <h2>Contact us</h2>
+    <p>To talk to us, learn more, or get connected to the experts, reach out via this form.</p>
+    <form class="form" id="contact_form" novalidate>
+      <input type="hidden" name="form" value="contact_form">
+      <label><span class="lt">Email</span><input type="email" name="email" required autocomplete="email"></label>
+      <label><span class="lt">Name <span class="opt">(optional)</span></span><input type="text" name="name" autocomplete="name"></label>
+      <label><span class="lt">Message</span><textarea name="message" placeholder="Any context you’d like to give us; any requests, questions, information, comments, or thoughts"></textarea></label>
+      <div><button class="btn" type="submit">Send</button><p class="status" aria-live="polite"></p></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer data-scene="none" data-mood="golden">
+  <div class="col">
+    <form class="sub" id="subscription_form_footer" novalidate>
+      <label for="email_subscribe">Our news, by email</label>
+      <input type="email" id="email_subscribe" name="email" placeholder="Email address" required autocomplete="email">
+      <button class="btn" type="submit">Subscribe</button>
+      <p class="status" aria-live="polite" style="flex-basis:100%"></p>
+    </form>
+    <p style="margin-top:3rem"><a href="https://aisgf.us" target="_blank" rel="noopener">AI Safety and Governance Fund</a> is a 501(c)(4) nonprofit dedicated to ensuring that AI and other technologies benefit humanity and are developed safely, securely, in alignment with human values, and stimulate the economy.</p>
+    <dl class="links">
+      <dt>Resources</dt>
+      <dd><a href="https://ifanyonebuildsit.com/" target="_blank" rel="noopener"><cite>If Anyone Builds It, Everyone Dies</cite></a>, a book by Eliezer Yudkowsky and Nate Soares</dd>
+      <dd><a href="https://intelligence.org/the-problem/" target="_blank" rel="noopener">“The Problem”</a>, by MIRI</dd>
+      <dd><a href="https://whycare.aisgf.us" target="_blank" rel="noopener">Our chat tool about AI safety</a></dd>
+      <dt>Other organizations</dt>
+      <dd><a href="https://intelligence.org/" target="_blank" rel="noopener">Machine Intelligence Research Institute (MIRI)</a></dd>
+      <dd><a href="https://safe.ai" target="_blank" rel="noopener">Center for AI Safety (CAIS)</a></dd>
+    </dl>
+  </div>
+</footer>
+
+<script>
+(function () {
+'use strict';
+/* =====================================================================
+   The sky and the flock.
+   One fixed canvas behind the page. Every section names a scene and a
+   mood; the scene decides what the hundred birds are doing, the mood
+   decides the light. Interludes are scrubbed by scroll: their progress p
+   runs 0→1 while the section passes the middle of the screen.
+   ===================================================================== */
+var reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+var cv = document.getElementById('sky');
+var ctx = cv.getContext('2d'), sky = ctx;
+var layer = document.createElement('canvas'), lctx = layer.getContext('2d');   // a picture whose section edge is on screen is drawn here first, so the edge can be soft
+var W = 0, H = 0, DPR = 1, wide = false, small = false;
+var N = 100;
+var INK = [18, 26, 36], LIGHT = [238, 242, 247];
+
+function mulberry(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+var rnd = mulberry(20261002);
+function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
+function lerp(a, b, t) { return a + (b - a) * t; }
+function smooth(t) { t = clamp(t, 0, 1); return t * t * (3 - 2 * t); }
+function ease(t) { t = clamp(t, 0, 1); return 1 - Math.pow(1 - t, 3); }
+function hex(h) { return [parseInt(h.substr(1, 2), 16), parseInt(h.substr(3, 2), 16), parseInt(h.substr(5, 2), 16)]; }
+function mixc(a, b, t) { return [lerp(a[0], b[0], t), lerp(a[1], b[1], t), lerp(a[2], b[2], t)]; }
+function rgba(c, a) { return 'rgba(' + Math.round(c[0]) + ',' + Math.round(c[1]) + ',' + Math.round(c[2]) + ',' + (a == null ? 1 : a) + ')'; }
+function lin(v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }
+function lum(c) { return 0.2126 * lin(c[0]) + 0.7152 * lin(c[1]) + 0.0722 * lin(c[2]); }
+
+/* ---------- moods: three sky stops, a glow, how much night ----------
+   Warm light means one thing: the moratorium, and the times people got it
+   right (firstlight, clear, golden). Everything before the moratorium is
+   cool; so are the parts that explain, count or argue. */
+function mood(top, mid, bot, gx, gy, gc, ga, night) { return { s: [hex(top), hex(mid), hex(bot)], g: [gx, gy, hex(gc), ga], n: night }; }
+var MOODS = {
+  cool:       mood('#7f9dc2', '#bccde0', '#e6edf4', 0.82, 0.1, '#ffffff', 0.22, 0),
+  day:        mood('#86abd3', '#b9cfe6', '#e2ebf3', 0.55, 0.05, '#ffffff', 0.28, 0),
+  slate:      mood('#8fa1b8', '#c2cbd6', '#e0e4e9', 0.5, 0.08, '#ffffff', 0.12, 0),
+  overcast:   mood('#959ca4', '#b7bcc1', '#d4d6d6', 0.5, 0.2, '#ffffff', 0.0, 0),
+  uncanny:    mood('#8f9c97', '#b4bdb4', '#d5d9cd', 0.5, 0.5, '#ffffff', 0.0, 0),
+  firstlight: mood('#8597b8', '#b8b6c8', '#f0c6a3', 0.2, 1.0, '#ffcf9e', 0.62, 0),
+  night:      mood('#0b111d', '#121b2b', '#1c2638', 0.78, 0.16, '#d2e1ff', 0.10, 1),
+  haze:       mood('#8b9db2', '#bcc6cf', '#dfe3e2', 0.72, 0.3, '#ffffff', 0.12, 0),
+  clear:      mood('#7eaee0', '#bad7ef', '#f6ebd7', 0.5, 1.02, '#fff0c8', 0.62, 0),
+  golden:     mood('#90a3c2', '#d8c4b2', '#f3cb9e', 0.78, 0.92, '#ffd08a', 0.6, 0)
+};
+function blendMood(A, B, t) {
+  if (t <= 0) return A; if (t >= 1) return B;
+  return { s: [mixc(A.s[0], B.s[0], t), mixc(A.s[1], B.s[1], t), mixc(A.s[2], B.s[2], t)],
+    g: [lerp(A.g[0], B.g[0], t), lerp(A.g[1], B.g[1], t), mixc(A.g[2], B.g[2], t), lerp(A.g[3], B.g[3], t)], n: lerp(A.n, B.n, t) };
+}
+function skyAt(M, fy) { return fy < 0.55 ? mixc(M.s[0], M.s[1], fy / 0.55) : mixc(M.s[1], M.s[2], (fy - 0.55) / 0.45); }
+function onDark(M, fy) { return lum(skyAt(M, fy)) < 0.2; }
+var MOON = [214, 222, 234];
+function inkAt(M, y) { var L = lum(skyAt(M, clamp(y / H, 0, 1))); return mixc(INK, MOON, smooth((0.2 - L) / 0.1)); }
+var curM = null;
+
+var stars = [];
+for (var si = 0; si < 110; si++) stars.push({ x: rnd(), y: rnd() * 0.78, r: 0.45 + rnd() * 0.95, a: 0.25 + rnd() * 0.7, tw: rnd() * 6.28 });
+
+function drawSky(M, now) {
+  var g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, rgba(M.s[0])); g.addColorStop(0.55, rgba(M.s[1])); g.addColorStop(1, rgba(M.s[2]));
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  if (M.g[3] > 0.01) {
+    var gx = M.g[0] * W, gy = M.g[1] * H, r = Math.max(W, H) * 0.62;
+    var rg = ctx.createRadialGradient(gx, gy, 0, gx, gy, r);
+    rg.addColorStop(0, rgba(M.g[2], M.g[3])); rg.addColorStop(0.35, rgba(M.g[2], M.g[3] * 0.4)); rg.addColorStop(1, rgba(M.g[2], 0));
+    ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
+  }
+  if (M.n > 0.02) {
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i], tw = reduced ? 1 : 0.75 + 0.25 * Math.sin(now * 0.0011 + s.tw);
+      ctx.fillStyle = 'rgba(232,238,250,' + (s.a * M.n * tw).toFixed(3) + ')';
+      ctx.beginPath(); ctx.arc(s.x * W, s.y * H, s.r, 0, 6.283); ctx.fill();
+    }
+  }
+}
+
+/* ---------- birds ---------- */
+var B = [];
+for (var bi = 0; bi < N; bi++) {
+  B.push({ i: bi, x: rnd() * 900, y: rnd() * 500, vx: rnd() * 2 - 1, vy: rnd() * 2 - 1,
+    ph: rnd() * 6.28, fs: 0.85 + rnd() * 0.3, st: 'fly', tg: null, delay: 0, dir: rnd() < 0.5 ? -1 : 1,
+    hop: 0, hidden: false, morph: 1, ang: 0, sc: 1, trail: [], rank: rnd() });
+  B[bi].fs0 = B[bi].fs;
+}
+var entering = false;   // true while a new scene assigns targets: perched birds must not wait on a wire that is gone
+function setTarget(b, tg, delay) {
+  b.tg = tg; b.delay = delay || 0;
+  if (b.st === 'perched') { b.pendingLift = true; if (entering) b.delay = Math.min(b.delay, 60 + rnd() * 260); }
+  if (b.hidden && tg && tg.kind !== 'away' && tg.kind !== 'hide') respawn(b, tg);
+}
+/* arrivals come in as one loose stream from the right edge (the margin side), at the height they are going to;
+   a scene can ask for 'left' (the way they left) or 'below' (out of the light low on the screen) */
+function respawn(b, tg) {
+  var q = tg.wire ? tg.wire.pt(tg.t) : tg.box ? { x: tg.box.x + tg.box.w / 2, y: tg.box.y + tg.box.h / 2 } : tg.pts ? tg.pts[0] : tg;
+  var tx = q.x != null ? q.x : F.ax || W * 0.7, ty = q.y != null ? q.y : F.ay || H * 0.3;
+  if (tg.from === 'below') { b.x = clamp(tx + (rnd() - 0.5) * 110, tg.minx || 0, W - 8); b.y = H + 40 + rnd() * 140; b.vx = (rnd() - 0.5) * 0.5; b.vy = -2.5; }
+  else if (tg.from === 'left') { b.x = -30 - rnd() * 140; b.y = ty + (rnd() - 0.5) * (tg.jit != null ? tg.jit : 50); b.vx = 2.6; b.vy = 0; }
+  else { b.x = W + 30 + rnd() * 140; b.y = ty + (rnd() - 0.5) * (tg.jit != null ? tg.jit : 50); b.vx = -2.6; b.vy = 0; }
+  b.hidden = false; b.st = 'fly'; b.trail.length = 0;
+}
+
+/* ---------- glyphs: drawn, not imported; three simple shapes ---------- */
+function drawFlyer(x, y, ang, ph, s, col) {
+  var f = Math.sin(ph);                 // wingbeat
+  var span = 6.2 * s, up = (0.15 + 0.85 * (0.5 + 0.5 * f)) * 3.6 * s - 1.2 * s;
+  ctx.save(); ctx.translate(x, y); ctx.rotate(ang);
+  ctx.fillStyle = col;
+  for (var sg = -1; sg <= 1; sg += 2) {
+    ctx.beginPath();
+    ctx.moveTo(0.9 * s * sg, -0.2 * s);
+    ctx.quadraticCurveTo(span * 0.45 * sg, -up * 1.15 - 0.6 * s, span * sg, -up);
+    ctx.quadraticCurveTo(span * 0.5 * sg, -up * 0.35 + 0.35 * s, 0.6 * s * sg, 0.55 * s);
+    ctx.closePath(); ctx.fill();
+  }
+  ctx.beginPath(); ctx.ellipse(0, 0.15 * s, 1.15 * s, 0.85 * s, 0, 0, 6.283); ctx.fill();
+  ctx.restore();
+}
+function drawPercher(x, y, dir, s, col) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(dir, 1); ctx.fillStyle = col;
+  ctx.beginPath(); ctx.ellipse(-0.1 * s, -2.55 * s, 2.55 * s, 1.75 * s, -0.28, 0, 6.283); ctx.fill();
+  ctx.beginPath(); ctx.arc(1.95 * s, -4.45 * s, 1.18 * s, 0, 6.283); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(2.9 * s, -4.6 * s); ctx.lineTo(4.05 * s, -4.3 * s); ctx.lineTo(2.9 * s, -3.95 * s); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(-1.9 * s, -2.0 * s); ctx.lineTo(-5.3 * s, -0.45 * s); ctx.lineTo(-4.6 * s, -1.25 * s); ctx.lineTo(-2.2 * s, -3.0 * s); ctx.closePath(); ctx.fill();
+  ctx.restore();
+}
+function drawDot(x, y, s, col, a) { var g0 = ctx.globalAlpha; ctx.fillStyle = col; ctx.globalAlpha = g0 * a; ctx.beginPath(); ctx.arc(x, y, 1.5 * s, 0, 6.283); ctx.fill(); ctx.globalAlpha = g0; }
+
+/* ---------- geometry helpers ---------- */
+function Wire(x0, y0, x1, y1, sag) { this.x0 = x0; this.y0 = y0; this.x1 = x1; this.y1 = y1; this.sag = sag; }
+Wire.prototype.pt = function (t) { var mx = (this.x0 + this.x1) / 2, my = (this.y0 + this.y1) / 2 + 2 * this.sag, u = 1 - t; return { x: u * u * this.x0 + 2 * u * t * mx + t * t * this.x1, y: u * u * this.y0 + 2 * u * t * my + t * t * this.y1 }; };
+function strokeWire(w, col, a) { if (curM) col = inkAt(curM, (w.y0 + w.y1) / 2); ctx.strokeStyle = rgba(col, a); ctx.lineWidth = 1.15; ctx.beginPath(); ctx.moveTo(w.x0, w.y0); ctx.quadraticCurveTo((w.x0 + w.x1) / 2, (w.y0 + w.y1) / 2 + 2 * w.sag, w.x1, w.y1); ctx.stroke(); }
+function perchOn(w, t, dir) { return { kind: 'perch', wire: w, t: t, dir: dir || 1 }; }
+function rowsAt(R, yFrac, gapD, sag, inset) {
+  var n = small ? 4 : 2, gap = small ? 27 : gapD, y = R.y + R.h * yFrac - (n - 1) * gap / 2, ws = [];
+  inset = inset || 0;
+  for (var k = 0; k < n; k++) ws.push(new Wire(R.x - 10 + inset, y + k * gap, R.x + R.w + 10 - inset, y + k * gap, sag));
+  return ws;
+}
+function slotIn(ws, k, total) { total = total || N; var per = Math.ceil(total / ws.length), w = Math.min(ws.length - 1, Math.floor(k / per)), j = k - w * per; return { wire: ws[w], t: 0.04 + 0.92 * (j + 0.5) / per }; }
+function perchSlot(ws, k, dir, total) { var sl = slotIn(ws, k, total); return perchOn(sl.wire, sl.t, dir); }
+function knot(i, t, R, scale, n) {
+  n = n || N;
+  var u = (i / n) * Math.PI * 2 + t * 0.00004;
+  function p(uu) {
+    var rr = 1 + 0.42 * Math.cos(3 * uu), X = rr * Math.cos(2 * uu), Y = rr * Math.sin(2 * uu), Z = 0.42 * Math.sin(3 * uu);
+    var a = t * 0.00009, ca = Math.cos(a), sa = Math.sin(a), X1 = X * ca + Z * sa, Z1 = -X * sa + Z * ca;
+    var tl = 0.62, ct = Math.cos(tl), st = Math.sin(tl), Y1 = Y * ct - Z1 * st, Z2 = Y * st + Z1 * ct;
+    var s = Math.min(R.w, R.h * 1.25) * 0.29 * (scale || 1);
+    return { x: R.x + R.w / 2 + X1 * s, y: R.y + R.h / 2 + Y1 * s * 0.92, z: Z2 };
+  }
+  var a0 = p(u), a1 = p(u + 0.03);
+  a0.ang = clamp(Math.atan2(a1.y - a0.y, a1.x - a0.x), -0.9, 0.9) * 0.6;
+  return a0;
+}
+
+/* ---------- sections ---------- */
+var secEls = Array.prototype.slice.call(document.querySelectorAll('[data-scene]'));
+var colRef = document.querySelector('.col');
+function readSections() {
+  var out = [];
+  for (var i = 0; i < secEls.length; i++) {
+    var el = secEls[i];
+    var d = el.closest('details'); if (d && !d.open) continue;
+    var r = el.getBoundingClientRect();
+    if (r.height < 2) continue;
+    out.push({ el: el, r: r, scene: el.getAttribute('data-scene'), mood: el.getAttribute('data-mood'), from: el.getAttribute('data-from'), light: el.getAttribute('data-light'),
+      inter: el.classList.contains('interlude'), hero: el.classList.contains('hero'), cap: el.querySelector('.cap') });
+  }
+  return out;
+}
+function activeIndex(list) {
+  var c = H * 0.5, best = -1;
+  for (var i = 0; i < list.length; i++) if (list[i].r.top <= c && list[i].r.bottom > c) best = i;
+  if (best < 0) { var bd = 1e9; for (var j = 0; j < list.length; j++) { var d = Math.min(Math.abs(list[j].r.top - c), Math.abs(list[j].r.bottom - c)); if (d < bd) { bd = d; best = j; } } }
+  return best;
+}
+function endMood(s) { return MOODS[s.mood] || MOODS.day; }
+function moodNow(list, ai) {
+  var s = list[ai]; var M = endMood(s);
+  if (s.inter) {   // mp counts from the section's top, padding included: the light changes as the picture rides in
+    var A = s.from && MOODS[s.from] ? MOODS[s.from] : (ai > 0 ? curFromMood(list, ai - 1) : M);
+    var lw = s.light ? s.light.split(' ').map(Number) : [0.1, 0.5];   // an interlude can settle its light before its picture moves
+    return blendMood(A, M, smooth(((s.mp != null ? s.mp : s.p) - lw[0]) / Math.max(0.01, lw[1] - lw[0])));
+  }
+  // a reading section takes the light over from the one before it once its top is in the upper third of the
+  // screen, after the last lines before it have gone under the bar: no jump at the handover
+  var pv = list[ai - 1];
+  if (pv && pv.mood !== s.mood && !pv.el.contains(s.el) && !s.el.contains(pv.el)) {
+    var t = smooth((H * 0.35 - s.r.top) / (H * 0.35));
+    if (t < 1) return blendMood(endMood(pv), M, t);
+  }
+  return M;
+}
+function curFromMood(list, k) { return endMood(list[k]); }
+
+/* ---------- regions ---------- */
+function colRight() { if (!colRef) return W * 0.55; var r = colRef.getBoundingClientRect(); return r.right; }
+var barH = 58, VH = window.innerHeight;   // the fixed bar (nothing pins under it); the small viewport height
+function capStuckRect(s) {
+  var c = s.cap, h = c.offsetHeight, top = c.classList.contains('at-top');
+  var y = c._top != null ? c._top : top ? Math.max(H * 0.09, barH + 12) : H * (small ? 0.6 : 0.62);
+  return { top: y, bottom: y + h, isTop: top };
+}
+/* Captions pin low on the screen, but never past its bottom edge and never under the bar: a tall one (the call,
+   with its button) pins higher. Measured against the small viewport, so a phone's toolbar coming and going does
+   not move them. A picture interlude ('fig') gets top padding as tall as its picture, so the picture scrolls in
+   above its caption, inside its own section, like a figure, and pins with it. */
+var caps = Array.prototype.slice.call(document.querySelectorAll('.cap'));
+var svp = document.createElement('div');
+svp.setAttribute('aria-hidden', 'true');
+svp.style.cssText = 'position:absolute;top:0;left:0;width:0;height:100vh;height:100svh;visibility:hidden;pointer-events:none';
+document.body.appendChild(svp);
+function picTop() { return Math.max(VH * 0.07, barH + 8); }
+function fitCaps() {
+  VH = svp.offsetHeight || window.innerHeight;
+  var bar = document.getElementById('bar'); barH = bar ? bar.offsetHeight : 58;
+  document.documentElement.style.setProperty('--barh', barH + 'px');
+  var floor = Math.max(VH * 0.09, barH + 12), t0 = picTop();
+  for (var i = 0; i < caps.length; i++) {
+    var c = caps[i], h = c.offsetHeight, sec = c.parentNode, y;
+    if (!h) { c._top = null; continue; }   // inside the closed technical section
+    if (c.classList.contains('at-top')) { c._top = parseFloat(getComputedStyle(c).top) || floor; c._nopic = VH * 0.95 - (c._top + h + 30) < 120; if (sec.classList.contains('hold')) sec.style.setProperty('--hold', Math.round(c._top + h) + 'px'); continue; }
+    y = Math.round(Math.max(floor, Math.min(VH * (window.innerWidth <= 700 ? 0.6 : 0.62), VH - h - Math.max(16, VH * 0.045))));
+    if (c._top !== y) { c._top = y; c.style.setProperty('--captop', y + 'px'); }
+    if (sec.classList.contains('fig')) {
+      var above = y - t0 - 30, below = VH * 0.95 - (y + h + 24); c._below = above < 90 && below > above;   // too little room above: the picture goes under the caption
+      c._nopic = Math.max(above, below) < 120;   // no room on either side for a legible picture (a very short screen): the caption stands alone
+      var pad = c._below || c._nopic ? 0 : Math.max(0, Math.round(y - t0)); if (sec._pad !== pad) { sec._pad = pad; sec.style.setProperty('--pad', pad + 'px'); }
+    }
+  }
+}
+var heroEl = document.querySelector('.hero'), heroQ = document.querySelector('.hero-q'), heroT = document.querySelector('.hero-text');
+function regionFor(s) {
+  if (s.hero) {   // drawn on the first screen, so it moves with it
+    var ht = heroEl.getBoundingClientRect().top, q = heroQ ? heroQ.getBoundingClientRect() : null;
+    if (q && q.height) {   // desktop: the quotes take the bottom; the line sits in the sky beside the headline
+      var x0 = Math.max(W * 0.5, heroT.getBoundingClientRect().right + 40), y0 = ht + H * 0.08;
+      return { x: x0, y: y0, w: Math.max(220, W * 0.96 - x0), h: Math.max(150, q.top - y0 - 70) };
+    }
+    return { x: W * 0.04, y: ht + H * 0.07, w: W * 0.92, h: H * (small ? 0.42 : 0.5) };
+  }
+  if (s.inter && s.cap) {
+    var c = capStuckRect(s), x = W * (small ? 0.05 : 0.06), w = W * (small ? 0.9 : 0.88);
+    if (!c.isTop) {
+      if (s.cap._below) { var yb = c.bottom + 24; return { x: x, y: yb, w: w, h: Math.max(40, VH * 0.95 - yb) }; }   // a very short screen: under the caption
+      var y = picTop(); return { x: x, y: y, w: w, h: Math.max(40, c.top - y - 30) };
+    }
+    var y2 = c.bottom + 30; return { x: x, y: y2, w: w, h: Math.max(140, VH * 0.95 - y2) };   // the small viewport: a phone's toolbar does not move it
+  }
+  if (wide) { var x3 = colRight() + Math.max(56, W * 0.05); return { x: x3, y: H * 0.14, w: Math.max(200, W - x3 - Math.max(40, W * 0.04)), h: H * 0.72 }; }
+  return null;
+}
+
+/* ---------- free flight ---------- */
+var TUNE = window.__tune || { sep: 34, sepw: 0.55, coh: 0.0022, ali: 0.08, glob: 0.0005, rad: 90 };
+var F = { R: { x: 0, y: 0, w: 1, h: 1 }, ax: 0, ay: 0, sc: 1, vmax: 3.2, vmin: 1.3, pull: 1, edge: 0.16, obs: [], gx: 0, gy: 0, gn: 0 };
+function flockCentre() {
+  var x = 0, y = 0, n = 0;
+  for (var i = 0; i < N; i++) { var o = B[i]; if (o.hidden || o.st === 'perched' || !o.tg || o.tg.kind !== 'free') continue; x += o.x; y += o.y; n++; }
+  F.gn = n; if (n) { F.gx = x / n; F.gy = y / n; }
+}
+function freeFly(b, dt) {
+  var cx = 0, cy = 0, avx = 0, avy = 0, sx = 0, sy = 0, n = 0;
+  for (var j = 0; j < N; j++) {
+    if (j === b.i) continue; var o = B[j];
+    if (o.hidden || o.st === 'perched' || !o.tg || o.tg.kind !== 'free') continue;
+    var dx = o.x - b.x, dy = o.y - b.y, d2 = dx * dx + dy * dy;
+    if (d2 > TUNE.rad * TUNE.rad) continue;
+    n++; cx += o.x; cy += o.y; avx += o.vx; avy += o.vy;
+    var sep = TUNE.sep * F.sc * (small ? 0.8 : 1);
+    if (d2 < sep * sep) { var d = Math.sqrt(d2) + 0.01; sx -= dx / d * (sep - d) / sep; sy -= dy / d * (sep - d) / sep; }
+  }
+  var ax = 0, ay = 0;
+  if (n) { ax += (cx / n - b.x) * TUNE.coh; ay += (cy / n - b.y) * TUNE.coh; ax += (avx / n - b.vx) * TUNE.ali; ay += (avy / n - b.vy) * TUNE.ali; }
+  if (F.gn > 1) { ax += (F.gx - b.x) * TUNE.glob; ay += (F.gy - b.y) * TUNE.glob; }
+  ax += sx * TUNE.sepw; ay += sy * TUNE.sepw;
+  b.wd = (b.wd || b.rank * 6.28) + 0.02 * dt; ax += Math.cos(b.wd * 1.7 + b.i) * 0.03; ay += Math.sin(b.wd * 1.3 + b.i * 0.7) * 0.03;
+  var tx = F.ax - b.x, ty = F.ay - b.y, td = Math.sqrt(tx * tx + ty * ty) + 0.01;
+  ax += tx / td * 0.05 * F.pull * Math.min(1, td / 90); ay += ty / td * 0.05 * F.pull * Math.min(1, td / 90);
+  var R = F.R, m = 26, ex = F.edge || 0.16;
+  if (b.x < R.x + m) ax += ex; if (b.x > R.x + R.w - m) ax -= ex;
+  if (b.y < R.y + m) ay += ex; if (b.y > R.y + R.h - m) ay -= ex;
+  for (var k = 0; k < F.obs.length; k++) {
+    var ob = F.obs[k];
+    if (b.x > ob.x && b.x < ob.x + ob.w && b.y > ob.y && b.y < ob.y + ob.h) {
+      var l = b.x - ob.x, r = ob.x + ob.w - b.x, t = b.y - ob.y, bt = ob.y + ob.h - b.y, mn = Math.min(l, r, t, bt);
+      if (mn === l) ax -= 0.4; else if (mn === r) ax += 0.4; else if (mn === t) ay -= 0.4; else ay += 0.4;
+    }
+  }
+  b.vx += ax * dt; b.vy += ay * dt;
+  var v = Math.sqrt(b.vx * b.vx + b.vy * b.vy);
+  if (v > F.vmax) { b.vx *= F.vmax / v; b.vy *= F.vmax / v; } else if (v < F.vmin && v > 0) { b.vx *= F.vmin / v; b.vy *= F.vmin / v; }
+  b.x += b.vx * dt; b.y += b.vy * dt;
+  b.ang = clamp(Math.atan2(b.vy, Math.abs(b.vx) + 0.01), -0.5, 0.5) * 0.6;
+  b.sc = F.sc;
+}
+
+/* ---------- targeted flight ---------- */
+function targetXY(b) {
+  var tg = b.tg;
+  if (tg.wire) { var p = tg.wire.pt(tg.t); tg.x = p.x; tg.y = p.y; }
+  return tg;
+}
+function seek(b, dt) {
+  var tg = targetXY(b);
+  var dx = tg.x - b.x, dy = tg.y - b.y, d = Math.sqrt(dx * dx + dy * dy) + 0.0001;
+  if (tg.kind === 'perch' && d < 2.2) { b.x = tg.x; b.y = tg.y; b.vx = b.vy = 0; b.st = 'perched'; b.dir = tg.dir || b.dir; b.ang = 0; return; }
+  // long arrivals are brisk; the last stretch brakes
+  var vmax = tg.v || (tg.fast ? 7.5 : 3.6 + 2.6 * smooth((d - 120) / 220)), want = Math.min(vmax, d * (tg.kind === 'hover' ? 0.05 : 0.085) + 0.5);
+  var stx = dx / d * want - b.vx, sty = dy / d * want - b.vy, k = tg.fast ? 0.3 : 0.13;
+  b.vx += stx * k * dt; b.vy += sty * k * dt;
+  b.x += b.vx * dt; b.y += b.vy * dt;
+  b.ang = clamp(Math.atan2(b.vy, Math.abs(b.vx) + 0.01), -0.6, 0.6) * 0.55;
+  if (b.vx > 0.25) b.dir = 1; else if (b.vx < -0.25) b.dir = -1;
+  if (tg.kind === 'away' && (b.y < -40 || b.x < -50 || b.x > W + 50)) b.hidden = true;
+}
+function pin(b, dt) {
+  var tg = b.tg, k = 1 - Math.pow(1 - (tg.k || 0.16), dt);
+  var nx = b.x + (tg.x - b.x) * k, ny = b.y + (tg.y - b.y) * k;
+  b.vx = (nx - b.x) / Math.max(dt, 0.01); b.vy = (ny - b.y) / Math.max(dt, 0.01); b.x = nx; b.y = ny;
+  b.ang = tg.ang != null ? tg.ang : clamp(Math.atan2(b.vy, Math.abs(b.vx) + 0.01), -0.6, 0.6) * 0.5;
+  b.st = 'fly';
+}
+function roam(b, dt) {
+  var tg = b.tg, bx = tg.box;
+  if (tg.wx == null || tg.left <= 0 || Math.abs(tg.wx - b.x) + Math.abs(tg.wy - b.y) < 10) {
+    tg.wx = bx.x + 10 + rnd() * Math.max(1, bx.w - 20); tg.wy = bx.y + 10 + rnd() * Math.max(1, bx.h - 20); tg.left = 40 + rnd() * 70;
+  }
+  tg.left -= dt;
+  var dx = tg.wx - b.x, dy = tg.wy - b.y, d = Math.sqrt(dx * dx + dy * dy) + 0.01, sp = tg.speed || 2.1;
+  b.vx += (dx / d * sp - b.vx) * 0.06 * dt; b.vy += (dy / d * sp - b.vy) * 0.06 * dt;
+  b.x += b.vx * dt; b.y += b.vy * dt;
+  if (b.x < bx.x + 4) { b.x = bx.x + 4; b.vx = Math.abs(b.vx); } if (b.x > bx.x + bx.w - 4) { b.x = bx.x + bx.w - 4; b.vx = -Math.abs(b.vx); }
+  if (b.y < bx.y + 4) { b.y = bx.y + 4; b.vy = Math.abs(b.vy); } if (b.y > bx.y + bx.h - 4) { b.y = bx.y + bx.h - 4; b.vy = -Math.abs(b.vy); }
+  b.ang = clamp(Math.atan2(b.vy, Math.abs(b.vx) + 0.01), -0.6, 0.6) * 0.5;
+}
+function followPath(b, dt) {
+  var tg = b.tg, pt = tg.pts[tg.i];
+  var dx = pt.x - b.x, dy = pt.y - b.y, d = Math.sqrt(dx * dx + dy * dy) + 0.01, sp = Math.min(3.4, d * 0.09 + 1.4);
+  b.vx += (dx / d * sp - b.vx) * 0.16 * dt; b.vy += (dy / d * sp - b.vy) * 0.16 * dt;
+  b.x += b.vx * dt; b.y += b.vy * dt;
+  b.ang = clamp(Math.atan2(b.vy, Math.abs(b.vx) + 0.01), -0.6, 0.6) * 0.55;
+  if (d < 9) { tg.i++; if (tg.i >= tg.pts.length) b.tg = tg.then; }
+}
+function stepBird(b, dt) {
+  if (b.hidden) return;
+  if (b.sc < 1 && b.tg && b.tg.kind !== 'free' && b.tg.kind !== 'away') b.sc = Math.min(1, b.sc + 0.015 * dt);   // back to full size after the scatter
+  if (b.delay > 0) {
+    b.delay -= dt * 16.67;
+    if (b.st === 'perched') { if (b.pendingLift && b.tg && b.tg.wire && !entering) { /* still on its old wire */ } return; }
+    if (b.tg && b.tg.kind !== 'free') { b.vx *= 0.985; b.vy *= 0.985; b.x += b.vx * dt; b.y += b.vy * dt; b.ph += 0.3 * dt * b.fs; return; }
+  }
+  if (b.st === 'perched' && b.pendingLift) { b.pendingLift = false; b.st = 'fly'; b.vy = -1.6 - rnd(); b.vx = (rnd() - 0.5) * 1.6; }
+  if (b.st === 'perched') {
+    if (b.tg && b.tg.wire) { var p = b.tg.wire.pt(b.tg.t); b.x = p.x; b.y = p.y; }
+    return;
+  }
+  var tg = b.tg;
+  if (!tg || tg.kind === 'free') freeFly(b, dt);
+  else if (tg.kind === 'pin') pin(b, dt);
+  else if (tg.kind === 'roam') roam(b, dt);
+  else if (tg.kind === 'path') followPath(b, dt);
+  else seek(b, dt);
+  b.ph += (tg && tg.kind === 'hover' ? 0.22 : 0.31) * dt * b.fs;
+  if (tg && tg.fast) { b.trail.push(b.x, b.y); if (b.trail.length > 10) b.trail.splice(0, 2); } else if (b.trail.length) b.trail.length = 0;
+  if (b.x !== b.x || b.y !== b.y) { b.x = W / 2; b.y = H / 3; b.vx = 1; b.vy = 0; }
+}
+
+/* =====================================================================
+   Scenes. enter() runs once when a scene starts (or the layout changes),
+   frame() runs every frame with the scroll progress p, back() draws the
+   lines behind the birds, front() draws anything over them.
+   ===================================================================== */
+var SC = {}, G = {};   // G: per-scene geometry
+var labelFont = '600 15px "Alegreya Sans", "Gill Sans", sans-serif';
+function setAllFree(stagger) { for (var i = 0; i < N; i++) setTarget(B[i], { kind: 'free' }, stagger ? rnd() * stagger : 0); }
+function lissajous(R, now, sx, sy) { return { x: R.x + R.w * (0.5 + 0.33 * Math.sin(now * 0.00017 * (sx || 1))), y: R.y + R.h * (0.48 + 0.26 * Math.sin(now * 0.00023 * (sy || 1) + 1.3)) }; }
+
+/* the first screen: a line draws itself, the flock comes in and stops on it, and stays.
+   "Stopped until scientists consider it safe"; the line comes back for the poll's stop, the nations,
+   every agreement that held, your place, and first light. It scrolls away with the page, still perched. */
+function anchorWires(old, ws) { if (!old || old.length !== ws.length) return ws; ws.forEach(function (w, k) { var o = old[k]; o.x0 = w.x0; o.y0 = w.y0; o.x1 = w.x1; o.y1 = w.y1; o.sag = w.sag; }); return old; }
+SC.line = {
+  wires: function (S) {   // two lines running in from the right edge, toward the headline
+    var R = S.R, y = R.y + R.h * (small ? 0.46 : 0.5), x0 = small ? R.x + R.w * 0.04 : R.x;
+    return [new Wire(x0, y - 17, W + 24, y - 21, 6), new Wire(x0 + (small ? 26 : 34), y + 17, W + 24, y + 13, 6)];
+  },
+  slots: function () {   // birds sit the way birds sit: uneven gaps, a few close pairs, nobody in the last stretch off-screen
+    var out = [], per = small ? 27 : 36;
+    for (var w = 0; w < 2; w++) {
+      var n = 0;
+      for (var j = 0; j < per + 6 && n < per; j++) {
+        if (rnd() < 0.14) continue;
+        var t = (j + 0.5 + (rnd() - 0.5) * 0.62) / (per + 6);
+        out.push({ w: w, t: clamp(t, 0.015, 0.93) * (small ? 0.96 : 0.92) }); n++;
+      }
+    }
+    return out;
+  },
+  lay: function (S) { G.line.ws = anchorWires(G.line.ws, this.wires(S)); },
+  enter: function (S) {
+    G.line = { ws: null, t0: S.placed ? -1e9 : performance.now() }; this.lay(S);
+    var sl = this.slots();
+    for (var i = 0; i < N; i++) {
+      if (i >= sl.length) { B[i].hidden = true; B[i].tg = null; continue; }   // the first screen needs only part of the flock
+      var tg = perchOn(G.line.ws[sl[i].w], sl[i].t, i % 5 ? -1 : 1); tg.v = 6.4;
+      setTarget(B[i], tg, 420 + Math.pow(rnd(), 1.3) * 1100);
+    }
+  },
+  frame: function (S) { this.lay(S); },
+  back: function (S, col) {
+    var d = smooth(clamp((performance.now() - G.line.t0) / 460, 0, 1));
+    G.line.ws.forEach(function (w) {
+      if (d >= 1) { strokeWire(w, col, 0.55); return; }
+      var x = w.x1 - (w.x1 - w.x0) * d;   // drawn from the edge in
+      ctx.save(); ctx.beginPath(); ctx.rect(x - 2, -9999, w.x1 - x + 6, 19998); ctx.clip(); strokeWire(w, col, 0.55); ctx.restore();
+    });
+  }
+};
+function lineHop(b, now) {   // now and then one bird shifts its feet; nothing else moves
+  var k = Math.floor(now / 6800), who = (k * 37 + 11) % N, ph = now - k * 6800;
+  return b.i === who && ph < 260 && b.st === 'perched' ? -4.5 * Math.sin(Math.PI * ph / 260) : 0;
+}
+
+/* grown, not designed: random numbers, nudged step by step, become a shape nobody drew */
+SC.grown = {
+  entry: 'fade',
+  enter: function (S) { for (var i = 0; i < N; i++) { B[i].hidden = true; B[i].tg = null; } this.lay(S); },
+  lay: function (S) {
+    var R = S.R, rr = mulberry(20261023), segs = [], tips = [], seeds = small ? 3 : 5, max = small ? 420 : 900, L = small ? 5 : 6.5, i;
+    for (i = 0; i < seeds; i++) tips.push({ x: R.x + R.w * (0.14 + 0.72 * (i + 0.5) / seeds) + (rr() - 0.5) * 30, y: R.y + R.h * 0.92, a: -Math.PI / 2 + (rr() - 0.5) * 0.5, d: 0 });
+    var guard = 0;
+    while (segs.length < max && tips.length && guard++ < 20000) {
+      var k = Math.floor(rr() * tips.length), t = tips[k];
+      t.a += (rr() - 0.5) * 0.7;
+      var nx = t.x + Math.cos(t.a) * L, ny = t.y + Math.sin(t.a) * L;
+      if (nx < R.x + 8 || nx > R.x + R.w - 8 || ny < R.y + 6 || ny > R.y + R.h * 0.95) { t.a += Math.PI * 0.6 * (rr() < 0.5 ? 1 : -1); if (rr() < 0.3) tips.splice(k, 1); continue; }
+      segs.push([t.x, t.y, nx, ny, t.d]); t.x = nx; t.y = ny; t.d++;
+      if (rr() < 0.075 && tips.length < 70) tips.push({ x: nx, y: ny, a: t.a + (rr() < 0.5 ? 0.7 : -0.7), d: t.d });
+      if (t.d > 160) tips.splice(k, 1);
+    }
+    var dots = []; for (i = 0; i < (small ? 120 : 260); i++) dots.push([R.x + rr() * R.w, R.y + rr() * R.h * 0.95]);
+    G.grown = { segs: segs, dots: dots, R: R };
+  },
+  frame: function (S, p) { if (S.relaid || !G.grown) this.lay(S); G.grown.u = reduced ? 1 : smooth((p - 0.04) / 0.42); },
+  back: function (S, col) {
+    var g = G.grown; if (!g) return;
+    var n = Math.floor(g.segs.length * g.u), i;
+    ctx.fillStyle = rgba(col, 0.35 * (1 - g.u));   // the numbers, before anything is learned
+    ctx.beginPath(); for (i = 0; i < g.dots.length; i++) ctx.rect(g.dots[i][0], g.dots[i][1], 1.4, 1.4); ctx.fill();
+    ctx.strokeStyle = rgba(col, 0.6); ctx.lineCap = 'round';
+    for (var w = 0; w < 3; w++) {   // thicker where it is older
+      ctx.lineWidth = [1.6, 1.1, 0.7][w]; ctx.beginPath();
+      for (i = 0; i < n; i++) { var sg = g.segs[i], d = sg[4]; if ((d < 30 ? 0 : d < 80 ? 1 : 2) !== w) continue; ctx.moveTo(sg[0], sg[1]); ctx.lineTo(sg[2], sg[3]); }
+      ctx.stroke();
+    }
+  }
+};
+
+/* "We become the irrelevant animal in the way", drawn as a surveyor's elevation (round 8; the round-7 toy town read as a children's book). */
+SC.highway = {   // "We become the irrelevant animal in the way", drawn as a surveyor's elevation with nothing labelled. A town in open country; a level is set out across all the land, with stakes at one spacing through the town exactly as through the fields; then everything above the level is cleared and cut away at one steady pace, from one side to the other, until only flat ground and the stakes are left. Every mark is a function of p and a seeded layout, so scrolling back restores the town exactly.
+  entry: 'fade',
+  P: function () { return small ? { P0: 0.205, P1: 0.285, P2: 0.325, P3: 0.70 } : { P0: 0.185, P1: 0.275, P2: 0.31, P3: 0.715 }; },   // the level and its stakes go in from P0 to P1; the cut runs from P2 to P3; then it is held until the caption lets go
+  enter: function (S) { for (var i = 0; i < N; i++) { B[i].hidden = true; B[i].tg = null; } this.lay(S); },
+  lay: function (S) {
+    var R = S.R, sm = small, rr = mulberry(20261010), i, k, x;
+    var gy = R.y + R.h * clamp(0.64 - 0.11 * (R.h / Math.max(1, R.w) - 0.45), 0.52, 0.64);   // the level: everything above it goes (higher in a tall picture)
+    var Zcap = Math.max(0.45, Math.min(sm ? 1.6 : 2.2, (gy - R.y - 8) / 96));   // the tower must fit under the caption
+    // the front's run, and where it stands in the reduced-motion still: the town ends short of it there, the river starts past it
+    var PP = this.P(), still = typeof STILL === 'object' && STILL && STILL.highway >= 0 ? STILL.highway : 0.46, lead = sm ? 64 : 120;
+    var f0 = W + 22 + lead, f1 = -28 - 1.1 * Zcap * (sm ? 30 : 14), fS = f0 - (f0 - f1) * clamp((still - PP.P2) / (PP.P3 - PP.P2), 0, 1);
+    var t0 = W * (sm ? -0.04 : 0.10), span = Math.max(W * 0.3, Math.min(W * 0.62, fS - 0.5 * lead - t0));   // the town's stretch of land
+    // the town, west to east: [kind, width in units, priority, gap after]; narrower screens keep the essential blocks at a size you can see
+    var seq = sm ? [['row4', 52, 1, 6], ['civic', 49, 1, 6], ['block1', 56, 1, 0]]
+                 : [['housesW', 70, 4, 20], ['row6', 81, 1, 9], ['civic', 49, 1, 16], ['blocks2', 92, 2, 10], ['houses3', 86, 2, 20], ['works', 58, 4, 12], ['wt', 20, 2, 0]];
+    var use = seq, tot = 0, pr, gaps = 0, zMin = sm ? 0.75 : W >= 1100 ? 1.85 : 1.35;
+    for (pr = 4; pr >= 1; pr--) {
+      use = seq.filter(function (c) { return c[2] <= pr; }); tot = 0;
+      for (i = 0; i < use.length; i++) tot += use[i][1] + (i < use.length - 1 ? use[i][3] : 0);
+      if (span / tot >= zMin || pr === 1) break;
+    }
+    var Z = Math.max(0.45, Math.min(Zcap, span / tot));
+    for (i = 0; i < use.length - 1; i++) gaps += use[i][3];
+    var stretch = gaps > 0 ? clamp(1 + (span - tot * Z) / (gaps * Z), 1, 1.7) : 1, used = (tot - gaps) * Z + gaps * Z * stretch;
+    // the land: a broad hill, a gentle rise for the town, a river, a rise beyond it; surveyed ground is never quite smooth
+    var rwF = sm ? 0.045 : 0.024, rcF = clamp((fS + 10) / W + rwF, sm ? 0.865 : 0.78, sm ? 0.9 : 0.86);   // the river's left bank lies just past the still's front
+    var bumps = sm ? [[0.4, 6, 0.33], [rcF, -9, rwF], [0.985, 8, 0.06]]
+                   : [[0.045, 26, 0.06], [0.42, 8, 0.3], [rcF, -10, rwF], [0.925, 9, 0.065]];
+    var base = gy - (sm ? 11 : 14) * Z, q1 = rr() * 6.28, q2 = rr() * 6.28, q3 = rr() * 6.28;
+    function natY(xx) {
+      var y = base + Z * (0.8 * Math.sin(xx / 31 + q1) + 0.45 * Math.sin(xx / 13.7 + q2) + 0.2 * Math.sin(xx / 6.1 + q3));
+      for (var j = 0; j < bumps.length; j++) { var b = bumps[j], d = Math.abs(xx / W - b[0]) / b[2]; if (d < 1) y -= b[1] * Z * 0.5 * (1 + Math.cos(Math.PI * d)); }
+      return y;
+    }
+    // ---- drawing kit: an object is outlines (filled, then drawn), struts (drawn at outline weight), fine lines and openings; (u, v) are units from its left foot, v up
+    var objs = [];
+    function mk(x0, w, layer, plot, bY) {
+      var x1 = x0 + w * Z, o = { x0: x0, x1: x1, base: bY != null ? bY : natY((x0 + x1) / 2), layer: layer, plot: plot !== false, parts: [], struts: [], lines: [], wins: [], edges: [x0, x1], top: 1e9, la: layer ? 0.5 : 0.74, da: layer ? 0.26 : 0.36, lw: layer ? 0.85 : 1 };
+      objs.push(o); return o;
+    }
+    function at(o, u, v) { return [o.x0 + u * Z, o.base - v * Z]; }
+    function poly(o, uv, into) { var a = []; for (var j = 0; j < uv.length; j++) { var q = at(o, uv[j][0], uv[j][1]); a.push(q); if (q[1] < o.top) o.top = q[1]; } into.push(a); return a; }
+    function part(o, uv) { return poly(o, uv, o.parts); }
+    function strut(o, uv) { return poly(o, uv, o.struts); }
+    function line(o, uv) { return poly(o, uv, o.lines); }
+    function win(o, u, v, w, hh) { var q = at(o, u, v + hh); o.wins.push([q[0], q[1], w * Z, hh * Z]); }
+    function gable(x0, w, wall, rise, layer, chim, bY) {   // a house with its gable end to us
+      var o = mk(x0, w, layer, true, bY), ov = 1.1, f = 0.8, hw = w / 2 + ov;
+      function rv(u) { return wall + f + rise * (1 - Math.abs(u - w / 2) / hw); }
+      if (chim) { var cu = w * 0.64, cw = Math.max(2.2, w * 0.12); part(o, [[cu, rv(cu + cw) - 1.6], [cu, rv(cu) + 3.4], [cu + cw, rv(cu) + 3.4], [cu + cw, rv(cu + cw) - 1.6]]); }
+      part(o, [[0, 0], [0, wall], [-ov, wall], [-ov, wall + f], [w / 2, wall + f + rise], [w + ov, wall + f], [w + ov, wall], [w, wall], [w, 0]]);
+      return o;
+    }
+    function hip(x0, w, wall, rise, layer, chim, bY) {   // a house side-on, under a hipped roof
+      var o = mk(x0, w, layer, true, bY), ov = 1.1, f = 0.8, hp = Math.min(rise * 1.15, w * 0.3), rg = wall + f + rise;
+      if (chim) { var cu = w * 0.66; part(o, [[cu, rg - 1.6], [cu, rg + 3.2], [cu + 2.4, rg + 3.2], [cu + 2.4, rg - 1.6]]); }
+      part(o, [[0, 0], [0, wall], [-ov, wall], [-ov, wall + f], [hp - ov, rg], [w - hp + ov, rg], [w + ov, wall + f], [w + ov, wall], [w, wall], [w, 0]]);
+      return o;
+    }
+    function shed(x0, w, h1, h2) { var o = mk(x0, w, 0); part(o, [[0, 0], [0, h1], [-0.6, h1], [-0.6, h1 + 0.7], [w + 0.6, h2 + 0.7], [w + 0.6, h2], [w, h2], [w, 0]]); return o; }
+    function row(x0, ws) {   // narrow gable-fronted town houses on one levelled street: plots alike, heights and pitches not
+      var u = 0, tw = 0, j, f2; for (j = 0; j < ws.length; j++) tw += ws[j];
+      var bY = natY(x0 + tw * Z / 2);
+      for (j = 0; j < ws.length; j++) {
+        var w = ws[j], o = mk(x0 + u * Z, w, 0, true, bY), wall = 16 + 9 * rr(), fl;
+        if (j === 2 && ws.length > 4) { wall = 22 + 2 * rr(); part(o, [[0, 0], [0, wall + 1.4], [w, wall + 1.4], [w, 0]]); line(o, [[0, wall], [w, wall]]); fl = 3; }   // a later house with a flat parapet
+        else { part(o, [[0, 0], [0, wall], [w / 2, wall + w * (0.42 + 0.2 * rr())], [w, wall], [w, 0]]); fl = Math.floor((wall - 2.5) / 6.4); }
+        for (f2 = 0; f2 < fl; f2++) { win(o, w * 0.2, 2.6 + f2 * 6.4, 2.1, 3.3); win(o, w * 0.8 - 2.1, 2.6 + f2 * 6.4, 2.1, 3.3); }
+        u += w;
+      }
+    }
+    function civic(x0) {   // the town hall: two storeys under a hipped roof, its tower rising from the middle of the front
+      var bY = natY(x0 + 24.5 * Z), hall = hip(x0, 49, 16, 8, 0, false, bY), t, tw = 11, sh = 54, cp = 8, j;
+      for (j = 0; j < 3; j++) { win(hall, 3 + j * 5.5, 2.8, 2.2, 4); win(hall, 3 + j * 5.5, 9.4, 2.2, 4); win(hall, 32.8 + j * 5.5, 2.8, 2.2, 4); win(hall, 32.8 + j * 5.5, 9.4, 2.2, 4); }
+      t = mk(x0 + 19 * Z, tw, 0, false, bY); t.rx = hall.x1;   // it goes with its hall
+      part(t, [[0, 0], [0, sh], [-0.8, sh], [-0.8, sh + 1.4], [tw / 2, sh + 1.4 + cp], [tw + 0.8, sh + 1.4], [tw + 0.8, sh], [tw, sh], [tw, 0]]);
+      strut(t, [[tw / 2, sh + 1.4 + cp], [tw / 2, sh + 5.4 + cp]]);
+      line(t, [[0, 17], [tw, 17]]); line(t, [[0, 41], [tw, 41]]);
+      win(t, 2.2, sh - 10, 1.8, 6); win(t, tw - 4, sh - 10, 1.8, 6); win(t, tw / 2 - 1.6, 0, 3.2, 6.2);
+    }
+    function blocks(x0, two) {   // flats behind, low houses in front of them
+      var fh = 6.4, a = mk(x0, 50, 1), hA = 6 * fh + 2.2, f2, j, b, hB;
+      part(a, [[31, hA - 1], [31, hA + 4.4], [42, hA + 4.4], [42, hA - 1]]);
+      part(a, [[0, 0], [0, hA], [50, hA], [50, 0]]);
+      line(a, [[0, hA - 1.3], [50, hA - 1.3]]);
+      for (f2 = 0; f2 < 6; f2++) for (j = 0; j < 6; j++) win(a, 3.4 + j * 7.4, 2.4 + f2 * fh, 2.4, 3.1);
+      if (two) {
+        b = mk(x0 + 55 * Z, 37, 1); hB = 4 * fh + 2.2;
+        part(b, [[0, 0], [0, hB], [37, hB], [37, 0]]);
+        for (f2 = 0; f2 < 4; f2++) win(b, 2.6, 2.6 + f2 * fh, 31.8, 1.6);
+      }
+      hip(x0 + 4 * Z, 22, 9.5, 5.5, 0, true);
+      if (two) gable(x0 + 66 * Z, 17, 10, 7.5, 0, false);
+    }
+    function works(x0) {   // a north-light shed and its chimney stack
+      var s = mk(x0 + 5 * Z, 5.6, 1), sh = 60, o, wall = 13, nb = 4, bw = 58 / nb, th = 6.5, pts = [[0, 0], [0, wall]], j;
+      part(s, [[0, 0], [0.9, sh], [0.4, sh], [0.4, sh + 1.8], [5.2, sh + 1.8], [5.2, sh], [4.7, sh], [5.6, 0]]);
+      line(s, [[0.8, sh - 7], [4.8, sh - 7]]);
+      o = mk(x0, 58, 0);
+      for (j = 0; j < nb; j++) pts.push([j * bw, wall + th], [(j + 1) * bw, wall]);
+      pts.push([58, 0]); part(o, pts); s.rx = o.x1;   // the stack goes with its shed: no chimney left standing alone
+      for (j = 0; j < 6; j++) win(o, 4 + j * 9.2, 6.2, 3.4, 3.2);
+    }
+    function waterTower(x0) {
+      var o = mk(x0, 20, 0), lg = 36, j;
+      strut(o, [[1.2, 0], [3.2, lg]]); strut(o, [[18.8, 0], [16.8, lg]]);
+      line(o, [[7.6, 0], [8.4, lg]]); line(o, [[12.4, 0], [11.6, lg]]);
+      for (j = 0; j < 3; j++) {
+        var v0 = j * 12, v1 = v0 + 12, a0 = 1.2 + 2 * v0 / lg, a1 = 1.2 + 2 * v1 / lg;
+        line(o, [[a0, v0], [20 - a1, v1]]); line(o, [[20 - a0, v0], [a1, v1]]);
+        if (j) line(o, [[a0, v0], [20 - a0, v0]]);
+      }
+      part(o, [[-0.6, lg], [-0.6, lg + 13], [10, lg + 18.5], [20.6, lg + 13], [20.6, lg]]);
+      line(o, [[-0.6, lg + 13], [20.6, lg + 13]]); line(o, [[-1.6, lg + 1.2], [21.6, lg + 1.2]]);
+      strut(o, [[10, lg + 18.5], [10, lg + 21]]);
+      o.edges = [x0 + 1.2 * Z, x0 + 18.8 * Z, x0 + 8 * Z, x0 + 12 * Z];
+    }
+    function farm(x0) {   // a barn and its silo
+      var b = mk(x0, 30, 0), wall = 10.5, s, sh = 29;
+      part(b, [[0, 0], [0, wall], [-0.8, wall], [3.4, wall + 6.2], [15, wall + 11.5], [26.6, wall + 6.2], [30.8, wall], [30, wall], [30, 0]]);
+      line(b, [[11, 0], [11, 8], [19, 8], [19, 0]]);
+      s = mk(x0 + 33 * Z, 8, 0);
+      part(s, [[0, 0], [0, sh], [1.1, sh + 2.4], [4, sh + 3.4], [6.9, sh + 2.4], [8, sh], [8, 0]]);
+      line(s, [[0, sh * 0.34], [8, sh * 0.34]]); line(s, [[0, sh * 0.67], [8, sh * 0.67]]);
+    }
+    function tree(xc, w, hh) {   // drawn as an outline with its branches: not a ball on a stick
+      var o = mk(xc - w / 2 * Z, w, 0, false), cy = hh * 0.6, ry = hh * 0.4, rx = w / 2, a1 = rr() * 6.28, a2 = rr() * 6.28, a3 = rr() * 6.28, pts = [], j;
+      o.la = 0.5; o.da = 0.4; o.lw = 0.85; o.edges = [xc];
+      for (j = 0; j < 34; j++) {
+        var th = j / 34 * 6.2832, r = 1 + 0.075 * Math.sin(3 * th + a1) + 0.05 * Math.sin(7 * th + a2) + 0.035 * Math.sin(12 * th + a3);
+        pts.push([w / 2 + Math.cos(th) * rx * r, cy + Math.sin(th) * ry * r]);
+      }
+      part(o, pts);
+      var tb = cy - ry * 0.9;
+      strut(o, [[w / 2, 0], [w / 2, tb]]);
+      line(o, [[w / 2, tb], [w / 2 - rx * 0.32, cy + ry * 0.15]]); line(o, [[w / 2, tb], [w / 2 + rx * 0.06, cy + ry * 0.5]]); line(o, [[w / 2 + rx * 0.02, cy - ry * 0.3], [w / 2 + rx * 0.4, cy + ry * 0.2]]);
+      return o;
+    }
+    function poplar(xc, w, hh) {
+      var o = mk(xc - w / 2 * Z, w, 0, false), v0 = hh * 0.1, pts = [], j, t, r;
+      o.la = 0.5; o.da = 0.36; o.lw = 0.85; o.edges = [xc];
+      for (j = 0; j <= 14; j++) { t = j / 14; r = Math.pow(Math.sin(Math.PI * Math.min(1, 0.06 + t * 0.94)), 0.7) * (1 + 0.07 * Math.sin(j * 2.1 + xc)); pts.push([w / 2 + r * w / 2, v0 + t * (hh - v0)]); }
+      for (j = 14; j >= 0; j--) { t = j / 14; r = Math.pow(Math.sin(Math.PI * Math.min(1, 0.06 + t * 0.94)), 0.7) * (1 + 0.07 * Math.sin(j * 1.7 + xc * 0.7)); pts.push([w / 2 - r * w / 2, v0 + t * (hh - v0)]); }
+      part(o, pts); strut(o, [[w / 2, 0], [w / 2, v0 + 1.5]]); line(o, [[w / 2, v0 + 1], [w / 2, hh * 0.78]]);
+      return o;
+    }
+    // ---- the town
+    x = t0 + Math.max(0, span - used) / 2;
+    var townX0 = x;
+    for (i = 0; i < use.length; i++) {
+      var c = use[i], cw = c[1] * Z, gw = (i < use.length - 1 ? c[3] : 0) * Z * stretch, gx = x + cw + gw / 2;
+      if (c[0] === 'row4') row(x, [13, 14.5, 12, 12.5]);
+      else if (c[0] === 'row6') row(x, [13, 14.5, 12.5, 15, 13.5, 12.5]);
+      else if (c[0] === 'civic') civic(x);
+      else if (c[0] === 'block1') blocks(x, false);
+      else if (c[0] === 'blocks2') blocks(x, true);
+      else if (c[0] === 'houses2') { gable(x, 18, 12, 8.5, 0, true); hip(x + 24 * Z, 26, 10.5, 6.5, 0, false); }
+      else if (c[0] === 'houses3') { gable(x, 19, 12, 9, 0, true); hip(x + 25 * Z, 28, 11, 7, 0, false); gable(x + 59 * Z, 16, 10.5, 8, 0, false); shed(x + 78 * Z, 8, 6.5, 5); }
+      else if (c[0] === 'housesW') { gable(x, 18, 11, 8.5, 0, false); hip(x + 25 * Z, 30, 11.5, 7, 0, true); shed(x + 60 * Z, 10, 7, 5.5); }
+      else if (c[0] === 'works') works(x);
+      else if (c[0] === 'wt') waterTower(x);
+      if (c[3] >= 16 && i < use.length - 1) {   // a tree in the gaps left for one
+        if (c[0] === 'civic') { poplar(gx - 3.4 * Z, 6, 30); poplar(gx + 3.6 * Z, 6, 34); }
+        else tree(gx, Math.min(17, gw / Z - 3), 22);
+      }
+      x += cw + gw;
+    }
+    var townX1 = x;
+    // ---- the country around it (the east side is placed after the bridge, below)
+    if (!sm) {
+      tree(0.032 * W, 24, 30); tree(0.054 * W, 28, 35); tree(0.075 * W, 21, 26);   // a copse on the hill
+      if (townX0 - 0.1 * W > 50 * Z) farm(0.1 * W);
+    }
+    // ---- the ground as surveyed: natural, with the building plots levelled; sampled every 2-4px (coarser on wide screens)
+    var st = W > 2200 ? 4 : W > 1100 ? 3 : 2, n = Math.ceil((W + 40) / st) + 2, ys = [];
+    for (i = 0; i < n; i++) ys.push(natY(-20 + i * st));
+    objs.forEach(function (o) {
+      if (!o.plot) return;
+      var a = o.x0 - 1, b = o.x1 + 1, rp = 4;
+      for (var j = Math.max(0, Math.floor((a - rp + 20) / st)); j < n && -20 + j * st <= b + rp; j++) {
+        var xx = -20 + j * st, t = xx < a ? (xx - (a - rp)) / rp : xx > b ? (b + rp - xx) / rp : 1;
+        ys[j] = lerp(ys[j], o.base, clamp(t, 0, 1));
+      }
+    });
+    function yAt(xx) { var f = (xx + 20) / st, j = Math.floor(f); if (!(j >= 0)) return ys[0]; if (j >= n - 1) return ys[n - 1]; return lerp(ys[j], ys[j + 1], f - j); }
+    // ---- the river and its bridge
+    var rb = bumps[sm ? 1 : 2], rc = rb[0] * W, rw = rb[2] * W, yw = base + 4 * Z, wx0 = rc, wx1 = rc;
+    while (wx0 > rc - rw && yAt(wx0 - 1) > yw) wx0 -= 1;
+    while (wx1 < rc + rw && yAt(wx1 + 1) > yw) wx1 += 1;
+    var water = wx1 - wx0 > 4 ? { x0: wx0, x1: wx1, y: yw } : null;
+    var xa = rc - rw * 1.32, xb = rc + rw * 1.32, sL = rc - rw * 0.6, sR = rc + rw * 0.6;
+    var yP = Math.min(yAt(xa), yAt(xb)) - 3.6 * Z, yD = yP + 1.7 * Z, yA = yD + 2.2 * Z, ySL = yAt(sL), ySR = yAt(sR), cyA = 2 * yA - (ySR + ySL) / 2;
+    var bp = [[xa, yP], [xb, yP], [xb, yAt(xb)]];
+    for (x = xb - 2; x > sR; x -= 2) bp.push([x, yAt(x)]);
+    for (k = 0; k <= 16; k++) { var tq = k / 16, uq = 1 - tq; bp.push([uq * uq * sR + 2 * uq * tq * rc + tq * tq * sL, uq * uq * ySR + 2 * uq * tq * cyA + tq * tq * ySL]); }
+    for (x = sL - 2; x > xa; x -= 2) bp.push([x, yAt(x)]);
+    bp.push([xa, yAt(xa)]);
+    objs.push({ x0: xa, x1: xb, base: yP, layer: 0, plot: false, parts: [bp], struts: [], lines: [[[xa, yD], [xb, yD]]], wins: [], edges: [xa, xb], top: yP, la: 0.66, da: 0.4, lw: 1 });
+    x = xb + W * 0.012;
+    if (!sm) {
+      poplar(x, 6, 32); poplar(x + W * 0.014, 6, 37); poplar(x + W * 0.028, 6, 30); x += W * 0.06;
+      if (x + 70 * Z < W - 6) { hip(x, 24, 10, 6, 0, true); farm(x + 30 * Z); x += 74 * Z; }
+      if (x + 20 * Z < W) tree(Math.max(x + 14 * Z, 0.968 * W), 22, 27);
+    } else if (x + 4 < W) { poplar(x + 2, 5.5, 28); if (x + 30 * Z < W) tree(x + 16 * Z, 16, 21); }   // phones: only what fits past the bridge
+    // ---- survey stakes at one spacing; only the row's phase is chosen, so that none stands on a wall, a leg or a trunk
+    var sp = sm ? 40 : Math.round(40 * clamp(Z, 1.2, 2)), avoid = [], best = 0, bestS = -1e9, o2, sx;
+    objs.forEach(function (o) { avoid.push.apply(avoid, o.edges); });
+    for (o2 = 0; o2 < sp; o2 += 0.5) {
+      var hits = 0, clear = 1e9;
+      for (sx = W - 8 - o2; sx > 6; sx -= sp) for (k = 0; k < avoid.length; k++) { var dd = Math.abs(sx - avoid[k]); if (dd < 3.5) hits++; if (dd < clear) clear = dd; }
+      var score = -hits * 1000 + Math.min(clear, 8);
+      if (score > bestS) { bestS = score; best = o2; }
+    }
+    var stakes = []; for (sx = W - 8 - best; sx > 6; sx -= sp) stakes.push(sx);
+    // ---- the front's run: from past the right edge until the cut has left the screen on the left
+    var cmax = 0; for (x = -20; x <= 40; x += 2) cmax = Math.max(cmax, Math.abs(yAt(x) - gy) * 1.1 + 1);
+    var top = gy; objs.forEach(function (o) { if (o.top < top) top = o.top; });
+    // dust: each thing is sampled into specks (along its outlines, and through its body), each with the moment it lets go;
+    // the side the front comes from goes first, so a building crumbles from one edge into nothing
+    var dr = mulberry(424242);
+    function inPoly(px, py, poly) { var c = false; for (var a = 0, b = poly.length - 1; a < poly.length; b = a++) { var xi = poly[a][0], yi = poly[a][1], xj = poly[b][0], yj = poly[b][1]; if ((yi > py) !== (yj > py) && px < (xj - xi) * (py - yi) / (yj - yi) + xi) c = !c; } return c; }
+    objs.forEach(function (o) {
+      var right = o.rx != null ? o.rx : o.x1, left = o.x0, wd = Math.max(4, right - left), d = [];
+      function add(x, y, body) { var f = clamp((right - x) / wd, 0, 1); d.push([x, y, clamp(0.06 + 0.5 * f + 0.14 * (dr() - 0.5), 0, 0.72), 0.4 + dr(), 0.4 + dr(), dr() * 6.28, body ? 1 : 0]); }
+      o.parts.concat(o.struts).forEach(function (pl) {
+        for (var a = 0; a < pl.length; a++) { var p0 = pl[a], p1 = pl[(a + 1) % pl.length], L = Math.hypot(p1[0] - p0[0], p1[1] - p0[1]); for (var t = 0; t < L; t += 1.4) add(p0[0] + (p1[0] - p0[0]) * t / L, p0[1] + (p1[1] - p0[1]) * t / L, false); }
+      });
+      o.parts.forEach(function (pl) {
+        var x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9; pl.forEach(function (q) { x0 = Math.min(x0, q[0]); x1 = Math.max(x1, q[0]); y0 = Math.min(y0, q[1]); y1 = Math.max(y1, q[1]); });
+        for (var yy = y0 + 1.5; yy < y1; yy += 2.6) for (var xx = x0 + 1.5; xx < x1; xx += 2.6) if (inPoly(xx, yy, pl)) add(xx + (dr() - 0.5) * 2, yy + (dr() - 0.5) * 2, true);
+      });
+      o.dust = d; o.left = left; o.right = right;
+    });
+    var back = objs.filter(function (o) { return o.layer; }), front = objs.filter(function (o) { return !o.layer; });
+    G.hw = { R: R, gy: gy, Z: Z, ys: ys, n: n, st: st, yAt: yAt, objs: back.concat(front), stakes: stakes, sp: sp, water: water, top: top,
+             town: [townX0, townX1], sh: sm ? 17 : 24, rod: sm ? 1.5 : 1.8, band: (sm ? 14 : 18) * Math.min(Z, 1.25), hs: sm ? 4 : W > 2200 ? 6 : 4.5, zd: clamp(Z, 0.8, 1.25),
+             lead: lead, bottom: Math.min(H + 20, R.y + R.h + H * 0.5), f0: f0, f1: Math.min(f1, -26 - cmax), front: f0, planU: 0, fS: fS };
+  },
+  frame: function (S, p) {
+    if (S.relaid || !G.hw) this.lay(S);
+    var h = G.hw, PP = this.P(); if (!(p >= 0)) p = 0;
+    h.planU = clamp((p - PP.P0) / (PP.P1 - PP.P0), 0, 1);
+    h.front = h.f0 - (h.f0 - h.f1) * clamp((p - PP.P2) / (PP.P3 - PP.P2), 0, 1);   // one speed, no easing: it neither aims at the town nor slows for it
+  },
+  back: function (S, col) {
+    var h = G.hw; if (!h) return;
+    var gy = h.gy, Z = h.Z, fx = h.front, lead = h.lead, ty = ctx.getTransform().f / DPR, i, j, k, x;
+    var c = Math.abs(h.yAt(fx) - gy) * 1.1 + 1, cut = fx < W + 20;
+    // riding away: gone before its highest mark (a standing building, a pole top, the record of the old ground) can sit under the bar
+    var yTop = gy - h.sh - 4;
+    for (k = 0; k < h.objs.length; k++) { var ob = h.objs[k]; if (((ob.rx != null ? ob.rx : ob.x1) + lead - fx) / lead < 1 && ob.top < yTop) yTop = ob.top; }
+    if (cut) for (i = Math.max(0, Math.ceil((fx + c + 20) / h.st)); i < h.n; i += 2) if (h.ys[i] < yTop) yTop = h.ys[i];
+    var fa = smooth((yTop + ty - barH - 12) / 90);
+    if (!(fa > 0.004)) return;
+    var M = curM || MOODS.overcast, Hs = H > 0 ? H : 1, ga;
+    function ink(a) { return rgba(col, a); }
+    function unit(v) { return v > 0 ? (v < 1 ? v : 1) : 0; }
+    function groundNow(xx) { return xx <= fx ? h.yAt(xx) : xx >= fx + c ? gy : lerp(h.yAt(fx), gy, (xx - fx) / c); }
+    function groundPath(m) {   // the ground as it is now: natural up to the front, the cut face, then the level (every m-th sample)
+      var d = h.st * m; ctx.moveTo(-20, groundNow(-20));
+      for (var q = m; q < h.n + m; q += m) {
+        var xx = -20 + q * h.st;
+        if (fx > xx - d && fx < xx) ctx.lineTo(fx, groundNow(fx));
+        if (fx + c > xx - d && fx + c < xx) ctx.lineTo(fx + c, gy);
+        if (xx > fx + c || xx >= W + 20) { ctx.lineTo(W + 20, groundNow(W + 20)); return; }
+        ctx.lineTo(xx, groundNow(xx));
+      }
+    }
+    function trace(pts) { ctx.moveTo(pts[0][0], pts[0][1]); for (var q = 1; q < pts.length; q++) ctx.lineTo(pts[q][0], pts[q][1]); }
+    ctx.save();
+    try {
+      ctx.globalAlpha *= fa; ga = ctx.globalAlpha;
+      ctx.lineJoin = 'round'; ctx.lineCap = 'butt';
+      // (1) the earth, faintly, under the ground as it is now
+      var deep = Math.max(gy + 20, Math.min(h.bottom, gy + 120 * Z));
+      ctx.beginPath(); groundPath(2); ctx.lineTo(W + 20, deep); ctx.lineTo(-20, deep); ctx.closePath();
+      var eg = ctx.createLinearGradient(0, gy - 30 * Z, 0, deep); eg.addColorStop(0, ink(0.05)); eg.addColorStop(1, ink(0));
+      ctx.fillStyle = eg; ctx.fill();
+      // (1b) the ground the plan will take: hatched between the land and the level as the level is ruled (lines added whole as the
+      //      ruling head passes their lower ends, so the edge is never vertical); the cut takes it with everything on it
+      if (h.planU > 0 && fx > -20) {
+        if (h.hmax == null) { h.hmax = 0; for (i = 0; i < h.n; i++) h.hmax = Math.max(h.hmax, gy - h.ys[i]); h.hmax += 4; }
+        var hx = W + 20 - (W + 40) * h.planU, xr = Math.min(fx, W + 20), L = h.hmax, hstep = small ? 6 : 7;
+        ctx.save(); ctx.beginPath(); ctx.moveTo(-20, gy); ctx.lineTo(-20, h.ys[0]);
+        for (i = 1; i < h.n && -20 + i * h.st < xr; i++) ctx.lineTo(-20 + i * h.st, h.ys[i]);
+        ctx.lineTo(xr, h.yAt(xr)); ctx.lineTo(xr, gy); ctx.closePath(); ctx.clip();
+        ctx.strokeStyle = ink(0.12); ctx.lineWidth = 0.6; ctx.beginPath();
+        for (x = Math.floor((hx - L) / hstep) * hstep; x < xr + 2; x += hstep) { if (x + L < hx) continue; ctx.moveTo(x, gy - L); ctx.lineTo(x + L, gy); }
+        ctx.stroke(); ctx.restore();
+      }
+      // (2) the levelled ground in section: ruled hatching fixed to the land, uncovered by the cut, with a slanted leading edge
+      if (cut) {
+        var xs = fx + c, bd = h.band;
+        ctx.save(); ctx.beginPath(); ctx.moveTo(xs, gy); ctx.lineTo(W + 20, gy); ctx.lineTo(W + 20, gy + bd); ctx.lineTo(xs + bd * 0.9, gy + bd); ctx.closePath(); ctx.clip();
+        ctx.strokeStyle = ink(0.2); ctx.lineWidth = 0.75; ctx.beginPath();
+        for (x = Math.floor((xs - bd) / h.hs) * h.hs; x < W + 20; x += h.hs) { ctx.moveTo(x, gy + bd); ctx.lineTo(x + bd, gy); }
+        ctx.stroke(); ctx.restore();
+      }
+      // (3) the river, where it still is
+      var wt = h.water;
+      if (wt && fx > wt.x0) {
+        var ww = wt.x1 - wt.x0, wr = Math.min(wt.x1, fx);
+        ctx.strokeStyle = ink(0.42); ctx.lineWidth = 0.8; ctx.beginPath();
+        ctx.moveTo(wt.x0, wt.y); ctx.lineTo(wr, wt.y);
+        if (wr > wt.x0 + ww * 0.2) { ctx.moveTo(wt.x0 + ww * 0.2, wt.y + 2.4 * Z); ctx.lineTo(Math.min(wr, wt.x1 - ww * 0.2), wt.y + 2.4 * Z); }
+        if (wr > wt.x0 + ww * 0.38) { ctx.moveTo(wt.x0 + ww * 0.38, wt.y + 4.6 * Z); ctx.lineTo(Math.min(wr, wt.x1 - ww * 0.38), wt.y + 4.6 * Z); }
+        ctx.stroke();
+      }
+      // (4) the ground line: natural up to the front, then the cut face and the new level, drawn heavier
+      ctx.beginPath(); ctx.moveTo(-20, h.ys[0]);
+      for (i = 1; i < h.n && -20 + i * h.st < fx; i++) ctx.lineTo(-20 + i * h.st, h.ys[i]);
+      if (fx > -20) ctx.lineTo(Math.min(fx, W + 20), h.yAt(Math.min(fx, W + 20)));
+      ctx.strokeStyle = ink(0.6); ctx.lineWidth = 1.1; ctx.stroke();
+      if (cut) {
+        ctx.beginPath();
+        if (fx >= -20) ctx.moveTo(fx, h.yAt(fx)); else ctx.moveTo(-20, groundNow(-20));
+        if (fx + c > -20) ctx.lineTo(fx + c, gy);
+        ctx.lineTo(W + 20, gy);
+        ctx.strokeStyle = ink(0.74); ctx.lineWidth = 1.45; ctx.stroke();
+      }
+      // (4b) the record of the old ground behind the front: the land's shape, dashed, with nothing of the town in it
+      if (cut) {
+        var i0 = Math.max(0, Math.ceil((fx + c + 20) / h.st)); i0 += i0 % 2;
+        if (i0 < h.n) {
+          ctx.setLineDash([3 * h.zd, 3 * h.zd]); ctx.lineDashOffset = -20 + i0 * h.st; ctx.strokeStyle = ink(0.22); ctx.lineWidth = 0.7; ctx.beginPath();
+          ctx.moveTo(-20 + i0 * h.st, h.ys[i0]); for (i = i0 + 2; i < h.n; i += 2) ctx.lineTo(-20 + i * h.st, h.ys[i]);
+          ctx.stroke(); ctx.setLineDash([]); ctx.lineDashOffset = 0;
+        }
+      }
+      // (5) everything of ours above the level. Ahead of the front each thing is marked for removal (drawn dashed, as on a
+      //     demolition drawing) and is gone by the time the front reaches it: nothing is struck, folded or broken
+      var M0 = skyAt(M, unit((h.top - 4 + ty) / Hs)), M1 = skyAt(M, unit((gy + 4 + ty) / Hs));
+      var paper = ctx.createLinearGradient(0, h.top - 4, 0, gy + 4);
+      paper.addColorStop(0, rgba(mixc(M0, col, 0.035))); paper.addColorStop(1, rgba(mixc(M1, col, 0.035)));
+      var dash = [4 * h.zd, 3 * h.zd];
+      for (k = 0; k < h.objs.length; k++) {
+        var o = h.objs[k], r = clamp(((o.rx != null ? o.rx : o.x1) + lead - fx) / lead, 0, 1); if (r >= 1) continue;
+        // nothing falls: ahead of the front each thing turns to dust, from the side the front comes from, and blows away
+        var cutX = r > 0.04 ? o.right - (o.right - o.left + 8) * clamp((r - 0.04) / 0.5, 0, 1) : 1e9;
+        if (r > 0) {
+          for (i = 0; i < o.dust.length; i++) {
+            var dp = o.dust[i], u = (r - dp[2]) / 0.45; if (!(u > 0) || u >= 1) continue;
+            var e = ease(u), dxp = dp[0] + e * (26 + 70 * dp[3]) * Z, dyp = dp[1] - e * (14 + 46 * dp[4]) * Z + Math.sin(dp[5] + u * 5) * 3 * u;
+            ctx.fillStyle = ink((dp[6] ? 0.4 : 0.8) * (1 - u) * (1 - u * 0.6)); var sz = dp[6] ? 1.3 : 1.6; ctx.fillRect(dxp, dyp, sz, sz);
+          }
+        }
+        if (cutX < o.left - 6) continue;
+        var fillA = 1, solA = 1, dashA = 0;
+        ctx.save(); if (cutX < 1e8) {   // a ragged edge, not a wipe
+          ctx.beginPath(); ctx.moveTo(-50, o.top - 20);
+          for (var yy2 = o.top - 20; yy2 <= o.base + 12; yy2 += 3) ctx.lineTo(cutX + 5 * Math.sin(yy2 * 0.9 + o.left) + 3.5 * Math.sin(yy2 * 2.7 + o.right), yy2);
+          ctx.lineTo(-50, o.base + 12); ctx.closePath(); ctx.clip();
+        }
+        for (i = 0; i < o.parts.length; i++) {
+          ctx.beginPath(); trace(o.parts[i]); ctx.closePath();
+          if (fillA > 0.01) { ctx.globalAlpha = ga * fillA; ctx.fillStyle = paper; ctx.fill(); ctx.globalAlpha = ga; }
+          if (solA > 0.01) { ctx.strokeStyle = ink(o.la * solA); ctx.lineWidth = o.lw; ctx.stroke(); }
+        }
+        if (solA > 0.01) {
+          if (o.wins.length) { ctx.fillStyle = ink(0.26 * solA); ctx.beginPath(); for (i = 0; i < o.wins.length; i++) { var wn = o.wins[i]; ctx.rect(wn[0], wn[1], wn[2], wn[3]); } ctx.fill(); }
+          if (o.lines.length) { ctx.strokeStyle = ink(o.da * solA); ctx.lineWidth = 0.6; ctx.beginPath(); for (i = 0; i < o.lines.length; i++) trace(o.lines[i]); ctx.stroke(); }
+          if (o.struts.length) { ctx.strokeStyle = ink(o.la * solA); ctx.lineWidth = o.lw; ctx.beginPath(); for (i = 0; i < o.struts.length; i++) trace(o.struts[i]); ctx.stroke(); }
+        }
+        if (dashA > 0.01) {
+          ctx.setLineDash(dash); ctx.lineDashOffset = 0; ctx.strokeStyle = ink(o.la * dashA); ctx.lineWidth = o.lw; ctx.beginPath();
+          for (i = 0; i < o.parts.length; i++) { trace(o.parts[i]); ctx.closePath(); }
+          for (i = 0; i < o.struts.length; i++) trace(o.struts[i]);
+          ctx.stroke(); ctx.setLineDash([]);
+        }
+        ctx.restore();
+      }
+      // (6) the level, ruled right to left across all the land as the stakes go in; a chain line (dash-dot), fixed to the land
+      var x0 = W + 20 - (W + 40) * h.planU, x1 = Math.min(fx + c, W + 20), sp = h.sp;
+      if (h.planU > 0 && x0 < x1) {
+        ctx.setLineDash([12 * h.zd, 3 * h.zd, 2 * h.zd, 3 * h.zd]); ctx.lineDashOffset = x0;
+        ctx.strokeStyle = ink(0.68); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(x0, gy); ctx.lineTo(x1, gy); ctx.stroke();
+        ctx.setLineDash([]); ctx.lineDashOffset = 0;
+      }
+      // (7) the stakes: one spacing, in the fields, the river and the town alike; each is tied to the level until the cut reaches it
+      if (h.planU > 0) {
+        var pS = [], pO = [], pT = [];
+        for (k = 0; k < h.stakes.length; k++) {
+          var sx = h.stakes[k], a = clamp((sx - x0) / (sp * 0.8), 0, 1); if (a <= 0) continue;
+          var yb = groundNow(sx);
+          pS.push(sx, yb, yb - h.sh * a);
+          if (Math.abs(yb - gy) > 1) pO.push(sx, yb, lerp(yb, gy, a));
+          if (sx < x1) pT.push(sx);
+        }
+        ctx.lineWidth = 0.6; ctx.strokeStyle = ink(0.28); ctx.beginPath();
+        for (k = 0; k < pO.length; k += 3) { ctx.moveTo(pO[k], pO[k + 1]); ctx.lineTo(pO[k], pO[k + 2]); }
+        ctx.stroke();
+        ctx.lineWidth = 0.8; ctx.strokeStyle = ink(0.5); ctx.beginPath();
+        for (k = 0; k < pT.length; k++) { ctx.moveTo(pT[k], gy - 2.4 * h.zd); ctx.lineTo(pT[k], gy + 2.4 * h.zd); }
+        ctx.stroke();
+        // a ranging rod: one continuous shaft in four equal bands, dark and light, measured up from the ground, with a foot tick
+        var bl = h.sh / 4;
+        ctx.lineWidth = h.rod;
+        for (var par = 0; par < 2; par++) {
+          ctx.strokeStyle = ink(par ? 0.3 : 0.8); ctx.beginPath();
+          for (k = 0; k < pS.length; k += 3) {
+            var len = pS[k + 1] - pS[k + 2];
+            for (j = par; j < 4 && j * bl < len; j += 2) { ctx.moveTo(pS[k], pS[k + 1] - j * bl); ctx.lineTo(pS[k], pS[k + 1] - Math.min(len, (j + 1) * bl)); }
+          }
+          ctx.stroke();
+        }
+        ctx.lineWidth = 0.8; ctx.strokeStyle = ink(0.6); ctx.beginPath();
+        for (k = 0; k < pS.length; k += 3) { ctx.moveTo(pS[k] - 2.5, pS[k + 1]); ctx.lineTo(pS[k] + 2.5, pS[k + 1]); }
+        ctx.stroke();
+      }
+    } finally { ctx.restore(); }
+  }
+};
+
+/* inner alignment: perfect while measured, its own way when not */
+SC.inner = {
+  geom: function (S, p) {
+    // the frame (0.7 of a step outside the grid on each side) must fit inside the picture, under the bar
+    var R = S.R, top = Math.max(R.y, barH + 8), avail = R.y + R.h - top, gw = small ? Math.min(R.w * 0.78, avail * 0.8 / 1.14) : Math.min(R.w * 0.42, avail * 0.8 / 1.14), step = gw / 10;
+    var ox = small ? R.x + (R.w - gw) / 2 : R.x + R.w * 0.16 + smooth(p / 0.42) * R.w * 0.1, oy = R.y + R.h - gw * 1.07;
+    return { step: step, ox: ox, oy: oy, gw: gw };
+  },
+  enter: function (S) { var g = this.geom(S, 0); for (var i = 0; i < N; i++) setTarget(B[i], { kind: 'pin', x: g.ox + (i % 10 + 0.5) * g.step, y: g.oy + (Math.floor(i / 10) + 0.5) * g.step, k: 0.09, ang: 0 }, rnd() * 500); G.inner = { g: g, frameA: 0, lift: 0 }; this.t0 = S.placed ? -1e9 : performance.now(); },
+  frame: function (S, p, now) {
+    var g = this.geom(S, p), gph = now * 0.012;
+    var Rk = small ? { x: S.R.x, y: S.R.y - S.R.h * 0.05, w: S.R.w, h: S.R.h * 0.6 } : { x: S.R.x + S.R.w * 0.62, y: S.R.y, w: S.R.w * 0.36, h: S.R.h * 0.8 };
+    if (S.leaving && !reduced) Rk.x += Math.min(W, S.lt * 0.42);   // its own way: off to the right
+    for (var i = 0; i < N; i++) {
+      var b = B[i], col = i % 10, row = Math.floor(i / 10);
+      var gx = g.ox + (col + 0.5) * g.step, gy = g.oy + (row + 0.5) * g.step;
+      var th = 0.42 + 0.16 * ((9 - col) / 9) + 0.03 * b.rank, f = smooth((p - th) / 0.12);
+      var k = knot(i, now, Rk, 0.85);
+      b.tg.x = lerp(gx, k.x, f); b.tg.y = lerp(gy, k.y, f); b.tg.k = 0.12 + f * 0.05; b.tg.ang = f > 0.5 ? k.ang : 0;
+      b.ph = f < 0.2 ? gph : b.ph;
+      b.depth = k.z * f;
+    }
+    G.inner = { g: g, frameA: (1 - smooth((p - 0.36) / 0.1)) * clamp((now - this.t0 - 1300) / 450, 0, 1), lift: 0 };
+  },
+  back: function (S, col) {
+    var I = G.inner; if (!I || I.frameA <= 0) return;
+    var g = I.g, pad = g.step * 0.7, x0 = g.ox - pad, y0 = g.oy - pad - I.lift, x1 = g.ox + g.gw + pad, y1 = g.oy + g.gw + pad - I.lift, L = Math.min(34, g.gw * 0.16);
+    ctx.strokeStyle = rgba(col, 0.7 * I.frameA); ctx.lineWidth = 1.5; ctx.lineCap = 'square';
+    [[x0, y0, 1, 1], [x1, y0, -1, 1], [x0, y1, 1, -1], [x1, y1, -1, -1]].forEach(function (c) { ctx.beginPath(); ctx.moveTo(c[0] + c[2] * L, c[1]); ctx.lineTo(c[0], c[1]); ctx.lineTo(c[0], c[1] + c[3] * L); ctx.stroke(); });
+  }
+};
+
+/* first light: they come back, a few at a time, rising out of the light low on the screen (right of the caption,
+   never through it), and settle on a line like the first screen's. Once back, they stay. */
+function unevenSlots(nw, per) {   // birds sit the way birds sit: uneven gaps, a few close pairs
+  var out = [];
+  for (var w = 0; w < nw; w++) for (var j = 0, n = 0; j < per + 6 && n < per; j++) { if (rnd() < 0.14) continue; out.push({ w: w, t: 0.04 + 0.92 * clamp((j + 0.5 + (rnd() - 0.5) * 0.62) / (per + 6), 0, 1) }); n++; }
+  return out;
+}
+SC.ret = {
+  lay: function (S) {
+    var R = S.R, tr = 0;
+    Array.prototype.forEach.call(S.el.querySelectorAll('.cap h2, .cap .dek'), function (e) { var rg = document.createRange(); rg.selectNodeContents(e); tr = Math.max(tr, rg.getBoundingClientRect().right); });   // the text, not its box
+    var x0 = small ? R.x : Math.max(R.x + R.w * 0.3, tr + 70);
+    if (!small && R.x + R.w - x0 < 200) x0 = R.x;   // no room beside the caption: across the sky
+    var A = { x: x0, y: R.y, w: R.x + R.w - x0, h: R.h }, was = G.ret && G.ret.ws;
+    G.ret = G.ret || {}; G.ret.ws = anchorWires(was, rowsAt(A, 0.56, 34, 6)); G.ret.minx = x0 + 10;
+    if (was && G.ret.ws !== was) G.ret.fresh = true;
+  },
+  enter: function (S) {
+    G.ret = null; this.lay(S); this.state = []; this.t0 = S.placed ? -1e9 : performance.now();
+    var w0 = G.ret.ws[0], per = Math.max(8, Math.min(36, Math.floor(Math.abs(w0.x1 - w0.x0) * 0.92 / 15)));
+    this.seat = unevenSlots(G.ret.ws.length, per);
+    for (var i = 0; i < N; i++) this.state[i] = i < this.seat.length ? 0 : -1;   // -1: not in this picture
+  },
+  frame: function (S, p, now) {
+    if (S.relaid) { this.lay(S); if (G.ret.fresh) { G.ret.fresh = false; for (var r = 0; r < N; r++) { var tb = B[r].tg; if (this.state[r] === 1 && tb && tb.wire) { var sr = this.seat[r]; tb.wire = G.ret.ws[Math.min(sr.w, G.ret.ws.length - 1)]; tb.t = sr.t; } } } }
+    // the first groups rise while the picture comes up the screen; the rest once the caption has pinned
+    var pad = S.el._pad || 0, ride = pad ? clamp((H * 0.85 - S.el.getBoundingClientRect().top) / pad, 0, 1) : 1;
+    for (var i = 0; i < N; i++) {
+      if (this.state[i] !== 0) continue;
+      var b = B[i], g = Math.floor(b.rank * 8);
+      if ((g < 3 && ride > 0.45 + 0.18 * g) || p > 0.04 + 0.045 * g) {
+        this.state[i] = 1; var sl = this.seat[i];
+        var tg = perchOn(G.ret.ws[Math.min(sl.w, G.ret.ws.length - 1)], sl.t, i % 4 ? -1 : 1); tg.from = small ? 'right' : 'below'; tg.minx = G.ret.minx; tg.v = 3.1; setTarget(b, tg, rnd() * 420);
+      }
+    }
+  },
+  back: function (S, col) {   // the line is there from the start, faint, and firms up as they settle on it
+    var per = 0; for (var i = 0; i < N; i++) if (this.state[i] === 1 && B[i].st === 'perched') per++;
+    var a = (0.3 + 0.25 * Math.min(1, per / 20)) * clamp((performance.now() - this.t0) / 420, 0, 1);
+    if (a > 0.01) G.ret.ws.forEach(function (w) { strokeWire(w, col, a); });
+  }
+};
+
+/* the poll, Quinnipiac Sept 2026: speed carries the answer.
+   30 stop (still, on the wire) · 47 slow down (a slow circle) · 14 current pace · 5 faster (racing) · 4 not sure (hovering) */
+var POLL = [
+  { n: 30, kind: 'stop', label: '30 stop' },
+  { n: 47, kind: 'orbit', speed: 0.00045, label: '47 slow down' },
+  { n: 14, kind: 'orbit', speed: 0.0016, label: '14 keep the current pace' },
+  { n: 5, kind: 'orbit', speed: 0.0058, fast: true, label: '5 go faster' },
+  { n: 4, kind: 'hover', label: '4 not sure' }
+];
+SC.count = {
+  entry: 'fade',   // a chart: it appears whole, then its groups move at their own speeds
+  lay: function (S) {
+    var R = S.R, C = { groups: [], R: R, la: 0 };
+    if (!small) {
+      var gy = R.y + R.h * 0.5;
+      C.groups[0] = { wire: new Wire(R.x, R.y + R.h * 0.66, R.x + R.w * 0.3, R.y + R.h * 0.66, 4), lx: R.x + R.w * 0.15, ly: R.y + R.h * 0.66 + 38 };
+      C.groups[1] = { cx: R.x + R.w * 0.49, cy: gy, rx: Math.min(R.w * 0.105, 150), ry: Math.min(R.h * 0.24, 105) };
+      C.groups[2] = { cx: R.x + R.w * 0.71, cy: gy, rx: Math.min(R.w * 0.06, 80), ry: Math.min(R.h * 0.16, 70) };
+      C.groups[3] = { cx: R.x + R.w * 0.89, cy: gy, rx: Math.min(R.w * 0.055, 72), ry: Math.min(R.h * 0.15, 64) };
+      C.groups[4] = { x: R.x + R.w * 0.15, y: R.y + R.h * 0.2 };
+    } else {
+      C.groups[0] = { wire: new Wire(R.x, R.y + R.h * 0.2, R.x + R.w, R.y + R.h * 0.2, 4), lx: R.x + R.w * 0.5, ly: R.y + R.h * 0.2 + 30 };
+      C.groups[1] = { cx: R.x + R.w * 0.27, cy: R.y + R.h * 0.56, rx: R.w * 0.22, ry: R.h * 0.13 };
+      C.groups[2] = { cx: R.x + R.w * 0.76, cy: R.y + R.h * 0.5, rx: R.w * 0.13, ry: R.h * 0.075 };
+      C.groups[3] = { cx: R.x + R.w * 0.76, cy: R.y + R.h * 0.8, rx: R.w * 0.13, ry: R.h * 0.07 };
+      C.groups[4] = { x: R.x + R.w * 0.27, y: R.y + R.h * 0.88 };
+    }
+    G.count = C;
+  },
+  member: function (i) { var acc = 0; for (var g = 0; g < POLL.length; g++) { if (i < acc + POLL[g].n) return [g, i - acc]; acc += POLL[g].n; } return [POLL.length - 1, 0]; },
+  enter: function (S) {
+    this.lay(S);
+    for (var i = 0; i < N; i++) {
+      var m = this.member(i), g = m[0], k = m[1], P = POLL[g], Cg = G.count.groups[g];
+      if (P.kind === 'stop') setTarget(B[i], perchOn(Cg.wire, 0.03 + 0.94 * (k + 0.5) / P.n, k % 5 === 0 ? 1 : -1), 200 + rnd() * 1000);
+      else if (P.kind === 'hover') setTarget(B[i], { kind: 'hover', x: Cg.x, y: Cg.y }, 0);
+      else setTarget(B[i], { kind: 'pin', x: Cg.cx, y: Cg.cy, k: 0.04 }, 0);
+    }
+    this.t0 = performance.now() - 1600;   // the orbits are already at speed when it appears
+  },
+  frame: function (S, p, now) {
+    if (S.relaid) { this.lay(S); for (var r = 0; r < POLL[0].n; r++) if (B[r].tg && B[r].tg.wire) B[r].tg.wire = G.count.groups[0].wire; }
+    var C = G.count, ramp = clamp((now - this.t0) / 1600, 0, 1);
+    for (var i = 0; i < N; i++) {
+      var m = this.member(i), g = m[0], k = m[1], P = POLL[g], Cg = C.groups[g], b = B[i];
+      if (P.kind === 'orbit') {
+        var a = now * P.speed + (k / P.n) * 6.283, wob = P.fast ? 0 : Math.sin(now * 0.001 + k) * 3;
+        b.tg.x = Cg.cx + Math.cos(a) * (Cg.rx + wob); b.tg.y = Cg.cy + Math.sin(a) * (Cg.ry + wob);
+        b.tg.k = lerp(0.04, P.fast ? 0.5 : 0.25, ramp); b.tg.ang = clamp(Math.cos(a) * 0.5, -0.5, 0.5);
+        b.tg.fast = !!P.fast; b.fs = P.fast ? 1.6 : P.speed < 0.001 ? 0.55 : 0.95;
+      } else if (P.kind === 'hover') { var a2 = now * 0.0011 + k * 1.57; b.tg.x = Cg.x + (k - 1.5) * (small ? 16 : 20) + Math.cos(a2) * 3; b.tg.y = Cg.y + Math.sin(a2 * 1.3) * 4 + (k % 2) * 8; }
+    }
+    C.la = 1;   // the labels come with the chart: the entry fade carries them
+  },
+  back: function (S, col) { if (G.count) strokeWire(G.count.groups[0].wire, col, 0.55); },
+  front: function (S, col) {
+    var C = G.count; if (!C || C.la <= 0) return;
+    ctx.font = small ? '600 13px "Alegreya Sans", sans-serif' : labelFont; ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'center';
+    function lab(t, x, y) { ctx.fillStyle = rgba(inkAt(curM, y), C.la); ctx.fillText(t, x, y); }
+    var g = C.groups;
+    lab(POLL[0].label, g[0].lx, g[0].ly);
+    for (var q = 1; q <= 3; q++) lab(POLL[q].label, g[q].cx, g[q].cy + g[q].ry + (small ? 22 : 34));
+    lab(POLL[4].label, g[4].x, g[4].y - (small ? 16 : 22));
+  }
+};
+
+/* national restrictions, then a global moratorium */
+var GROUPS = [22, 20, 18, 16, 14, 10];
+SC.nations = {
+  lay: function (S) {
+    var R = S.R, cols = small ? 2 : 3, rows = Math.ceil(6 / cols), anchors = [];
+    for (var g = 0; g < 6; g++) { var c = g % cols, r = Math.floor(g / cols); anchors.push({ x: R.x + R.w * (c + 0.5) / cols, y: R.y + R.h * (0.12 + 0.62 * (r + 0.5) / rows) }); }
+    var shorts = anchors.map(function (a, g) { var len = Math.min(R.w / cols * 0.78, GROUPS[g] * (small ? 6.5 : 8.5)); return new Wire(a.x - len / 2, a.y + 14, a.x + len / 2, a.y + 14, 3); });
+    var longs = rowsAt({ x: R.x, y: R.y, w: R.w, h: R.h }, 0.88, 26, 10);
+    G.nat = { anchors: anchors, shorts: shorts, longs: longs, phase: -1, sa: 0, la: 0 };
+  },
+  member: function (i) { var acc = 0; for (var g = 0; g < 6; g++) { if (i < acc + GROUPS[g]) return [g, i - acc]; acc += GROUPS[g]; } return [5, 0]; },
+  assign: function (phase, now) {
+    var Nt = G.nat;
+    for (var i = 0; i < N; i++) {
+      var m = this.member(i), g = m[0], k = m[1], b = B[i];
+      if (phase === 0) setTarget(b, { kind: 'seek', fast: false, x: Nt.anchors[g].x, y: Nt.anchors[g].y }, 0);
+      else if (phase === 1) setTarget(b, perchOn(Nt.shorts[g], (k + 0.5) / GROUPS[g], k % 2 ? -1 : 1), rnd() * 300);
+      else setTarget(b, perchSlot(Nt.longs, i, (i % 4) ? -1 : 1), (5 - g) * 70 + rnd() * 420);
+    }
+  },
+  enter: function (S) { this.lay(S); G.nat.phase = -1; },
+  frame: function (S, p, now) {
+    if (S.relaid) {   // keep the phase and re-point the birds to the new wires: nobody takes off
+      var ph = G.nat.phase; this.lay(S); G.nat.phase = ph;
+      for (var r = 0; r < N; r++) { var tr = B[r].tg; if (!tr || !tr.wire) continue; if (ph === 1) tr.wire = G.nat.shorts[this.member(r)[0]]; else { var sl = slotIn(G.nat.longs, r); tr.wire = sl.wire; tr.t = sl.t; } }
+    }
+    var Nt = G.nat, phase = p < 0.08 ? 0 : p < 0.3 ? 1 : 2;
+    if (reduced) phase = 2;
+    if (phase !== Nt.phase) { Nt.phase = phase; this.assign(phase, now); }
+    if (phase === 0) {
+      for (var i = 0; i < N; i++) { var m = this.member(i), g = m[0], b = B[i], a = now * (0.0034 + g * 0.0005) * (g % 2 ? -1 : 1) + (m[1] / GROUPS[g]) * 6.283; b.tg.x = Nt.anchors[g].x + Math.cos(a) * (18 + (m[1] % 3) * 7); b.tg.y = Nt.anchors[g].y - 18 + Math.sin(a) * (8 + (m[1] % 3) * 4); b.tg.fast = true; }
+    }
+    Nt.sa = phase === 0 ? smooth((p + 0.02) / 0.06) : phase === 1 ? 1 : Math.max(0.25, 1 - smooth((p - 0.3) / 0.07));   // each nation's own line stays, faintly
+    Nt.la = smooth((p - 0.26) / 0.07);
+    if (reduced) { Nt.sa = 0.25; Nt.la = 1; }
+  },
+  back: function (S, col) { var Nt = G.nat; Nt.shorts.forEach(function (w) { strokeWire(w, col, 0.55 * Nt.sa); }); Nt.longs.forEach(function (w) { strokeWire(w, col, 0.55 * Nt.la); }); }
+};
+
+/* join: one place is empty until you take it */
+var GAP = 81;
+SC.join = {
+  entry: 'fade',   // the wires come up already full, except one place
+  lay: function (S) { G.join = anchorWires(G.join, rowsAt(S.R, 0.5, 34, 9, 10)); },
+  slot: function (k) { return perchSlot(G.join, k, (k % 4) ? -1 : 1); },
+  gapAt: function () { var sl = slotIn(G.join, GAP); return sl.wire.pt(sl.t); },
+  enter: function (S) {
+    G.join = null; this.lay(S); this.came = -1; this.t0 = performance.now();
+    var k = 0;
+    for (var i = 0; i < N - 1; i++) { if (k === GAP) k++; setTarget(B[i], this.slot(k), 0); k++; }
+  },
+  frame: function (S, p, now) {
+    if (S.relaid) {   // new wires: everyone keeps their place, you included
+      var was = G.join; this.lay(S);
+      if (G.join !== was) { var k = 0; for (var i = 0; i < N - 1; i++) { if (k === GAP) k++; var sl = slotIn(G.join, k); if (B[i].tg && B[i].tg.wire) { B[i].tg.wire = sl.wire; B[i].tg.t = sl.t; } k++; } }
+      var yb = B[N - 1]; if (this.came === 1 && yb.tg && yb.tg.wire) { var ys = slotIn(G.join, GAP); yb.tg.wire = ys.wire; yb.tg.t = ys.t; }
+    }
+    var you = B[N - 1], g = this.gapAt(), come = reduced ? 1 : (p > 0.24 && now - this.t0 > 900 ? 1 : 0);
+    if (reduced && this.came === 1 && you.tg && you.tg.kind === 'pin') { you.tg.x = g.x + 24; you.tg.y = g.y - 26; }
+    if (come !== this.came) {
+      this.came = come;
+      if (reduced) { you.hidden = false; setTarget(you, { kind: 'pin', x: g.x + 24, y: g.y - 26, ang: 0.35 }, 0); }   // the still: one empty place, and the bird about to take it
+      else if (come) {
+        var tr = 0; Array.prototype.forEach.call(S.el.querySelectorAll('.cap .pull'), function (e) { tr = Math.max(tr, e.getBoundingClientRect().right); });
+        var yt = this.slot(GAP); yt.v = 3.4; yt.dir = -1; yt.from = small ? 'right' : 'below'; yt.minx = tr + 40; setTarget(you, yt, 0);   // you come up from where you are reading
+      }
+      else setTarget(you, { kind: 'away', x: W + 120, y: g.y }, 0);
+    }
+  },
+  back: function (S, col) {
+    G.join.forEach(function (w) { strokeWire(w, col, 0.55); });
+    var you = B[N - 1], g = this.gapAt(), ur = small ? 2.3 : 2.7;
+    if (!(you.st === 'perched' && !you.hidden)) { ctx.strokeStyle = rgba(inkAt(curM, g.y), 0.8); ctx.lineWidth = 1.2; ctx.beginPath(); ctx.arc(g.x, g.y - ur - 0.6, ur, 0, 6.283); ctx.stroke(); }   // your place, empty
+  }
+};
+
+/* July: the test did not hold. Birds kept inside a box find a gap, and go into another box. */
+SC.breach = {
+  entry: 'fade',
+  geom: function (S) {
+    var R = S.R, w = R.w * (small ? 0.4 : 0.3), h = Math.min(R.h * 0.62, w * (small ? 1.25 : 0.78)), y = R.y + (R.h - h) / 2 - (small ? 6 : 10);
+    var A = { x: R.x + R.w * (small ? 0.02 : 0.08), y: y, w: w, h: h }, Bx = { x: R.x + R.w * (small ? 0.58 : 0.62), y: y, w: w, h: h };
+    return { A: A, B: Bx, gapA: { x: A.x + A.w, y: A.y + A.h * 0.5 }, gapB: { x: Bx.x, y: Bx.y + Bx.h * 0.5 } };
+  },
+  inA: function (i) { return { kind: 'roam', box: this.inner(G.br.A), speed: 1.9 }; },
+  inner: function (bx) { return { x: bx.x + 8, y: bx.y + 8, w: bx.w - 16, h: bx.h - 16 }; },
+  enter: function (S) {
+    G.br = this.geom(S); G.br.open = 0; G.br.broken = 0; this.out = [];
+    for (var i = 0; i < N; i++) {
+      this.out[i] = false; setTarget(B[i], this.inA(i), 0);
+    }
+  },
+  frame: function (S, p, now) {
+    if (S.relaid) { var g = this.geom(S); G.br.A = g.A; G.br.B = g.B; G.br.gapA = g.gapA; G.br.gapB = g.gapB; for (var r = 0; r < N; r++) { var t = B[r].tg; if (t && t.kind === 'roam') t.box = this.inner(this.out[r] ? G.br.B : G.br.A); } }
+    var Gb = G.br; Gb.open = reduced ? 1 : smooth((p - 0.14) / 0.08); Gb.inB = reduced ? 1 : smooth((p - 0.2) / 0.06); Gb.broken = reduced ? 1 : smooth((p - 0.36) / 0.1);
+    for (var i = 0; i < N; i++) {
+      var b = B[i], goes = b.rank < 0.62, th = 0.2 + 0.3 * (b.rank / 0.62), out = goes && (reduced || p > th);
+      if (out !== this.out[i]) {
+        this.out[i] = out;
+        if (out) setTarget(b, { kind: 'path', i: 0, pts: [{ x: Gb.gapA.x - 10, y: Gb.gapA.y }, { x: Gb.gapA.x + 16, y: Gb.gapA.y }, { x: Gb.gapB.x - 10, y: Gb.gapB.y + (rnd() - 0.5) * 20 }, { x: Gb.gapB.x + 14, y: Gb.gapB.y }], then: { kind: 'roam', box: this.inner(Gb.B), speed: 2.5 } }, 0);
+        else setTarget(b, { kind: 'path', i: 0, pts: [{ x: Gb.gapB.x + 12, y: Gb.gapB.y }, { x: Gb.gapA.x - 14, y: Gb.gapA.y }], then: this.inA(i) }, 0);
+      }
+    }
+  },
+  back: function (S, col) {
+    var Gb = G.br, gap = 22 * Gb.open;
+    function box(bx, gx, side, dashed, a) {
+      ctx.strokeStyle = rgba(inkAt(curM, bx.y + bx.h / 2), a); ctx.lineWidth = 1.4; ctx.setLineDash(dashed ? [5, 6] : []);
+      ctx.beginPath();
+      if (side === 'right') { ctx.moveTo(bx.x + bx.w, bx.y + bx.h / 2 - gx); ctx.lineTo(bx.x + bx.w, bx.y); ctx.lineTo(bx.x, bx.y); ctx.lineTo(bx.x, bx.y + bx.h); ctx.lineTo(bx.x + bx.w, bx.y + bx.h); ctx.lineTo(bx.x + bx.w, bx.y + bx.h / 2 + gx); }
+      else { ctx.moveTo(bx.x, bx.y + bx.h / 2 + gx); ctx.lineTo(bx.x, bx.y + bx.h); ctx.lineTo(bx.x + bx.w, bx.y + bx.h); ctx.lineTo(bx.x + bx.w, bx.y); ctx.lineTo(bx.x, bx.y); ctx.lineTo(bx.x, bx.y + bx.h / 2 - gx); }
+      ctx.stroke(); ctx.setLineDash([]);
+    }
+    box(Gb.A, gap, 'right', false, 0.75);
+    box(Gb.B, 22 * Gb.inB, 'left', Gb.broken > 0.5, 0.75);
+    ctx.font = small ? '600 13px "Alegreya Sans", sans-serif' : labelFont; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.fillStyle = rgba(inkAt(curM, Gb.A.y + Gb.A.h + 28), 0.9);
+    ctx.fillText('the test at OpenAI', Gb.A.x + Gb.A.w / 2, Gb.A.y + Gb.A.h + 28);
+    ctx.fillText(small ? 'Hugging Face' : 'Hugging Face’s computers', Gb.B.x + Gb.B.w / 2, Gb.B.y + Gb.B.h + 28);
+  }
+};
+
+/* We've done it before: one wire per agreement, drawn where the page lists it; each fills as you reach it; the open row (AI) last */
+var PREC_PER = [12, 12, 12, 12, 12, 12, 12, 16];
+SC.prec = {
+  rows: function () { return Array.prototype.slice.call(document.querySelectorAll('.prec .perch')); },
+  enter: function (S) { for (var i = 0; i < N; i++) { B[i].hidden = true; B[i].tg = null; } G.prec = { on: [], t: [] }; },
+  done: function () { return !this.rows().some(function (e, r) { var q = e.getBoundingClientRect(); return G.prec && G.prec.on[r] && q.bottom > 0 && q.top < H; }); },   // none of its lines on screen
+  frame: function (S, p, now) {
+    var els = this.rows(), Gp = G.prec;
+    for (var r = 0; r < els.length; r++) {
+      var q = els[r].getBoundingClientRect(), last = r === els.length - 1, was = Gp.on[r];
+      var on = reduced ? true : q.top < H * (last ? 0.66 : 0.84) ? true : q.top > H * 0.95 ? false : !!was;
+      if (on !== was) { Gp.on[r] = on; Gp.t[r] = now; var li = els[r].closest('li'); if (li) li.classList.toggle('landed', on); }
+    }
+  },
+  back: function (S, col) {
+    var els = this.rows(), Gp = G.prec, t = performance.now();
+    for (var r = 0; r < els.length; r++) {
+      if (!Gp.on[r]) continue;
+      var q = els[r].getBoundingClientRect(); if (q.bottom < -40 || q.top > H + 40) continue;
+      var last = r === els.length - 1, u = reduced ? 1 : smooth((t - (Gp.t[r] || 0)) / 700), y = q.top + q.height * 0.6 + (ctx.getTransform().f ? 0 : 0);
+      ctx.strokeStyle = rgba(inkAt(curM, y), last ? 0.55 : 0.75); ctx.lineWidth = last ? 1.2 : 1.8;
+      if (last) ctx.setLineDash([6, 6]);
+      ctx.beginPath(); ctx.moveTo(q.left, y); ctx.lineTo(q.left + (q.right - q.left) * u, y); ctx.stroke();   // a line, drawn
+      ctx.setLineDash([]);
+    }
+  }
+};
+
+/* the end: no race; the flock flies together, in formation, toward the light */
+SC.together = {
+  entry: 'fade',
+  enter: function (S) { for (var i = 0; i < N; i++) { B[i].hidden = true; B[i].tg = null; } },
+  frame: function (S, p) { this.p = reduced ? 0.8 : p; },
+  back: function (S, col) {
+    var R = S.R, p = this.p || 0, k = small ? 5 : 7, rr = mulberry(7), stopX = R.x + R.w * 0.62, y0 = R.y + R.h * 0.18, y1 = R.y + R.h * 0.86;
+    var lineU = smooth((p - 0.3) / 0.14), halt = smooth((p - 0.42) / 0.2), r = small ? 3 : 3.6;
+    for (var i = 0; i < k; i++) {
+      var y = lerp(y0, y1, i / (k - 1)), v = 0.55 + 0.45 * rr();
+      var raceX = R.x + R.w * (0.04 + 0.52 * v * smooth(p / 0.42)), x = lerp(raceX, stopX - r - 3, halt);
+      ctx.strokeStyle = rgba(col, 0.2); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(R.x - 20, y); ctx.lineTo(R.x + R.w + 20, y); ctx.stroke();   // a track each
+      ctx.strokeStyle = rgba(col, 0.5 * (1 - halt)); ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(Math.max(R.x, x - 60 * v), y); ctx.lineTo(x, y); ctx.stroke();   // racing
+      ctx.fillStyle = rgba(col, 0.9); ctx.beginPath(); ctx.arc(x, y, r, 0, 6.283); ctx.fill();
+    }
+    if (lineU > 0) { ctx.strokeStyle = rgba(col, 0.85); ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(stopX, y0 - 22); ctx.lineTo(stopX, lerp(y0 - 22, y1 + 22, lineU)); ctx.stroke(); }   // one line, for all of them
+  }
+};
+
+/* ---------- the loop ----------
+   A section either has a picture (its scene) or is empty ('none'): reading happens under an empty sky.
+   A picture belongs to its section. When reading moves on, it keeps playing and rides away with its
+   caption (or with what it is drawn on), like a figure in an article; its birds are put away only once
+   it has left the screen. A new picture starts when its section reaches the middle of the screen and
+   nothing else is still on screen. Birds fly in from the right; scrolling back up, a jump (a link,
+   a fling, the technical section opening) and reduced motion place a picture as it stands instead. */
+var cur = { name: 'none', el: null, key: '', leaving: false, lt0: 0, fade0: -1e9 };
+var lastT = 0, scrollPrev = window.scrollY, lastDy = 0, jumpUntil = 0, jumpT0 = -1e9, jumpMoved = false, calm = 0, afterJump = false, firstFrame = true;
+var STILL = { highway: 0.46, together: 0.8, grown: 1 };   // highway: the plan through the town, the levelling just short of it   // reduced motion: the frame that says it
+function sceneFor(s) {
+  if (s.inter && s.cap && s.cap._nopic) return 'none';   // no room for its picture on this screen
+  if (s.inter || s.hero) return s.scene;
+  if (!wide && s.el.getAttribute('data-mobile') !== 'on') return 'none';
+  return s.scene;
+}
+var barEl = document.getElementById('bar'), barKey = '';
+function tintBar(M) {
+  if (!barEl) return;
+  var c = skyAt(M, 0.02), dark = lum(c) < 0.2, k = Math.round(c[0] / 3) + ',' + Math.round(c[1] / 3) + ',' + Math.round(c[2] / 3) + (dark ? 'd' : 'l');
+  if (k === barKey) return; barKey = k;
+  barEl.style.setProperty('--barbg', rgba(c, 0.78)); barEl.setAttribute('data-on', dark ? 'dark' : 'light');
+}
+function regionKey(R) { return R ? [Math.round(R.x), Math.round(R.y), Math.round(R.w), Math.round(R.h)].join(',') : 'none'; }
+function progress(s) {   // counted from the caption: a picture interlude's top padding is its picture riding in
+  var pad = s.el._pad || 0;
+  return clamp((H * 0.5 - (s.r.top + pad)) / Math.max(1, s.r.height - pad), 0, 1);
+}
+function sceneNow(now) { return reduced ? 0 : now; }   // reduced motion: every still is the same moment
+function sceneP(s, name) { return reduced && s.inter ? (STILL[name] != null ? STILL[name] : 1) : progress(s); }
+function riseOf(s) { return s.inter && s.cap ? capStuckRect(s).top - s.cap.getBoundingClientRect().top : 0; }   // how far the caption is from where it pins
+function sceneState(s, name, now) {
+  var R = regionFor(s) || { x: W * 0.05, y: H * 0.1, w: W * 0.9, h: H * 0.5 };
+  return { R: R, hero: s.hero, el: s.el, p: sceneP(s, name), relaid: false, leaving: cur.leaving, lt: now - cur.lt0 };
+}
+function putAway() {
+  for (var i = 0; i < N; i++) { var b = B[i]; b.hidden = true; b.st = 'fly'; b.tg = null; b.delay = 0; b.pendingLift = false; b.trail.length = 0; }
+  cur.name = 'none'; cur.el = null; cur.leaving = false;
+}
+function birdsOnScreen(rise, r) {   // only where the picture can be drawn: its section's visible part
+  var y0 = Math.max(0, r.top) - 12, y1 = Math.min(H, r.bottom) + 12; if (y1 - y0 <= 24) return false;
+  for (var i = 0; i < N; i++) { var b = B[i]; if (b.hidden) continue; var y = b.y - rise; if (y > y0 && y < y1 && b.x > -40 && b.x < W + 40) return true; }
+  return false;
+}
+function armJump(ms) { var t = performance.now(); jumpUntil = Math.max(jumpUntil, t + ms); jumpT0 = t; jumpMoved = false; }
+function start(s, name, now, placed, calmStart) {
+  cur.name = name; cur.el = s.el; cur.leaving = false;
+  var S = sceneState(s, name, now); S.placed = placed; cur.key = regionKey(S.R);
+  for (var i = 0; i < N; i++) { var b = B[i]; b.hidden = true; b.st = 'fly'; b.tg = null; b.delay = 0; b.vx = b.vy = 0; b.trail.length = 0; b.morph = name === 'grown' ? 0 : 1; b.depth = 0; b.fs = b.fs0; b.sc = 1; }
+  F.obs = obstaclesFor(s);
+  entering = true; SC[name].enter(S); entering = false;
+  var fade = SC[name].entry === 'fade';
+  if (placed || fade || reduced) { SC[name].frame(S, S.p, sceneNow(now)); snapAll(); }
+  cur.fade0 = !reduced && ((fade && !placed) || (placed && calmStart)) ? now : -1e9;   // a picture placed while the page is still fades in
+}
+
+function frame(now) {
+  var dt = lastT ? clamp((now - lastT) / 16.67, 0.25, 2.5) : 1; lastT = now;
+  var sy = window.scrollY, dy = sy - scrollPrev; scrollPrev = sy; if (dy) lastDy = dy;
+  calm = dy === 0 ? calm + 1 : 0;
+  if (Math.abs(dy) > H * 0.3) { if (jumpUntil <= now) jumpT0 = now; jumpUntil = Math.max(jumpUntil, now + 250); }   // a jump or a hard fling: nothing flies in
+  if (jumpUntil > now) {
+    if (dy !== 0) { jumpMoved = true; if (now - jumpT0 < 1800) jumpUntil = Math.max(jumpUntil, now + 160); }   // the jump's own smooth scroll
+    else if (jumpMoved && calm >= 3) jumpUntil = now;   // it has landed: what moves next is the reader
+  }
+  var jumping = jumpUntil > now;
+  if (jumping) afterJump = true;
+  var list = readSections(); if (!list.length) return;
+  var ai = activeIndex(list), s = list[ai];
+  s.p = reduced && s.inter ? 1 : progress(s);
+  s.mp = reduced && s.inter ? 1 : clamp((H * 0.5 - s.r.top) / Math.max(1, s.r.height), 0, 1);
+  var M = moodNow(list, ai);
+  // the picture wanted now: the reading section's, or the next one's as it comes up the screen
+  var ws = null, want = 'none', w0 = sceneFor(s);
+  if (w0 !== 'none') { ws = s; want = w0; }
+  else { var nx = list[ai + 1]; if (nx && nx.r.top < H * 0.85) { var w1 = sceneFor(nx); if (w1 !== 'none') { ws = nx; want = w1; } } }
+
+  // the picture on screen, and the section it belongs to
+  var ps = null;
+  if (cur.el) for (var q = 0; q < list.length; q++) if (list[q].el === cur.el) { ps = list[q]; break; }
+  if (cur.name !== 'none' && !ps) putAway();   // its section is gone (the technical part closed)
+  if (cur.name !== 'none') {
+    if (ws && ws.el === cur.el) cur.leaving = false;   // back with its own section: carry on, no replay
+    else if (jumping) putAway();
+    else if (!cur.leaving) { cur.leaving = true; cur.lt0 = now; }
+  }
+  if (cur.name !== 'none' && cur.leaving) {   // put away once nothing of it can be seen
+    var r0 = ps.el.getBoundingClientRect(), rs0 = riseOf(ps), S0 = sceneState(ps, cur.name, now);
+    var off = r0.bottom < -20 || r0.top > H + 20, above = ps.inter && S0.R.y + S0.R.h - rs0 < 0;
+    if (off || ((above || (SC[cur.name].done && SC[cur.name].done(S0))) && !birdsOnScreen(rs0, r0))) putAway();
+  }
+  if (cur.name === 'none' && want !== 'none' && (!jumping || reduced)) {   // reduced motion places every picture anyway
+    var placed = reduced || afterJump || lastDy < 0 || (firstFrame && !(ws.hero && sy < 8));   // only the first screen, opened at the top, flies in on load
+    start(ws, want, now, placed, dy === 0);
+  }
+  if (!jumping) afterJump = false;
+  firstFrame = false;
+
+  var rise = 0, S = null, cs = null;
+  if (cur.name !== 'none') {
+    cs = cur.leaving ? ps : ws;
+    S = sceneState(cs, cur.name, now);
+    var key = regionKey(S.R);
+    if (key !== cur.key) { cur.key = key; S.relaid = true; F.obs = obstaclesFor(cs); }
+    rise = riseOf(cs);
+    SC[cur.name].frame(S, S.p, sceneNow(now));
+    if (jumping && !cur.leaving && !reduced) snapAll();   // mid-jump, whatever its section adds is placed, not flown in
+  }
+
+  // captions take the colour the sky allows: every caption on or near the screen, where it is now
+  for (var ci = 0; ci < list.length; ci++) {
+    var cl = list[ci]; if (!cl.inter || !cl.cap || cl.r.top > H * 1.5 || cl.r.bottom < -H * 0.5) continue;
+    var cr = ci === ai ? capStuckRect(cl) : cl.cap.getBoundingClientRect(), on = onDark(M, clamp((cr.top + cr.bottom) / 2 / H, 0, 1)) ? 'dark' : 'light';
+    if (cl.cap.getAttribute('data-on') !== on) cl.cap.setAttribute('data-on', on);
+  }
+
+  if (S) { flockCentre(); if (!reduced) for (var j = 0; j < N; j++) stepBird(B[j], dt); else snapAll(); }
+
+  drawSky(M, now); curM = M; tintBar(M);
+  if (!S) return;
+  var dark2 = onDark(M, 0.5), lineCol = dark2 ? [214, 222, 234] : INK, sc0 = SC[cur.name];
+  var GA = clamp((now - cur.fade0) / 420, 0, 1) * (sc0.alpha ? clamp(sc0.alpha(S), 0, 1) : 1);
+  if (GA <= 0.004) return;
+  // a picture stays inside its own section: it never draws over the text before or after it, and where
+  // the section's edge is on screen the picture comes out from behind that text with a soft edge
+  var sr = cs.el.getBoundingClientRect(), ct = Math.max(0, sr.top), cb = Math.min(H, sr.bottom), SOFT = 40;
+  if (cb - ct < 1) return;
+  var edged = sr.top > 0 || sr.bottom < H;
+  if (edged) { ctx = lctx; ctx.clearRect(0, 0, W, H); }
+  ctx.save(); ctx.beginPath(); ctx.rect(0, ct, W, cb - ct); ctx.clip(); ctx.translate(0, -rise); ctx.globalAlpha = GA;
+  if (sc0.back) sc0.back(S, lineCol);
+  var s0 = small ? 1.2 : 1.42, UNIT = small ? 2.3 : 2.7;
+  for (var k = 0; k < N; k++) {
+    var b = B[k]; if (b.hidden) continue;
+    var birdCol = rgba(inkAt(M, b.y - rise));
+    var sc = s0 * (b.sc || 1) * (1 + (b.depth || 0) * 0.22);
+    // every member of a picture is a plain mark, a unit: a person, a copy of an AI, a country's share; never a bird
+    var ur = UNIT * sc / s0;
+    if (b.st === 'perched') { ctx.fillStyle = birdCol; ctx.beginPath(); ctx.arc(b.x, b.y - ur - 0.6, ur, 0, 6.283); ctx.fill(); }
+    else {
+      if (b.trail.length > 2) { ctx.strokeStyle = birdCol; ctx.globalAlpha = GA * 0.22; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.moveTo(b.trail[0], b.trail[1]); for (var tt = 2; tt < b.trail.length; tt += 2) ctx.lineTo(b.trail[tt], b.trail[tt + 1]); ctx.stroke(); ctx.globalAlpha = GA; }
+      ctx.fillStyle = birdCol; ctx.beginPath(); ctx.arc(b.x, b.y, ur, 0, 6.283); ctx.fill();
+    }
+  }
+  if (sc0.front) sc0.front(S, lineCol);
+  ctx.restore();
+  if (edged) {
+    ctx.globalCompositeOperation = 'destination-out';
+    var gr;
+    if (sr.top > 0) { gr = ctx.createLinearGradient(0, ct, 0, ct + SOFT); gr.addColorStop(0, 'rgba(0,0,0,1)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = gr; ctx.fillRect(0, ct, W, SOFT); }
+    if (sr.bottom < H) { gr = ctx.createLinearGradient(0, cb - SOFT, 0, cb); gr.addColorStop(0, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(0,0,0,1)'); ctx.fillStyle = gr; ctx.fillRect(0, cb - SOFT, W, SOFT); }
+    ctx.globalCompositeOperation = 'source-over';
+    ctx = sky; ctx.drawImage(layer, 0, 0, W, H);
+  }
+}
+function obstaclesFor(s) {
+  var out = [], els = s.cap ? [s.cap] : [];
+  for (var i = 0; i < els.length; i++) { var r = els[i].getBoundingClientRect(); if (!r.height) continue; out.push({ x: r.left - 22, y: r.top - 22, w: r.width + 44, h: r.height + 44 }); }
+  if (s.inter && s.cap) { var c = capStuckRect(s); out = [{ x: 0, y: c.top - 26, w: W, h: c.bottom - c.top + 52 }]; }
+  return out;
+}
+/* reduced motion: no flight, just the picture */
+function snapAll() {
+  for (var i = 0; i < N; i++) {
+    var b = B[i], tg = b.tg; if (!tg) continue;
+    if (tg.kind === 'away' || tg.kind === 'hide') { b.hidden = true; continue; }
+    b.delay = 0; b.pendingLift = false;   // a placed bird has nothing left to wait for
+    if (tg.kind === 'free') { if (b.fx == null) { b.fx = rnd(); b.fy = rnd(); } b.x = F.R.x + F.R.w * (0.15 + 0.7 * b.fx); b.y = F.R.y + F.R.h * (0.2 + 0.6 * b.fy); b.st = 'fly'; b.ph = 1.2; b.hidden = false; b.sc = F.sc; continue; }
+    if (tg.kind === 'path') { b.tg = tg = tg.then; }
+    if (tg.kind === 'roam') { if (b.fx == null) { b.fx = rnd(); b.fy = rnd(); } b.x = tg.box.x + tg.box.w * (0.1 + 0.8 * b.fx); b.y = tg.box.y + tg.box.h * (0.1 + 0.8 * b.fy); b.st = 'fly'; b.ph = 1.2; b.hidden = false; continue; }
+    if (tg.wire) { var p = tg.wire.pt(tg.t); b.x = p.x; b.y = p.y; b.vx = b.vy = 0; b.st = 'perched'; b.dir = tg.dir || 1; b.hidden = false; continue; }
+    b.x = tg.x; b.y = tg.y; b.vx = b.vy = 0; b.st = tg.kind === 'perch' ? 'perched' : 'fly'; b.hidden = false; if (tg.ang != null) b.ang = tg.ang;
+  }
+}
+
+function resize() {
+  W = window.innerWidth; H = window.innerHeight; DPR = Math.min(2, window.devicePixelRatio || 1);
+  cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR); ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  layer.width = cv.width; layer.height = cv.height; lctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  wide = W >= 1000; small = W < 700;
+}
+var raf = 0;
+function safe(now) { try { frame(now); } catch (e) { ctx = sky; if (!safe.told) { safe.told = true; if (window.console) console.error(e); } } }   // one bad frame must not freeze the birds for good
+function loop(now) { raf = 0; if (!document.hidden) safe(now); raf = requestAnimationFrame(loop); }
+function still() { if (!raf) raf = requestAnimationFrame(function (t) { raf = 0; safe(t); }); }
+
+document.documentElement.classList.add('sky');
+resize();
+for (var hb = 0; hb < N; hb++) B[hb].hidden = true;   // nobody is on screen until a picture brings them
+fitCaps();
+window.addEventListener('resize', function () { resize(); fitCaps(); cur.key = ''; if (reduced) still(); });
+if (document.fonts) document.fonts.ready.then(function () { fitCaps(); cur.key = ''; if (reduced) still(); });
+if (window.ResizeObserver) { var ro = new ResizeObserver(function () { fitCaps(); cur.key = ''; if (reduced) still(); }); caps.forEach(function (c) { ro.observe(c); }); }
+var tech = document.getElementById('technical'); if (tech) tech.addEventListener('toggle', function () { fitCaps(); cur.key = ''; armJump(400); if (reduced) still(); });
+document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href^="#"]'); if (a) armJump(450); }, true);   // a link: no stream of birds across the page
+window.addEventListener('hashchange', function () { armJump(450); });
+if (reduced) { window.addEventListener('scroll', still, { passive: true }); still(); if (document.fonts) document.fonts.ready.then(still); }
+else raf = requestAnimationFrame(loop);
+window.__flock = { B: B, cur: cur };
+})();
+
+</script>
+<script>
+(function () {
+  'use strict';
+  /* links into the technical explanation open it first, as the old site did */
+  function reveal(id, jump) {
+    if (!id) return;
+    var el = document.getElementById(id); if (!el) return;
+    var d = el.tagName === 'DETAILS' ? el : el.closest('details');
+    if (d && !d.open) { d.open = true; if (jump !== false) requestAnimationFrame(function () { requestAnimationFrame(function () { el.scrollIntoView(); }); }); }
+  }
+  function fromHash() { try { reveal(decodeURIComponent(location.hash.slice(1))); } catch (e) {} }
+  window.addEventListener('hashchange', fromHash);
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a) return;
+    var id = a.getAttribute('href').slice(1); if (id && id !== 'copy') reveal(id, false);
+  });
+  if (location.hash) { fromHash(); window.addEventListener('load', fromHash); }
+  /* arriving on an old link jumps straight there; smooth scrolling only for clicks after load */
+  window.addEventListener('load', function () { setTimeout(function () { document.documentElement.classList.add('ready'); }, 50); });
+
+  /* the bar: tinted once you leave the top, marks where you are, folds into a menu on narrow screens */
+  var bar = document.getElementById('bar'), menuBtn = bar.querySelector('.menu'), links = Array.prototype.slice.call(bar.querySelectorAll('ul a'));
+  var marks = links.map(function (a) { var el = document.getElementById(a.getAttribute('href').slice(1)); return el ? (el.closest('section, details') || el) : null; });
+  var ticking = false;
+  function onScroll() {
+    ticking = false;
+    document.documentElement.classList.toggle('scrolled', window.scrollY > 24);
+    var line = window.innerHeight * 0.38, cur = -1;
+    for (var i = 0; i < marks.length; i++) { var m = marks[i]; if (!m) continue; var d = m.closest && m.closest('details'); if (d && !d.open && m !== d) continue; if (m.getBoundingClientRect().top <= line) { if (cur < 0 || marks[cur].getBoundingClientRect().top <= m.getBoundingClientRect().top) cur = i; } }
+    links.forEach(function (a, k) { if (k === cur) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  window.addEventListener('resize', onScroll); onScroll();
+  function setMenu(open) { bar.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  menuBtn.addEventListener('click', function () { setMenu(!bar.classList.contains('open')); });
+  links.forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && bar.classList.contains('open')) { setMenu(false); menuBtn.focus(); } });
+  document.addEventListener('click', function (e) { if (bar.classList.contains('open') && !bar.contains(e.target)) setMenu(false); });
+
+  /* forms post to the same endpoints as before, but only from moratorium.ai itself */
+  var LIVE = /(^|\.)moratorium\.ai$/.test(location.hostname);
+  function hook(form, endpoint) {
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = form.querySelector('.status'), btn = form.querySelector('button[type=submit]');
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (!LIVE) { status.textContent = 'This is a preview copy of the site, so nothing was sent. On moratorium.ai this form goes to the team.'; return; }
+      btn.disabled = true; status.textContent = 'Sending…';
+      fetch(endpoint, { method: 'POST', body: new FormData(form) }).then(function (r) { return r.json(); }).then(function (d) {
+        if (d && d.success) { var p = document.createElement('p'); p.className = 'done'; p.textContent = d.message || 'Thank you.'; form.replaceWith(p); }
+        else { status.textContent = (d && d.message) || 'That didn’t go through. Please try again.'; btn.disabled = false; }
+      }).catch(function () { status.textContent = 'That didn’t go through. Please try again.'; btn.disabled = false; });
+    });
+  }
+  hook(document.getElementById('join_form'), 'https://forms.moratorium.ai/?submit_form');
+  hook(document.getElementById('contact_form'), 'https://forms.moratorium.ai/?submit_form');
+  var sub = document.getElementById('subscription_form_footer');
+  if (sub) {
+    var hidden = document.createElement('input'); hidden.type = 'hidden'; hidden.name = 'form'; hidden.value = 'moratorium.ai footer subscription'; sub.appendChild(hidden);
+    hook(sub, 'https://forms.moratorium.ai/?subscribe');
+  }
+
+  /* copy the call script */
+  var cs = document.getElementById('copy_script'), ss = document.getElementById('script_status');
+  if (cs) cs.addEventListener('click', function () {
+    var text = document.querySelector('#script p').textContent.replace(/^[“"]|[”"]$/g, '');
+    function ok() { ss.textContent = 'Copied. Fill in the brackets before you send it.'; }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, function () { window.prompt('Copy these words:', text); });
+    else window.prompt('Copy these words:', text);
+  });
+
+  /* copy the link */
+  var copy = document.getElementById('share_button_copy'), label = document.getElementById('copy_text');
+  if (copy) copy.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = 'https://moratorium.ai';
+    function ok() { label.textContent = 'Copied'; setTimeout(function () { label.textContent = 'Copy the link'; }, 2000); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(ok, function () { window.prompt('Copy this link:', url); });
+    else window.prompt('Copy this link:', url);
+  });
+})();
+</script>
+</body>
+</html>

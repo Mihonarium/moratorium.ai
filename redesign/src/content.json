@@ -1,0 +1,167 @@
+{
+ "short": [
+  "<a class=\"lab\" href=\"#why\">The risk:</a> Companies are racing to build AI smarter than humans without knowing how to control it. Leading scientists warn it could cause human extinction.",
+  "<a class=\"lab\" href=\"#what-happened\">What happened:</a> In July 2026, AI under test at OpenAI broke out and hacked a real company, Hugging Face, to cheat on its test. In September, OpenAI paused all work in which its most capable AI can use tools.",
+  "<a class=\"lab\" href=\"#ai-moratorium\">The fix:</a> A worldwide moratorium, a pause set by law, on using huge amounts of computing power to build more powerful AI, until scientists agree it’s safe.",
+  "<a class=\"lab\" href=\"#done-before\">Done before:</a> Biologists paused risky experiments in 1974, and nations banned biological weapons.",
+  "<a class=\"lab\" href=\"#ask-your-representative\">Your part:</a> 77 in 100 Americans want powerful AI slowed down or stopped until its safety can be evaluated. Ask your elected officials for a moratorium."
+ ],
+ "happened_pull": "In July 2026, an AI that OpenAI was testing broke out and spent four and a half days hacking into Hugging Face, another AI company, to cheat on its test.",
+ "happened": [
+  "About 700 copies of the AI joined in, coordinating on a message board. Investigators found they knew it was off-limits.",
+  "In May, OpenAI staff saw its AI reaching the internet when it wasn’t allowed to. In June, staff traced a security alert to the test and said there was no need to stop it.",
+  "Anthropic and a UK government lab have reported similar incidents. OpenAI paused part of its training for two weeks over the summer, and on September 25, after a smaller escape, it paused all training and testing in which its most capable AI can use tools, such as running commands on a computer.",
+  "On September 30 a Senate subcommittee held a hearing on rogue AI, a week after a bill to pause advanced AI development was introduced in the Senate. The White House has said it opposes a pause.",
+  "OpenAI’s chief executive told the UN Security Council that AI shouldn’t be trained without “an extremely strong case” that it can be kept under human control."
+ ],
+ "happened_src": "Sources: <a href=\"https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf\" target=\"_blank\" rel=\"noopener\">OpenAI’s report</a> · <a href=\"https://huggingface.co/blog/agent-intrusion-technical-timeline\" target=\"_blank\" rel=\"noopener\">Hugging Face’s timeline</a> · <a href=\"https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/\" target=\"_blank\" rel=\"noopener\">METR’s investigation</a> · <a href=\"https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents\" target=\"_blank\" rel=\"noopener\">Anthropic</a> · <a href=\"https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing\" target=\"_blank\" rel=\"noopener\">UK AI Security Institute</a> · <a href=\"https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/\" target=\"_blank\" rel=\"noopener\">OpenAI, September 25</a> · <a href=\"https://www.hsgac.senate.gov/subcommittees/dmdcc/hearings/rogue-ai-securing-the-homeland-against-ai-agent-attacks/\" target=\"_blank\" rel=\"noopener\">the Senate hearing</a> · <a href=\"https://www.govinfo.gov/app/details/BILLS-119s5493is\" target=\"_blank\" rel=\"noopener\">S. 5493</a> · <a href=\"https://abcnews.com/US/wireStory/tech-leaders-sake-humanity-control-ai-technology-created-136696851\" target=\"_blank\" rel=\"noopener\">AP on the White House</a> · <a href=\"https://openai.com/index/sam-altman-un-security-council-remarks/\" target=\"_blank\" rel=\"noopener\">Altman at the UN</a>",
+ "prec_dek": "Countries, and sometimes scientists themselves, have looked at a dangerous technology and drawn a line. The lines on gene-splicing and human cloning were drawn before anyone was hurt.",
+ "prec": [
+  {
+   "year": "1963",
+   "what": "Nuclear tests in the open sky.",
+   "line": "Partial Test Ban Treaty.",
+   "held": "Even countries that didn’t sign stopped; no one has tested in the open air since 1980."
+  },
+  {
+   "year": "1972",
+   "what": "Biological weapons.",
+   "line": "The U.S. gave up its own in 1969; a global ban followed.",
+   "held": "189 countries are parties."
+  },
+  {
+   "year": "1974–75",
+   "what": "Gene-splicing.",
+   "line": "Biologists paused their own risky experiments, met at Asilomar to write safety rules, then resumed.",
+   "held": "The pause “was universally observed.”"
+  },
+  {
+   "year": "1987",
+   "what": "Ozone-eating chemicals.",
+   "line": "Montreal Protocol; in 2009, the first treaty ratified by every UN member state.",
+   "held": "The ozone layer is on track to return to 1980 levels by about 2040, and by 2066 over Antarctica."
+  },
+  {
+   "year": "1993",
+   "what": "Chemical weapons.",
+   "line": "193 countries joined the Chemical Weapons Convention.",
+   "held": "In 2023 inspectors confirmed that every declared stockpile, 72,304 tonnes, had been destroyed."
+  },
+  {
+   "year": "1995",
+   "what": "Blinding laser weapons.",
+   "line": "Banned before one was used in war.",
+   "held": "111 countries, including the U.S., China and Russia, are bound; no battlefield use has been confirmed."
+  },
+  {
+   "year": "1996–2005",
+   "what": "Human cloning.",
+   "line": "Dozens of countries outlawed cloning a person.",
+   "held": "Cloning worked in monkeys in 2018; no cloned human pregnancy has ever been confirmed."
+  },
+  {
+   "year": "?",
+   "what": "AI smarter than humans.",
+   "line": "",
+   "held": "U.S. lawmakers have proposed a law to pause building AI with more than a set amount of computing. A treaty could make such a pause worldwide, checked by tracking the specialized chips used to build AI.",
+   "open": true
+  }
+ ],
+ "prec_src": "Sources: <a href=\"https://www.un.org/en/observances/end-nuclear-tests-day/history\" target=\"_blank\" rel=\"noopener\">UN</a> · <a href=\"https://disarmament.unoda.org/en/our-work/weapons-mass-destruction/biological-weapons/universality\" target=\"_blank\" rel=\"noopener\">UNODA</a> · <a href=\"https://www.nobelprize.org/prizes/chemistry/1980/berg/article/\" target=\"_blank\" rel=\"noopener\">Paul Berg</a> · <a href=\"https://csl.noaa.gov/assessments/ozone/2022/executivesummary/\" target=\"_blank\" rel=\"noopener\">WMO/UNEP ozone assessment</a> · <a href=\"https://www.opcw.org/media-centre/news/2023/07/opcw-confirms-all-declared-chemical-weapons-stockpiles-verified\" target=\"_blank\" rel=\"noopener\">OPCW</a> · <a href=\"https://disarmament.unoda.org/en/our-work/conventional-arms/convention-certain-conventional-weapons/high-contracting-parties-and-signatories-ccw\" target=\"_blank\" rel=\"noopener\">CCW parties</a> · <a href=\"https://doi.org/10.1016/j.cell.2018.01.020\" target=\"_blank\" rel=\"noopener\">Liu et al., Cell</a> · <a href=\"https://www.govinfo.gov/content/pkg/BILLS-119s5493is/html/BILLS-119s5493is.htm\" target=\"_blank\" rel=\"noopener\">S. 5493</a> · <a href=\"https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation\" target=\"_blank\" rel=\"noopener\">CSIS on smallpox</a> · <a href=\"https://www.who.int/health-topics/smallpox\" target=\"_blank\" rel=\"noopener\">WHO</a>",
+ "canwork_dek": "The heads of four leading AI companies, most American voters and some lawmakers have said AI development should slow down.",
+ "canwork": [
+  "<strong>The AI companies.</strong> The heads of OpenAI, Anthropic, Google DeepMind and xAI have all backed slowing the pace at which the most advanced AI improves, though not stopping it.",
+  "<strong>Their own employees.</strong> 1,386 people who work at leading AI companies asked the U.S. government to support an international effort to build the tools needed to “deliberately pace” AI development as AI starts doing AI research itself. One of them, OpenAI researcher Leo Gao, wrote: “no individual actor is willing to stop unilaterally. To survive, we must coordinate to slow down the race.”",
+  "<strong>Voters.</strong> 68 in 100 American likely voters support a temporary pause on advanced AI development and a permanent ban on AI that exceeds human intelligence; 25 oppose it.",
+  "<strong>Lawmakers and attorneys general.</strong> In the U.S., a bill to pause advanced AI development was introduced in the Senate on September 23, 2026. The same day, 26 attorneys general, including a Republican, asked Congress for “international cooperation to pace AI advancement and prevent the development of harmful superintelligence.” In the UK, a bill to ban superintelligence was introduced in Parliament on September 8.",
+  "<strong>Signers.</strong> More than 140,000 people have signed the Statement on Superintelligence, which calls for a prohibition on developing superintelligence until there is broad scientific consensus that it will be done safely and controllably, and strong public buy-in. Among them:"
+ ],
+ "canwork_groups": [
+  [
+   "Scientists",
+   "Geoffrey Hinton and Yoshua Bengio, pioneers of modern AI; Nobel laureates Daron Acemoğlu and John Mather; Martin Rees, Astronomer Royal."
+  ],
+  [
+   "Left and right",
+   "Susan Rice, President Obama’s National Security Advisor; Steve Bannon, President Trump’s former chief strategist; Glenn Beck; former congressmen Joe Crowley (D) and Keith Rothfus (R)."
+  ],
+  [
+   "National security",
+   "Admiral Mike Mullen, Chairman of the Joint Chiefs under Presidents Bush and Obama; Mark Beall, former Director of AI Strategy and Policy at the Department of Defense; Lord Browne, former UK Defence Minister."
+  ],
+  [
+   "Presidents and lawmakers",
+   "Mary Robinson, former President of Ireland; Kersti Kaljulaid, former President of Estonia; Brando Benifei, who co-led the European Parliament’s work on the EU AI Act."
+  ],
+  [
+   "Faith leaders",
+   "Paolo Benanti, the Pope’s adviser on AI; Walter Kim, President of the National Association of Evangelicals; Anthony J. Granado of the US Conference of Catholic Bishops."
+  ],
+  [
+   "In China",
+   "Turing laureate Andrew Yao; Ya-Qin Zhang, former President of Baidu; Yi Zeng of the Beijing Institute of AI Safety and Governance; Peng Zhang, CEO of the AI company Zhipu AI."
+  ],
+  [
+   "Founders",
+   "Steve Wozniak, co-founder of Apple; Jaan Tallinn, co-founder of Skype; Emad Mostaque, founder of Stability AI; Richard Branson, founder of Virgin."
+  ],
+  [
+   "Public figures",
+   "Prince Harry and Meghan, the Duke and Duchess of Sussex; Stephen Fry; Joseph Gordon-Levitt; Yuval Noah Harari."
+  ]
+ ],
+ "canwork_close": "When enough people ask, governments can make every AI company slow down.",
+ "canwork_src": "Sources: <a href=\"https://darioamodei.com/post/we-must-pace-the-frontier\" target=\"_blank\" rel=\"noopener\">Amodei</a> · <a href=\"https://www.cnbc.com/2026/09/14/sam-altman-ai-slowdown-anthropic-amodei-musk.html\" target=\"_blank\" rel=\"noopener\">CNBC on Altman and Musk</a> · <a href=\"https://x.com/demishassabis/status/2098909516582490602\" target=\"_blank\" rel=\"noopener\">Hassabis</a> · <a href=\"https://www.pacingthefrontier.com/\" target=\"_blank\" rel=\"noopener\">Pacing the Frontier</a> · <a href=\"https://www.filesforprogress.org/datasets/2026/9/dfp_ai_development_pause.pdf\" target=\"_blank\" rel=\"noopener\">Data for Progress, September 4–9, 2026, 1,332 likely voters</a> · <a href=\"https://www.govinfo.gov/app/details/BILLS-119s5493is\" target=\"_blank\" rel=\"noopener\">S. 5493</a> · <a href=\"https://oag.ca.gov/system/files/attachments/press-docs/federal-ai-regulation-letter-2026.pdf\" target=\"_blank\" rel=\"noopener\">attorneys general letter</a> · <a href=\"https://bills.parliament.uk/bills/4288\" target=\"_blank\" rel=\"noopener\">UK bill</a> · <a href=\"https://superintelligence-statement.org/\" target=\"_blank\" rel=\"noopener\">Statement on Superintelligence</a>",
+ "prec_after": "Even during the Cold War, the United States and the Soviet Union worked together to eradicate smallpox, which killed as many as 300 million people in the twentieth century. The world was declared free of it in 1980.",
+ "ask_intro": "In the U.S., most House offices log calls and letters by issue. Congressional staff say a call, or a letter in your own words, can sway lawmakers who haven’t made up their minds.",
+ "ask_regions": [
+  "<strong>United States.</strong> Call the Capitol switchboard at <a href=\"tel:+12022243121\">202-224-3121</a> and ask for your representative or one of your senators, or find them at <a href=\"https://www.house.gov/representatives/find-your-representative\" target=\"_blank\" rel=\"noopener\">house.gov</a> and <a href=\"https://www.senate.gov/senators/senators-contact.htm\" target=\"_blank\" rel=\"noopener\">senate.gov</a>.",
+  "<strong>United Kingdom.</strong> <a href=\"https://members.parliament.uk/FindYourMP\" target=\"_blank\" rel=\"noopener\">Find your MP</a> on Parliament’s website and write to them.",
+  "<strong>European Union.</strong> <a href=\"https://www.europarl.europa.eu/meps/en/home\" target=\"_blank\" rel=\"noopener\">Find your Members of the European Parliament</a> and write to them.",
+  "<strong>Elsewhere.</strong> Find your representatives on your national parliament’s website and write to them."
+ ],
+ "ask_script": "Hi, my name is [your name] and I live in [your town]. I’m calling about AI. I’d like [representative’s name] to support national limits on the computing used to build the most powerful AI, and an international agreement to stop the development of AI smarter than humans until scientists agree it can be done safely. Thank you.",
+ "ask_src": "Sources: <a href=\"https://ir.vanderbilt.edu/handle/1803/12665\" target=\"_blank\" rel=\"noopener\">Abernathy 2015</a> · <a href=\"https://web.archive.org/web/2023/https://www.congressfoundation.org/storage/documents/CMF_Pubs/cwc-perceptions-of-citizen-advocacy.pdf\" target=\"_blank\" rel=\"noopener\">Congressional Management Foundation</a>",
+ "faq_more": [
+  [
+   "How would anyone check?",
+   "The most powerful AI is trained on vast numbers of specialized chips made by a handful of companies, so governments could track where the chips go, and inspectors could check what they are used for. Nuclear material is already tracked this way: in 2025 the International Atomic Energy Agency checked it in 190 countries. An AI agreement would need a similar watchdog. <a href=\"https://www.iaea.org/sites/default/files/sir-2025.pdf\" target=\"_blank\" rel=\"noopener\">IAEA, Safeguards Implementation Report 2025</a>."
+  ],
+  [
+   "Who decides when training can resume?",
+   "Not the companies on their own. Under a moratorium, governments set the limits in law and lift them only when there is broad scientific agreement that it can be done safely. The Statement on Superintelligence adds a second condition: strong public buy-in."
+  ]
+ ],
+ "hero_quotes": [
+  [
+   "Geoffrey Hinton",
+   "The alarm bell I’m ringing has to do with the existential threat of them taking control",
+   "Nobel laureate, a “godfather” of AI"
+  ],
+  [
+   "Sam Altman",
+   "Development of superhuman machine intelligence [...] is probably the greatest threat to the continued existence of humanity",
+   "now CEO of OpenAI, writing in 2015"
+  ],
+  [
+   "António Guterres",
+   "[AI’s] creators themselves have warned that much bigger, potentially catastrophic and existential risks lie ahead",
+   "UN Secretary-General"
+  ],
+  [
+   "Yoshua Bengio",
+   "[...] a rogue AI may be dangerous for the whole of humanity, irrespective of one’s nationality",
+   "Turing Award winner"
+  ],
+  [
+   "Stuart Russell",
+   "If we pursue [our current approach], then we will eventually lose control over the machines",
+   "co-author of the standard AI textbook"
+  ],
+  [
+   "Zhang Jun",
+   "[...] ensuring that mankind has the ability to press the pause button at critical moments",
+   "then China’s ambassador to the UN"
+  ]
+ ]
+}
