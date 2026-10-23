@@ -32,17 +32,10 @@ function lum(c) { return 0.2126 * lin(c[0]) + 0.7152 * lin(c[1]) + 0.0722 * lin(
    right (firstlight, clear, golden). Everything before the moratorium is
    cool; so are the parts that explain, count or argue. */
 function mood(top, mid, bot, gx, gy, gc, ga, night) { return { s: [hex(top), hex(mid), hex(bot)], g: [gx, gy, hex(gc), ga], n: night }; }
-var MOODS = {   // one plain paper ground for the whole page: the pictures carry the meaning, not the sky
-  cool: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
-  day: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
-  slate: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
-  overcast: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
-  uncanny: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
-  firstlight: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
-  night: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
-  haze: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
-  clear: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0),
-  golden: mood('#f3f1ec', '#f3f1ec', '#f3f1ec', 0.5, 0.5, '#ffffff', 0, 0)
+var MOODS = {   // white for reading; a soft plate behind each picture; one dark band where the essay turns to the answer
+  white: mood('#ffffff', '#ffffff', '#ffffff', 0.5, 0.5, '#ffffff', 0, 0),
+  plate: mood('#efeee9', '#efeee9', '#efeee9', 0.5, 0.5, '#ffffff', 0, 0),
+  day:   mood('#ffffff', '#ffffff', '#ffffff', 0.5, 0.5, '#ffffff', 0, 0)
 };
 function blendMood(A, B, t) {
   if (t <= 0) return A; if (t >= 1) return B;

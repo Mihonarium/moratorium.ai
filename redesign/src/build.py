@@ -213,7 +213,7 @@ def page(title, desc, body, depth):
     h = head.replace('<title>AI moratorium is necessary to avoid extinction</title>', '<title>%s</title>' % title)
     h = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % desc, h)
     h = h.replace('href="img/favicon.ico"', 'href="%simg/favicon.ico"' % up)
-    return h + '\n<style>body{min-height:100vh;background:#f3f1ec}.page{padding:12vh 0}</style>\n</head>\n<body>\n' + body.replace('{{UP}}', up) + '\n</body>\n</html>\n'
+    return h + '\n<style>body{min-height:100vh;background:#ffffff}.page{padding:12vh 0}</style>\n</head>\n<body>\n' + body.replace('{{UP}}', up) + '\n</body>\n</html>\n'
 
 news = '''<main class="page"><div class="col">
   <p class="dek" style="margin-bottom:2rem"><a href="{{UP}}">AI moratorium is necessary to avoid extinction</a></p>

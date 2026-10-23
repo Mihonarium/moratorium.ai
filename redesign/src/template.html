@@ -26,7 +26,7 @@
 @media (min-width:1000px){:root{--colw:min(39rem,50vw)}}
 @media (min-width:1480px){:root{--colx:calc((100vw - 1320px)/2 + var(--gut))}}
 *{box-sizing:border-box}
-html{background:#f3f1ec;-webkit-text-size-adjust:100%}
+html{background:#ffffff;-webkit-text-size-adjust:100%}
 html.ready{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html.ready{scroll-behavior:auto}}
 body{margin:0;font-family:var(--serif);font-size:1.25rem;line-height:1.62;color:var(--fg);background:transparent;-webkit-font-smoothing:antialiased;font-kerning:normal;font-variant-numeric:oldstyle-nums proportional-nums}
@@ -192,7 +192,10 @@ html:not(.sky) details.tech:not([open]){padding-bottom:22vh}
 .interlude{position:relative;height:150vh}
 html.sky .interlude.fig{padding-top:var(--pad,55vh);height:calc(150vh + var(--pad,55vh))}   /* the picture rides in above its caption, inside its section */
 @media screen{html.sky .chapter.notes{padding-top:18vh}}   /* the Notes panel fades in over this padding; its heading starts where the panel is dark */
-html.sky .hold{height:calc(50vh + var(--hold,240px))}   /* a top-pinned caption lets go when its section's end comes up, and its picture rides away with it */
+html.sky .hold{height:calc(50vh + var(--hold,240px))}
+.band{position:relative;z-index:1;background:#161b22;color:#eef2f7;padding:20vh 0 18vh}   /* where the essay turns to the answer */
+.band .cap{position:static;color:#eef2f7;--fg:#eef2f7;--fg2:#c9d2de}
+.band .cap .dek{color:#c9d2de}   /* a top-pinned caption lets go when its section's end comes up, and its picture rides away with it */
 @media screen and (prefers-reduced-motion:no-preference){html.sky .interlude[data-scene=highway]{height:230vh}html.sky .interlude[data-scene=highway] .hold{height:calc(130vh + var(--hold,240px))}}   /* the levelling plays at a steady, visible pace */
 @media screen and (prefers-reduced-motion:no-preference) and (max-width:700px){html.sky .interlude[data-scene=highway]{height:210vh}html.sky .interlude[data-scene=highway] .hold{height:calc(110vh + var(--hold,230px))}}
 .pic{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
@@ -244,7 +247,7 @@ footer .links dd{margin:0 0 .25rem}
   <button class="menu" type="button" aria-expanded="false" aria-controls="navlist">Sections</button>
 </nav>
 
-<header class="hero" id="top" data-scene="none" data-mood="cool">
+<header class="hero" id="top" data-scene="none" data-mood="white">
   <div class="hero-text">
     <h1>AI moratorium is necessary to avoid extinction</h1>
     <p class="tag">Large AI training runs have to be stopped until scientists consider it safe to proceed.</p>
@@ -256,7 +259,7 @@ footer .links dd{margin:0 0 .25rem}
 </header>
 
 <main id="main">
-<section class="chapter" id="short" data-scene="none" data-mood="cool" aria-labelledby="short-h">
+<section class="chapter" id="short" data-scene="none" data-mood="white" aria-labelledby="short-h">
   <div class="col">
     <h2 id="short-h">The short version</h2>
     <ul class="tldr">
@@ -265,7 +268,7 @@ footer .links dd{margin:0 0 .25rem}
   </div>
 </section>
 
-<section class="chapter" id="statement" data-scene="none" data-mood="cool" aria-label="The warnings">
+<section class="chapter" id="statement" data-scene="none" data-mood="white" aria-label="The warnings">
   <div class="col">
     <blockquote class="statement"><p>“Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war.”</p></blockquote>
     <p class="attr">A <a href="https://www.safe.ai/statement-on-ai-risk" target="_blank" rel="noopener">statement</a> signed by leading AI researchers and executives.</p>
@@ -275,12 +278,12 @@ footer .links dd{margin:0 0 .25rem}
   </div>
 </section>
 
-<section class="interlude fig" id="what-happened" data-scene="breach" data-mood="haze">
+<section class="interlude fig" id="what-happened" data-scene="breach" data-mood="plate">
   <p class="pic">Picture: dots, each a copy of the AI, kept inside a box marked “the test at OpenAI”, find a gap, and most of them go into a second box marked “Hugging Face’s computers”.</p>
   <div class="cap"><p class="pull">{{HAPPENED_PULL}}</p></div>
 </section>
 
-<section class="chapter" data-scene="none" data-mood="haze" aria-labelledby="happened-h">
+<section class="chapter" data-scene="none" data-mood="white" aria-labelledby="happened-h">
   <div class="col">
     <h2 id="happened-h">What happened</h2>
     <ul class="tldr">
@@ -290,31 +293,31 @@ footer .links dd{margin:0 0 .25rem}
   </div>
 </section>
 
-<section class="chapter" id="why" data-scene="none" data-mood="day">
+<section class="chapter" id="why" data-scene="none" data-mood="white">
   <div class="col">
     <h2 id="why-we-need-a-global-ai-moratorium">Why we need a global AI moratorium</h2>
 {{SEG:summary}}
   </div>
 </section>
 
-<section class="interlude fig" data-scene="grown" data-mood="day">
+<section class="interlude fig" data-scene="grown" data-mood="plate">
   <p class="pic">Picture: scattered points give way to a branching structure that grows step by step, like a root system, in a shape nobody drew.</p>
   <div class="cap"><p class="pull">AI is grown, not designed. Even its makers don’t understand how it works.</p></div>
 </section>
 
-<section class="chapter" data-scene="none" data-mood="day">
+<section class="chapter" data-scene="none" data-mood="white">
   <div class="col">
 {{SEG:unlike}}
 {{SEG:surpass_a}}
   </div>
 </section>
 
-<section class="interlude" data-scene="highway" data-mood="overcast" data-light="0 0.18">
+<section class="interlude" data-scene="highway" data-mood="plate" data-light="0 0.18">
   <p class="pic">Picture: an architect’s side view of a town in open country: terraced houses, a town hall with a tower, flats, trees, fields and a river under a bridge. A level is ruled through the ground beneath all of it, and survey poles are set at one spacing, through the town exactly as through the fields. Then, at one steady pace from one side to the other, everything above the level is marked for removal and cut away, the town and the ground it stands on included, until only flat ground and the poles are left, with a faint dashed line where the land used to be.</p>
   <div class="hold"><div class="cap at-top"><p class="pull">An AI far smarter than us wouldn’t need to hate us to drive us extinct. Not caring about us would be enough.</p></div></div>
 </section>
 
-<section class="chapter" data-scene="none" data-mood="overcast">
+<section class="chapter" data-scene="none" data-mood="white">
   <div class="col">
 {{SEG:surpass_b}}
 {{SEG:default}}
@@ -322,7 +325,7 @@ footer .links dd{margin:0 0 .25rem}
   </div>
 </section>
 
-<section class="chapter cont" data-scene="none" data-mood="slate">
+<section class="chapter cont" data-scene="none" data-mood="white">
   <div class="col">
 {{SEG:action}}
 {{SEG:whatcan}}
@@ -330,14 +333,14 @@ footer .links dd{margin:0 0 .25rem}
   </div>
 </section>
 
-<section class="chapter tech-lead" data-scene="none" data-mood="slate">
+<section class="chapter tech-lead" data-scene="none" data-mood="white">
   <div class="col">
     <p>Read about the technical problem of AI alignment: how modern AI works and why exactly experts expect a catastrophe.</p>
   </div>
 </section>
 <details class="tech" id="technical">
   <summary><span class="show">Learn about AI and AI alignment</span><span class="hide">Hide the explanation of AI and AI alignment</span><span class="len">12-minute read</span></summary>
-  <section class="chapter" data-scene="none" data-mood="slate">
+  <section class="chapter" data-scene="none" data-mood="white">
     <div class="col">
 {{SEG:intel}}
 {{SEG:ml}}
@@ -347,17 +350,17 @@ footer .links dd{margin:0 0 .25rem}
 {{SEG:inner_a}}
     </div>
   </section>
-  <section class="interlude fig" data-scene="inner" data-mood="uncanny">
+  <section class="interlude fig" data-scene="inner" data-mood="plate">
     <p class="pic">Picture: dots hold a perfect grid inside a measuring frame, then leave for a shape of their own once the frame lifts.</p>
     <div class="cap"><p class="pull">Good scores in training and testing don’t show what a smart AI really wants.</p></div>
   </section>
-  <section class="chapter" data-scene="none" data-mood="uncanny">
+  <section class="chapter" data-scene="none" data-mood="white">
     <div class="col">
 {{SEG:inner_b}}
 {{SEG:exist}}
     </div>
   </section>
-  <section class="chapter notes" data-scene="none" data-mood="night" aria-labelledby="footnote-label">
+  <section class="chapter notes" data-scene="none" data-mood="white" aria-labelledby="footnote-label">
     <div class="col">
       <h2 id="footnote-label">Notes</h2>
       <ol>
@@ -367,32 +370,32 @@ footer .links dd{margin:0 0 .25rem}
   </section>
 </details>
 
-<section class="interlude" data-scene="none" data-mood="firstlight" aria-labelledby="ai-moratorium">
+<section class="band" data-scene="none" data-mood="white" aria-labelledby="ai-moratorium">
   <div class="cap"><h2 id="ai-moratorium">AI Moratorium</h2><p class="dek">How do we prevent a catastrophe?</p></div>
 </section>
 
-<section class="chapter" data-scene="none" data-mood="firstlight">
+<section class="chapter" data-scene="none" data-mood="white">
   <div class="col">
 {{SEG:mor_a}}
   </div>
 </section>
 
-<section class="interlude fig" data-scene="count" data-mood="day">
+<section class="interlude fig" data-scene="count" data-mood="plate">
   <p class="pic">Picture: a hundred dots, one per person: 30 sit still on a line, 47 circle slowly, 14 circle at a steady pace, 5 race, and 4 hover, unsure.</p>
   <div class="cap"><p class="pull">77 of 100 Americans want AI companies to slow down or stop developing powerful AI until its safety can be evaluated.</p><p class="src"><a href="https://poll.qu.edu/poll-release?releaseid=3969" target="_blank" rel="noopener">Quinnipiac University poll</a>, September 24–27, 2026, 1,202 adults. 30 said stop, 47 slow down, 14 keep the current pace, 5 go faster, 4 not sure.</p></div></section>
 
-<section class="chapter" data-scene="none" data-mood="day">
+<section class="chapter" data-scene="none" data-mood="white">
   <div class="col">
 {{SEG:mor_b}}
   </div>
 </section>
 
-<section class="interlude fig" data-scene="nations" data-mood="day">
+<section class="interlude fig" data-scene="nations" data-mood="plate">
   <p class="pic">Picture: six separate groups of dots race, then each settles on its own short line, then all of them settle together on the same long lines.</p>
   <div class="cap"><p class="pull">{{CALL}}</p><a class="btn" href="#how-to-help" id="help_moratorium_button">Help AI Moratorium</a></div>
 </section>
 
-<section class="chapter" id="done-before" data-scene="prec" data-mood="clear" data-mobile="on" aria-labelledby="done-h">
+<section class="chapter" id="done-before" data-scene="prec" data-mood="white" data-mobile="on" aria-labelledby="done-h">
   <div class="col">
     <h2 id="done-h">We’ve done it before</h2>
     <p class="dek">{{PREC_DEK}}</p>
@@ -404,7 +407,7 @@ footer .links dd{margin:0 0 .25rem}
   </div>
 </section>
 
-<section class="chapter" id="can-work" data-scene="none" data-mood="clear" aria-labelledby="can-work-h">
+<section class="chapter" id="can-work" data-scene="none" data-mood="white" aria-labelledby="can-work-h">
   <div class="col">
     <h2 id="can-work-h">Why this can work</h2>
     <p class="dek">{{CANWORK_DEK}}</p>
@@ -420,7 +423,7 @@ footer .links dd{margin:0 0 .25rem}
   </div>
 </section>
 
-<section class="chapter" id="how-to-help" data-scene="none" data-mood="day">
+<section class="chapter" id="how-to-help" data-scene="none" data-mood="white">
   <div class="col">
     <h2>How to help</h2>
     <h3>Raise awareness</h3>
@@ -438,12 +441,12 @@ footer .links dd{margin:0 0 .25rem}
   </div>
 </section>
 
-<section class="interlude fig" data-scene="join" data-mood="day">
+<section class="interlude fig" data-scene="join" data-mood="plate">
   <p class="pic">Picture: lines full of dots with one empty place; one dot rises and takes it.</p>
   <div class="cap"><p class="pull">Join the effort to establish an international AI moratorium.</p></div>
 </section>
 
-<section class="chapter" data-scene="none" data-mood="day">
+<section class="chapter" data-scene="none" data-mood="white">
   <div class="col">
     <h3 id="join">Join us</h3>
     <form class="form" id="join_form" novalidate>
@@ -459,7 +462,7 @@ footer .links dd{margin:0 0 .25rem}
   </div>
 </section>
 
-<section class="chapter" data-scene="none" data-mood="day">
+<section class="chapter" data-scene="none" data-mood="white">
   <div class="col">
 {{SEG:counter_a}}
 {{FAQ_MORE}}
@@ -468,12 +471,12 @@ footer .links dd{margin:0 0 .25rem}
   </div>
 </section>
 
-<section class="interlude fig" data-scene="together" data-mood="golden">
+<section class="interlude fig" data-scene="together" data-mood="plate">
   <p class="pic">Picture: dots race along separate tracks; a single line is drawn across all the tracks, and every dot stops at it, side by side.</p>
   <div class="cap"><p class="pull">In a race to build AI that no one can control, everyone loses. The more people understand that, the sooner countries can end the race together.</p></div>
 </section>
 
-<section class="chapter" id="contact" data-scene="none" data-mood="golden">
+<section class="chapter" id="contact" data-scene="none" data-mood="white">
   <div class="col">
     <h2>Contact us</h2>
     <p>To talk to us, learn more, or get connected to the experts, reach out via this form.</p>
@@ -488,7 +491,7 @@ footer .links dd{margin:0 0 .25rem}
 </section>
 </main>
 
-<footer data-scene="none" data-mood="golden">
+<footer data-scene="none" data-mood="white">
   <div class="col">
     <form class="sub" id="subscription_form_footer" novalidate>
       <label for="email_subscribe">Our news, by email</label>
