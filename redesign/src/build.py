@@ -148,12 +148,14 @@ for m in re.finditer(r'\{\s*name:\s*\'(.*?)\',\s*title:\s*\'(.*?)\',.*?text:\s*\
     name, title, text, link, rest = m.groups()
     quotes.append({'name': name, 'title': title, 'text': text, 'link': link, 'mobile': 'on_mobile: true' in rest})
 FIX = json.load(open(os.path.join(HERE, 'quote-fixes.json'), encoding='utf-8')) if os.path.exists(os.path.join(HERE, 'quote-fixes.json')) else {}
+C0 = json.load(open(os.path.join(HERE, 'content.json'), encoding='utf-8'))
+on_first_screen = set(h[0] for h in C0['hero_quotes'])   # the wall below doesn't repeat them
 qh = []
 for q in quotes:
     f = FIX.get(q['name'], {})
-    if f.get('drop'): continue
+    if f.get('drop') or q['name'] in on_first_screen: continue
     text, title, link = f.get('text', q['text']), f.get('title', q['title']), f.get('link', q['link'])
-    cls = 'q' if q['mobile'] else 'q wide-only'
+    cls = 'q'   # five left after the first screen's six: all fit on a phone
     qh.append('      <figure class="%s"><blockquote><p>“%s”</p></blockquote><figcaption><a href="%s" target="_blank" rel="noopener">%s</a>, %s</figcaption></figure>' % (
         cls, html.escape(text, quote=False), html.escape(link), html.escape(q['name'], quote=False), html.escape(title, quote=False)))
 
