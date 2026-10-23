@@ -27,7 +27,7 @@
 @media (min-width:1000px){:root{--colw:min(39rem,50vw)}}
 @media (min-width:1480px){:root{--colx:calc((100vw - 1320px)/2 + var(--gut))}}
 *{box-sizing:border-box}
-html{background:#c6d6e6;-webkit-text-size-adjust:100%}
+html{background:#ffffff;-webkit-text-size-adjust:100%}
 html.ready{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html.ready{scroll-behavior:auto}}
 body{margin:0;font-family:var(--serif);font-size:1.25rem;line-height:1.62;color:var(--fg);background:transparent;-webkit-font-smoothing:antialiased;font-kerning:normal;font-variant-numeric:oldstyle-nums proportional-nums}
@@ -185,7 +185,7 @@ details.tech>summary .len{font-weight:400;color:var(--fg2)}
 details.tech>summary .hide{display:none}
 details.tech[open]>summary .show{display:none}
 details.tech[open]>summary .hide{display:inline}
-html:not(.sky) details.tech:not([open]){padding-bottom:22vh}
+details.tech:not([open]){padding-bottom:16vh}
 .notes{font-size:1rem}
 .notes ol{padding-left:1.3em}
 
@@ -193,7 +193,10 @@ html:not(.sky) details.tech:not([open]){padding-bottom:22vh}
 .interlude{position:relative;height:150vh}
 html.sky .interlude.fig{padding-top:var(--pad,55vh);height:calc(150vh + var(--pad,55vh))}   /* the picture rides in above its caption, inside its section */
 @media screen{html.sky .chapter.notes{padding-top:18vh}}   /* the Notes panel fades in over this padding; its heading starts where the panel is dark */
-html.sky .hold{height:calc(50vh + var(--hold,240px))}   /* a top-pinned caption lets go when its section's end comes up, and its picture rides away with it */
+html.sky .hold{height:calc(50vh + var(--hold,240px))}
+.band{position:relative;z-index:1;background:#161b22;color:#eef2f7;padding:20vh 0 18vh}   /* where the essay turns to the answer */
+.band .cap{position:static;color:#eef2f7;--fg:#eef2f7;--fg2:#c9d2de}
+.band .cap .dek{color:#c9d2de}   /* a top-pinned caption lets go when its section's end comes up, and its picture rides away with it */
 @media screen and (prefers-reduced-motion:no-preference){html.sky .interlude[data-scene=highway]{height:230vh}html.sky .interlude[data-scene=highway] .hold{height:calc(130vh + var(--hold,240px))}}   /* the levelling plays at a steady, visible pace */
 @media screen and (prefers-reduced-motion:no-preference) and (max-width:700px){html.sky .interlude[data-scene=highway]{height:210vh}html.sky .interlude[data-scene=highway] .hold{height:calc(110vh + var(--hold,230px))}}
 .pic{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
@@ -224,7 +227,7 @@ footer .links dd{margin:0 0 .25rem}
 
 @media print{.light{background:none!important}#sky{display:none}.interlude,html.sky .interlude.fig{height:auto;padding-top:0;break-inside:avoid;page-break-inside:avoid}html.sky .hold{height:auto}.cap,.cap[data-on]{position:static;color:#000;--fg:#000;--fg2:#333}.light{--fg:#000;--fg2:#333}.chapter{padding:2rem 0}details.tech>summary{display:none}details.tech{display:block}}
 </style>
-<style>body{min-height:100vh;background:linear-gradient(180deg,#7f9dc2 0%,#bccde0 55%,#e6edf4 100%) fixed}.page{padding:12vh 0}</style>
+<style>body{min-height:100vh;background:#ffffff}.page{padding:12vh 0}</style>
 </head>
 <body>
 <main class="page"><div class="col"><p>The explanation now lives on the <a id="go" href="../../#why">home page</a>.</p></div></main>

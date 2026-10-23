@@ -32,17 +32,10 @@ function lum(c) { return 0.2126 * lin(c[0]) + 0.7152 * lin(c[1]) + 0.0722 * lin(
    right (firstlight, clear, golden). Everything before the moratorium is
    cool; so are the parts that explain, count or argue. */
 function mood(top, mid, bot, gx, gy, gc, ga, night) { return { s: [hex(top), hex(mid), hex(bot)], g: [gx, gy, hex(gc), ga], n: night }; }
-var MOODS = {
-  cool:       mood('#7f9dc2', '#bccde0', '#e6edf4', 0.82, 0.1, '#ffffff', 0.22, 0),
-  day:        mood('#86abd3', '#b9cfe6', '#e2ebf3', 0.55, 0.05, '#ffffff', 0.28, 0),
-  slate:      mood('#8fa1b8', '#c2cbd6', '#e0e4e9', 0.5, 0.08, '#ffffff', 0.12, 0),
-  overcast:   mood('#959ca4', '#b7bcc1', '#d4d6d6', 0.5, 0.2, '#ffffff', 0.0, 0),
-  uncanny:    mood('#8f9c97', '#b4bdb4', '#d5d9cd', 0.5, 0.5, '#ffffff', 0.0, 0),
-  firstlight: mood('#8597b8', '#b8b6c8', '#f0c6a3', 0.2, 1.0, '#ffcf9e', 0.62, 0),
-  night:      mood('#0b111d', '#121b2b', '#1c2638', 0.78, 0.16, '#d2e1ff', 0.10, 1),
-  haze:       mood('#8b9db2', '#bcc6cf', '#dfe3e2', 0.72, 0.3, '#ffffff', 0.12, 0),
-  clear:      mood('#7eaee0', '#bad7ef', '#f6ebd7', 0.5, 1.02, '#fff0c8', 0.62, 0),
-  golden:     mood('#90a3c2', '#d8c4b2', '#f3cb9e', 0.78, 0.92, '#ffd08a', 0.6, 0)
+var MOODS = {   // white for reading; a soft plate behind each picture; one dark band where the essay turns to the answer
+  white: mood('#ffffff', '#ffffff', '#ffffff', 0.5, 0.5, '#ffffff', 0, 0),
+  plate: mood('#efeee9', '#efeee9', '#efeee9', 0.5, 0.5, '#ffffff', 0, 0),
+  day:   mood('#ffffff', '#ffffff', '#ffffff', 0.5, 0.5, '#ffffff', 0, 0)
 };
 function blendMood(A, B, t) {
   if (t <= 0) return A; if (t >= 1) return B;
@@ -678,26 +671,11 @@ SC.highway = {   // "We become the irrelevant animal in the way", drawn as a sur
     // ---- the front's run: from past the right edge until the cut has left the screen on the left
     var cmax = 0; for (x = -20; x <= 40; x += 2) cmax = Math.max(cmax, Math.abs(yAt(x) - gy) * 1.1 + 1);
     var top = gy; objs.forEach(function (o) { if (o.top < top) top = o.top; });
-    // dust: each thing is sampled into specks (along its outlines, and through its body), each with the moment it lets go;
-    // the side the front comes from goes first, so a building crumbles from one edge into nothing
-    var dr = mulberry(424242);
-    function inPoly(px, py, poly) { var c = false; for (var a = 0, b = poly.length - 1; a < poly.length; b = a++) { var xi = poly[a][0], yi = poly[a][1], xj = poly[b][0], yj = poly[b][1]; if ((yi > py) !== (yj > py) && px < (xj - xi) * (py - yi) / (yj - yi) + xi) c = !c; } return c; }
-    objs.forEach(function (o) {
-      var right = o.rx != null ? o.rx : o.x1, left = o.x0, wd = Math.max(4, right - left), d = [];
-      function add(x, y, body) { var f = clamp((right - x) / wd, 0, 1); d.push([x, y, clamp(0.06 + 0.5 * f + 0.14 * (dr() - 0.5), 0, 0.72), 0.4 + dr(), 0.4 + dr(), dr() * 6.28, body ? 1 : 0]); }
-      o.parts.concat(o.struts).forEach(function (pl) {
-        for (var a = 0; a < pl.length; a++) { var p0 = pl[a], p1 = pl[(a + 1) % pl.length], L = Math.hypot(p1[0] - p0[0], p1[1] - p0[1]); for (var t = 0; t < L; t += 1.4) add(p0[0] + (p1[0] - p0[0]) * t / L, p0[1] + (p1[1] - p0[1]) * t / L, false); }
-      });
-      o.parts.forEach(function (pl) {
-        var x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9; pl.forEach(function (q) { x0 = Math.min(x0, q[0]); x1 = Math.max(x1, q[0]); y0 = Math.min(y0, q[1]); y1 = Math.max(y1, q[1]); });
-        for (var yy = y0 + 1.5; yy < y1; yy += 2.6) for (var xx = x0 + 1.5; xx < x1; xx += 2.6) if (inPoly(xx, yy, pl)) add(xx + (dr() - 0.5) * 2, yy + (dr() - 0.5) * 2, true);
-      });
-      o.dust = d; o.left = left; o.right = right;
-    });
     var back = objs.filter(function (o) { return o.layer; }), front = objs.filter(function (o) { return !o.layer; });
     G.hw = { R: R, gy: gy, Z: Z, ys: ys, n: n, st: st, yAt: yAt, objs: back.concat(front), stakes: stakes, sp: sp, water: water, top: top,
              town: [townX0, townX1], sh: sm ? 17 : 24, rod: sm ? 1.5 : 1.8, band: (sm ? 14 : 18) * Math.min(Z, 1.25), hs: sm ? 4 : W > 2200 ? 6 : 4.5, zd: clamp(Z, 0.8, 1.25),
-             lead: lead, bottom: Math.min(H + 20, R.y + R.h + H * 0.5), f0: f0, f1: Math.min(f1, -26 - cmax), front: f0, planU: 0, fS: fS };
+             lead: lead, bottom: Math.min(H + 20, R.y + R.h + H * 0.5), f0: W + 20, f1: -30 - ((small ? 90 : 150) + (small ? 70 : 110)) * Math.min(Z, 1.4), front: W + 20,   // the front runs until the last grain has blown off the left edge
+             planU: 0, fS: fS };
   },
   frame: function (S, p) {
     if (S.relaid || !G.hw) this.lay(S);
@@ -707,155 +685,133 @@ SC.highway = {   // "We become the irrelevant animal in the way", drawn as a sur
   },
   back: function (S, col) {
     var h = G.hw; if (!h) return;
-    var gy = h.gy, Z = h.Z, fx = h.front, lead = h.lead, ty = ctx.getTransform().f / DPR, i, j, k, x;
-    var c = Math.abs(h.yAt(fx) - gy) * 1.1 + 1, cut = fx < W + 20;
-    // riding away: gone before its highest mark (a standing building, a pole top, the record of the old ground) can sit under the bar
-    var yTop = gy - h.sh - 4;
-    for (k = 0; k < h.objs.length; k++) { var ob = h.objs[k]; if (((ob.rx != null ? ob.rx : ob.x1) + lead - fx) / lead < 1 && ob.top < yTop) yTop = ob.top; }
-    if (cut) for (i = Math.max(0, Math.ceil((fx + c + 20) / h.st)); i < h.n; i += 2) if (h.ys[i] < yTop) yTop = h.ys[i];
+    var gy = h.gy, Z = h.Z, fx = h.front, T = ctx.getTransform(), ty = T.f / DPR, i, j, k, x;
+    var J = (small ? 90 : 150) * Math.min(Z, 1.4), D = (small ? 70 : 110) * Math.min(Z, 1.4), cs = small ? 2.5 : 3;   // the band that crumbles, how far its dust blows, the size of a grain
+    var cut = fx < W + 20;
+    var yTop = gy - h.sh - 4;   // riding away: gone before its highest mark can sit under the bar
+    for (k = 0; k < h.objs.length; k++) { var ob = h.objs[k]; if (ob.x0 < fx + J && ob.top < yTop) yTop = ob.top; }
+    if (cut) for (i = Math.max(0, Math.ceil((fx + J + 20) / h.st)); i < h.n; i += 2) if (h.ys[i] < yTop) yTop = h.ys[i];
     var fa = smooth((yTop + ty - barH - 12) / 90);
     if (!(fa > 0.004)) return;
-    var M = curM || MOODS.overcast, Hs = H > 0 ? H : 1, ga;
+    var M = curM || MOODS.overcast, Hs = H > 0 ? H : 1, ga, main = ctx;
     function ink(a) { return rgba(col, a); }
     function unit(v) { return v > 0 ? (v < 1 ? v : 1) : 0; }
-    function groundNow(xx) { return xx <= fx ? h.yAt(xx) : xx >= fx + c ? gy : lerp(h.yAt(fx), gy, (xx - fx) / c); }
-    function groundPath(m) {   // the ground as it is now: natural up to the front, the cut face, then the level (every m-th sample)
-      var d = h.st * m; ctx.moveTo(-20, groundNow(-20));
-      for (var q = m; q < h.n + m; q += m) {
-        var xx = -20 + q * h.st;
-        if (fx > xx - d && fx < xx) ctx.lineTo(fx, groundNow(fx));
-        if (fx + c > xx - d && fx + c < xx) ctx.lineTo(fx + c, gy);
-        if (xx > fx + c || xx >= W + 20) { ctx.lineTo(W + 20, groundNow(W + 20)); return; }
-        ctx.lineTo(xx, groundNow(xx));
-      }
-    }
     function trace(pts) { ctx.moveTo(pts[0][0], pts[0][1]); for (var q = 1; q < pts.length; q++) ctx.lineTo(pts[q][0], pts[q][1]); }
-    ctx.save();
+    function hsh(a, b) { var t = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return t - Math.floor(t); }
+    // everything of ours above the level is drawn whole on its own sheet; then, from the front, it crumbles into grains that blow away
+    if (!h.oc) { h.oc = document.createElement('canvas'); h.octx = h.oc.getContext('2d'); }
+    // the sheet covers only the strip the town stands in, in device pixels
+    var oy = Math.floor(T.d * (h.top - 50) + T.f), ohh = Math.max(1, Math.ceil(T.d * (gy + 4) + T.f) - oy);
+    if (h.oc.width !== cv.width || h.oc.height !== ohh) { h.oc.width = cv.width; h.oc.height = ohh; }
+    var oc = h.octx;
+    main.save();
     try {
-      ctx.globalAlpha *= fa; ga = ctx.globalAlpha;
-      ctx.lineJoin = 'round'; ctx.lineCap = 'butt';
-      // (1) the earth, faintly, under the ground as it is now
+      main.globalAlpha *= fa; ga = main.globalAlpha;
+      // (1) under the level: the earth, faintly, and once the land above is gone, the level in section
       var deep = Math.max(gy + 20, Math.min(h.bottom, gy + 120 * Z));
-      ctx.beginPath(); groundPath(2); ctx.lineTo(W + 20, deep); ctx.lineTo(-20, deep); ctx.closePath();
-      var eg = ctx.createLinearGradient(0, gy - 30 * Z, 0, deep); eg.addColorStop(0, ink(0.05)); eg.addColorStop(1, ink(0));
-      ctx.fillStyle = eg; ctx.fill();
-      // (1b) the ground the plan will take: hatched between the land and the level as the level is ruled (lines added whole as the
-      //      ruling head passes their lower ends, so the edge is never vertical); the cut takes it with everything on it
-      if (h.planU > 0 && fx > -20) {
-        if (h.hmax == null) { h.hmax = 0; for (i = 0; i < h.n; i++) h.hmax = Math.max(h.hmax, gy - h.ys[i]); h.hmax += 4; }
-        var hx = W + 20 - (W + 40) * h.planU, xr = Math.min(fx, W + 20), L = h.hmax, hstep = small ? 6 : 7;
-        ctx.save(); ctx.beginPath(); ctx.moveTo(-20, gy); ctx.lineTo(-20, h.ys[0]);
-        for (i = 1; i < h.n && -20 + i * h.st < xr; i++) ctx.lineTo(-20 + i * h.st, h.ys[i]);
-        ctx.lineTo(xr, h.yAt(xr)); ctx.lineTo(xr, gy); ctx.closePath(); ctx.clip();
-        ctx.strokeStyle = ink(0.12); ctx.lineWidth = 0.6; ctx.beginPath();
-        for (x = Math.floor((hx - L) / hstep) * hstep; x < xr + 2; x += hstep) { if (x + L < hx) continue; ctx.moveTo(x, gy - L); ctx.lineTo(x + L, gy); }
-        ctx.stroke(); ctx.restore();
-      }
-      // (2) the levelled ground in section: ruled hatching fixed to the land, uncovered by the cut, with a slanted leading edge
+      ctx.beginPath(); ctx.moveTo(-20, gy); ctx.lineTo(W + 20, gy); ctx.lineTo(W + 20, deep); ctx.lineTo(-20, deep); ctx.closePath();
+      var eg = ctx.createLinearGradient(0, gy, 0, deep); eg.addColorStop(0, ink(0.05)); eg.addColorStop(1, ink(0)); ctx.fillStyle = eg; ctx.fill();
       if (cut) {
-        var xs = fx + c, bd = h.band;
-        ctx.save(); ctx.beginPath(); ctx.moveTo(xs, gy); ctx.lineTo(W + 20, gy); ctx.lineTo(W + 20, gy + bd); ctx.lineTo(xs + bd * 0.9, gy + bd); ctx.closePath(); ctx.clip();
+        var xs = Math.max(-20, fx), bd = h.band;
+        ctx.save(); ctx.beginPath(); ctx.rect(xs, gy, W + 20 - xs, bd); ctx.clip();
         ctx.strokeStyle = ink(0.2); ctx.lineWidth = 0.75; ctx.beginPath();
         for (x = Math.floor((xs - bd) / h.hs) * h.hs; x < W + 20; x += h.hs) { ctx.moveTo(x, gy + bd); ctx.lineTo(x + bd, gy); }
         ctx.stroke(); ctx.restore();
-      }
-      // (3) the river, where it still is
-      var wt = h.water;
-      if (wt && fx > wt.x0) {
-        var ww = wt.x1 - wt.x0, wr = Math.min(wt.x1, fx);
-        ctx.strokeStyle = ink(0.42); ctx.lineWidth = 0.8; ctx.beginPath();
-        ctx.moveTo(wt.x0, wt.y); ctx.lineTo(wr, wt.y);
-        if (wr > wt.x0 + ww * 0.2) { ctx.moveTo(wt.x0 + ww * 0.2, wt.y + 2.4 * Z); ctx.lineTo(Math.min(wr, wt.x1 - ww * 0.2), wt.y + 2.4 * Z); }
-        if (wr > wt.x0 + ww * 0.38) { ctx.moveTo(wt.x0 + ww * 0.38, wt.y + 4.6 * Z); ctx.lineTo(Math.min(wr, wt.x1 - ww * 0.38), wt.y + 4.6 * Z); }
-        ctx.stroke();
-      }
-      // (4) the ground line: natural up to the front, then the cut face and the new level, drawn heavier
-      ctx.beginPath(); ctx.moveTo(-20, h.ys[0]);
-      for (i = 1; i < h.n && -20 + i * h.st < fx; i++) ctx.lineTo(-20 + i * h.st, h.ys[i]);
-      if (fx > -20) ctx.lineTo(Math.min(fx, W + 20), h.yAt(Math.min(fx, W + 20)));
-      ctx.strokeStyle = ink(0.6); ctx.lineWidth = 1.1; ctx.stroke();
-      if (cut) {
-        ctx.beginPath();
-        if (fx >= -20) ctx.moveTo(fx, h.yAt(fx)); else ctx.moveTo(-20, groundNow(-20));
-        if (fx + c > -20) ctx.lineTo(fx + c, gy);
-        ctx.lineTo(W + 20, gy);
-        ctx.strokeStyle = ink(0.74); ctx.lineWidth = 1.45; ctx.stroke();
-      }
-      // (4b) the record of the old ground behind the front: the land's shape, dashed, with nothing of the town in it
-      if (cut) {
-        var i0 = Math.max(0, Math.ceil((fx + c + 20) / h.st)); i0 += i0 % 2;
+        ctx.beginPath(); ctx.moveTo(xs, gy); ctx.lineTo(W + 20, gy); ctx.strokeStyle = ink(0.74); ctx.lineWidth = 1.45; ctx.stroke();
+        // the record of the old ground where nothing is left: the land's shape, dashed
+        var i0 = Math.max(0, Math.ceil((fx + J + D + 20) / h.st)); i0 += i0 % 2;
         if (i0 < h.n) {
           ctx.setLineDash([3 * h.zd, 3 * h.zd]); ctx.lineDashOffset = -20 + i0 * h.st; ctx.strokeStyle = ink(0.22); ctx.lineWidth = 0.7; ctx.beginPath();
           ctx.moveTo(-20 + i0 * h.st, h.ys[i0]); for (i = i0 + 2; i < h.n; i += 2) ctx.lineTo(-20 + i * h.st, h.ys[i]);
           ctx.stroke(); ctx.setLineDash([]); ctx.lineDashOffset = 0;
         }
       }
-      // (5) everything of ours above the level. Ahead of the front each thing is marked for removal (drawn dashed, as on a
-      //     demolition drawing) and is gone by the time the front reaches it: nothing is struck, folded or broken
-      var M0 = skyAt(M, unit((h.top - 4 + ty) / Hs)), M1 = skyAt(M, unit((gy + 4 + ty) / Hs));
-      var paper = ctx.createLinearGradient(0, h.top - 4, 0, gy + 4);
-      paper.addColorStop(0, rgba(mixc(M0, col, 0.035))); paper.addColorStop(1, rgba(mixc(M1, col, 0.035)));
-      var dash = [4 * h.zd, 3 * h.zd];
-      for (k = 0; k < h.objs.length; k++) {
-        var o = h.objs[k], r = clamp(((o.rx != null ? o.rx : o.x1) + lead - fx) / lead, 0, 1); if (r >= 1) continue;
-        // nothing falls: ahead of the front each thing turns to dust, from the side the front comes from, and blows away
-        var cutX = r > 0.04 ? o.right - (o.right - o.left + 8) * clamp((r - 0.04) / 0.5, 0, 1) : 1e9;
-        if (r > 0) {
-          for (i = 0; i < o.dust.length; i++) {
-            var dp = o.dust[i], u = (r - dp[2]) / 0.45; if (!(u > 0) || u >= 1) continue;
-            var e = ease(u), dxp = dp[0] + e * (26 + 70 * dp[3]) * Z, dyp = dp[1] - e * (14 + 46 * dp[4]) * Z + Math.sin(dp[5] + u * 5) * 3 * u;
-            ctx.fillStyle = ink((dp[6] ? 0.4 : 0.8) * (1 - u) * (1 - u * 0.6)); var sz = dp[6] ? 1.3 : 1.6; ctx.fillRect(dxp, dyp, sz, sz);
+      // (2) our world, whole, on the sheet: the ground above the level, the river, the town, the trees
+      var xEnd = Math.min(W + 20, fx + J + D);
+      if (xEnd > -20) {
+        oc.setTransform(1, 0, 0, 1, 0, 0); oc.clearRect(0, 0, h.oc.width, h.oc.height); oc.setTransform(T.a, 0, 0, T.d, T.e, T.f - oy);
+        ctx = oc;
+        ctx.lineJoin = 'round'; ctx.lineCap = 'butt';
+        ctx.beginPath(); ctx.moveTo(-20, gy); for (i = 0; i < h.n; i++) ctx.lineTo(-20 + i * h.st, h.ys[i]); ctx.lineTo(W + 20, gy); ctx.closePath();
+        ctx.fillStyle = ink(0.06); ctx.fill();
+        if (h.planU > 0) {   // the ground the plan will take, hatched as the level is ruled
+          if (h.hmax == null) { h.hmax = 0; for (i = 0; i < h.n; i++) h.hmax = Math.max(h.hmax, gy - h.ys[i]); h.hmax += 4; }
+          var hx = W + 20 - (W + 40) * h.planU, L = h.hmax, hstep = small ? 6 : 7;
+          ctx.save(); ctx.clip();
+          ctx.strokeStyle = ink(0.12); ctx.lineWidth = 0.6; ctx.beginPath();
+          for (x = Math.floor((hx - L) / hstep) * hstep; x < W + 22; x += hstep) { if (x + L < hx) continue; ctx.moveTo(x, gy - L); ctx.lineTo(x + L, gy); }
+          ctx.stroke(); ctx.restore();
+        }
+        ctx.beginPath(); ctx.moveTo(-20, h.ys[0]); for (i = 1; i < h.n; i++) ctx.lineTo(-20 + i * h.st, h.ys[i]);
+        ctx.strokeStyle = ink(0.6); ctx.lineWidth = 1.1; ctx.stroke();
+        var wt = h.water;
+        if (wt) {
+          var ww = wt.x1 - wt.x0; ctx.strokeStyle = ink(0.42); ctx.lineWidth = 0.8; ctx.beginPath();
+          ctx.moveTo(wt.x0, wt.y); ctx.lineTo(wt.x1, wt.y);
+          ctx.moveTo(wt.x0 + ww * 0.2, wt.y + 2.4 * Z); ctx.lineTo(wt.x1 - ww * 0.2, wt.y + 2.4 * Z);
+          ctx.moveTo(wt.x0 + ww * 0.38, wt.y + 4.6 * Z); ctx.lineTo(wt.x1 - ww * 0.38, wt.y + 4.6 * Z); ctx.stroke();
+        }
+        var M0 = skyAt(M, unit((h.top - 4 + ty) / Hs)), M1 = skyAt(M, unit((gy + 4 + ty) / Hs));
+        var paper = ctx.createLinearGradient(0, h.top - 4, 0, gy + 4);
+        paper.addColorStop(0, rgba(mixc(M0, col, 0.035))); paper.addColorStop(1, rgba(mixc(M1, col, 0.035)));
+        for (k = 0; k < h.objs.length; k++) {
+          var o = h.objs[k]; if (o.x1 < -20 || o.x0 > xEnd) continue;
+          for (i = 0; i < o.parts.length; i++) {
+            ctx.beginPath(); trace(o.parts[i]); ctx.closePath();
+            ctx.fillStyle = paper; ctx.fill(); ctx.strokeStyle = ink(o.la); ctx.lineWidth = o.lw; ctx.stroke();
           }
+          if (o.wins.length) { ctx.fillStyle = ink(0.26); ctx.beginPath(); for (i = 0; i < o.wins.length; i++) { var wn = o.wins[i]; ctx.rect(wn[0], wn[1], wn[2], wn[3]); } ctx.fill(); }
+          if (o.lines.length) { ctx.strokeStyle = ink(o.da); ctx.lineWidth = 0.6; ctx.beginPath(); for (i = 0; i < o.lines.length; i++) trace(o.lines[i]); ctx.stroke(); }
+          if (o.struts.length) { ctx.strokeStyle = ink(o.la); ctx.lineWidth = o.lw; ctx.beginPath(); for (i = 0; i < o.struts.length; i++) trace(o.struts[i]); ctx.stroke(); }
         }
-        if (cutX < o.left - 6) continue;
-        var fillA = 1, solA = 1, dashA = 0;
-        ctx.save(); if (cutX < 1e8) {   // a ragged edge, not a wipe
-          ctx.beginPath(); ctx.moveTo(-50, o.top - 20);
-          for (var yy2 = o.top - 20; yy2 <= o.base + 12; yy2 += 3) ctx.lineTo(cutX + 5 * Math.sin(yy2 * 0.9 + o.left) + 3.5 * Math.sin(yy2 * 2.7 + o.right), yy2);
-          ctx.lineTo(-50, o.base + 12); ctx.closePath(); ctx.clip();
+        // (3) the crumbling: grains fixed to the land, each letting go at its own moment inside the band ahead of the front
+        var specks = [];
+        if (cut) {
+          var c0 = Math.floor(Math.max(-20, fx) / cs), c1 = Math.ceil(xEnd / cs), r0 = Math.floor((h.top - 8) / cs), r1 = Math.ceil((gy + 1) / cs);
+          var dx0 = Math.max(0, Math.floor(T.a * c0 * cs + T.e)), dx1 = Math.min(h.oc.width, Math.ceil(T.a * c1 * cs + T.e) + 1);
+          var dy0 = Math.max(0, Math.floor(T.d * r0 * cs + T.f) - oy), dy1 = Math.min(h.oc.height, Math.ceil(T.d * r1 * cs + T.f) - oy + 1);
+          var img = dx1 > dx0 && dy1 > dy0 ? oc.getImageData(dx0, dy0, dx1 - dx0, dy1 - dy0) : null, iw = dx1 - dx0;
+          ctx.globalCompositeOperation = 'destination-out'; ctx.fillStyle = '#000'; ctx.beginPath();
+          for (var cc = c0; cc < c1; cc++) for (var rr2 = r0; rr2 < r1; rr2++) {
+            var gx = cc * cs, gyy = rr2 * cs, n = hsh(cc, rr2), d = gx - fx - n * J;
+            if (d <= 0) continue;
+            ctx.rect(gx, gyy, cs, cs);   // this grain has let go
+            if (d < D && img) {
+              var px = Math.floor(T.a * (gx + cs / 2) + T.e) - dx0, py = Math.floor(T.d * (gyy + cs / 2) + T.f) - oy - dy0;
+              if (px >= 0 && py >= 0 && px < iw && py < dy1 - dy0) { var al = img.data[(py * iw + px) * 4 + 3]; if (al > 12) specks.push(gx, gyy, d / D, n, al / 255); }
+            }
+          }
+          if (W + 20 > fx + J) ctx.rect(Math.max(-20, fx + J), h.top - 40, W + 40 - Math.max(-20, fx + J), gy - h.top + 42);   // past the band, nothing is left
+          ctx.fill(); ctx.globalCompositeOperation = 'source-over';
         }
-        for (i = 0; i < o.parts.length; i++) {
-          ctx.beginPath(); trace(o.parts[i]); ctx.closePath();
-          if (fillA > 0.01) { ctx.globalAlpha = ga * fillA; ctx.fillStyle = paper; ctx.fill(); ctx.globalAlpha = ga; }
-          if (solA > 0.01) { ctx.strokeStyle = ink(o.la * solA); ctx.lineWidth = o.lw; ctx.stroke(); }
+        ctx = main;
+        ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.drawImage(h.oc, 0, oy); ctx.restore();
+        // the dust: each grain drifts off on the wind, thinning as it goes
+        for (k = 0; k < specks.length; k += 5) {
+          var e = ease(specks[k + 2]), nn = specks[k + 3];
+          var sxp = specks[k] + e * (24 + 60 * hsh(nn, 3.1)) * Z, syp = specks[k + 1] - e * (12 + 44 * hsh(nn, 7.7)) * Z;
+          ctx.fillStyle = ink(0.75 * specks[k + 4] * (1 - e) * (1 - e)); ctx.fillRect(sxp, syp, cs * 0.8, cs * 0.8);
         }
-        if (solA > 0.01) {
-          if (o.wins.length) { ctx.fillStyle = ink(0.26 * solA); ctx.beginPath(); for (i = 0; i < o.wins.length; i++) { var wn = o.wins[i]; ctx.rect(wn[0], wn[1], wn[2], wn[3]); } ctx.fill(); }
-          if (o.lines.length) { ctx.strokeStyle = ink(o.da * solA); ctx.lineWidth = 0.6; ctx.beginPath(); for (i = 0; i < o.lines.length; i++) trace(o.lines[i]); ctx.stroke(); }
-          if (o.struts.length) { ctx.strokeStyle = ink(o.la * solA); ctx.lineWidth = o.lw; ctx.beginPath(); for (i = 0; i < o.struts.length; i++) trace(o.struts[i]); ctx.stroke(); }
-        }
-        if (dashA > 0.01) {
-          ctx.setLineDash(dash); ctx.lineDashOffset = 0; ctx.strokeStyle = ink(o.la * dashA); ctx.lineWidth = o.lw; ctx.beginPath();
-          for (i = 0; i < o.parts.length; i++) { trace(o.parts[i]); ctx.closePath(); }
-          for (i = 0; i < o.struts.length; i++) trace(o.struts[i]);
-          ctx.stroke(); ctx.setLineDash([]);
-        }
-        ctx.restore();
       }
-      // (6) the level, ruled right to left across all the land as the stakes go in; a chain line (dash-dot), fixed to the land
-      var x0 = W + 20 - (W + 40) * h.planU, x1 = Math.min(fx + c, W + 20), sp = h.sp;
+      // (4) the level, ruled right to left across all the land as the stakes go in; a chain line (dash-dot), fixed to the land
+      var x0 = W + 20 - (W + 40) * h.planU, x1 = Math.min(fx, W + 20), sp = h.sp;
       if (h.planU > 0 && x0 < x1) {
         ctx.setLineDash([12 * h.zd, 3 * h.zd, 2 * h.zd, 3 * h.zd]); ctx.lineDashOffset = x0;
         ctx.strokeStyle = ink(0.68); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(x0, gy); ctx.lineTo(x1, gy); ctx.stroke();
         ctx.setLineDash([]); ctx.lineDashOffset = 0;
       }
-      // (7) the stakes: one spacing, in the fields, the river and the town alike; each is tied to the level until the cut reaches it
+      // (5) the stakes: one spacing, in the fields, the river and the town alike; once the land is gone they stand on the level
       if (h.planU > 0) {
-        var pS = [], pO = [], pT = [];
+        var pS = [], pO = [];
         for (k = 0; k < h.stakes.length; k++) {
           var sx = h.stakes[k], a = clamp((sx - x0) / (sp * 0.8), 0, 1); if (a <= 0) continue;
-          var yb = groundNow(sx);
+          var yb = sx > fx + J * 0.5 ? gy : h.yAt(sx);
           pS.push(sx, yb, yb - h.sh * a);
           if (Math.abs(yb - gy) > 1) pO.push(sx, yb, lerp(yb, gy, a));
-          if (sx < x1) pT.push(sx);
         }
         ctx.lineWidth = 0.6; ctx.strokeStyle = ink(0.28); ctx.beginPath();
         for (k = 0; k < pO.length; k += 3) { ctx.moveTo(pO[k], pO[k + 1]); ctx.lineTo(pO[k], pO[k + 2]); }
         ctx.stroke();
-        ctx.lineWidth = 0.8; ctx.strokeStyle = ink(0.5); ctx.beginPath();
-        for (k = 0; k < pT.length; k++) { ctx.moveTo(pT[k], gy - 2.4 * h.zd); ctx.lineTo(pT[k], gy + 2.4 * h.zd); }
-        ctx.stroke();
-        // a ranging rod: one continuous shaft in four equal bands, dark and light, measured up from the ground, with a foot tick
         var bl = h.sh / 4;
         ctx.lineWidth = h.rod;
         for (var par = 0; par < 2; par++) {
@@ -870,7 +826,7 @@ SC.highway = {   // "We become the irrelevant animal in the way", drawn as a sur
         for (k = 0; k < pS.length; k += 3) { ctx.moveTo(pS[k] - 2.5, pS[k + 1]); ctx.lineTo(pS[k] + 2.5, pS[k + 1]); }
         ctx.stroke();
       }
-    } finally { ctx.restore(); }
+    } finally { ctx = main; main.restore(); }
   }
 };
 
